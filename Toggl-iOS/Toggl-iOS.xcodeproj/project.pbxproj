@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0C3B6B23F5696E0027DC14 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C3B6A23F5696E0027DC14 /* AppState.swift */; };
+		8C0C3B6E23F569BF0027DC14 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C3B6D23F569BF0027DC14 /* AppReducer.swift */; };
+		8C0C3B7123F569F90027DC14 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C3B7023F569F90027DC14 /* AppAction.swift */; };
 		8C30DEE223F46A1D0086C94D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30DEE123F46A1D0086C94D /* AppDelegate.swift */; };
 		8C30DEE423F46A1D0086C94D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30DEE323F46A1D0086C94D /* SceneDelegate.swift */; };
 		8C30DEE623F46A1D0086C94D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30DEE523F46A1D0086C94D /* ViewController.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C0C3B6A23F5696E0027DC14 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		8C0C3B6D23F569BF0027DC14 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		8C0C3B7023F569F90027DC14 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		8C30DEDE23F46A1C0086C94D /* Toggl-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toggl-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C30DEE123F46A1D0086C94D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C30DEE323F46A1D0086C94D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +53,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C0C3B6923F569630027DC14 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				8C0C3B6A23F5696E0027DC14 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		8C0C3B6C23F569B20027DC14 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				8C0C3B6D23F569BF0027DC14 /* AppReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		8C0C3B6F23F569EA0027DC14 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				8C0C3B7023F569F90027DC14 /* AppAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		8C30DED523F46A1C0086C94D = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +111,9 @@
 		8C30DEF923F46D9C0086C94D /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				8C0C3B6F23F569EA0027DC14 /* Actions */,
+				8C0C3B6C23F569B20027DC14 /* Reducers */,
+				8C0C3B6923F569630027DC14 /* State */,
 				8C30DEFA23F46DAD0086C94D /* Core */,
 			);
 			path = Architecture;
@@ -176,9 +209,12 @@
 			files = (
 				8C30DF0223F46EBF0086C94D /* Store.swift in Sources */,
 				8C30DF0023F46E710086C94D /* Effect.swift in Sources */,
+				8C0C3B6B23F5696E0027DC14 /* AppState.swift in Sources */,
 				8C30DEE623F46A1D0086C94D /* ViewController.swift in Sources */,
+				8C0C3B7123F569F90027DC14 /* AppAction.swift in Sources */,
 				8C30DEE223F46A1D0086C94D /* AppDelegate.swift in Sources */,
 				8C30DEFE23F46E550086C94D /* Reducer.swift in Sources */,
+				8C0C3B6E23F569BF0027DC14 /* AppReducer.swift in Sources */,
 				8C30DEE423F46A1D0086C94D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
