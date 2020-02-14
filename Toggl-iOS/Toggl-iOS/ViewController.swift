@@ -12,7 +12,7 @@ import Onboarding
 
 class ViewController: UIViewController {
 
-    var store: AnyStoreType<AppState, AppAction> = buildStore()
+    var store: Store<AppState, AppAction> = buildStore()
     
     override func viewDidLoad()
     {

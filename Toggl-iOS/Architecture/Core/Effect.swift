@@ -25,5 +25,15 @@ public struct Effect<Action>: ObservableType
         observable.subscribe(observer)
     }
     
+    public func map<B>(_ transform: @escaping (Action) throws -> B) -> Effect<B>
+    {
+        return Effect<B>(observable: observable.map(transform))
+    }
+    
     public static var empty: Effect<Action> { Effect(observable: Observable.empty()) }
+    
+    public static func from(effects: [Effect]) -> Effect
+    {
+        return Effect(observable: Observable.from(effects).merge())
+    }
 }

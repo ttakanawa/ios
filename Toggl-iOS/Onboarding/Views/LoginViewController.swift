@@ -20,7 +20,7 @@ public class LoginViewController: UIViewController {
     
     private var disposeBag = DisposeBag()
     
-    public var store: AnyStoreType<User?, OnboardingAction>!
+    public var store: Store<User?, OnboardingAction>!
     
     public override func viewDidLoad()
     {

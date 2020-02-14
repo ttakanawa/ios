@@ -8,11 +8,18 @@
 
 import Foundation
 import Architecture
+import Onboarding
 
-func buildStore() -> AnyStoreType<AppState, AppAction>
+let _onboardingReducer = pullback(onboardingReducer,
+                          state: \AppState.user,
+                          action: \AppAction.onboarding)
+
+let combinedReducers = combine(appReducer, _onboardingReducer)
+
+func buildStore() -> Store<AppState, AppAction>
 {
-    return AnyStoreType(Store<AppState, AppAction>(
+    return Store(BaseStore<AppState, AppAction>(
         initialState: AppState(),
-        reducer: appReducer
+        reducer: combinedReducers
     ))
 }

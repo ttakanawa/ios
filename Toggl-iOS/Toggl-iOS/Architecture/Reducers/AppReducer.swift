@@ -17,6 +17,7 @@ var appReducer: Reducer<AppState, AppAction> = Reducer { state, action in
     case .setForegroundStatus:
         state.appStatus = .foreground
     case .onboarding:
+        print("Onboarding action")
         break
     }
     

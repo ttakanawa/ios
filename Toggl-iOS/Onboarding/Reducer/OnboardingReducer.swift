@@ -10,14 +10,10 @@ import Foundation
 import Architecture
 import Models
 
-public typealias OnboardingState = (user: User?, showSignInModal: Bool)
-public let onboardingReducer = Reducer<OnboardingState, OnboardingAction> { state, action in
+public let onboardingReducer = Reducer<User?, OnboardingAction> { state, action in
     
     switch action {
        
-    case .signInWithEmailTapped:
-        state.showSignInModal = true
-        
     case .loginTapped(let email, let password):
         print("Trying to login")
         

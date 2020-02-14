@@ -22,7 +22,7 @@ extension BehaviorRelay
     }
 }
 
-public protocol StoreType
+public protocol StoreProtocol
 {
     associatedtype State
     associatedtype Action
@@ -31,12 +31,12 @@ public protocol StoreType
     func dispatch(_ action: Action)
 }
 
-public struct AnyStoreType<State, Action>: StoreType
+public struct Store<State, Action>: StoreProtocol
 {
     private let actionHandler: (Action) -> Void
     private let stateProvider: Observable<State>
 
-    public init<S: StoreType>(_ store: S) where S.Action == Action, S.State == State {
+    public init<S: StoreProtocol>(_ store: S) where S.Action == Action, S.State == State {
         self.init(action: store.dispatch, state: store.state)
     }
 
@@ -54,7 +54,7 @@ public struct AnyStoreType<State, Action>: StoreType
     }
 }
 
-public final class Store<State, Action>: StoreType
+public final class BaseStore<State, Action>: StoreProtocol
 {
     private var reducer: Reducer<State, Action>
     private var disposeBag = DisposeBag()
@@ -81,19 +81,19 @@ public final class Store<State, Action>: StoreType
     }
 }
 
-extension StoreType
+extension StoreProtocol
 {
-    public func view<LocalState, LocalAction>(
+    public func view<LocalState, LocalAction, S: StoreProtocol>(
         state toLocalState: @escaping (State) -> LocalState,
         action toGlobalAction: @escaping (LocalAction) -> Action?
-    ) -> AnyStoreType<LocalState, LocalAction>
+    ) -> S where S.State == LocalState, S.Action == LocalAction
     {
-        return AnyStoreType(
+        return Store<LocalState, LocalAction>(
             action: { newAction in
                 guard let oldAction = toGlobalAction(newAction) else { return }
                 self.dispatch(oldAction)
             },
             state: state.map(toLocalState)
-        )
+        ) as! S
     }
 }

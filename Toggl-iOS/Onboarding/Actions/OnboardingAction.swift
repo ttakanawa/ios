@@ -10,7 +10,6 @@ import Foundation
 
 public enum OnboardingAction
 {
-    case signInWithEmailTapped
     case loginTapped(email: String, password: String)
     case forgotPasswordTapped
     case cancelTapped
