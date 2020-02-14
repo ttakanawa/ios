@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Architecture
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
-    var window: UIWindow?
+    var window: UIWindow?    
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool
     {

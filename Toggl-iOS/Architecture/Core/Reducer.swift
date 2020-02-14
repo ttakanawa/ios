@@ -12,7 +12,7 @@ public typealias ReduceFunction<StateType, ActionType> = (inout StateType, Actio
 
 public struct Reducer<StateType, ActionType>
 {
-    public let reduce: ReduceFunction<StateType, ActionType>
+    let reduce: ReduceFunction<StateType, ActionType>
     
     public init(_ reduce: @escaping ReduceFunction<StateType, ActionType>)
     {

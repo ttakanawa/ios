@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import Architecture
+import Onboarding
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    var store: AnyStoreType<AppState, AppAction> = buildStore()
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        let onboarding = OnboardingPresenter.mainView
+        
+        onboarding.store = store.view(
+            state: { $0.user },
+            action: { .onboarding($0) }
+        )
+        
+        UIApplication.shared.keyWindow?.rootViewController = onboarding
+    }
 }
 
