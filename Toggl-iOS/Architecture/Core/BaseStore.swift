@@ -52,6 +52,11 @@ public struct Store<State, Action>: StoreProtocol
     public var state: Observable<State> {
         stateProvider
     }
+    
+    public static func create(initialState: State, reducer: Reducer<State, Action>) -> Store
+    {
+        return Store(BaseStore(initialState: initialState, reducer: reducer))
+    }
 }
 
 public final class BaseStore<State, Action>: StoreProtocol

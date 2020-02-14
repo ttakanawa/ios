@@ -18,8 +18,8 @@ let combinedReducers = combine(appReducer, _onboardingReducer)
 
 func buildStore() -> Store<AppState, AppAction>
 {
-    return Store(BaseStore<AppState, AppAction>(
+    return Store.create(
         initialState: AppState(),
         reducer: combinedReducers
-    ))
+    )
 }
