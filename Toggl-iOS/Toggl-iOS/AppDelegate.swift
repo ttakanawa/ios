@@ -12,7 +12,8 @@ import Architecture
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
-    var window: UIWindow?    
+    var window: UIWindow?
+    var store: Store<AppState, AppAction, AppEnvironment> = buildStore()
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool
     {
@@ -21,6 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+        if #available(iOS 13, *) {
+            return true
+        }
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let vc = ViewController()
+        vc.store = store
+        window!.rootViewController = vc
+        window!.makeKeyAndVisible()
+        
         return true
     }
 
@@ -32,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func applicationDidEnterBackground(_ application: UIApplication)
     {
         // Not called under iOS 13 - See SceneDelegate sceneDidEnterBackground
+        store.dispatch(.setBackgroundStatus)
     }
 
     func applicationWillEnterForeground(_ application: UIApplication)
@@ -41,7 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     func applicationDidBecomeActive(_ application: UIApplication)
     {
-        // Not called under iOS 13 - See SceneDelegate sceneDidBecomeActive
+        // Not called under iOS 13 - See SceneDelegate sceneWillEnterForeground
+        store.dispatch(.setForegroundStatus)
     }
 
     // MARK: UISceneSession Lifecycle

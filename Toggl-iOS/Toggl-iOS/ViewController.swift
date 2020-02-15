@@ -12,8 +12,8 @@ import Onboarding
 import Environment
 
 class ViewController: UIViewController {
-
-    var store: Store<AppState, AppAction, AppEnvironment> = buildStore()
+    
+    var store: Store<AppState, AppAction, AppEnvironment>!
     
     override func viewDidLoad()
     {
@@ -29,10 +29,6 @@ class ViewController: UIViewController {
             action: { .onboarding($0) },
             environment: { $0.api }
         )
-        
-        _ = store.state
-            .map({ $0.user })
-            .subscribe(onNext: { print($0) })
         
         UIApplication.shared.keyWindow?.rootViewController = onboarding
     }
