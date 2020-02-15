@@ -8,6 +8,7 @@
 
 import Foundation
 import Models
+import Architecture
 
 enum AppStatus
 {
@@ -19,6 +20,5 @@ enum AppStatus
 struct AppState
 {
     var appStatus: AppStatus = .unknown
-    var user: User?
-    var showSignInModal: Bool = false
+    var user: Loadable<User> = .nothing
 }

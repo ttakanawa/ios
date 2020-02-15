@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16085" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16078.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,12 +77,21 @@
                                     <constraint firstItem="9zB-Cf-kQy" firstAttribute="top" secondItem="4mu-9s-8Te" secondAttribute="bottom" constant="16" id="yHb-e2-dPQ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGJ-Rf-jVd">
+                                <rect key="frame" x="20" y="316" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="rGJ-Rf-jVd" firstAttribute="trailing" secondItem="keF-OC-BhR" secondAttribute="trailing" constant="-20" id="2Fc-cx-eid"/>
+                            <constraint firstItem="keF-OC-BhR" firstAttribute="top" secondItem="rGJ-Rf-jVd" secondAttribute="bottom" constant="46" id="2Fi-rW-8wz"/>
                             <constraint firstItem="bAX-Ct-KdZ" firstAttribute="trailing" secondItem="keF-OC-BhR" secondAttribute="trailing" id="kUP-xS-mpa"/>
                             <constraint firstItem="keF-OC-BhR" firstAttribute="centerY" secondItem="bAX-Ct-KdZ" secondAttribute="centerY" id="lpP-u5-sbd"/>
                             <constraint firstItem="keF-OC-BhR" firstAttribute="leading" secondItem="bAX-Ct-KdZ" secondAttribute="leading" id="q2Z-k2-lRx"/>
+                            <constraint firstItem="rGJ-Rf-jVd" firstAttribute="leading" secondItem="keF-OC-BhR" secondAttribute="leading" constant="20" id="u9b-lb-5ls"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bAX-Ct-KdZ"/>
                     </view>
@@ -89,11 +99,12 @@
                         <outlet property="emailTextField" destination="pVI-My-grL" id="mx1-ms-Kf0"/>
                         <outlet property="loginButton" destination="9zB-Cf-kQy" id="o8y-lj-AdT"/>
                         <outlet property="passwordTextField" destination="4mu-9s-8Te" id="UK6-JZ-Gkc"/>
+                        <outlet property="userLabel" destination="rGJ-Rf-jVd" id="b7s-lq-ToE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sK-Ze-8hh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-633" y="-887"/>
+            <point key="canvasLocation" x="-633.33333333333337" y="-887.27678571428567"/>
         </scene>
     </scenes>
 </document>

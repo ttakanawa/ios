@@ -17,10 +17,11 @@ public class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var userLabel: UILabel!
     
     private var disposeBag = DisposeBag()
     
-    public var store: Store<User?, OnboardingAction>!
+    public var store: Store<Loadable<User>, OnboardingAction>!
     
     public override func viewDidLoad()
     {
@@ -33,6 +34,11 @@ public class LoginViewController: UIViewController {
         loginButton.rx.tap
             .subscribe(onNext: dispatchLoginTapAction)
             .disposed(by: disposeBag)
+        
+        store.state
+            .map(toString)
+            .bind(to: userLabel.rx.text)
+            .disposed(by: disposeBag)
     }
     
     private func dispatchLoginTapAction()
@@ -43,5 +49,19 @@ public class LoginViewController: UIViewController {
         }
         
         self.store.dispatch(.loginTapped(email: email, password: password))
+    }
+}
+
+fileprivate func toString(loadableUser: Loadable<User>) -> String
+{
+    switch loadableUser {
+        case .nothing:
+            return "empty"
+        case .loading:
+            return "loading"
+        case let .error(error):
+            return "error: \(error)"
+        case let .loaded(user):
+            return "loaded: \(user.email)"
     }
 }

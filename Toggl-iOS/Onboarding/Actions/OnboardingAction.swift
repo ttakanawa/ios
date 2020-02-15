@@ -7,11 +7,11 @@
 //
 
 import Foundation
+import Models
 
 public enum OnboardingAction
 {
     case loginTapped(email: String, password: String)
-    case forgotPasswordTapped
-    case cancelTapped
-    case goToSignupTapped
+    case logoutTapped
+    case setUser(User?)
 }

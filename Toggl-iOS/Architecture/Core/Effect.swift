@@ -37,3 +37,11 @@ public struct Effect<Action>: ObservableType
         return Effect(observable: Observable.from(effects).merge())
     }
 }
+
+public extension Observable
+{
+    func toEffect() -> Effect<Element>
+    {
+        return Effect(observable: self)
+    }
+}

@@ -36,6 +36,7 @@
 		8C6EBCDD23F69E0000306F5B /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0C3BEF23F5ABB50027DC14 /* Onboarding.storyboard */; };
 		8C6EBCDE23F69E0B00306F5B /* OnboardingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C3BEB23F5AB900027DC14 /* OnboardingAction.swift */; };
 		8C6EBCDF23F69E0F00306F5B /* OnboardingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C3BED23F5AB9B0027DC14 /* OnboardingReducer.swift */; };
+		8C816DE723F7EA7300E4BB8D /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C816DE623F7EA7300E4BB8D /* Loadable.swift */; };
 		8CA8C78B23F6AC04006DBFA3 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C3B9A23F5AAA60027DC14 /* Architecture.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8CA8C78C23F6AC04006DBFA3 /* Architecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C3B9A23F5AAA60027DC14 /* Architecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CA8C78E23F6AC07006DBFA3 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C3BF823F5AE000027DC14 /* Models.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -211,6 +212,7 @@
 		8C6EBCD523F69D6500306F5B /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		8C6EBCD923F69D8300306F5B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8C816DD323F706D600E4BB8D /* OnboardingPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OnboardingPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8C816DE623F7EA7300E4BB8D /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +282,7 @@
 		8C0C3B9B23F5AAA60027DC14 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				8C816DE623F7EA7300E4BB8D /* Loadable.swift */,
 				8C30DEFA23F46DAD0086C94D /* Core */,
 				8C0C3B9C23F5AAA60027DC14 /* Architecture.h */,
 				8C0C3B9D23F5AAA60027DC14 /* Info.plist */,
@@ -746,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0C3BDB23F5AAC70027DC14 /* BaseStore.swift in Sources */,
+				8C816DE723F7EA7300E4BB8D /* Loadable.swift in Sources */,
 				8C0C3BDA23F5AAC70027DC14 /* Effect.swift in Sources */,
 				8C0C3BD923F5AAC70027DC14 /* Reducer.swift in Sources */,
 			);

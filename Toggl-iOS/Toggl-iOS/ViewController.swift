@@ -28,6 +28,10 @@ class ViewController: UIViewController {
             action: { .onboarding($0) }
         )
         
+        _ = store.state
+            .map({ $0.user })
+            .subscribe(onNext: { print($0) })
+        
         UIApplication.shared.keyWindow?.rootViewController = onboarding
     }
 }

@@ -9,23 +9,35 @@
 import Foundation
 import Architecture
 import Models
+import RxSwift
 
-public let onboardingReducer = Reducer<User?, OnboardingAction> { state, action in
+public let onboardingReducer = Reducer<Loadable<User>, OnboardingAction> { state, action in
     
     switch action {
        
     case .loginTapped(let email, let password):
-        print("Trying to login")
+        state = .loading
+        return loadUser(email: email, password: password)
         
-    case .forgotPasswordTapped:
-        break
+    case let .setUser(user):
+        guard let user = user else {
+            state = .nothing
+            break
+        }
+        state = .loaded(user)
         
-    case .cancelTapped:
+    case .logoutTapped:
         break
-        
-    case .goToSignupTapped:
-        break
+
     }
     
     return .empty
+}
+
+fileprivate func loadUser(email: String, password: String) -> Effect<OnboardingAction>
+{
+    return Observable
+        .just(OnboardingAction.setUser(User(email: email)))
+        .delay(0.4, scheduler: MainScheduler.instance)
+        .toEffect()
 }
