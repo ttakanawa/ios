@@ -210,6 +210,7 @@
 		8C6EBCBE23F69D2800306F5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C6EBCD523F69D6500306F5B /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		8C6EBCD923F69D8300306F5B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		8C816DD323F706D600E4BB8D /* OnboardingPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OnboardingPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +341,7 @@
 		8C30DED523F46A1C0086C94D = {
 			isa = PBXGroup;
 			children = (
+				8C816DD423F7074100E4BB8D /* AppPlaygrounds */,
 				8C30DEE023F46A1D0086C94D /* Toggl-iOS */,
 				8C0C3B9B23F5AAA60027DC14 /* Architecture */,
 				8C0C3BA823F5AAA70027DC14 /* ArchitectureTests */,
@@ -432,6 +434,14 @@
 				8C0C3C1723F5AFA00027DC14 /* LoginViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8C816DD423F7074100E4BB8D /* AppPlaygrounds */ = {
+			isa = PBXGroup;
+			children = (
+				8C816DD323F706D600E4BB8D /* OnboardingPlayground.playground */,
+			);
+			path = AppPlaygrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
