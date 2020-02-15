@@ -39,6 +39,6 @@ fileprivate func loadUser(email: String, password: String) -> Effect<OnboardingA
 {
     return Observable
         .just(OnboardingAction.setUser(User(email: email)))
-        .delay(0.4, scheduler: MainScheduler.instance)
+        .delay(.seconds(1), scheduler: MainScheduler.instance)
         .toEffect()
 }

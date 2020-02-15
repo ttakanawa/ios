@@ -42,7 +42,8 @@
 		8C816E0123F7FA1100E4BB8D /* Environment.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C816DF123F7FA1100E4BB8D /* Environment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C816E0423F7FA1100E4BB8D /* Environment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C816DEF23F7FA1100E4BB8D /* Environment.framework */; };
 		8C816E0523F7FA1100E4BB8D /* Environment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C816DEF23F7FA1100E4BB8D /* Environment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8C816E0C23F7FA1900E4BB8D /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C816DE823F7F9BB00E4BB8D /* AppEnvironment.swift */; };
+		8C816E0D23F7FD7E00E4BB8D /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C816DE823F7F9BB00E4BB8D /* AppEnvironment.swift */; };
+		8C816E0F23F7FD8A00E4BB8D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C816E0E23F7FD8A00E4BB8D /* API.swift */; };
 		8CA8C78B23F6AC04006DBFA3 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C3B9A23F5AAA60027DC14 /* Architecture.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8CA8C78C23F6AC04006DBFA3 /* Architecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C3B9A23F5AAA60027DC14 /* Architecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CA8C78E23F6AC07006DBFA3 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C3BF823F5AE000027DC14 /* Models.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -248,6 +249,7 @@
 		8C816DF723F7FA1100E4BB8D /* EnvironmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnvironmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C816DFE23F7FA1100E4BB8D /* EnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
 		8C816E0023F7FA1100E4BB8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C816E0E23F7FD8A00E4BB8D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +446,7 @@
 		8C30DEF923F46D9C0086C94D /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				8C816DE823F7F9BB00E4BB8D /* AppEnvironment.swift */,
 				8C0C3B7023F569F90027DC14 /* AppAction.swift */,
 				8C0C3B6D23F569BF0027DC14 /* AppReducer.swift */,
 				8C0C3B6A23F5696E0027DC14 /* AppState.swift */,
@@ -505,9 +508,9 @@
 		8C816DF023F7FA1100E4BB8D /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				8C816DE823F7F9BB00E4BB8D /* AppEnvironment.swift */,
 				8C816DF123F7FA1100E4BB8D /* Environment.h */,
 				8C816DF223F7FA1100E4BB8D /* Info.plist */,
+				8C816E0E23F7FD8A00E4BB8D /* API.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 					};
 					8C816DEE23F7FA1100E4BB8D = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 					8C816DF623F7FA1100E4BB8D = {
 						CreatedOnToolsVersion = 11.4;
@@ -931,6 +935,7 @@
 				8C30DEE623F46A1D0086C94D /* ViewController.swift in Sources */,
 				8C0C3B7123F569F90027DC14 /* AppAction.swift in Sources */,
 				8C30DEE223F46A1D0086C94D /* AppDelegate.swift in Sources */,
+				8C816E0D23F7FD7E00E4BB8D /* AppEnvironment.swift in Sources */,
 				8C0C3B6E23F569BF0027DC14 /* AppReducer.swift in Sources */,
 				8C30DEE423F46A1D0086C94D /* SceneDelegate.swift in Sources */,
 			);
@@ -960,7 +965,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C816E0C23F7FA1900E4BB8D /* AppEnvironment.swift in Sources */,
+				8C816E0F23F7FD8A00E4BB8D /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1528,6 +1533,7 @@
 		8C816E0723F7FA1100E4BB8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1547,6 +1553,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1557,6 +1564,7 @@
 		8C816E0823F7FA1100E4BB8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

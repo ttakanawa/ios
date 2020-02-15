@@ -7,14 +7,7 @@
 //
 
 import Foundation
-
-public struct API
-{
-    public init()
-    {
-        
-    }
-}
+import Environment
 
 public struct AppEnvironment
 {
