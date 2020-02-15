@@ -18,7 +18,7 @@ public let onboardingReducer = Reducer<Loadable<User>, OnboardingAction, API> { 
        
     case .loginTapped(let email, let password):
         state = .loading
-        return loadUser(email: email, password: password)
+        return loadUser(email: email, password: password, api: api)
         
     case let .setUser(user):
         guard let user = user else {
@@ -35,10 +35,10 @@ public let onboardingReducer = Reducer<Loadable<User>, OnboardingAction, API> { 
     return .empty
 }
 
-fileprivate func loadUser(email: String, password: String) -> Effect<OnboardingAction>
+fileprivate func loadUser(email: String, password: String, api: API) -> Effect<OnboardingAction>
 {
-    return Observable
-        .just(OnboardingAction.setUser(User(email: email)))
-        .delay(.seconds(1), scheduler: MainScheduler.instance)
+    return api.loginUser(email: email, password: password)
+        .map({ OnboardingAction.setUser($0) })
+        .catchError({ _ in Observable.just(OnboardingAction.logoutTapped) })
         .toEffect()
 }

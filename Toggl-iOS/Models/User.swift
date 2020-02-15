@@ -8,12 +8,15 @@
 
 import Foundation
 
-public struct User
+public struct User: Codable, Equatable
 {
-    public let email: String
-    
-    public init(email: String)
+    public var id: Int
+    var apiToken: String
+
+    enum CodingKeys: String, CodingKey
     {
-        self.email = email
+        case id
+    
+        case apiToken = "api_token"
     }
 }

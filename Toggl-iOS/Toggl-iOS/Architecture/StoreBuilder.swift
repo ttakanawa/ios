@@ -25,7 +25,7 @@ func buildStore() -> Store<AppState, AppAction, AppEnvironment>
         initialState: AppState(),
         reducer: combinedReducers,
         environment: AppEnvironment(
-            api: API()
+            api: API(urlSession: URLSession(configuration: URLSessionConfiguration.default))
         )
     )
 }

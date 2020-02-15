@@ -63,6 +63,6 @@ fileprivate func toString(loadableUser: Loadable<User>) -> String
         case let .error(error):
             return "error: \(error)"
         case let .loaded(user):
-            return "loaded: \(user.email)"
+            return "loaded: \(user.id)"
     }
 }
