@@ -9,10 +9,11 @@
 import UIKit
 import Architecture
 import Onboarding
+import Environment
 
 class ViewController: UIViewController {
 
-    var store: Store<AppState, AppAction> = buildStore()
+    var store: Store<AppState, AppAction, AppEnvironment> = buildStore()
     
     override func viewDidLoad()
     {
@@ -25,7 +26,8 @@ class ViewController: UIViewController {
         
         onboarding.store = store.view(
             state: { $0.user },
-            action: { .onboarding($0) }
+            action: { .onboarding($0) },
+            environment: { $0.api }
         )
         
         _ = store.state

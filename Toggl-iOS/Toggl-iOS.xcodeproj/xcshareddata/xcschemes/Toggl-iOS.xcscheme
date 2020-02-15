@@ -58,6 +58,16 @@
                ReferencedContainer = "container:Toggl-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8C816DF623F7FA1100E4BB8D"
+               BuildableName = "EnvironmentTests.xctest"
+               BlueprintName = "EnvironmentTests"
+               ReferencedContainer = "container:Toggl-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

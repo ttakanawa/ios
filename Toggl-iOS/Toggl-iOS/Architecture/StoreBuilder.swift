@@ -9,17 +9,23 @@
 import Foundation
 import Architecture
 import Onboarding
+import Environment
 
 let _onboardingReducer = pullback(onboardingReducer,
                           state: \AppState.user,
-                          action: \AppAction.onboarding)
+                          action: \AppAction.onboarding,
+                          environment: \AppEnvironment.api
+)
 
 let combinedReducers = combine(appReducer, _onboardingReducer)
 
-func buildStore() -> Store<AppState, AppAction>
+func buildStore() -> Store<AppState, AppAction, AppEnvironment>
 {
     return Store.create(
         initialState: AppState(),
-        reducer: combinedReducers
+        reducer: combinedReducers,
+        environment: AppEnvironment(
+            api: API()
+        )
     )
 }

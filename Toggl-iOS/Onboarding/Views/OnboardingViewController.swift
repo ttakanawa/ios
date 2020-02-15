@@ -11,6 +11,7 @@ import Architecture
 import Models
 import RxCocoa
 import RxSwift
+import Environment
 
 public class OnboardingViewController: UIViewController
 {
@@ -18,7 +19,7 @@ public class OnboardingViewController: UIViewController
 
     private var disposeBag = DisposeBag()
     
-    public var store: Store<Loadable<User>, OnboardingAction>!
+    public var store: Store<Loadable<User>, OnboardingAction, API>!
 
     public override func viewDidLoad()
     {

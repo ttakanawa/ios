@@ -8,8 +8,9 @@
 
 import Foundation
 import Architecture
+import Environment
 
-var appReducer: Reducer<AppState, AppAction> = Reducer { state, action in
+var appReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { state, action, environment in
     switch action
     {
     case .setBackgroundStatus:

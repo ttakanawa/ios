@@ -10,8 +10,9 @@ import Foundation
 import Architecture
 import Models
 import RxSwift
+import Environment
 
-public let onboardingReducer = Reducer<Loadable<User>, OnboardingAction> { state, action in
+public let onboardingReducer = Reducer<Loadable<User>, OnboardingAction, API> { state, action, api in
     
     switch action {
        
