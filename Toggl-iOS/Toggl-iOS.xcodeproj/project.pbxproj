@@ -26,6 +26,8 @@
 		8C30DEE623F46A1D0086C94D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30DEE523F46A1D0086C94D /* ViewController.swift */; };
 		8C30DEEB23F46A1F0086C94D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C30DEEA23F46A1F0086C94D /* Assets.xcassets */; };
 		8C30DEEE23F46A1F0086C94D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C30DEEC23F46A1F0086C94D /* LaunchScreen.storyboard */; };
+		8C6B7F9523FA8A91003F56CD /* StoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6B7F9423FA8A91003F56CD /* StoreProtocol.swift */; };
+		8C6B7F9723FA8AB5003F56CD /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6B7F9623FA8AB5003F56CD /* StoreView.swift */; };
 		8C6EBCB623F69D2800306F5B /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6EBCAD23F69D2800306F5B /* Onboarding.framework */; };
 		8C6EBCBD23F69D2800306F5B /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6EBCBC23F69D2800306F5B /* OnboardingTests.swift */; };
 		8C6EBCBF23F69D2800306F5B /* Onboarding.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C6EBCAF23F69D2800306F5B /* Onboarding.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -350,6 +352,8 @@
 		8C30DEFD23F46E550086C94D /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		8C30DEFF23F46E710086C94D /* Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		8C30DF0123F46EBF0086C94D /* BaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStore.swift; sourceTree = "<group>"; };
+		8C6B7F9423FA8A91003F56CD /* StoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProtocol.swift; sourceTree = "<group>"; };
+		8C6B7F9623FA8AB5003F56CD /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		8C6EBCAD23F69D2800306F5B /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6EBCAF23F69D2800306F5B /* Onboarding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Onboarding.h; sourceTree = "<group>"; };
 		8C6EBCB023F69D2800306F5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -625,6 +629,8 @@
 				8C30DEFD23F46E550086C94D /* Reducer.swift */,
 				8C30DEFF23F46E710086C94D /* Effect.swift */,
 				8C30DF0123F46EBF0086C94D /* BaseStore.swift */,
+				8C6B7F9423FA8A91003F56CD /* StoreProtocol.swift */,
+				8C6B7F9623FA8AB5003F56CD /* StoreView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1206,8 +1212,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0C3BDB23F5AAC70027DC14 /* BaseStore.swift in Sources */,
+				8C6B7F9523FA8A91003F56CD /* StoreProtocol.swift in Sources */,
 				8C816DE723F7EA7300E4BB8D /* Loadable.swift in Sources */,
 				8C0C3BDA23F5AAC70027DC14 /* Effect.swift in Sources */,
+				8C6B7F9723FA8AB5003F56CD /* StoreView.swift in Sources */,
 				8C0C3BD923F5AAC70027DC14 /* Reducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
