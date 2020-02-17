@@ -10,7 +10,7 @@ import Foundation
 import Architecture
 import Models
 import RxSwift
-import Environment
+import API
 
 public let onboardingReducer = Reducer<Loadable<User>, OnboardingAction, API> { state, action, api in
     

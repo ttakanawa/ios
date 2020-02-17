@@ -9,7 +9,7 @@
 import Foundation
 import Architecture
 import Onboarding
-import Environment
+import API
 
 let _onboardingReducer = pullback(onboardingReducer,
                           state: \AppState.user,

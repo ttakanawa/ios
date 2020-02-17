@@ -11,7 +11,7 @@ import Architecture
 import Models
 import RxCocoa
 import RxSwift
-import Environment
+import API
 
 public class OnboardingViewController: UIViewController
 {

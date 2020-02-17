@@ -8,7 +8,6 @@
 
 import Foundation
 import Architecture
-import Environment
 
 var appReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { state, action, environment in
     switch action

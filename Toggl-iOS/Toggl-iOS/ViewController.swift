@@ -9,7 +9,6 @@
 import UIKit
 import Architecture
 import Onboarding
-import Environment
 
 class ViewController: UIViewController {
     

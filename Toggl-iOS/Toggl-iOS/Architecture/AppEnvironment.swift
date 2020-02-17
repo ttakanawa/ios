@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Environment
+import API
 
 public struct AppEnvironment
 {
