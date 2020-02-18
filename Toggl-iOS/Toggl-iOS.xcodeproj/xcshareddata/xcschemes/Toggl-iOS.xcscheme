@@ -88,6 +88,56 @@
                ReferencedContainer = "container:Toggl-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8C6B7FDA23FAA5AB003F56CD"
+               BuildableName = "UIExtensionsTests.xctest"
+               BlueprintName = "UIExtensionsTests"
+               ReferencedContainer = "container:Toggl-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8C6B800423FAFF4F003F56CD"
+               BuildableName = "TimeEntriesLogTests.xctest"
+               BlueprintName = "TimeEntriesLogTests"
+               ReferencedContainer = "container:Toggl-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8C6B802623FAFF8E003F56CD"
+               BuildableName = "SettingsTests.xctest"
+               BlueprintName = "SettingsTests"
+               ReferencedContainer = "container:Toggl-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8C6B804823FAFFB5003F56CD"
+               BuildableName = "ReportsTests.xctest"
+               BlueprintName = "ReportsTests"
+               ReferencedContainer = "container:Toggl-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8C6B806A23FAFFE3003F56CD"
+               BuildableName = "CalendarTests.xctest"
+               BlueprintName = "CalendarTests"
+               ReferencedContainer = "container:Toggl-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -110,6 +160,18 @@
             ReferencedContainer = "container:Toggl-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <AdditionalOptions>
+         <AdditionalOption
+            key = "MallocStackLogging"
+            value = ""
+            isEnabled = "YES">
+         </AdditionalOption>
+         <AdditionalOption
+            key = "PrefersMallocStackLoggingLite"
+            value = ""
+            isEnabled = "YES">
+         </AdditionalOption>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

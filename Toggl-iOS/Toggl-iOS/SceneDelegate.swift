@@ -12,19 +12,18 @@ import Architecture
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate
 {
-    var window: UIWindow?
+    var coordinator: AppCoordinator?
     var store: Store<AppState, AppAction, AppEnvironment>!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
     {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
         store = (UIApplication.shared.delegate as! AppDelegate).store
         
-        window = UIWindow(windowScene: windowScene)
-        let vc = ViewController()
-        vc.store = store
-        window!.rootViewController = vc
-        window!.makeKeyAndVisible()
+        let window = UIWindow(windowScene: windowScene)
+        coordinator = AppCoordinator(window: window, store: store)
+        coordinator?.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene)
@@ -43,7 +42,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate
 
     func sceneWillResignActive(_ scene: UIScene)
     {
-        store.dispatch(.setForegroundStatus)
+        //store.dispatch(.setForegroundStatus)
     }
 
     func sceneWillEnterForeground(_ scene: UIScene)
@@ -54,7 +53,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate
 
     func sceneDidEnterBackground(_ scene: UIScene)
     {
-        store.dispatch(.setBackgroundStatus)
+        //store.dispatch(.setBackgroundStatus)
     }
 
 

@@ -17,19 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear(_ animated: Bool)
-    {
-        let onboarding = OnboardingPresenter.mainView
         
-        onboarding.store = store.view(
-            state: { $0.user },
-            action: { .onboarding($0) },
-            environment: { $0.api }
-        )
-        
-        UIApplication.shared.keyWindow?.rootViewController = onboarding
+        view.backgroundColor = UIColor.red
     }
 }
 

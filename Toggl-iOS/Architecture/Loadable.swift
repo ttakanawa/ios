@@ -15,3 +15,13 @@ public enum Loadable<Value>
     case error(Error)
     case loaded(Value)
 }
+
+public func isLoaded<V>(loadable: Loadable<V>) -> Bool
+{
+    switch loadable {
+    case .loaded(_):
+        return true
+    default:
+        return false
+    }
+}

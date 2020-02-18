@@ -12,28 +12,28 @@ import Models
 import RxCocoa
 import RxSwift
 import API
+import UIExtensions
 
-public class OnboardingViewController: UIViewController
+public class OnboardingViewController: UIViewController, Storyboarded
 {
+    public static var storyboardName = "Onboarding"
+    public static var storyboardBundle =  Bundle(for: OnboardingViewController.self as AnyClass)
+    
     @IBOutlet weak var emailSignInButton: UIButton!
 
     private var disposeBag = DisposeBag()
     
     public var store: Store<Loadable<User>, OnboardingAction, API>!
+    public var coordinator: OnboardingCoordinator!
 
     public override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        navigationController?.isNavigationBarHidden = true
 
         emailSignInButton.rx.tap
-            .subscribe(onNext: showEmailSignIn)
-            .disposed(by: disposeBag)
-    }
-    
-    private func showEmailSignIn()
-    {
-        let vc = storyboard!.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        vc.store = store
-        present(vc, animated: true)
+            .subscribe(onNext: coordinator.showEmailSignIn)
+            .disposed(by: disposeBag)    
     }
 }

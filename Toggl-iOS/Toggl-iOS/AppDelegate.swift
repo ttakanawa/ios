@@ -12,7 +12,7 @@ import Architecture
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
-    var window: UIWindow?
+    var coordinator: AppCoordinator?
     var store: Store<AppState, AppAction, AppEnvironment> = buildStore()
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool
@@ -25,13 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         if #available(iOS 13, *) {
             return true
         }
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = ViewController()
-        vc.store = store
-        window!.rootViewController = vc
-        window!.makeKeyAndVisible()
-        
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        coordinator = AppCoordinator(window: window, store: store)
+        coordinator?.start()
+                
         return true
     }
 
