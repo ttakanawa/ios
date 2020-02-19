@@ -75,7 +75,6 @@
 		8C6EBCDD23F69E0000306F5B /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C0C3BEF23F5ABB50027DC14 /* Onboarding.storyboard */; };
 		8C6EBCDE23F69E0B00306F5B /* OnboardingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C3BEB23F5AB900027DC14 /* OnboardingAction.swift */; };
 		8C6EBCDF23F69E0F00306F5B /* OnboardingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C3BED23F5AB9B0027DC14 /* OnboardingReducer.swift */; };
-		8C816DE723F7EA7300E4BB8D /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C816DE623F7EA7300E4BB8D /* Loadable.swift */; };
 		8C816E0D23F7FD7E00E4BB8D /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C816DE823F7F9BB00E4BB8D /* AppEnvironment.swift */; };
 		8C816E1E23F84FCD00E4BB8D /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C816E1523F84FCD00E4BB8D /* Networking.framework */; };
 		8C816E2523F84FCD00E4BB8D /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C816E2423F84FCD00E4BB8D /* NetworkingTests.swift */; };
@@ -120,6 +119,7 @@
 		8CBCBB5923FD1456002B72FB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6B7FCC23FAA361003F56CD /* Coordinator.swift */; };
 		8CBCBB5A23FD1458002B72FB /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6B7FF023FAA5BA003F56CD /* Storyboarded.swift */; };
 		8CBCBB5C23FD2348002B72FB /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBB5B23FD2347002B72FB /* ObservableType+Extensions.swift */; };
+		8CBCBB5D23FD23B5002B72FB /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C816DE623F7EA7300E4BB8D /* Loadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -858,7 +858,6 @@
 		8C0C3B9B23F5AAA60027DC14 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
-				8C816DE623F7EA7300E4BB8D /* Loadable.swift */,
 				8C30DEFA23F46DAD0086C94D /* Core */,
 				8C0C3B9C23F5AAA60027DC14 /* Architecture.h */,
 				8C0C3B9D23F5AAA60027DC14 /* Info.plist */,
@@ -1235,6 +1234,7 @@
 		8CBCBB3023FD1393002B72FB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8CBCBB5E23FD23B9002B72FB /* Types */,
 				8CBCBB4D23FD13AD002B72FB /* Rx */,
 				8CBCBB4C23FD139C002B72FB /* UI */,
 				8CBCBB3123FD1393002B72FB /* Common.h */,
@@ -1268,6 +1268,14 @@
 				8CBCBB5B23FD2347002B72FB /* ObservableType+Extensions.swift */,
 			);
 			path = Rx;
+			sourceTree = "<group>";
+		};
+		8CBCBB5E23FD23B9002B72FB /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				8C816DE623F7EA7300E4BB8D /* Loadable.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2115,7 +2123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C0C3BDB23F5AAC70027DC14 /* BaseStore.swift in Sources */,
-				8C816DE723F7EA7300E4BB8D /* Loadable.swift in Sources */,
 				8C0C3BDA23F5AAC70027DC14 /* Effect.swift in Sources */,
 				8C0C3BD923F5AAC70027DC14 /* Reducer.swift in Sources */,
 			);
@@ -2291,6 +2298,7 @@
 				8CBCBB5923FD1456002B72FB /* Coordinator.swift in Sources */,
 				8CBCBB4F23FD13E1002B72FB /* BehaviorRelay+Extensions.swift in Sources */,
 				8CBCBB5A23FD1458002B72FB /* Storyboarded.swift in Sources */,
+				8CBCBB5D23FD23B5002B72FB /* Loadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

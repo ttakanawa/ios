@@ -54,14 +54,14 @@ public class LoginViewController: UIViewController, Storyboarded
             .disposed(by: disposeBag)
         
         store.state
-            .map{ $0.user }
-            .map(toString)
+            .map{ $0.user.description }
             .drive(userLabel.rx.text)
             .disposed(by: disposeBag)
         
         store.state
-            .map{ $0.user }
-            .filter(isLoaded)
+            .map{ $0.user.isLoaded }
+            .filter({ $0 })
+            .distinctUntilChanged()
             .drive(onNext: { [weak self] _ in
                 self?.dismiss(animated: true) {
                     self?.coordinator.loggedIn?()
@@ -73,19 +73,5 @@ public class LoginViewController: UIViewController, Storyboarded
     public override func viewDidDisappear(_ animated: Bool)
     {
         super.viewDidDisappear(animated)
-    }
-}
-
-fileprivate func toString(loadableUser: Loadable<User>) -> String
-{
-    switch loadableUser {
-        case .nothing:
-            return "empty"
-        case .loading:
-            return "loading"
-        case let .error(error):
-            return "error: \(error)"
-        case let .loaded(user):
-            return "loaded: \(user.id)"
     }
 }

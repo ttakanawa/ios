@@ -20,3 +20,11 @@ public struct User: Codable, Equatable
         case apiToken = "api_token"
     }
 }
+
+extension User: CustomStringConvertible
+{
+    public var description: String
+    {
+        return "\(id)"
+    }
+}
