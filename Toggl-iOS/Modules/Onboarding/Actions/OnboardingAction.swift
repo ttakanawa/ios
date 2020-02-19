@@ -14,6 +14,7 @@ public enum OnboardingAction
     case emailEntered(String)
     case passwordEntered(String)
     case loginTapped
-    case logoutTapped
-    case setUser(User?)
+    
+    case setUser(User)
+    case setError(Error)
 }

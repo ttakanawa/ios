@@ -29,15 +29,10 @@ public let onboardingReducer = Reducer<OnboardingState, OnboardingAction, API> {
         return loadUser(email: state.email, password: state.password, api: api)
         
     case let .setUser(user):
-        guard let user = user else {
-            state.user = .nothing
-            break
-        }
         state.user = .loaded(user)
         
-    case .logoutTapped:
-        break
-
+    case let .setError(error):
+        state.user = .error(error)
     }
     
     return .empty
@@ -47,6 +42,6 @@ fileprivate func loadUser(email: String, password: String, api: API) -> Effect<O
 {
     return api.loginUser(email: email, password: password)
         .map({ OnboardingAction.setUser($0) })
-        .catchError({ _ in Observable.just(OnboardingAction.logoutTapped) })
+        .catchError({ Observable.just(OnboardingAction.setError($0)) })
         .toEffect()
 }
