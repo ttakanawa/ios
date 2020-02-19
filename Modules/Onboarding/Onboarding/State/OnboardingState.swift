@@ -14,7 +14,6 @@ public struct LocalOnboardingState
 {
     internal var email: String = ""
     internal var password: String = ""
-    internal var loginButtonEnabled: Bool = false
     
     public init()
     {
@@ -51,14 +50,12 @@ public struct OnboardingState
             local.password = newValue
         }
     }
-    
-    internal var loginButtonEnabled: Bool
+}
+
+extension OnboardingState
+{
+    var loginButtonEnabled: Bool
     {
-        get {
-            local.loginButtonEnabled
-        }
-        set {
-            local.loginButtonEnabled = newValue
-        }
+        return email.count > 5 && password.count > 5
     }
 }

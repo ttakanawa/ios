@@ -18,11 +18,9 @@ public let onboardingReducer = Reducer<OnboardingState, OnboardingAction, API> {
         
     case let .emailEntered(email):
         state.email = email
-        state.loginButtonEnabled = state.email.count > 5 && state.password.count > 5
                 
     case let .passwordEntered(password):
         state.password = password
-        state.loginButtonEnabled = state.email.count > 5 && state.password.count > 5
         
     case .loginTapped:
         state.user = .loading
