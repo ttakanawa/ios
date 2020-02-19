@@ -6,6 +6,13 @@
    </FileRef>
    <Group
       location = "container:"
+      name = "Playgrounds">
+      <FileRef
+         location = "group:Playgrounds/OnboardingPlayground.playground">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
       name = "Dependencies">
       <FileRef
          location = "group:Modules/TogglTrack/TogglTrack.xcodeproj">

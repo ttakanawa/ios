@@ -20,6 +20,7 @@
 		8CBCBD1623FD3935002B72FB /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBD1323FD3935002B72FB /* Architecture.framework */; };
 		8CBCBD1823FD3935002B72FB /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBD1423FD3935002B72FB /* Models.framework */; };
 		8CBCBD1A23FD3935002B72FB /* RxSwiftDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBD1523FD3935002B72FB /* RxSwiftDependency.framework */; };
+		8CDC12C923FD666000E8D298 /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDC12C823FD666000E8D298 /* API.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8CBCBD1323FD3935002B72FB /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBCBD1423FD3935002B72FB /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBCBD1523FD3935002B72FB /* RxSwiftDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CDC12C823FD666000E8D298 /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				8CBCBD1A23FD3935002B72FB /* RxSwiftDependency.framework in Frameworks */,
 				8CBCBD1823FD3935002B72FB /* Models.framework in Frameworks */,
 				8CBCBD1623FD3935002B72FB /* Architecture.framework in Frameworks */,
+				8CDC12C923FD666000E8D298 /* API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +155,7 @@
 		8CBCBD1223FD3935002B72FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CDC12C823FD666000E8D298 /* API.framework */,
 				8CBCBD1323FD3935002B72FB /* Architecture.framework */,
 				8CBCBD1423FD3935002B72FB /* Models.framework */,
 				8CBCBD1523FD3935002B72FB /* RxSwiftDependency.framework */,
