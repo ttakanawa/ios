@@ -119,6 +119,7 @@
 		8CBCBB5623FD1423002B72FB /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBB2F23FD1393002B72FB /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CBCBB5923FD1456002B72FB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6B7FCC23FAA361003F56CD /* Coordinator.swift */; };
 		8CBCBB5A23FD1458002B72FB /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6B7FF023FAA5BA003F56CD /* Storyboarded.swift */; };
+		8CBCBB5C23FD2348002B72FB /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBB5B23FD2347002B72FB /* ObservableType+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -656,6 +657,7 @@
 		8CBCBB3E23FD1394002B72FB /* CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTests.swift; sourceTree = "<group>"; };
 		8CBCBB4023FD1394002B72FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CBCBB4E23FD13E1002B72FB /* BehaviorRelay+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Extensions.swift"; sourceTree = "<group>"; };
+		8CBCBB5B23FD2347002B72FB /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1263,6 +1265,7 @@
 			isa = PBXGroup;
 			children = (
 				8CBCBB4E23FD13E1002B72FB /* BehaviorRelay+Extensions.swift */,
+				8CBCBB5B23FD2347002B72FB /* ObservableType+Extensions.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -2284,6 +2287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CBCBB5C23FD2348002B72FB /* ObservableType+Extensions.swift in Sources */,
 				8CBCBB5923FD1456002B72FB /* Coordinator.swift in Sources */,
 				8CBCBB4F23FD13E1002B72FB /* BehaviorRelay+Extensions.swift in Sources */,
 				8CBCBB5A23FD1458002B72FB /* Storyboarded.swift in Sources */,

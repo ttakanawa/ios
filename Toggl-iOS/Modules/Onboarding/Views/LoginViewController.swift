@@ -32,7 +32,7 @@ public class LoginViewController: UIViewController, Storyboarded
     public override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+                
         emailTextField.rx.text.orEmpty
             .map(OnboardingAction.emailEntered)
             .bind(onNext: store.dispatch)
@@ -49,9 +49,8 @@ public class LoginViewController: UIViewController, Storyboarded
             .disposed(by: disposeBag)
         
         loginButton.rx.tap
-            .subscribe(onNext: {[weak self] in
-                self?.dispatchLoginTapAction()
-            })
+            .mapTo(OnboardingAction.loginTapped)
+            .subscribe(onNext: store.dispatch)
             .disposed(by: disposeBag)
         
         store.state
@@ -63,17 +62,12 @@ public class LoginViewController: UIViewController, Storyboarded
         store.state
             .map{ $0.user }
             .filter(isLoaded)
-            .drive(onNext: { _ in
-                self.dismiss(animated: true) {
-                    self.coordinator.loggedIn?()
+            .drive(onNext: { [weak self] _ in
+                self?.dismiss(animated: true) {
+                    self?.coordinator.loggedIn?()
                 }
             })
             .disposed(by: disposeBag)
-    }
-
-    private func dispatchLoginTapAction()
-    {
-        self.store.dispatch(.loginTapped)
     }
         
     public override func viewDidDisappear(_ animated: Bool)
