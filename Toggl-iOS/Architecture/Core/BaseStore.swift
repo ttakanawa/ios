@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxRelay
+import RxCocoa
 
 extension BehaviorRelay
 {
@@ -26,10 +27,10 @@ public final class Store<State, Action>
 {
     private var disposeBag: DisposeBag = DisposeBag()
     
-    public var state: Observable<State>
+    public var state: Driver<State>
     public var _dispatch: ((Action) -> Void)?
             
-    private init(dispatch: @escaping (Action) -> Void, stateObservable: Observable<State>)
+    private init(dispatch: @escaping (Action) -> Void, stateObservable: Driver<State>)
     {
         _dispatch = dispatch
         state = stateObservable
@@ -38,7 +39,7 @@ public final class Store<State, Action>
     public init<Environment>(initialState: State, reducer: Reducer<State, Action, Environment>, environment: Environment)
     {
         let behaviorRelay = BehaviorRelay(value: initialState)
-        state = behaviorRelay.asObservable()
+        state = behaviorRelay.asDriver()
         
         _dispatch = { action in
             let effect = reducer.reduce(&behaviorRelay.settableValue, action, environment)
@@ -51,7 +52,7 @@ public final class Store<State, Action>
     }
     
     public func view<ViewState, ViewAction>(
-        state toLocalState: @escaping (State) throws -> ViewState,
+        state toLocalState: @escaping (State) -> ViewState,
         action toGlobalAction: @escaping (ViewAction) -> Action?
     ) -> Store<ViewState, ViewAction>
     {
