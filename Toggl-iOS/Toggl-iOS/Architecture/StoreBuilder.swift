@@ -19,9 +19,9 @@ let _onboardingReducer = pullback(onboardingReducer,
 
 let combinedReducers = combine(appReducer, _onboardingReducer)
 
-func buildStore() -> Store<AppState, AppAction, AppEnvironment>
+func buildStore() -> Store<AppState, AppAction>
 {
-    return Store.create(
+    return Store(
         initialState: AppState(),
         reducer: combinedReducers,
         environment: AppEnvironment(

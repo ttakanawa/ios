@@ -13,7 +13,7 @@ import Architecture
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var coordinator: AppCoordinator?
-    var store: Store<AppState, AppAction, AppEnvironment> = buildStore()
+    var store: Store<AppState, AppAction> = buildStore()
 
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool
     {

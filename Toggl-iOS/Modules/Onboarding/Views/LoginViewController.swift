@@ -26,7 +26,7 @@ public class LoginViewController: UIViewController, Storyboarded
     
     private var disposeBag = DisposeBag()
     
-    public weak var store: Store<Loadable<User>, OnboardingAction, API>!
+    public weak var store: Store<Loadable<User>, OnboardingAction>!
     public weak var coordinator: OnboardingCoordinator!
 
     public override func viewDidLoad()

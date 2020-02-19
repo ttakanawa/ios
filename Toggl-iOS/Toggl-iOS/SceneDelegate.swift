@@ -13,7 +13,7 @@ import Architecture
 class SceneDelegate: UIResponder, UIWindowSceneDelegate
 {
     var coordinator: AppCoordinator?
-    var store: Store<AppState, AppAction, AppEnvironment>!
+    var store: Store<AppState, AppAction>!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
     {

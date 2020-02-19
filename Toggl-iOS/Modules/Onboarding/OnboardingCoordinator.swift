@@ -15,13 +15,13 @@ import API
 public class OnboardingCoordinator: Coordinator
 {
     private let navigationController: UINavigationController
-    private let store: Store<Loadable<User>, OnboardingAction, API>
+    private let store: Store<Loadable<User>, OnboardingAction>
     
     public var loggedIn: (() -> ())?
     
     private var currentVC: UIViewController? = nil
         
-    public init(navigationController: UINavigationController, store: Store<Loadable<User>, OnboardingAction, API>)
+    public init(navigationController: UINavigationController, store: Store<Loadable<User>, OnboardingAction>)
     {
         self.navigationController = navigationController
         self.store = store

@@ -23,7 +23,7 @@ public class OnboardingViewController: UIViewController, Storyboarded
 
     private var disposeBag = DisposeBag()
     
-    public var store: Store<Loadable<User>, OnboardingAction, API>!
+    public var store: Store<Loadable<User>, OnboardingAction>!
     public var coordinator: OnboardingCoordinator!
 
     public override func viewDidLoad()

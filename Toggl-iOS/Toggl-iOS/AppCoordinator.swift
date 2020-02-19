@@ -14,11 +14,11 @@ import TimeEntriesLog
 
 class AppCoordinator : Coordinator
 {
-    private let store: Store<AppState, AppAction, AppEnvironment>
+    private let store: Store<AppState, AppAction>
     private let navigationController = UINavigationController()
     private let window: UIWindow
         
-    init(window: UIWindow, store: Store<AppState, AppAction, AppEnvironment>)
+    init(window: UIWindow, store: Store<AppState, AppAction>)
     {
         self.window = window
         self.store = store
@@ -42,8 +42,7 @@ class AppCoordinator : Coordinator
             navigationController: navigationController,
             store: store.view(
                 state: { $0.user },
-                action: { .onboarding($0) },
-                environment: { $0.api }
+                action: { .onboarding($0) }
             )
         )
         onboardingCoordinator.loggedIn = {
