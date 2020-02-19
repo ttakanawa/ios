@@ -21,5 +21,21 @@ enum AppStatus
 struct AppState
 {
     var appStatus: AppStatus = .unknown
-    var onboardingState: OnboardingState = OnboardingState()
+    var user: Loadable<User> = .nothing
+    
+    var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
+}
+
+extension AppState
+{
+    var onboardingState: OnboardingState
+    {
+        get {
+            return OnboardingState(user: user, local: localOnboardingState)
+        }
+        set {
+            self.user = newValue.user
+            self.localOnboardingState = newValue.local
+        }
+    }
 }

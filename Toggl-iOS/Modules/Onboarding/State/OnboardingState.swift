@@ -10,15 +10,55 @@ import Foundation
 import Models
 import Architecture
 
-public struct OnboardingState
+public struct LocalOnboardingState
 {
-    public var user: Loadable<User>
     internal var email: String = ""
     internal var password: String = ""
     internal var loginButtonEnabled: Bool = false
     
     public init()
     {
-        user = .nothing
+    }
+}
+
+public struct OnboardingState
+{
+    public var user: Loadable<User>
+    public private(set) var local: LocalOnboardingState
+    
+    public init(user: Loadable<User>, local: LocalOnboardingState)
+    {
+        self.user = user
+        self.local = local
+    }
+    
+    internal var email: String
+    {
+        get {
+            local.email
+        }
+        set {
+            local.email = newValue
+        }
+    }
+    
+    internal var password: String
+    {
+        get {
+            local.password
+        }
+        set {
+            local.password = newValue
+        }
+    }
+    
+    internal var loginButtonEnabled: Bool
+    {
+        get {
+            local.loginButtonEnabled
+        }
+        set {
+            local.loginButtonEnabled = newValue
+        }
     }
 }
