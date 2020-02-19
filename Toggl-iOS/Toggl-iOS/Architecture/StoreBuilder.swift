@@ -12,7 +12,7 @@ import Onboarding
 import API
 
 let _onboardingReducer = pullback(onboardingReducer,
-                          state: \AppState.user,
+                          state: \AppState.onboardingState,
                           action: \AppAction.onboarding,
                           environment: \AppEnvironment.api
 )

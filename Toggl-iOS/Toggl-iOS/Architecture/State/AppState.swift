@@ -9,6 +9,7 @@
 import Foundation
 import Models
 import Architecture
+import Onboarding
 
 enum AppStatus
 {
@@ -20,5 +21,5 @@ enum AppStatus
 struct AppState
 {
     var appStatus: AppStatus = .unknown
-    var user: Loadable<User> = .nothing
+    var onboardingState: OnboardingState = OnboardingState()
 }

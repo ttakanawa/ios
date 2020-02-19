@@ -26,13 +26,28 @@ public class LoginViewController: UIViewController, Storyboarded
     
     private var disposeBag = DisposeBag()
     
-    public weak var store: Store<Loadable<User>, OnboardingAction>!
+    public weak var store: OnboardingStore!
     public weak var coordinator: OnboardingCoordinator!
 
     public override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        emailTextField.rx.text.orEmpty
+            .map(OnboardingAction.emailEntered)
+            .bind(onNext: store.dispatch)
+            .disposed(by: disposeBag)
 
+        passwordTextField.rx.text.orEmpty
+            .map(OnboardingAction.passwordEntered)
+            .bind(onNext: store.dispatch)
+            .disposed(by: disposeBag)
+
+        store.state
+            .map({ $0.loginButtonEnabled })
+            .drive(loginButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
         loginButton.rx.tap
             .subscribe(onNext: {[weak self] in
                 self?.dispatchLoginTapAction()
@@ -40,14 +55,15 @@ public class LoginViewController: UIViewController, Storyboarded
             .disposed(by: disposeBag)
         
         store.state
+            .map{ $0.user }
             .map(toString)
-            .bind(to: userLabel.rx.text)
+            .drive(userLabel.rx.text)
             .disposed(by: disposeBag)
         
         store.state
+            .map{ $0.user }
             .filter(isLoaded)
-            .take(1)
-            .subscribe(onNext: { _ in
+            .drive(onNext: { _ in
                 self.dismiss(animated: true) {
                     self.coordinator.loggedIn?()
                 }
@@ -57,12 +73,7 @@ public class LoginViewController: UIViewController, Storyboarded
 
     private func dispatchLoginTapAction()
     {
-        guard let email = emailTextField.text,
-            let password = passwordTextField.text else {
-                return
-        }
-        
-        self.store.dispatch(.loginTapped(email: email, password: password))
+        self.store.dispatch(.loginTapped)
     }
         
     public override func viewDidDisappear(_ animated: Bool)

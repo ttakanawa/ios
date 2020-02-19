@@ -123,6 +123,7 @@
 		8CA8C79623F6AC0D006DBFA3 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0C3BF823F5AE000027DC14 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CA8C79723F6AC0E006DBFA3 /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6EBCAD23F69D2800306F5B /* Onboarding.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8CA8C79823F6AC0E006DBFA3 /* Onboarding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6EBCAD23F69D2800306F5B /* Onboarding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CBCBB2923FD0E71002B72FB /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBB2723FD0DBF002B72FB /* OnboardingState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -672,6 +673,7 @@
 		8C816E3B23F851A500E4BB8D /* RxSwfitDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwfitDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C816E3D23F851A500E4BB8D /* RxSwfitDependency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxSwfitDependency.h; sourceTree = "<group>"; };
 		8C816E3E23F851A500E4BB8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CBCBB2723FD0DBF002B72FB /* OnboardingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1194,6 +1196,7 @@
 		8C6EBCAE23F69D2800306F5B /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				8CBCBB2623FD0D97002B72FB /* State */,
 				8C0C3BEA23F5AB840027DC14 /* Actions */,
 				8C0C3BE923F5AB7D0027DC14 /* Reducer */,
 				8C6EBCDB23F69D8800306F5B /* Views */,
@@ -1258,6 +1261,14 @@
 				8C816E3E23F851A500E4BB8D /* Info.plist */,
 			);
 			path = RxSwfitDependency;
+			sourceTree = "<group>";
+		};
+		8CBCBB2623FD0D97002B72FB /* State */ = {
+			isa = PBXGroup;
+			children = (
+				8CBCBB2723FD0DBF002B72FB /* OnboardingState.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2251,6 +2262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CBCBB2923FD0E71002B72FB /* OnboardingState.swift in Sources */,
 				8C6EBCDC23F69DA300306F5B /* LoginViewController.swift in Sources */,
 				8C6EBCDA23F69D8300306F5B /* OnboardingViewController.swift in Sources */,
 				8C6EBCDE23F69E0B00306F5B /* OnboardingAction.swift in Sources */,

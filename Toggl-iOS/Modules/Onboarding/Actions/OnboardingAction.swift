@@ -11,7 +11,9 @@ import Models
 
 public enum OnboardingAction
 {
-    case loginTapped(email: String, password: String)
+    case emailEntered(String)
+    case passwordEntered(String)
+    case loginTapped
     case logoutTapped
     case setUser(User?)
 }

@@ -12,16 +12,18 @@ import UIExtensions
 import Models
 import API
 
+public typealias OnboardingStore = Store<OnboardingState, OnboardingAction>
+
 public class OnboardingCoordinator: Coordinator
 {
     private let navigationController: UINavigationController
-    private let store: Store<Loadable<User>, OnboardingAction>
+    private let store: OnboardingStore
     
     public var loggedIn: (() -> ())?
     
     private var currentVC: UIViewController? = nil
         
-    public init(navigationController: UINavigationController, store: Store<Loadable<User>, OnboardingAction>)
+    public init(navigationController: UINavigationController, store: OnboardingStore)
     {
         self.navigationController = navigationController
         self.store = store

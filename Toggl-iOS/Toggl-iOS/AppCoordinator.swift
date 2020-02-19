@@ -41,7 +41,7 @@ class AppCoordinator : Coordinator
         let onboardingCoordinator = OnboardingCoordinator(
             navigationController: navigationController,
             store: store.view(
-                state: { $0.user },
+                state: { return $0.onboardingState },
                 action: { .onboarding($0) }
             )
         )
