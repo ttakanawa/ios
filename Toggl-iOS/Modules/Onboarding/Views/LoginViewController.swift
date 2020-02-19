@@ -12,7 +12,7 @@ import RxSwift
 import Architecture
 import Models
 import API
-import UIExtensions
+import Common
 
 public class LoginViewController: UIViewController, Storyboarded
 {

@@ -12,7 +12,7 @@ import Models
 import RxCocoa
 import RxSwift
 import API
-import UIExtensions
+import Common
 
 public class OnboardingViewController: UIViewController, Storyboarded
 {

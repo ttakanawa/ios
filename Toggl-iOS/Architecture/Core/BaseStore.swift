@@ -10,18 +10,7 @@ import Foundation
 import RxSwift
 import RxRelay
 import RxCocoa
-
-extension BehaviorRelay
-{
-    var settableValue: Element {
-        set {
-            accept(newValue)
-        }
-        get {
-            return value
-        }
-    }
-}
+import Common
 
 public final class Store<State, Action>
 {

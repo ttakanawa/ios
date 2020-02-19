@@ -1,15 +1,15 @@
 //
-//  UIExtensionsTests.swift
-//  UIExtensionsTests
+//  CommonTests.swift
+//  CommonTests
 //
-//  Created by Ricardo Sánchez Sotres on 17/02/2020.
+//  Created by Ricardo Sánchez Sotres on 19/02/2020.
 //  Copyright © 2020 Ricardo Sánchez Sotres. All rights reserved.
 //
 
 import XCTest
-@testable import UIExtensions
+@testable import Common
 
-class UIExtensionsTests: XCTestCase {
+class CommonTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

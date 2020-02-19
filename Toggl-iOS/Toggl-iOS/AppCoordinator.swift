@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import UIExtensions
+import Common
 import Architecture
 import Onboarding
 import TimeEntriesLog

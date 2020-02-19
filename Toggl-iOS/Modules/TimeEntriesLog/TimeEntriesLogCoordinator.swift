@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import UIExtensions
+import Common
 
 public class TimeEntriesLogCoordinator: Coordinator
 {

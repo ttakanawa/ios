@@ -8,7 +8,7 @@
 
 import UIKit
 import Architecture
-import UIExtensions
+import Common
 import Models
 import API
 
