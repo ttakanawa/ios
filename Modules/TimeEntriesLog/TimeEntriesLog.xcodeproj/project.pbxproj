@@ -14,6 +14,11 @@
 		8C04907E23FD544200475780 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04907D23FD544200475780 /* Architecture.framework */; };
 		8C04908223FD544500475780 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04908123FD544500475780 /* Models.framework */; };
 		8C04908523FD544800475780 /* RxSwiftDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C04908423FD544800475780 /* RxSwiftDependency.framework */; };
+		8C0490AE23FD55A600475780 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0490AD23FD55A600475780 /* Repository.framework */; };
+		8C0490B223FD55D600475780 /* TimeEntriesLogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490B123FD55D600475780 /* TimeEntriesLogAction.swift */; };
+		8C0490B423FD55EB00475780 /* TimeEntriesLogState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490B323FD55EB00475780 /* TimeEntriesLogState.swift */; };
+		8C0490B623FD560200475780 /* TimeEntriesLogReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490B523FD560200475780 /* TimeEntriesLogReducer.swift */; };
+		8C0490C123FD5CDA00475780 /* TimeEntriesLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490C023FD5CDA00475780 /* TimeEntriesLogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,11 @@
 		8C04907D23FD544200475780 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C04908123FD544500475780 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C04908423FD544800475780 /* RxSwiftDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0490AD23FD55A600475780 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0490B123FD55D600475780 /* TimeEntriesLogAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogAction.swift; sourceTree = "<group>"; };
+		8C0490B323FD55EB00475780 /* TimeEntriesLogState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogState.swift; sourceTree = "<group>"; };
+		8C0490B523FD560200475780 /* TimeEntriesLogReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogReducer.swift; sourceTree = "<group>"; };
+		8C0490C023FD5CDA00475780 /* TimeEntriesLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C0490AE23FD55A600475780 /* Repository.framework in Frameworks */,
 				8C04908523FD544800475780 /* RxSwiftDependency.framework in Frameworks */,
 				8C04908223FD544500475780 /* Models.framework in Frameworks */,
 				8C04907E23FD544200475780 /* Architecture.framework in Frameworks */,
@@ -106,6 +117,7 @@
 		8C04907623FD541500475780 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C0490C023FD5CDA00475780 /* TimeEntriesLogViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +125,7 @@
 		8C04907723FD541C00475780 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				8C0490B323FD55EB00475780 /* TimeEntriesLogState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -120,6 +133,7 @@
 		8C04907823FD542100475780 /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
+				8C0490B523FD560200475780 /* TimeEntriesLogReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -127,6 +141,7 @@
 		8C04907923FD542800475780 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				8C0490B123FD55D600475780 /* TimeEntriesLogAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -134,6 +149,7 @@
 		8C04907C23FD544200475780 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C0490AD23FD55A600475780 /* Repository.framework */,
 				8C04908423FD544800475780 /* RxSwiftDependency.framework */,
 				8C04908123FD544500475780 /* Models.framework */,
 				8C04907D23FD544200475780 /* Architecture.framework */,
@@ -251,7 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C0490B423FD55EB00475780 /* TimeEntriesLogState.swift in Sources */,
+				8C0490B223FD55D600475780 /* TimeEntriesLogAction.swift in Sources */,
 				8C04907B23FD543600475780 /* TimeEntriesLogCoordinator.swift in Sources */,
+				8C0490B623FD560200475780 /* TimeEntriesLogReducer.swift in Sources */,
+				8C0490C123FD5CDA00475780 /* TimeEntriesLogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

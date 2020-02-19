@@ -10,6 +10,7 @@ import Foundation
 import Models
 import Architecture
 import Onboarding
+import TimeEntriesLog
 
 enum AppStatus
 {
@@ -22,6 +23,8 @@ public struct AppState
 {
     var appStatus: AppStatus = .unknown
     var user: Loadable<User> = .nothing
+    
+    var timeEntries: Loadable<[TimeEntry.ID: TimeEntry]> = .nothing
     
     var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
 }
@@ -36,6 +39,15 @@ extension AppState
         set {
             self.user = newValue.user
             self.localOnboardingState = newValue.local
+        }
+    }
+    
+    var timeEntriesLogState: TimeEntriesLogState
+    {
+        get {
+            return TimeEntriesLogState()
+        }
+        set {
         }
     }
 }

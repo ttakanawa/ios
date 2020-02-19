@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0490BC23FD583400475780 /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490BB23FD583400475780 /* TimeEntry.swift */; };
 		8CBCBCC223FD38A3002B72FB /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBCB823FD38A2002B72FB /* Models.framework */; };
 		8CBCBCC723FD38A3002B72FB /* ModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBCC623FD38A3002B72FB /* ModelsTests.swift */; };
 		8CBCBCC923FD38A3002B72FB /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CBCBCBB23FD38A2002B72FB /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C0490BB23FD583400475780 /* TimeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
 		8CBCBCB823FD38A2002B72FB /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBCBCBB23FD38A2002B72FB /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
 		8CBCBCBC23FD38A2002B72FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		8CBCBCBA23FD38A2002B72FB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8C0490BB23FD583400475780 /* TimeEntry.swift */,
 				8CBCBCD223FD38B3002B72FB /* User.swift */,
 				8CBCBCBB23FD38A2002B72FB /* Models.h */,
 				8CBCBCBC23FD38A2002B72FB /* Info.plist */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CBCBCD323FD38B3002B72FB /* User.swift in Sources */,
+				8C0490BC23FD583400475780 /* TimeEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
