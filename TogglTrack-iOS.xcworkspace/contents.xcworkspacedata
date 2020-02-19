@@ -40,6 +40,9 @@
          location = "container:"
          name = "Environment">
          <FileRef
+            location = "group:Modules/Repository/Repository.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:Modules/API/API.xcodeproj">
          </FileRef>
       </Group>
