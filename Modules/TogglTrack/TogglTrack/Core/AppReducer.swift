@@ -8,17 +8,22 @@
 
 import Foundation
 import Architecture
+import Timer
 
 var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { state, action, environment in
     switch action
     {
-    case .setBackgroundStatus:
-        state.appStatus = .background
-    case .setForegroundStatus:
-        state.appStatus = .foreground
-    
-    case .onboarding, .timer:
-        break
+        case .setBackgroundStatus:
+            state.appStatus = .background
+            
+        case .setForegroundStatus:
+            state.appStatus = .foreground
+            
+        case .onboarding(.setUser(_)):
+            return Effect.from(action: .timer(.load))
+        
+        case .onboarding, .timer:
+            break                    
     }
     
     return .empty

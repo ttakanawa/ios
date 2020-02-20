@@ -36,6 +36,11 @@ public struct Effect<Action>: ObservableType
     {
         return Effect(observable: Observable.from(effects).merge())
     }
+    
+    public static func from(action: Action) -> Effect
+    {
+        return Effect(observable: Observable.just(action))
+    }
 }
 
 public extension Observable

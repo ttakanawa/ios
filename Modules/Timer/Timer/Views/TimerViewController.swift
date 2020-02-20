@@ -32,10 +32,5 @@ public class TimerViewController: UIViewController, Storyboarded
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        store.dispatch(.load)
-        
-        store.state
-            .drive(onNext: { print($0) })
-            .disposed(by: disposeBag)
     }
 }
