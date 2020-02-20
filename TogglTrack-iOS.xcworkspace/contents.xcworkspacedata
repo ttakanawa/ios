@@ -5,7 +5,10 @@
       location = "container:"
       name = "Playgrounds">
       <FileRef
-         location = "group:Playgrounds/OnboardingPlayground.playground">
+         location = "group:/Users/ricardo/Documents/Proyectos/Toggl/ios/Playgrounds/Onboarding.playground">
+      </FileRef>
+      <FileRef
+         location = "group:Playgrounds/Timer.playground">
       </FileRef>
    </Group>
    <FileRef

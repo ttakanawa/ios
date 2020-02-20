@@ -7,10 +7,13 @@ import PlaygroundSupport
 
 let user: User? = nil
 
-let initialState = OnboardingState(
-    user: .nothing,
-    local: LocalOnboardingState()
-)
+struct MockOnboardingState: OnboardingState
+{
+    var user: Loadable<User> = .nothing
+    var localOnboardingState = LocalOnboardingState()
+}
+
+var initialState = MockOnboardingState()
 
 let store = Store(
     initialState: initialState,
