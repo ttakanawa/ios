@@ -22,33 +22,36 @@ enum AppStatus
 public struct AppState
 {
     var appStatus: AppStatus = .unknown
-    var user: Loadable<User> = .nothing
-    var entities: TimeLogEntities = TimeLogEntities()
+    public var user: Loadable<User> = .nothing
+    public var entities: TimeLogEntities = TimeLogEntities()
     
-    private var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
+    public var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
 }
 
 // Module specific states
-extension AppState
+extension AppState: OnboardingState
 {
     var onboardingState: OnboardingState
     {
         get {
-            return OnboardingState(user: user, local: localOnboardingState)
+            self
         }
         set {
-            self.user = newValue.user
-            self.localOnboardingState = newValue.local
+            user = newValue.user
+            localOnboardingState = newValue.localOnboardingState
         }
     }
-    
+}
+
+extension AppState: TimerState
+{
     var timerState: TimerState
     {
         get {
-            return TimerState(entities: entities)
+            self
         }
         set {
-            self.entities = newValue.entities
+            entities = newValue.entities
         }
     }
 }

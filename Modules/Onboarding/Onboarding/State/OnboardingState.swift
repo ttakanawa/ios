@@ -20,42 +20,31 @@ public struct LocalOnboardingState
     }
 }
 
-public struct OnboardingState
+public protocol OnboardingState
 {
-    public var user: Loadable<User>
-    public private(set) var local: LocalOnboardingState
-    
-    public init(user: Loadable<User>, local: LocalOnboardingState)
-    {
-        self.user = user
-        self.local = local
-    }
-    
+    var user: Loadable<User> { get set }
+    var localOnboardingState: LocalOnboardingState { get set }
+}
+
+extension OnboardingState
+{
     internal var email: String
     {
         get {
-            local.email
+            localOnboardingState.email
         }
         set {
-            local.email = newValue
+            localOnboardingState.email = newValue
         }
     }
     
     internal var password: String
     {
         get {
-            local.password
+            localOnboardingState.password
         }
         set {
-            local.password = newValue
+            localOnboardingState.password = newValue
         }
-    }
-}
-
-extension OnboardingState
-{
-    var loginButtonEnabled: Bool
-    {
-        return email.count > 5 && password.count > 5
     }
 }

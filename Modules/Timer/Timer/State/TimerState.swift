@@ -9,13 +9,7 @@
 import Foundation
 import Models
 
-public struct TimerState
+public protocol TimerState
 {
-    public var entities: TimeLogEntities
-    //public private(set) var local: LocalTimerState
-
-    public init(entities: TimeLogEntities)
-    {
-        self.entities = entities
-    }
+    var entities: TimeLogEntities { get set }
 }
