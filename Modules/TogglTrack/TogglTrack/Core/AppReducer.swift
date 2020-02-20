@@ -17,7 +17,7 @@ var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { stat
     case .setForegroundStatus:
         state.appStatus = .foreground
     
-    case .onboarding, .timeEntriesLog:
+    case .onboarding, .timer:
         break
     }
     

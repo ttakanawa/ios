@@ -9,7 +9,7 @@
 import UIKit
 import Architecture
 import Onboarding
-import TimeEntriesLog
+import Timer
 
 public class AppCoordinator : Coordinator
 {
@@ -52,11 +52,11 @@ public class AppCoordinator : Coordinator
     
     private func showTimeEntryLog()
     {
-        let timeEntriesLog = TimeEntriesLogCoordinator(
+        let timeEntriesLog = TimerCoordinator(
             navigationController: navigationController,
             store: store.view(
-                state: { $0.timeEntriesLogState },
-                action: { .timeEntriesLog($0) }
+                state: { $0.timerState },
+                action: { .timer($0) }
             )
         )
         timeEntriesLog.start()

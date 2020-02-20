@@ -24,7 +24,7 @@
             location = "group:Modules/Onboarding/Onboarding.xcodeproj">
          </FileRef>
          <FileRef
-            location = "group:Modules/TimeEntriesLog/TimeEntriesLog.xcodeproj">
+            location = "group:Modules/Timer/Timer.xcodeproj">
          </FileRef>
       </Group>
       <Group

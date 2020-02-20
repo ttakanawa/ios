@@ -9,7 +9,7 @@
 import Foundation
 import Architecture
 import Onboarding
-import TimeEntriesLog
+import Timer
 import API
 import Repository
 
@@ -33,9 +33,9 @@ public func buildStore() -> Store<AppState, AppAction>
             environment: \AppEnvironment.userAPI
         ),
         pullback(
-            timeEntriesLogReducer,
-            state: \AppState.timeEntriesLogState,
-            action: \AppAction.timeEntriesLog,
+            timerReducer,
+            state: \AppState.timerState,
+            action: \AppAction.timer,
             environment: \AppEnvironment.repository
         )
     )

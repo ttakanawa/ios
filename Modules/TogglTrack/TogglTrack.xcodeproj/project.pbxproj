@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C0490B823FD56AB00475780 /* TimeEntriesLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0490B723FD56AB00475780 /* TimeEntriesLog.framework */; };
+		8C8DC6F823FEDE7600104A09 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC6F723FEDE7600104A09 /* Timer.framework */; };
+		8C8DC6F923FEDE7600104A09 /* Timer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC6F723FEDE7600104A09 /* Timer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8CBCBBE223FD3477002B72FB /* TogglTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBBD823FD3477002B72FB /* TogglTrack.framework */; };
 		8CBCBBE723FD3477002B72FB /* TogglTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBBE623FD3477002B72FB /* TogglTrackTests.swift */; };
 		8CBCBBE923FD3477002B72FB /* TogglTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CBCBBDB23FD3477002B72FB /* TogglTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,8 +33,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8C8DC6FA23FEDE7700104A09 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8C8DC6F923FEDE7600104A09 /* Timer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8C0490B723FD56AB00475780 /* TimeEntriesLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimeEntriesLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C8DC6F723FEDE7600104A09 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBCBBD823FD3477002B72FB /* TogglTrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TogglTrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBCBBDB23FD3477002B72FB /* TogglTrack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TogglTrack.h; sourceTree = "<group>"; };
 		8CBCBBDC23FD3477002B72FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,10 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8DC6F823FEDE7600104A09 /* Timer.framework in Frameworks */,
 				8CBCBC1F23FD3550002B72FB /* Architecture.framework in Frameworks */,
 				8CBCBD0F23FD3919002B72FB /* Onboarding.framework in Frameworks */,
 				8CBCBCA623FD385C002B72FB /* API.framework in Frameworks */,
-				8C0490B823FD56AB00475780 /* TimeEntriesLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +133,7 @@
 		8CBCBC1D23FD3550002B72FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C8DC6F723FEDE7600104A09 /* Timer.framework */,
 				8C0490B723FD56AB00475780 /* TimeEntriesLog.framework */,
 				8CBCBD0E23FD3919002B72FB /* Onboarding.framework */,
 				8CBCBCA523FD385C002B72FB /* API.framework */,
@@ -166,6 +183,7 @@
 				8CBCBBD423FD3477002B72FB /* Sources */,
 				8CBCBBD523FD3477002B72FB /* Frameworks */,
 				8CBCBBD623FD3477002B72FB /* Resources */,
+				8C8DC6FA23FEDE7700104A09 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

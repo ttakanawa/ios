@@ -1,6 +1,6 @@
 //
-//  TimeEntriesLogReducer.swift
-//  TimeEntriesLog
+//  TimerReducer.swift
+//  Timer
 //
 //  Created by Ricardo Sánchez Sotres on 19/02/2020.
 //  Copyright © 2020 Ricardo Sánchez Sotres. All rights reserved.
@@ -12,7 +12,7 @@ import Models
 import RxSwift
 import Repository
 
-public let timeEntriesLogReducer = Reducer<TimeEntriesLogState, TimeEntriesLogAction, Repository> { state, action, repository in
+public let timerReducer = Reducer<TimerState, TimerAction, Repository> { state, action, repository in
     
     switch action {
         
@@ -39,10 +39,10 @@ public let timeEntriesLogReducer = Reducer<TimeEntriesLogState, TimeEntriesLogAc
 
 
 
-fileprivate func loadTimeEntries(_ repository: Repository) -> Effect<TimeEntriesLogAction>
+fileprivate func loadTimeEntries(_ repository: Repository) -> Effect<TimerAction>
 {
     return repository.getTimeEntries()
-        .map({ TimeEntriesLogAction.setEntities($0) })
-        .catchError({ Observable.just(TimeEntriesLogAction.setError($0)) })
+        .map({ TimerAction.setEntities($0) })
+        .catchError({ Observable.just(TimerAction.setError($0)) })
         .toEffect()
 }

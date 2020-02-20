@@ -8,7 +8,7 @@
 
 import Foundation
 import Onboarding
-import TimeEntriesLog
+import Timer
 
 public enum AppAction
 {
@@ -16,7 +16,7 @@ public enum AppAction
     case setForegroundStatus
     
     case onboarding(OnboardingAction)
-    case timeEntriesLog(TimeEntriesLogAction)
+    case timer(TimerAction)
 }
 
 extension AppAction
@@ -32,15 +32,15 @@ extension AppAction
         }
     }
     
-    var timeEntriesLog: TimeEntriesLogAction?
+    var timer: TimerAction?
     {
         get {
-            guard case let .timeEntriesLog(value) = self else { return nil }
+            guard case let .timer(value) = self else { return nil }
             return value
         }
         set {
-            guard case .timeEntriesLog = self, let newValue = newValue else { return }
-            self = .timeEntriesLog(newValue)
+            guard case .timer = self, let newValue = newValue else { return }
+            self = .timer(newValue)
         }
     }
 }

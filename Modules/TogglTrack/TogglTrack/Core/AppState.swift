@@ -10,7 +10,7 @@ import Foundation
 import Models
 import Architecture
 import Onboarding
-import TimeEntriesLog
+import Timer
 
 enum AppStatus
 {
@@ -42,10 +42,10 @@ extension AppState
         }
     }
     
-    var timeEntriesLogState: TimeEntriesLogState
+    var timerState: TimerState
     {
         get {
-            return TimeEntriesLogState(entities: entities)
+            return TimerState(entities: entities)
         }
         set {
             self.entities = newValue.entities
