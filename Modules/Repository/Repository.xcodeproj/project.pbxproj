@@ -11,6 +11,8 @@
 		8C0490A023FD551500475780 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C04909F23FD551500475780 /* RepositoryTests.swift */; };
 		8C0490A223FD551500475780 /* Repository.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C04909423FD551500475780 /* Repository.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C0490AC23FD552900475780 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490AB23FD552900475780 /* Repository.swift */; };
+		8CF3D69423FE66EB00F2AD02 /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF3D69323FE66EB00F2AD02 /* API.framework */; };
+		8CF3D69523FE66EB00F2AD02 /* API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF3D69323FE66EB00F2AD02 /* API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +25,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8CF3D69623FE66EB00F2AD02 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8CF3D69523FE66EB00F2AD02 /* API.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8C04909123FD551500475780 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C04909423FD551500475780 /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
@@ -31,6 +47,7 @@
 		8C04909F23FD551500475780 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		8C0490A123FD551500475780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C0490AB23FD552900475780 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		8CF3D69323FE66EB00F2AD02 /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF3D69423FE66EB00F2AD02 /* API.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +76,7 @@
 				8C04909323FD551500475780 /* Repository */,
 				8C04909E23FD551500475780 /* RepositoryTests */,
 				8C04909223FD551500475780 /* Products */,
+				8CF3D69223FE66EB00F2AD02 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +108,14 @@
 			path = RepositoryTests;
 			sourceTree = "<group>";
 		};
+		8CF3D69223FE66EB00F2AD02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CF3D69323FE66EB00F2AD02 /* API.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -111,6 +138,7 @@
 				8C04908D23FD551500475780 /* Sources */,
 				8C04908E23FD551500475780 /* Frameworks */,
 				8C04908F23FD551500475780 /* Resources */,
+				8CF3D69623FE66EB00F2AD02 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

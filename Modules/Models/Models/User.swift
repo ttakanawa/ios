@@ -11,7 +11,7 @@ import Foundation
 public struct User: Codable, Equatable
 {
     public var id: Int
-    var apiToken: String
+    public var apiToken: String
 
     enum CodingKeys: String, CodingKey
     {

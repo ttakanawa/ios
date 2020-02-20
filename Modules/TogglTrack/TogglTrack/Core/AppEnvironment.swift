@@ -8,13 +8,24 @@
 
 import Foundation
 import API
+import Repository
 
 public struct AppEnvironment
 {
     public let api: API
+    public let repository: Repository
     
-    public init(api: API)
+    public init(api: API, repository: Repository)
     {
         self.api = api
+        self.repository = repository
+    }
+}
+
+extension AppEnvironment
+{
+    var userAPI: UserAPI
+    {
+        return api
     }
 }

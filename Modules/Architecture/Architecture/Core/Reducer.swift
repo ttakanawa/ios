@@ -13,7 +13,7 @@ public typealias ReduceFunction<StateType, ActionType, Environment> = (inout Sta
 
 public struct Reducer<StateType, ActionType, Environment>
 {
-    let reduce: ReduceFunction<StateType, ActionType, Environment>
+    public let reduce: ReduceFunction<StateType, ActionType, Environment>
     
     public init(_ reduce: @escaping ReduceFunction<StateType, ActionType, Environment>)
     {

@@ -23,12 +23,12 @@ public struct AppState
 {
     var appStatus: AppStatus = .unknown
     var user: Loadable<User> = .nothing
+    var entities: TimeLogEntities = TimeLogEntities()
     
-    var timeEntries: Loadable<[TimeEntry.ID: TimeEntry]> = .nothing
-    
-    var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
+    private var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
 }
 
+// Module specific states
 extension AppState
 {
     var onboardingState: OnboardingState
@@ -45,9 +45,10 @@ extension AppState
     var timeEntriesLogState: TimeEntriesLogState
     {
         get {
-            return TimeEntriesLogState()
+            return TimeEntriesLogState(entities: entities)
         }
         set {
+            self.entities = newValue.entities
         }
     }
 }

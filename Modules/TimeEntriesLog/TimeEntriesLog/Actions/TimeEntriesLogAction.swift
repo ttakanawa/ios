@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import Models
 
 public enum TimeEntriesLogAction
 {
+    case load
     
+    case setEntities([TimeEntry])
+    case setError(Error)
 }

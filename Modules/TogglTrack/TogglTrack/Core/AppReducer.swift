@@ -9,14 +9,15 @@
 import Foundation
 import Architecture
 
-var appReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { state, action, environment in
+var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { state, action, environment in
     switch action
     {
     case .setBackgroundStatus:
         state.appStatus = .background
     case .setForegroundStatus:
         state.appStatus = .foreground
-    case .onboarding:
+    
+    case .onboarding, .timeEntriesLog:
         break
     }
     

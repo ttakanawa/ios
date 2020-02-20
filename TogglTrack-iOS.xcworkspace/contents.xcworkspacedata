@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:App/App.xcodeproj">
-   </FileRef>
    <Group
       location = "container:"
       name = "Playgrounds">
@@ -11,6 +8,9 @@
          location = "group:Playgrounds/OnboardingPlayground.playground">
       </FileRef>
    </Group>
+   <FileRef
+      location = "group:App/App.xcodeproj">
+   </FileRef>
    <Group
       location = "container:"
       name = "Dependencies">

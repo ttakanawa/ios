@@ -7,11 +7,15 @@
 //
 
 import Foundation
+import Models
 
 public struct TimeEntriesLogState
 {
-    public init()
+    public var entities: TimeLogEntities
+    //public private(set) var local: LocalTimeEntriesLogState
+
+    public init(entities: TimeLogEntities)
     {
-        
+        self.entities = entities
     }
 }

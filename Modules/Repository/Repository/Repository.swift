@@ -7,8 +7,21 @@
 //
 
 import Foundation
+import RxSwift
+import Models
+import API
 
 public class Repository
 {
+    private let api: TimelineAPI
     
+    public init(api: TimelineAPI)
+    {
+        self.api = api
+    }
+    
+    public func getTimeEntries() -> Observable<[TimeEntry]>
+    {
+        return api.loadEntries()
+    }
 }

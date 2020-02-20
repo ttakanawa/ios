@@ -14,7 +14,6 @@
 		8CBCBC1B23FD3524002B72FB /* BaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBC1823FD3524002B72FB /* BaseStore.swift */; };
 		8CBCBC1C23FD3524002B72FB /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBC1923FD3524002B72FB /* Effect.swift */; };
 		8CBCBC4323FD36AA002B72FB /* RxSwiftDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBC4223FD36AA002B72FB /* RxSwiftDependency.framework */; };
-		8CBCBD2123FD39CB002B72FB /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBD2023FD39CB002B72FB /* Loadable.swift */; };
 		8CBCBD2423FD39DE002B72FB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBD2223FD39DE002B72FB /* Coordinator.swift */; };
 		8CBCBD2523FD39DE002B72FB /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBD2323FD39DE002B72FB /* Storyboarded.swift */; };
 		8CBCBD3223FD3AC0002B72FB /* BehaviorRelay+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBD3023FD3AC0002B72FB /* BehaviorRelay+Extensions.swift */; };
@@ -42,7 +41,6 @@
 		8CBCBC1823FD3524002B72FB /* BaseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStore.swift; sourceTree = "<group>"; };
 		8CBCBC1923FD3524002B72FB /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		8CBCBC4223FD36AA002B72FB /* RxSwiftDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CBCBD2023FD39CB002B72FB /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		8CBCBD2223FD39DE002B72FB /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8CBCBD2323FD39DE002B72FB /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		8CBCBD3023FD3AC0002B72FB /* BehaviorRelay+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Extensions.swift"; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		8CBCBBFE23FD350B002B72FB /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
-				8CBCBD2023FD39CB002B72FB /* Loadable.swift */,
 				8CBCBD2B23FD3A5F002B72FB /* Extensions */,
 				8CBCBD1F23FD39C2002B72FB /* UI */,
 				8CBCBC1623FD3524002B72FB /* Core */,
@@ -257,7 +254,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CBCBC1C23FD3524002B72FB /* Effect.swift in Sources */,
-				8CBCBD2123FD39CB002B72FB /* Loadable.swift in Sources */,
 				8CBCBD2423FD39DE002B72FB /* Coordinator.swift in Sources */,
 				8CBCBD3223FD3AC0002B72FB /* BehaviorRelay+Extensions.swift in Sources */,
 				8CBCBD3323FD3AC0002B72FB /* ObservableType+Extensions.swift in Sources */,
