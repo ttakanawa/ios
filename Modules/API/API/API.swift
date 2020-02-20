@@ -39,32 +39,7 @@ public class API
         
         headers = ["User-Agent": userAgent + appVersion]
     }
-    
-    public func setAuth(token: String?)
-    {
-        guard let token = token else {
-            updateAuthHeaders(with: nil)
-            return
-        }
-        let loginData = "\(token):api_token".data(using: String.Encoding.utf8)!
-        updateAuthHeaders(with: loginData)
-    }
-    
-    public func loginUser(email: String, password: String) -> Observable<User>
-    {
-        let loginData = "\(email):\(password)".data(using: String.Encoding.utf8)!
-        updateAuthHeaders(with: loginData)
-
-        let endpoint: Endpoint<User> = createEntityEndpoint(path: "me")
-        return urlSession.load(endpoint)
-    }
-    
-    public func loadUser() -> Observable<User>
-    {
-        let endpoint: Endpoint<User> = createEntityEndpoint(path: "me")
-        return urlSession.load(endpoint)
-    }
-        
+      
     private func updateAuthHeaders(with loginData: Data?)
     {
         guard let loginData = loginData else {
@@ -85,5 +60,77 @@ public class API
             headers: headers,
             decoder: jsonDecoder
         )
+    }
+        
+    private func createEntitiesEndpoint<T>(path: String) -> Endpoint<[T]> where T: Decodable
+    {
+        return Endpoint<[T]>(
+            json: .get,
+            url: URL(string: baseURL + path)!,
+            headers: headers,
+            decoder: jsonDecoder
+        )
+    }
+}
+
+extension API: UserAPI
+{
+    public func loginUser(email: String, password: String) -> Observable<User>
+    {
+        let loginData = "\(email):\(password)".data(using: String.Encoding.utf8)!
+        updateAuthHeaders(with: loginData)
+
+        let endpoint: Endpoint<User> = createEntityEndpoint(path: "me")
+        return urlSession.load(endpoint)
+    }
+    
+    public func setAuth(token: String?)
+    {
+        guard let token = token else {
+            updateAuthHeaders(with: nil)
+            return
+        }
+        let loginData = "\(token):api_token".data(using: String.Encoding.utf8)!
+        updateAuthHeaders(with: loginData)
+    }
+      
+}
+
+extension API: TimelineAPI
+{
+    public func loadEntries() -> Observable<[TimeEntry]>
+    {
+        let endpoint: Endpoint<[TimeEntry]> = createEntitiesEndpoint(path: "me/time_entries")
+        return urlSession.load(endpoint)
+    }
+    
+    public func loadWorkspaces() -> Observable<[Workspace]>
+    {
+        let endpoint: Endpoint<[Workspace]> = createEntitiesEndpoint(path: "me/workspaces")
+        return urlSession.load(endpoint)
+    }
+    
+    public func loadClients() -> Observable<[Client]>
+    {
+        let endpoint: Endpoint<[Client]> = createEntitiesEndpoint(path: "me/clients")
+        return urlSession.load(endpoint)
+    }
+    
+    public func loadProjects() -> Observable<[Project]>
+    {
+        let endpoint: Endpoint<[Project]> = createEntitiesEndpoint(path: "me/projects")
+        return urlSession.load(endpoint)
+    }
+    
+    public func loadTags() -> Observable<[Tag]>
+    {
+        let endpoint: Endpoint<[Tag]> = createEntitiesEndpoint(path: "me/tags")
+        return urlSession.load(endpoint)
+    }
+    
+    public func loadTasks() -> Observable<[Task]>
+    {
+        let endpoint: Endpoint<[Task]> = createEntitiesEndpoint(path: "me/tasks")
+        return urlSession.load(endpoint)
     }
 }

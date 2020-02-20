@@ -12,7 +12,7 @@ import Models
 import RxSwift
 import API
 
-public let onboardingReducer = Reducer<OnboardingState, OnboardingAction, API> { state, action, api in
+public let onboardingReducer = Reducer<OnboardingState, OnboardingAction, UserAPI> { state, action, api in
     
     switch action {
         
@@ -28,6 +28,7 @@ public let onboardingReducer = Reducer<OnboardingState, OnboardingAction, API> {
         
     case let .setUser(user):
         state.user = .loaded(user)
+        api.setAuth(token: user.apiToken)
         
     case let .setError(error):
         state.user = .error(error)
@@ -36,7 +37,7 @@ public let onboardingReducer = Reducer<OnboardingState, OnboardingAction, API> {
     return .empty
 }
 
-fileprivate func loadUser(email: String, password: String, api: API) -> Effect<OnboardingAction>
+fileprivate func loadUser(email: String, password: String, api: UserAPI) -> Effect<OnboardingAction>
 {
     return api.loginUser(email: email, password: password)
         .map({ OnboardingAction.setUser($0) })

@@ -13,6 +13,8 @@
 		8CBCBC7723FD3807002B72FB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBC7623FD3807002B72FB /* API.swift */; };
 		8CBCBCA223FD384D002B72FB /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBCA123FD384D002B72FB /* Networking.framework */; };
 		8CBCBCD523FD38BA002B72FB /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBCD423FD38BA002B72FB /* Models.framework */; };
+		8CF3D69923FE676D00F2AD02 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF3D69823FE676D00F2AD02 /* UserAPI.swift */; };
+		8CF3D69B23FE7EFB00F2AD02 /* TimelineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF3D69A23FE7EFB00F2AD02 /* TimelineAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		8CBCBC7623FD3807002B72FB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		8CBCBCA123FD384D002B72FB /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBCBCD423FD38BA002B72FB /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CF3D69823FE676D00F2AD02 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		8CF3D69A23FE7EFB00F2AD02 /* TimelineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		8CBCBC5E23FD37ED002B72FB /* API */ = {
 			isa = PBXGroup;
 			children = (
+				8CF3D69723FE675F00F2AD02 /* Protocols */,
 				8CBCBC7623FD3807002B72FB /* API.swift */,
 				8CBCBC5F23FD37ED002B72FB /* API.h */,
 				8CBCBC6023FD37ED002B72FB /* Info.plist */,
@@ -103,6 +108,15 @@
 				8CBCBCA123FD384D002B72FB /* Networking.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CF3D69723FE675F00F2AD02 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8CF3D69823FE676D00F2AD02 /* UserAPI.swift */,
+				8CF3D69A23FE7EFB00F2AD02 /* TimelineAPI.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CBCBC7723FD3807002B72FB /* API.swift in Sources */,
+				8CF3D69B23FE7EFB00F2AD02 /* TimelineAPI.swift in Sources */,
+				8CF3D69923FE676D00F2AD02 /* UserAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
