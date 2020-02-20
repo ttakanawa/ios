@@ -27,7 +27,7 @@ public class TimeEntriesLogCoordinator: Coordinator
     
     public func start()
     {
-        let timeEntriesLog = TimeEntriesLogViewController()
+        let timeEntriesLog = TimeEntriesLogViewController.instantiate()
         timeEntriesLog.coordinator = self
         timeEntriesLog.store = store
         navigationController.pushViewController(timeEntriesLog, animated: true)

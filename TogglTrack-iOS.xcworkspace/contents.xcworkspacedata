@@ -21,10 +21,10 @@
          location = "container:"
          name = "Modules">
          <FileRef
-            location = "group:Modules/TimeEntriesLog/TimeEntriesLog.xcodeproj">
+            location = "group:Modules/Onboarding/Onboarding.xcodeproj">
          </FileRef>
          <FileRef
-            location = "group:Modules/Onboarding/Onboarding.xcodeproj">
+            location = "group:Modules/TimeEntriesLog/TimeEntriesLog.xcodeproj">
          </FileRef>
       </Group>
       <Group

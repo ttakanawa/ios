@@ -12,17 +12,20 @@ import Models
 import RxCocoa
 import RxSwift
 
-public class TimeEntriesLogViewController: UIViewController
+public class TimeEntriesLogViewController: UIViewController, Storyboarded
 {
+    public static var storyboardName = "TimeEntriesLog"
+    public static var storyboardBundle =  Bundle(for: TimeEntriesLogViewController.self as AnyClass)
+
     private var disposeBag = DisposeBag()
     
     public var store: TimeEntriesLogStore!
     public var coordinator: TimeEntriesLogCoordinator!
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     public override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        view.backgroundColor = .green
     }
 }

@@ -19,6 +19,7 @@
 		8C0490B423FD55EB00475780 /* TimeEntriesLogState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490B323FD55EB00475780 /* TimeEntriesLogState.swift */; };
 		8C0490B623FD560200475780 /* TimeEntriesLogReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490B523FD560200475780 /* TimeEntriesLogReducer.swift */; };
 		8C0490C123FD5CDA00475780 /* TimeEntriesLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490C023FD5CDA00475780 /* TimeEntriesLogViewController.swift */; };
+		8CF3D69023FD758E00F2AD02 /* TimeEntriesLog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF3D68F23FD758E00F2AD02 /* TimeEntriesLog.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8C0490B323FD55EB00475780 /* TimeEntriesLogState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogState.swift; sourceTree = "<group>"; };
 		8C0490B523FD560200475780 /* TimeEntriesLogReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogReducer.swift; sourceTree = "<group>"; };
 		8C0490C023FD5CDA00475780 /* TimeEntriesLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogViewController.swift; sourceTree = "<group>"; };
+		8CF3D68F23FD758E00F2AD02 /* TimeEntriesLog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TimeEntriesLog.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				8C0490C023FD5CDA00475780 /* TimeEntriesLogViewController.swift */,
+				8CF3D68F23FD758E00F2AD02 /* TimeEntriesLog.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CF3D69023FD758E00F2AD02 /* TimeEntriesLog.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

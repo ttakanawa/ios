@@ -97,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				8CBCBD3423FD3C32002B72FB /* AppCoordinator.swift */,
+				8CF3D69123FD780300F2AD02 /* Views */,
 				8CBCBC4723FD372D002B72FB /* Core */,
 				8CBCBBDB23FD3477002B72FB /* TogglTrack.h */,
 				8CBCBBDC23FD3477002B72FB /* Info.plist */,
@@ -134,6 +135,13 @@
 				8CBCBC4923FD3742002B72FB /* StoreBuilder.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		8CF3D69123FD780300F2AD02 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
