@@ -59,3 +59,16 @@ public final class Store<State, Action>
         _dispatch?(action)
     }
 }
+
+extension Store
+{
+    public func select<B>(_ selector: @escaping (State) -> B) -> Driver<B>
+    {
+        return state.map(selector)
+    }
+    
+    public func select<B>(_ selector: @escaping (State) -> B) -> Driver<B> where B: Equatable
+    {
+        return state.map(selector).distinctUntilChanged()
+    }
+}

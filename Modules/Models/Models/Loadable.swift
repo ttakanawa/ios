@@ -27,6 +27,16 @@ public extension Loadable
             return false
         }
     }
+    
+    var isLoading: Bool
+    {
+        switch self {
+        case .loading:
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 extension Loadable: CustomStringConvertible where Value: CustomStringConvertible

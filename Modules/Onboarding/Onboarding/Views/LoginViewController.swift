@@ -42,8 +42,7 @@ public class LoginViewController: UIViewController, Storyboarded
             .bind(onNext: store.dispatch)
             .disposed(by: disposeBag)
 
-        store.state
-            .map({ $0.loginButtonEnabled })
+        store.select(loginButtonEnabled)
             .drive(loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
@@ -52,15 +51,12 @@ public class LoginViewController: UIViewController, Storyboarded
             .subscribe(onNext: store.dispatch)
             .disposed(by: disposeBag)
         
-        store.state
-            .map{ $0.user.description }
+        store.select(userDescription)
             .drive(userLabel.rx.text)
             .disposed(by: disposeBag)
         
-        store.state
-            .map{ $0.user.isLoaded }
+        store.select(userIsLoaded)
             .filter({ $0 })
-            .distinctUntilChanged()
             .drive(onNext: { [weak self] _ in
                 self?.dismiss(animated: true) {
                     self?.coordinator.loggedIn?()

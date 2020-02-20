@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CA8C09823FEA53A00222C87 /* OnboardingSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA8C09723FEA53A00222C87 /* OnboardingSelectors.swift */; };
 		8CBCBCEC23FD38EB002B72FB /* Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBCE223FD38EB002B72FB /* Onboarding.framework */; };
 		8CBCBCF123FD38EB002B72FB /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBCF023FD38EB002B72FB /* OnboardingTests.swift */; };
 		8CBCBCF323FD38EB002B72FB /* Onboarding.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CBCBCE523FD38EB002B72FB /* Onboarding.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8CA8C09723FEA53A00222C87 /* OnboardingSelectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelectors.swift; sourceTree = "<group>"; };
 		8CBCBCE223FD38EB002B72FB /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBCBCE523FD38EB002B72FB /* Onboarding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Onboarding.h; sourceTree = "<group>"; };
 		8CBCBCE623FD38EB002B72FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CA8C09623FEA52900222C87 /* Selectors */ = {
+			isa = PBXGroup;
+			children = (
+				8CA8C09723FEA53A00222C87 /* OnboardingSelectors.swift */,
+			);
+			path = Selectors;
+			sourceTree = "<group>";
+		};
 		8CBCBCD823FD38EB002B72FB = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		8CBCBCE423FD38EB002B72FB /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				8CA8C09623FEA52900222C87 /* Selectors */,
 				8CBCBD0223FD390C002B72FB /* OnboardingCoordinator.swift */,
 				8CBCBD0023FD390C002B72FB /* Actions */,
 				8CBCBCFE23FD390C002B72FB /* Reducer */,
@@ -280,6 +291,7 @@
 				8CBCBD0C23FD390D002B72FB /* OnboardingViewController.swift in Sources */,
 				8CBCBD0723FD390D002B72FB /* OnboardingState.swift in Sources */,
 				8CBCBD0823FD390D002B72FB /* OnboardingReducer.swift in Sources */,
+				8CA8C09823FEA53A00222C87 /* OnboardingSelectors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
