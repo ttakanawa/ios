@@ -1,8 +1,8 @@
 //
-//  LoginViewController.swift
-//  Login
+//  SignupViewController.swift
+//  Onboarding
 //
-//  Created by Ricardo Sánchez Sotres on 13/02/2020.
+//  Created by Ricardo Sánchez Sotres on 21/02/2020.
 //  Copyright © 2020 Ricardo Sánchez Sotres. All rights reserved.
 //
 
@@ -13,29 +13,28 @@ import Architecture
 import Models
 import API
 
-public class LoginViewController: UIViewController, Storyboarded
+class SignupViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Onboarding"
-    public static var storyboardBundle = Bundle(for: LoginViewController.self as AnyClass)
-
+    public static var storyboardBundle = Bundle(for: SignupViewController.self as AnyClass)
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var userLabel: UILabel!
     
     private var disposeBag = DisposeBag()
     
     public weak var store: OnboardingStore!
     public weak var coordinator: OnboardingCoordinator!
-
-    public override func viewDidLoad()
-    {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-                
-        let button = UIBarButtonItem(title: "SignUp", style: .plain, target: nil, action: nil)
+        
+        let button = UIBarButtonItem(title: "Login", style: .plain, target: nil, action: nil)
         button.rx.tap
-            .bind(onNext: coordinator.showEmailSignUp)
-            .disposed(by: disposeBag)        
+            .bind(onNext: coordinator.showEmailSignIn)
+            .disposed(by: disposeBag)
         navigationItem.rightBarButtonItem = button
         
         store.select({ $0.email })
@@ -50,17 +49,17 @@ public class LoginViewController: UIViewController, Storyboarded
             .map(OnboardingAction.emailEntered)
             .bind(onNext: store.dispatch)
             .disposed(by: disposeBag)
-
+        
         passwordTextField.rx.text.compactMap({ $0 })
             .map(OnboardingAction.passwordEntered)
             .bind(onNext: store.dispatch)
             .disposed(by: disposeBag)
-
+        
         store.select(loginButtonEnabled)
-            .drive(loginButton.rx.isEnabled)
+            .drive(signupButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        loginButton.rx.tap
+        signupButton.rx.tap
             .mapTo(OnboardingAction.loginTapped)
             .subscribe(onNext: store.dispatch)
             .disposed(by: disposeBag)
@@ -69,13 +68,13 @@ public class LoginViewController: UIViewController, Storyboarded
             .drive(userLabel.rx.text)
             .disposed(by: disposeBag)
         
-        store.select(userIsLoaded)
-            .filter({ $0 })
-            .drive(onNext: { [weak self] _ in
-                self?.dismiss(animated: true) {
-                    self?.coordinator.loggedIn?()
-                }
-            })
-            .disposed(by: disposeBag)
+        //             store.select(userIsLoaded)
+        //                 .filter({ $0 })
+        //                 .drive(onNext: { [weak self] _ in
+        //                     self?.dismiss(animated: true) {
+        //                         self?.coordinator.loggedIn?()
+        //                     }
+        //                 })
+        //                 .disposed(by: disposeBag)
     }
 }

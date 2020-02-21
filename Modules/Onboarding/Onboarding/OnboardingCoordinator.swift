@@ -31,7 +31,7 @@ public class OnboardingCoordinator: Coordinator
         let onboarding = OnboardingViewController.instantiate()
         onboarding.coordinator = self
         onboarding.store = store
-        navigationController.pushViewController(onboarding, animated: true)
+        navigationController.pushViewController(onboarding, animated: true)    
     }
  
     func showEmailSignIn()
@@ -39,6 +39,28 @@ public class OnboardingCoordinator: Coordinator
         let vc = LoginViewController.instantiate()
         vc.store = store
         vc.coordinator = self
-        navigationController.present(vc, animated: true)
+        let nav = UINavigationController(rootViewController: vc)
+        if let presented = navigationController.presentedViewController {
+            presented.dismiss(animated: true) {
+                self.navigationController.present(nav, animated: true)
+            }
+        } else {
+            navigationController.present(nav, animated: true)
+        }
+    }
+    
+    func showEmailSignUp()
+    {
+        let vc = SignupViewController.instantiate()
+        vc.store = store
+        vc.coordinator = self
+        let nav = UINavigationController(rootViewController: vc)
+        if let presented = navigationController.presentedViewController {
+            presented.dismiss(animated: true) {
+                self.navigationController.present(nav, animated: true)
+            }
+        } else {
+            navigationController.present(nav, animated: true)
+        }
     }
 }
