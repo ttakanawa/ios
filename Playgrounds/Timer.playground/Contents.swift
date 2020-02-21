@@ -3,6 +3,7 @@ import Timer
 import Architecture
 import Models
 import API
+import Networking
 import Repository
 import PlaygroundSupport
 
@@ -18,7 +19,7 @@ var initialState = MockTimerState()
 let store = Store(
     initialState: initialState,
     reducer: timerReducer,
-    environment: Repository(api: API(urlSession: URLSession(configuration: URLSessionConfiguration.default)))
+    environment: Repository(api: API(urlSession: FakeURLSession()))
 )
 
 let nav = UINavigationController()
@@ -29,3 +30,5 @@ PlaygroundPage.current.liveView = nav
 PlaygroundPage.current.needsIndefiniteExecution = true
 
 coordinator.start()
+
+store.dispatch(.load)

@@ -37,12 +37,6 @@
             location = "group:Modules/Models/Models.xcodeproj">
          </FileRef>
          <FileRef
-            location = "group:Modules/Networking/Networking.xcodeproj">
-         </FileRef>
-         <FileRef
-            location = "group:Modules/RxSwiftDependency/RxSwiftDependency.xcodeproj">
-         </FileRef>
-         <FileRef
             location = "group:Modules/Architecture/Architecture.xcodeproj">
          </FileRef>
       </Group>
@@ -54,6 +48,16 @@
          </FileRef>
          <FileRef
             location = "group:Modules/API/API.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "Other">
+         <FileRef
+            location = "group:Modules/Networking/Networking.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Modules/RxSwiftDependency/RxSwiftDependency.xcodeproj">
          </FileRef>
       </Group>
    </Group>

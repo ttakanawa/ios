@@ -11,6 +11,14 @@ import Architecture
 import Models
 import RxCocoa
 import RxSwift
+import RxDataSources
+
+let timeEntries: (TimerState) -> [TimeEntry] = { state in
+    
+    guard case let .loaded(tes) = state.entities.timeEntries else { return [] }
+    
+    return Array(tes.values)
+}
 
 public class TimerViewController: UIViewController, Storyboarded
 {
@@ -27,10 +35,25 @@ public class TimerViewController: UIViewController, Storyboarded
     public override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 72
     }
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntry>>(configureCell:
+        { dataSource, tableView, indexPath, item in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TimeEntryCell", for: indexPath) as! TimeEntryCell
+            cell.descriptionLabel.text = item.description
+            cell.startLabel.text = "This is a test"
+            return cell
+        })
+        
+        store.select(timeEntries)
+            .map({ [SectionModel(model: "", items: $0 )] })
+            .drive(tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
         
     }
 }

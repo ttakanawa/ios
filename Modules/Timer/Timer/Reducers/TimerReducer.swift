@@ -38,7 +38,6 @@ public let timerReducer = Reducer<TimerState, TimerAction, Repository> { state, 
 }
 
 
-
 fileprivate func loadTimeEntries(_ repository: Repository) -> Effect<TimerAction>
 {
     return repository.getTimeEntries()

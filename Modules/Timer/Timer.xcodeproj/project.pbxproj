@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C404DB123FF054E00C91122 /* TimeEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C404DB023FF054E00C91122 /* TimeEntryCell.swift */; };
 		8C8DC6B723FEDA8D00104A09 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC6AD23FEDA8D00104A09 /* Timer.framework */; };
 		8C8DC6BC23FEDA8D00104A09 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6BB23FEDA8D00104A09 /* TimerTests.swift */; };
 		8C8DC6BE23FEDA8D00104A09 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C8DC6B023FEDA8D00104A09 /* Timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C404DB023FF054E00C91122 /* TimeEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryCell.swift; sourceTree = "<group>"; };
 		8C8DC6AD23FEDA8D00104A09 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8DC6B023FEDA8D00104A09 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		8C8DC6B123FEDA8D00104A09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 			children = (
 				8C8DC6E723FEDB7600104A09 /* TimerCoordinator.swift */,
 				8C8DC6EF23FEDB7600104A09 /* Actions */,
-				8C8DC6EA23FEDB7600104A09 /* Reducer */,
+				8C8DC6EA23FEDB7600104A09 /* Reducers */,
 				8C8DC6E823FEDB7600104A09 /* State */,
 				8C8DC6EC23FEDB7600104A09 /* Views */,
 				8C8DC6B023FEDA8D00104A09 /* Timer.h */,
@@ -145,12 +147,12 @@
 			path = State;
 			sourceTree = "<group>";
 		};
-		8C8DC6EA23FEDB7600104A09 /* Reducer */ = {
+		8C8DC6EA23FEDB7600104A09 /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
 				8C8DC6EB23FEDB7600104A09 /* TimerReducer.swift */,
 			);
-			path = Reducer;
+			path = Reducers;
 			sourceTree = "<group>";
 		};
 		8C8DC6EC23FEDB7600104A09 /* Views */ = {
@@ -158,6 +160,7 @@
 			children = (
 				8C8DC6ED23FEDB7600104A09 /* Timer.storyboard */,
 				8C8DC6EE23FEDB7600104A09 /* TimerViewController.swift */,
+				8C404DB023FF054E00C91122 /* TimeEntryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				8C8DC6F323FEDB7600104A09 /* TimerReducer.swift in Sources */,
 				8C8DC6F623FEDB7600104A09 /* TimerAction.swift in Sources */,
 				8C8DC6F223FEDB7600104A09 /* TimerState.swift in Sources */,
+				8C404DB123FF054E00C91122 /* TimeEntryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

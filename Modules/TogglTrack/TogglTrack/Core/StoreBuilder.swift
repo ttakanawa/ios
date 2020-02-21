@@ -12,6 +12,7 @@ import Onboarding
 import Timer
 import API
 import Repository
+import Networking
 
 public func logging<State, Action, Environment>(
     _ reducer: Reducer<State, Action, Environment>
@@ -41,7 +42,8 @@ public func buildStore() -> Store<AppState, AppAction>
     )
     let appReducer = logging(combinedReducers)
     
-    let api = API(urlSession: URLSession(configuration: URLSessionConfiguration.default))
+//    let api = API(urlSession: URLSession(configuration: URLSessionConfiguration.default))
+    let api = API(urlSession: FakeURLSession())
     let repository = Repository(api: api)
     let appEnvironment = AppEnvironment(
         api: api,

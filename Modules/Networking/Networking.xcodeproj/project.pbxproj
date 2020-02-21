@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C8DC70F23FEEF1D00104A09 /* workspaces.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C8DC70A23FEEF1D00104A09 /* workspaces.txt */; };
+		8C8DC71023FEEF1D00104A09 /* projects.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C8DC70B23FEEF1D00104A09 /* projects.txt */; };
+		8C8DC71123FEEF1D00104A09 /* timeentries.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C8DC70C23FEEF1D00104A09 /* timeentries.txt */; };
+		8C8DC71223FEEF1D00104A09 /* tags.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C8DC70D23FEEF1D00104A09 /* tags.txt */; };
+		8C8DC71323FEEF1D00104A09 /* clients.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8C8DC70E23FEEF1D00104A09 /* clients.txt */; };
 		8CBCBC8C23FD3823002B72FB /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBC8223FD3823002B72FB /* Networking.framework */; };
 		8CBCBC9123FD3823002B72FB /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBC9023FD3823002B72FB /* NetworkingTests.swift */; };
 		8CBCBC9323FD3823002B72FB /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CBCBC8523FD3823002B72FB /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CBCBC9E23FD3845002B72FB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBC9C23FD3845002B72FB /* Endpoint.swift */; };
 		8CBCBC9F23FD3845002B72FB /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBCBC9D23FD3845002B72FB /* URLSessionExtension.swift */; };
 		8CBCBCAB23FD386E002B72FB /* RxSwiftDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBCAA23FD386E002B72FB /* RxSwiftDependency.framework */; };
+		8CE2288623FF01A8007D9144 /* me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8CE2288523FF01A8007D9144 /* me.txt */; };
+		8CEE48C423FEFD740056F8F0 /* FakeURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEE48C323FEFD740056F8F0 /* FakeURLSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C8DC70A23FEEF1D00104A09 /* workspaces.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workspaces.txt; sourceTree = "<group>"; };
+		8C8DC70B23FEEF1D00104A09 /* projects.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = projects.txt; sourceTree = "<group>"; };
+		8C8DC70C23FEEF1D00104A09 /* timeentries.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = timeentries.txt; sourceTree = "<group>"; };
+		8C8DC70D23FEEF1D00104A09 /* tags.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tags.txt; sourceTree = "<group>"; };
+		8C8DC70E23FEEF1D00104A09 /* clients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clients.txt; sourceTree = "<group>"; };
 		8CBCBC8223FD3823002B72FB /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBCBC8523FD3823002B72FB /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		8CBCBC8623FD3823002B72FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,6 +47,8 @@
 		8CBCBC9C23FD3845002B72FB /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8CBCBC9D23FD3845002B72FB /* URLSessionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
 		8CBCBCAA23FD386E002B72FB /* RxSwiftDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE2288523FF01A8007D9144 /* me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = me.txt; sourceTree = "<group>"; };
+		8CEE48C323FEFD740056F8F0 /* FakeURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeURLSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +71,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C8DC70923FEEF0F00104A09 /* mockData */ = {
+			isa = PBXGroup;
+			children = (
+				8C8DC70E23FEEF1D00104A09 /* clients.txt */,
+				8C8DC70B23FEEF1D00104A09 /* projects.txt */,
+				8C8DC70D23FEEF1D00104A09 /* tags.txt */,
+				8C8DC70C23FEEF1D00104A09 /* timeentries.txt */,
+				8C8DC70A23FEEF1D00104A09 /* workspaces.txt */,
+				8CE2288523FF01A8007D9144 /* me.txt */,
+			);
+			path = mockData;
+			sourceTree = "<group>";
+		};
 		8CBCBC7823FD3823002B72FB = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +106,10 @@
 		8CBCBC8423FD3823002B72FB /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				8C8DC70923FEEF0F00104A09 /* mockData */,
 				8CBCBC9C23FD3845002B72FB /* Endpoint.swift */,
 				8CBCBC9D23FD3845002B72FB /* URLSessionExtension.swift */,
+				8CEE48C323FEFD740056F8F0 /* FakeURLSession.swift */,
 				8CBCBC8523FD3823002B72FB /* Networking.h */,
 				8CBCBC8623FD3823002B72FB /* Info.plist */,
 			);
@@ -197,6 +226,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8DC71123FEEF1D00104A09 /* timeentries.txt in Resources */,
+				8CE2288623FF01A8007D9144 /* me.txt in Resources */,
+				8C8DC71223FEEF1D00104A09 /* tags.txt in Resources */,
+				8C8DC71323FEEF1D00104A09 /* clients.txt in Resources */,
+				8C8DC71023FEEF1D00104A09 /* projects.txt in Resources */,
+				8C8DC70F23FEEF1D00104A09 /* workspaces.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +251,7 @@
 			files = (
 				8CBCBC9F23FD3845002B72FB /* URLSessionExtension.swift in Sources */,
 				8CBCBC9E23FD3845002B72FB /* Endpoint.swift in Sources */,
+				8CEE48C423FEFD740056F8F0 /* FakeURLSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
