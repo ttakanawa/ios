@@ -37,7 +37,7 @@ public extension Storyboarded
     
     static func instantiate() -> Self
     {
-        let storyboard = UIStoryboard(name: storyboardName, bundle: storyboardBundle)
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: storyboardIdentifier) as! Self        
     }
 }

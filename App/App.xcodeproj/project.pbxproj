@@ -15,6 +15,10 @@
 		8CBCBB8723FD333C002B72FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBCBB8523FD333C002B72FB /* LaunchScreen.storyboard */; };
 		8CBCBC2323FD3579002B72FB /* TogglTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBC2223FD3579002B72FB /* TogglTrack.framework */; };
 		8CBCBC2423FD3579002B72FB /* TogglTrack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CBCBC2223FD3579002B72FB /* TogglTrack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CC4E73C240044F500A93BDA /* RxSwiftDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC4E72E2400433500A93BDA /* RxSwiftDependency.framework */; };
+		8CC4E73D240044F500A93BDA /* RxSwiftDependency.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC4E72E2400433500A93BDA /* RxSwiftDependency.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8CC4E78D24004BE500A93BDA /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4E78B24004BE400A93BDA /* Onboarding.storyboard */; };
+		8CC4E78E24004BE500A93BDA /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC4E78C24004BE500A93BDA /* Timer.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				8CBCBC2423FD3579002B72FB /* TogglTrack.framework in Embed Frameworks */,
+				8CC4E73D240044F500A93BDA /* RxSwiftDependency.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +46,17 @@
 		8CBCBB8623FD333C002B72FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CBCBB8823FD333C002B72FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8CBCBC2223FD3579002B72FB /* TogglTrack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TogglTrack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E719240042CA00A93BDA /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E71C240042E100A93BDA /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E71F240042F200A93BDA /* Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E7222400430000A93BDA /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E7252400431100A93BDA /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E7282400431400A93BDA /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E72B2400432400A93BDA /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E72E2400433500A93BDA /* RxSwiftDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E78724004B3800A93BDA /* Assets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Assets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E78B24004BE400A93BDA /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		8CC4E78C24004BE500A93BDA /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CBCBC2323FD3579002B72FB /* TogglTrack.framework in Frameworks */,
+				8CC4E73C240044F500A93BDA /* RxSwiftDependency.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +92,7 @@
 		8CBCBB7923FD3337002B72FB /* App */ = {
 			isa = PBXGroup;
 			children = (
+				8CC4E78F24004C1200A93BDA /* Storyboards */,
 				8CBCBB7A23FD3337002B72FB /* AppDelegate.swift */,
 				8CBCBB7C23FD3337002B72FB /* SceneDelegate.swift */,
 				8CBCBB7E23FD3337002B72FB /* ViewController.swift */,
@@ -89,9 +107,27 @@
 		8CBCBBCA23FD340D002B72FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CC4E78724004B3800A93BDA /* Assets.framework */,
+				8CC4E72E2400433500A93BDA /* RxSwiftDependency.framework */,
+				8CC4E72B2400432400A93BDA /* Repository.framework */,
+				8CC4E7282400431400A93BDA /* Networking.framework */,
+				8CC4E7252400431100A93BDA /* Models.framework */,
+				8CC4E7222400430000A93BDA /* API.framework */,
+				8CC4E71F240042F200A93BDA /* Onboarding.framework */,
+				8CC4E71C240042E100A93BDA /* Timer.framework */,
+				8CC4E719240042CA00A93BDA /* Architecture.framework */,
 				8CBCBC2223FD3579002B72FB /* TogglTrack.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CC4E78F24004C1200A93BDA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8CC4E78C24004BE500A93BDA /* Timer.storyboard */,
+				8CC4E78B24004BE400A93BDA /* Onboarding.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +192,8 @@
 				8CBCBB8723FD333C002B72FB /* LaunchScreen.storyboard in Resources */,
 				8CBCBB8423FD333C002B72FB /* Assets.xcassets in Resources */,
 				8CBCBB8223FD3337002B72FB /* Main.storyboard in Resources */,
+				8CC4E78D24004BE500A93BDA /* Onboarding.storyboard in Resources */,
+				8CC4E78E24004BE500A93BDA /* Timer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,17 +14,12 @@
 		8C8DC6F123FEDB7600104A09 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6E723FEDB7600104A09 /* TimerCoordinator.swift */; };
 		8C8DC6F223FEDB7600104A09 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6E923FEDB7600104A09 /* TimerState.swift */; };
 		8C8DC6F323FEDB7600104A09 /* TimerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6EB23FEDB7600104A09 /* TimerReducer.swift */; };
-		8C8DC6F423FEDB7600104A09 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C8DC6ED23FEDB7600104A09 /* Timer.storyboard */; };
 		8C8DC6F523FEDB7600104A09 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6EE23FEDB7600104A09 /* TimerViewController.swift */; };
 		8C8DC6F623FEDB7600104A09 /* TimerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6F023FEDB7600104A09 /* TimerAction.swift */; };
 		8C8DC6FD23FEDE8B00104A09 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC6FC23FEDE8B00104A09 /* Architecture.framework */; };
-		8C8DC6FE23FEDE8B00104A09 /* Architecture.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC6FC23FEDE8B00104A09 /* Architecture.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C8DC70123FEDE9000104A09 /* RxSwiftDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC70023FEDE9000104A09 /* RxSwiftDependency.framework */; };
-		8C8DC70223FEDE9000104A09 /* RxSwiftDependency.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC70023FEDE9000104A09 /* RxSwiftDependency.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C8DC70423FEDE9600104A09 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC70323FEDE9600104A09 /* Models.framework */; };
-		8C8DC70523FEDE9600104A09 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC70323FEDE9600104A09 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C8DC70723FEDEA400104A09 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC70623FEDEA400104A09 /* Repository.framework */; };
-		8C8DC70823FEDEA400104A09 /* Repository.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC70623FEDEA400104A09 /* Repository.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,23 +32,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8C8DC6FF23FEDE8B00104A09 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8C8DC70823FEDEA400104A09 /* Repository.framework in Embed Frameworks */,
-				8C8DC6FE23FEDE8B00104A09 /* Architecture.framework in Embed Frameworks */,
-				8C8DC70223FEDE9000104A09 /* RxSwiftDependency.framework in Embed Frameworks */,
-				8C8DC70523FEDE9600104A09 /* Models.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		8C404DB023FF054E00C91122 /* TimeEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryCell.swift; sourceTree = "<group>"; };
 		8C8DC6AD23FEDA8D00104A09 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,13 +43,13 @@
 		8C8DC6E723FEDB7600104A09 /* TimerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
 		8C8DC6E923FEDB7600104A09 /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		8C8DC6EB23FEDB7600104A09 /* TimerReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerReducer.swift; sourceTree = "<group>"; };
-		8C8DC6ED23FEDB7600104A09 /* Timer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
 		8C8DC6EE23FEDB7600104A09 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		8C8DC6F023FEDB7600104A09 /* TimerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerAction.swift; sourceTree = "<group>"; };
 		8C8DC6FC23FEDE8B00104A09 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8DC70023FEDE9000104A09 /* RxSwiftDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8DC70323FEDE9600104A09 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C8DC70623FEDEA400104A09 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC4E7652400480600A93BDA /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +136,6 @@
 		8C8DC6EC23FEDB7600104A09 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8C8DC6ED23FEDB7600104A09 /* Timer.storyboard */,
 				8C8DC6EE23FEDB7600104A09 /* TimerViewController.swift */,
 				8C404DB023FF054E00C91122 /* TimeEntryCell.swift */,
 			);
@@ -176,6 +153,7 @@
 		8C8DC6FB23FEDE8B00104A09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CC4E7652400480600A93BDA /* UI.framework */,
 				8C8DC70623FEDEA400104A09 /* Repository.framework */,
 				8C8DC70323FEDE9600104A09 /* Models.framework */,
 				8C8DC70023FEDE9000104A09 /* RxSwiftDependency.framework */,
@@ -206,7 +184,6 @@
 				8C8DC6A923FEDA8D00104A09 /* Sources */,
 				8C8DC6AA23FEDA8D00104A09 /* Frameworks */,
 				8C8DC6AB23FEDA8D00104A09 /* Resources */,
-				8C8DC6FF23FEDE8B00104A09 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,7 +255,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C8DC6F423FEDB7600104A09 /* Timer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -432,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -462,6 +438,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.daneel.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -489,6 +466,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.daneel.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

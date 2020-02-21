@@ -16,7 +16,7 @@ import API
 public class OnboardingViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Onboarding"
-    public static var storyboardBundle =  Bundle(for: OnboardingViewController.self as AnyClass)
+    public static var storyboardBundle = Bundle(for: OnboardingViewController.self as AnyClass)
     
     @IBOutlet weak var emailSignInButton: UIButton!
 

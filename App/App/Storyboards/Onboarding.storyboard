@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16085" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16078.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,7 +10,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="bXh-P1-bhy">
             <objects>
-                <viewController storyboardIdentifier="OnboardingViewController" id="kr3-lk-fEa" customClass="OnboardingViewController" customModule="Onboarding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" id="kr3-lk-fEa" customClass="OnboardingViewController" customModule="Onboarding" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="38l-uL-Gaf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +40,7 @@
         <!--Login View Controller-->
         <scene sceneID="bWT-om-qWe">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="u6A-PT-acT" customClass="LoginViewController" customModule="Onboarding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="u6A-PT-acT" customClass="LoginViewController" customModule="Onboarding" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rhw-jZ-dc8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +108,7 @@
         <!--Signup View Controller-->
         <scene sceneID="VHC-Ic-b8Z">
             <objects>
-                <viewController storyboardIdentifier="SignupViewController" id="4jP-0v-7sy" customClass="SignupViewController" customModule="Onboarding" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignupViewController" id="4jP-0v-7sy" customClass="SignupViewController" customModule="Onboarding" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LCH-hl-oYZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

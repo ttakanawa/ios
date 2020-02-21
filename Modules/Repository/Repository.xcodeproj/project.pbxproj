@@ -12,7 +12,6 @@
 		8C0490A223FD551500475780 /* Repository.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C04909423FD551500475780 /* Repository.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C0490AC23FD552900475780 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0490AB23FD552900475780 /* Repository.swift */; };
 		8CF3D69423FE66EB00F2AD02 /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF3D69323FE66EB00F2AD02 /* API.framework */; };
-		8CF3D69523FE66EB00F2AD02 /* API.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8CF3D69323FE66EB00F2AD02 /* API.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,20 +23,6 @@
 			remoteInfo = Repository;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8CF3D69623FE66EB00F2AD02 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8CF3D69523FE66EB00F2AD02 /* API.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8C04909123FD551500475780 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +123,6 @@
 				8C04908D23FD551500475780 /* Sources */,
 				8C04908E23FD551500475780 /* Frameworks */,
 				8C04908F23FD551500475780 /* Resources */,
-				8CF3D69623FE66EB00F2AD02 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,7 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -358,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -388,6 +372,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.daneel.Repository;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -415,6 +400,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.daneel.Repository;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
