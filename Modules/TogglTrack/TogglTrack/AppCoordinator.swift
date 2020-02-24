@@ -10,6 +10,7 @@ import UIKit
 import Architecture
 import Onboarding
 import Timer
+import Utils
 
 public class AppCoordinator : Coordinator
 {

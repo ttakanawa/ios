@@ -12,11 +12,13 @@ import RxSwift
 import Architecture
 import Models
 import API
+import Utils
+import Assets
 
 public class LoginViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Onboarding"
-    public static var storyboardBundle = Bundle(for: LoginViewController.self as AnyClass)
+    public static var storyboardBundle = Assets.bundle
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!

@@ -9,6 +9,7 @@
 import UIKit
 import Architecture
 import Models
+import Utils
 
 public typealias TimerStore = Store<TimerState, TimerAction>
 

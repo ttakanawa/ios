@@ -12,6 +12,8 @@ import Models
 import RxCocoa
 import RxSwift
 import RxDataSources
+import Utils
+import Assets
 
 let timeEntries: (TimerState) -> [TimeEntry] = { state in
     
@@ -23,7 +25,7 @@ let timeEntries: (TimerState) -> [TimeEntry] = { state in
 public class TimerViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Timer"
-    public static var storyboardBundle =  Bundle(for: TimerViewController.self as AnyClass)
+    public static var storyboardBundle = Assets.bundle
 
     private var disposeBag = DisposeBag()
     

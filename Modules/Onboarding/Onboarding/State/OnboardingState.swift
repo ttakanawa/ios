@@ -9,6 +9,7 @@
 import Foundation
 import Models
 import Architecture
+import Utils
 
 public struct LocalOnboardingState
 {

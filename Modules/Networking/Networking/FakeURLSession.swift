@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Assets
 
 public class FakeURLSession: URLSessionProtocol
 {
@@ -24,7 +25,7 @@ public class FakeURLSession: URLSessionProtocol
     
     public func load<A>(_ endpoint: Endpoint<A>) -> Observable<A>
     {
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Assets.bundle
         guard let resource = requests[endpoint.request.url!.lastPathComponent],
             let path = bundle.path(forResource: resource, ofType: "txt") else {
                 return Observable.error(NetworkingError.unknown)

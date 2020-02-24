@@ -12,11 +12,13 @@ import Models
 import RxCocoa
 import RxSwift
 import API
+import Utils
+import Assets
 
 public class OnboardingViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Onboarding"
-    public static var storyboardBundle = Bundle(for: OnboardingViewController.self as AnyClass)
+    public static var storyboardBundle = Assets.bundle
     
     @IBOutlet weak var emailSignInButton: UIButton!
 

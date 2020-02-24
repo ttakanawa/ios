@@ -7,157 +7,157 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C404DB123FF054E00C91122 /* TimeEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C404DB023FF054E00C91122 /* TimeEntryCell.swift */; };
-		8C8DC6B723FEDA8D00104A09 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC6AD23FEDA8D00104A09 /* Timer.framework */; };
-		8C8DC6BC23FEDA8D00104A09 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6BB23FEDA8D00104A09 /* TimerTests.swift */; };
-		8C8DC6BE23FEDA8D00104A09 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C8DC6B023FEDA8D00104A09 /* Timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C8DC6F123FEDB7600104A09 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6E723FEDB7600104A09 /* TimerCoordinator.swift */; };
-		8C8DC6F223FEDB7600104A09 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6E923FEDB7600104A09 /* TimerState.swift */; };
-		8C8DC6F323FEDB7600104A09 /* TimerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6EB23FEDB7600104A09 /* TimerReducer.swift */; };
-		8C8DC6F523FEDB7600104A09 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6EE23FEDB7600104A09 /* TimerViewController.swift */; };
-		8C8DC6F623FEDB7600104A09 /* TimerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DC6F023FEDB7600104A09 /* TimerAction.swift */; };
-		8C8DC6FD23FEDE8B00104A09 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC6FC23FEDE8B00104A09 /* Architecture.framework */; };
-		8C8DC70123FEDE9000104A09 /* RxSwiftDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC70023FEDE9000104A09 /* RxSwiftDependency.framework */; };
-		8C8DC70423FEDE9600104A09 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC70323FEDE9600104A09 /* Models.framework */; };
-		8C8DC70723FEDEA400104A09 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8DC70623FEDEA400104A09 /* Repository.framework */; };
+		8C2516C92403C1B000BAD4B5 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2516BF2403C1B000BAD4B5 /* Timer.framework */; };
+		8C2516CE2403C1B000BAD4B5 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2516CD2403C1B000BAD4B5 /* TimerTests.swift */; };
+		8C2516D02403C1B000BAD4B5 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2516C22403C1B000BAD4B5 /* Timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C2517882403C27200BAD4B5 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25177E2403C27200BAD4B5 /* TimerCoordinator.swift */; };
+		8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */; };
+		8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517812403C27200BAD4B5 /* TimerViewController.swift */; };
+		8C25178B2403C27200BAD4B5 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517832403C27200BAD4B5 /* TimerState.swift */; };
+		8C25178C2403C27200BAD4B5 /* TimerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517852403C27200BAD4B5 /* TimerAction.swift */; };
+		8C25178D2403C27200BAD4B5 /* TimerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517872403C27200BAD4B5 /* TimerReducer.swift */; };
+		8C2518A62403C78100BAD4B5 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A52403C78100BAD4B5 /* Architecture.framework */; };
+		8C2518AA2403C78600BAD4B5 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A92403C78600BAD4B5 /* Models.framework */; };
+		8C2518AD2403C79000BAD4B5 /* Assets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518AC2403C79000BAD4B5 /* Assets.framework */; };
+		8C2518C02403C87200BAD4B5 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518BF2403C87200BAD4B5 /* Repository.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8C8DC6B823FEDA8D00104A09 /* PBXContainerItemProxy */ = {
+		8C2516CA2403C1B000BAD4B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8C8DC6A423FEDA8D00104A09 /* Project object */;
+			containerPortal = 8C2516B62403C1B000BAD4B5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8C8DC6AC23FEDA8D00104A09;
+			remoteGlobalIDString = 8C2516BE2403C1B000BAD4B5;
 			remoteInfo = Timer;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C404DB023FF054E00C91122 /* TimeEntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryCell.swift; sourceTree = "<group>"; };
-		8C8DC6AD23FEDA8D00104A09 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C8DC6B023FEDA8D00104A09 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
-		8C8DC6B123FEDA8D00104A09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C8DC6B623FEDA8D00104A09 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C8DC6BB23FEDA8D00104A09 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
-		8C8DC6BD23FEDA8D00104A09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C8DC6E723FEDB7600104A09 /* TimerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
-		8C8DC6E923FEDB7600104A09 /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
-		8C8DC6EB23FEDB7600104A09 /* TimerReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerReducer.swift; sourceTree = "<group>"; };
-		8C8DC6EE23FEDB7600104A09 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		8C8DC6F023FEDB7600104A09 /* TimerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerAction.swift; sourceTree = "<group>"; };
-		8C8DC6FC23FEDE8B00104A09 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C8DC70023FEDE9000104A09 /* RxSwiftDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C8DC70323FEDE9600104A09 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C8DC70623FEDEA400104A09 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CC4E7652400480600A93BDA /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2516BF2403C1B000BAD4B5 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2516C22403C1B000BAD4B5 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		8C2516C32403C1B000BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C2516C82403C1B000BAD4B5 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2516CD2403C1B000BAD4B5 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
+		8C2516CF2403C1B000BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C25177E2403C27200BAD4B5 /* TimerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
+		8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryCell.swift; sourceTree = "<group>"; };
+		8C2517812403C27200BAD4B5 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		8C2517832403C27200BAD4B5 /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
+		8C2517852403C27200BAD4B5 /* TimerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerAction.swift; sourceTree = "<group>"; };
+		8C2517872403C27200BAD4B5 /* TimerReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerReducer.swift; sourceTree = "<group>"; };
+		8C2518A52403C78100BAD4B5 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2518A92403C78600BAD4B5 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2518AC2403C79000BAD4B5 /* Assets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Assets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2518BF2403C87200BAD4B5 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C2518EE2403CA5F00BAD4B5 /* RxDatasourcesDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDatasourcesDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8C8DC6AA23FEDA8D00104A09 /* Frameworks */ = {
+		8C2516BC2403C1B000BAD4B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C8DC70723FEDEA400104A09 /* Repository.framework in Frameworks */,
-				8C8DC6FD23FEDE8B00104A09 /* Architecture.framework in Frameworks */,
-				8C8DC70123FEDE9000104A09 /* RxSwiftDependency.framework in Frameworks */,
-				8C8DC70423FEDE9600104A09 /* Models.framework in Frameworks */,
+				8C2518C02403C87200BAD4B5 /* Repository.framework in Frameworks */,
+				8C2518AD2403C79000BAD4B5 /* Assets.framework in Frameworks */,
+				8C2518AA2403C78600BAD4B5 /* Models.framework in Frameworks */,
+				8C2518A62403C78100BAD4B5 /* Architecture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C8DC6B323FEDA8D00104A09 /* Frameworks */ = {
+		8C2516C52403C1B000BAD4B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C8DC6B723FEDA8D00104A09 /* Timer.framework in Frameworks */,
+				8C2516C92403C1B000BAD4B5 /* Timer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C8DC6A323FEDA8D00104A09 = {
+		8C2516B52403C1B000BAD4B5 = {
 			isa = PBXGroup;
 			children = (
-				8C8DC6AF23FEDA8D00104A09 /* Timer */,
-				8C8DC6BA23FEDA8D00104A09 /* TimerTests */,
-				8C8DC6AE23FEDA8D00104A09 /* Products */,
-				8C8DC6FB23FEDE8B00104A09 /* Frameworks */,
+				8C2516C12403C1B000BAD4B5 /* Timer */,
+				8C2516CC2403C1B000BAD4B5 /* TimerTests */,
+				8C2516C02403C1B000BAD4B5 /* Products */,
+				8C2518A42403C78100BAD4B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		8C8DC6AE23FEDA8D00104A09 /* Products */ = {
+		8C2516C02403C1B000BAD4B5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C8DC6AD23FEDA8D00104A09 /* Timer.framework */,
-				8C8DC6B623FEDA8D00104A09 /* TimerTests.xctest */,
+				8C2516BF2403C1B000BAD4B5 /* Timer.framework */,
+				8C2516C82403C1B000BAD4B5 /* TimerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8C8DC6AF23FEDA8D00104A09 /* Timer */ = {
+		8C2516C12403C1B000BAD4B5 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				8C8DC6E723FEDB7600104A09 /* TimerCoordinator.swift */,
-				8C8DC6EF23FEDB7600104A09 /* Actions */,
-				8C8DC6EA23FEDB7600104A09 /* Reducers */,
-				8C8DC6E823FEDB7600104A09 /* State */,
-				8C8DC6EC23FEDB7600104A09 /* Views */,
-				8C8DC6B023FEDA8D00104A09 /* Timer.h */,
-				8C8DC6B123FEDA8D00104A09 /* Info.plist */,
+				8C25177E2403C27200BAD4B5 /* TimerCoordinator.swift */,
+				8C2517842403C27200BAD4B5 /* Actions */,
+				8C2517862403C27200BAD4B5 /* Reducers */,
+				8C2517822403C27200BAD4B5 /* State */,
+				8C25177F2403C27200BAD4B5 /* Views */,
+				8C2516C22403C1B000BAD4B5 /* Timer.h */,
+				8C2516C32403C1B000BAD4B5 /* Info.plist */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
 		};
-		8C8DC6BA23FEDA8D00104A09 /* TimerTests */ = {
+		8C2516CC2403C1B000BAD4B5 /* TimerTests */ = {
 			isa = PBXGroup;
 			children = (
-				8C8DC6BB23FEDA8D00104A09 /* TimerTests.swift */,
-				8C8DC6BD23FEDA8D00104A09 /* Info.plist */,
+				8C2516CD2403C1B000BAD4B5 /* TimerTests.swift */,
+				8C2516CF2403C1B000BAD4B5 /* Info.plist */,
 			);
 			path = TimerTests;
 			sourceTree = "<group>";
 		};
-		8C8DC6E823FEDB7600104A09 /* State */ = {
+		8C25177F2403C27200BAD4B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8C8DC6E923FEDB7600104A09 /* TimerState.swift */,
-			);
-			path = State;
-			sourceTree = "<group>";
-		};
-		8C8DC6EA23FEDB7600104A09 /* Reducers */ = {
-			isa = PBXGroup;
-			children = (
-				8C8DC6EB23FEDB7600104A09 /* TimerReducer.swift */,
-			);
-			path = Reducers;
-			sourceTree = "<group>";
-		};
-		8C8DC6EC23FEDB7600104A09 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8C8DC6EE23FEDB7600104A09 /* TimerViewController.swift */,
-				8C404DB023FF054E00C91122 /* TimeEntryCell.swift */,
+				8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */,
+				8C2517812403C27200BAD4B5 /* TimerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		8C8DC6EF23FEDB7600104A09 /* Actions */ = {
+		8C2517822403C27200BAD4B5 /* State */ = {
 			isa = PBXGroup;
 			children = (
-				8C8DC6F023FEDB7600104A09 /* TimerAction.swift */,
+				8C2517832403C27200BAD4B5 /* TimerState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		8C2517842403C27200BAD4B5 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				8C2517852403C27200BAD4B5 /* TimerAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
 		};
-		8C8DC6FB23FEDE8B00104A09 /* Frameworks */ = {
+		8C2517862403C27200BAD4B5 /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
-				8CC4E7652400480600A93BDA /* UI.framework */,
-				8C8DC70623FEDEA400104A09 /* Repository.framework */,
-				8C8DC70323FEDE9600104A09 /* Models.framework */,
-				8C8DC70023FEDE9000104A09 /* RxSwiftDependency.framework */,
-				8C8DC6FC23FEDE8B00104A09 /* Architecture.framework */,
+				8C2517872403C27200BAD4B5 /* TimerReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		8C2518A42403C78100BAD4B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C2518EE2403CA5F00BAD4B5 /* RxDatasourcesDep.framework */,
+				8C2518BF2403C87200BAD4B5 /* Repository.framework */,
+				8C2518AC2403C79000BAD4B5 /* Assets.framework */,
+				8C2518A92403C78600BAD4B5 /* Models.framework */,
+				8C2518A52403C78100BAD4B5 /* Architecture.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,25 +165,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		8C8DC6A823FEDA8D00104A09 /* Headers */ = {
+		8C2516BA2403C1B000BAD4B5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C8DC6BE23FEDA8D00104A09 /* Timer.h in Headers */,
+				8C2516D02403C1B000BAD4B5 /* Timer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8C8DC6AC23FEDA8D00104A09 /* Timer */ = {
+		8C2516BE2403C1B000BAD4B5 /* Timer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C8DC6C123FEDA8D00104A09 /* Build configuration list for PBXNativeTarget "Timer" */;
+			buildConfigurationList = 8C2516D32403C1B000BAD4B5 /* Build configuration list for PBXNativeTarget "Timer" */;
 			buildPhases = (
-				8C8DC6A823FEDA8D00104A09 /* Headers */,
-				8C8DC6A923FEDA8D00104A09 /* Sources */,
-				8C8DC6AA23FEDA8D00104A09 /* Frameworks */,
-				8C8DC6AB23FEDA8D00104A09 /* Resources */,
+				8C2516BA2403C1B000BAD4B5 /* Headers */,
+				8C2516BB2403C1B000BAD4B5 /* Sources */,
+				8C2516BC2403C1B000BAD4B5 /* Frameworks */,
+				8C2516BD2403C1B000BAD4B5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -191,47 +191,47 @@
 			);
 			name = Timer;
 			productName = Timer;
-			productReference = 8C8DC6AD23FEDA8D00104A09 /* Timer.framework */;
+			productReference = 8C2516BF2403C1B000BAD4B5 /* Timer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8C8DC6B523FEDA8D00104A09 /* TimerTests */ = {
+		8C2516C72403C1B000BAD4B5 /* TimerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C8DC6C423FEDA8D00104A09 /* Build configuration list for PBXNativeTarget "TimerTests" */;
+			buildConfigurationList = 8C2516D62403C1B000BAD4B5 /* Build configuration list for PBXNativeTarget "TimerTests" */;
 			buildPhases = (
-				8C8DC6B223FEDA8D00104A09 /* Sources */,
-				8C8DC6B323FEDA8D00104A09 /* Frameworks */,
-				8C8DC6B423FEDA8D00104A09 /* Resources */,
+				8C2516C42403C1B000BAD4B5 /* Sources */,
+				8C2516C52403C1B000BAD4B5 /* Frameworks */,
+				8C2516C62403C1B000BAD4B5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8C8DC6B923FEDA8D00104A09 /* PBXTargetDependency */,
+				8C2516CB2403C1B000BAD4B5 /* PBXTargetDependency */,
 			);
 			name = TimerTests;
 			productName = TimerTests;
-			productReference = 8C8DC6B623FEDA8D00104A09 /* TimerTests.xctest */;
+			productReference = 8C2516C82403C1B000BAD4B5 /* TimerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8C8DC6A423FEDA8D00104A09 /* Project object */ = {
+		8C2516B62403C1B000BAD4B5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Ricardo Sánchez Sotres";
 				TargetAttributes = {
-					8C8DC6AC23FEDA8D00104A09 = {
-						CreatedOnToolsVersion = 11.4;
-						LastSwiftMigration = 1140;
+					8C2516BE2403C1B000BAD4B5 = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
-					8C8DC6B523FEDA8D00104A09 = {
-						CreatedOnToolsVersion = 11.4;
+					8C2516C72403C1B000BAD4B5 = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 8C8DC6A723FEDA8D00104A09 /* Build configuration list for PBXProject "Timer" */;
+			buildConfigurationList = 8C2516B92403C1B000BAD4B5 /* Build configuration list for PBXProject "Timer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -239,26 +239,26 @@
 				en,
 				Base,
 			);
-			mainGroup = 8C8DC6A323FEDA8D00104A09;
-			productRefGroup = 8C8DC6AE23FEDA8D00104A09 /* Products */;
+			mainGroup = 8C2516B52403C1B000BAD4B5;
+			productRefGroup = 8C2516C02403C1B000BAD4B5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8C8DC6AC23FEDA8D00104A09 /* Timer */,
-				8C8DC6B523FEDA8D00104A09 /* TimerTests */,
+				8C2516BE2403C1B000BAD4B5 /* Timer */,
+				8C2516C72403C1B000BAD4B5 /* TimerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8C8DC6AB23FEDA8D00104A09 /* Resources */ = {
+		8C2516BD2403C1B000BAD4B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C8DC6B423FEDA8D00104A09 /* Resources */ = {
+		8C2516C62403C1B000BAD4B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -268,39 +268,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8C8DC6A923FEDA8D00104A09 /* Sources */ = {
+		8C2516BB2403C1B000BAD4B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C8DC6F523FEDB7600104A09 /* TimerViewController.swift in Sources */,
-				8C8DC6F123FEDB7600104A09 /* TimerCoordinator.swift in Sources */,
-				8C8DC6F323FEDB7600104A09 /* TimerReducer.swift in Sources */,
-				8C8DC6F623FEDB7600104A09 /* TimerAction.swift in Sources */,
-				8C8DC6F223FEDB7600104A09 /* TimerState.swift in Sources */,
-				8C404DB123FF054E00C91122 /* TimeEntryCell.swift in Sources */,
+				8C2517882403C27200BAD4B5 /* TimerCoordinator.swift in Sources */,
+				8C25178B2403C27200BAD4B5 /* TimerState.swift in Sources */,
+				8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */,
+				8C25178C2403C27200BAD4B5 /* TimerAction.swift in Sources */,
+				8C25178D2403C27200BAD4B5 /* TimerReducer.swift in Sources */,
+				8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8C8DC6B223FEDA8D00104A09 /* Sources */ = {
+		8C2516C42403C1B000BAD4B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C8DC6BC23FEDA8D00104A09 /* TimerTests.swift in Sources */,
+				8C2516CE2403C1B000BAD4B5 /* TimerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8C8DC6B923FEDA8D00104A09 /* PBXTargetDependency */ = {
+		8C2516CB2403C1B000BAD4B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8C8DC6AC23FEDA8D00104A09 /* Timer */;
-			targetProxy = 8C8DC6B823FEDA8D00104A09 /* PBXContainerItemProxy */;
+			target = 8C2516BE2403C1B000BAD4B5 /* Timer */;
+			targetProxy = 8C2516CA2403C1B000BAD4B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		8C8DC6BF23FEDA8D00104A09 /* Debug */ = {
+		8C2516D12403C1B000BAD4B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -351,7 +351,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -363,7 +364,7 @@
 			};
 			name = Debug;
 		};
-		8C8DC6C023FEDA8D00104A09 /* Release */ = {
+		8C2516D22403C1B000BAD4B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -408,7 +409,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -420,7 +422,7 @@
 			};
 			name = Release;
 		};
-		8C8DC6C223FEDA8D00104A09 /* Debug */ = {
+		8C2516D42403C1B000BAD4B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -432,14 +434,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Timer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.daneel.Timer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.aurora.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -448,7 +448,7 @@
 			};
 			name = Debug;
 		};
-		8C8DC6C323FEDA8D00104A09 /* Release */ = {
+		8C2516D52403C1B000BAD4B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -460,14 +460,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Timer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.daneel.Timer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.aurora.Timer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -475,7 +473,7 @@
 			};
 			name = Release;
 		};
-		8C8DC6C523FEDA8D00104A09 /* Debug */ = {
+		8C2516D72403C1B000BAD4B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -487,14 +485,14 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.daneel.TimerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.aurora.TimerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		8C8DC6C623FEDA8D00104A09 /* Release */ = {
+		8C2516D82403C1B000BAD4B5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -506,7 +504,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.daneel.TimerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.aurora.TimerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -516,34 +514,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C8DC6A723FEDA8D00104A09 /* Build configuration list for PBXProject "Timer" */ = {
+		8C2516B92403C1B000BAD4B5 /* Build configuration list for PBXProject "Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C8DC6BF23FEDA8D00104A09 /* Debug */,
-				8C8DC6C023FEDA8D00104A09 /* Release */,
+				8C2516D12403C1B000BAD4B5 /* Debug */,
+				8C2516D22403C1B000BAD4B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C8DC6C123FEDA8D00104A09 /* Build configuration list for PBXNativeTarget "Timer" */ = {
+		8C2516D32403C1B000BAD4B5 /* Build configuration list for PBXNativeTarget "Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C8DC6C223FEDA8D00104A09 /* Debug */,
-				8C8DC6C323FEDA8D00104A09 /* Release */,
+				8C2516D42403C1B000BAD4B5 /* Debug */,
+				8C2516D52403C1B000BAD4B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C8DC6C423FEDA8D00104A09 /* Build configuration list for PBXNativeTarget "TimerTests" */ = {
+		8C2516D62403C1B000BAD4B5 /* Build configuration list for PBXNativeTarget "TimerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C8DC6C523FEDA8D00104A09 /* Debug */,
-				8C8DC6C623FEDA8D00104A09 /* Release */,
+				8C2516D72403C1B000BAD4B5 /* Debug */,
+				8C2516D82403C1B000BAD4B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8C8DC6A423FEDA8D00104A09 /* Project object */;
+	rootObject = 8C2516B62403C1B000BAD4B5 /* Project object */;
 }

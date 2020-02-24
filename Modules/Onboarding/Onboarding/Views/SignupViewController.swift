@@ -12,12 +12,14 @@ import RxSwift
 import Architecture
 import Models
 import API
+import Utils
+import Assets
 
 class SignupViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Onboarding"
-    public static var storyboardBundle = Bundle(for: SignupViewController.self as AnyClass)
-    
+    public static var storyboardBundle = Bundle(for: Assets.self as AnyClass)
+
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
