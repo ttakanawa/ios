@@ -19,8 +19,8 @@ var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { stat
         case .setForegroundStatus:
             state.appStatus = .foreground
             
-        case .onboarding(.setUser(_)):
-            return Effect.from(action: .timer(.load))
+//        case .onboarding(.setUser(_)):            
+//            return Effect.from(action: .timer(.load))
         
         case .onboarding, .timer:
             break                    

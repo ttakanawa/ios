@@ -11,11 +11,34 @@ import Models
 
 public enum OnboardingAction
 {
-    case emailEntered(String)
-    case passwordEntered(String)
-    case loginTapped
-    case signupTapped
+    case emailSingInTapped    
+    case emailLogin(EmailLoginAction)
+    case emailSignup(EmailSignupAction)
+}
+
+
+extension OnboardingAction
+{
+    var emailLogin: EmailLoginAction? {
+        get {
+            guard case let .emailLogin(value) = self else { return nil }
+            return value
+        }
+        set {
+            guard case .emailLogin = self, let newValue = newValue else { return }
+            self = .emailLogin(newValue)
+        }
+    }
     
-    case setUser(User)
-    case setError(Error)
+    var emailSignup: EmailSignupAction?
+    {
+        get {
+            guard case let .emailSignup(value) = self else { return nil }
+            return value
+        }
+        set {
+            guard case .emailSignup = self, let newValue = newValue else { return }
+            self = .emailSignup(newValue)
+        }
+    }
 }

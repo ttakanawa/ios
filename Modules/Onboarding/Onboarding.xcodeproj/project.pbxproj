@@ -22,6 +22,10 @@
 		8C2518B12403C79F00BAD4B5 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518B02403C79F00BAD4B5 /* Models.framework */; };
 		8C2518B42403C7A300BAD4B5 /* Assets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518B32403C7A300BAD4B5 /* Assets.framework */; };
 		8C2518C42403C88500BAD4B5 /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518C32403C88500BAD4B5 /* API.framework */; };
+		8CAAACAB24050FC700E9BBAF /* EmailLoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACAA24050FC700E9BBAF /* EmailLoginAction.swift */; };
+		8CAAACAD24050FFF00E9BBAF /* EmailSignupAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACAC24050FFF00E9BBAF /* EmailSignupAction.swift */; };
+		8CAAACAF2405104400E9BBAF /* EmailLoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACAE2405104400E9BBAF /* EmailLoginReducer.swift */; };
+		8CAAACB12405104E00E9BBAF /* EmailSignupReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACB02405104E00E9BBAF /* EmailSignupReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		8C2518B02403C79F00BAD4B5 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518B32403C7A300BAD4B5 /* Assets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Assets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518C32403C88500BAD4B5 /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CAAACAA24050FC700E9BBAF /* EmailLoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginAction.swift; sourceTree = "<group>"; };
+		8CAAACAC24050FFF00E9BBAF /* EmailSignupAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignupAction.swift; sourceTree = "<group>"; };
+		8CAAACAE2405104400E9BBAF /* EmailLoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginReducer.swift; sourceTree = "<group>"; };
+		8CAAACB02405104E00E9BBAF /* EmailSignupReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignupReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				8C25176E2403C25900BAD4B5 /* OnboardingAction.swift */,
+				8CAAACAA24050FC700E9BBAF /* EmailLoginAction.swift */,
+				8CAAACAC24050FFF00E9BBAF /* EmailSignupAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -143,6 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				8C2517712403C25900BAD4B5 /* OnboardingReducer.swift */,
+				8CAAACAE2405104400E9BBAF /* EmailLoginReducer.swift */,
+				8CAAACB02405104E00E9BBAF /* EmailSignupReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -286,8 +298,12 @@
 			files = (
 				8C2517782403C25900BAD4B5 /* LoginViewController.swift in Sources */,
 				8C2517762403C25900BAD4B5 /* SignupViewController.swift in Sources */,
+				8CAAACAB24050FC700E9BBAF /* EmailLoginAction.swift in Sources */,
 				8C2517792403C25900BAD4B5 /* OnboardingAction.swift in Sources */,
+				8CAAACAD24050FFF00E9BBAF /* EmailSignupAction.swift in Sources */,
 				8C2517772403C25900BAD4B5 /* OnboardingViewController.swift in Sources */,
+				8CAAACAF2405104400E9BBAF /* EmailLoginReducer.swift in Sources */,
+				8CAAACB12405104E00E9BBAF /* EmailSignupReducer.swift in Sources */,
 				8C25177D2403C25900BAD4B5 /* OnboardingState.swift in Sources */,
 				8C25177A2403C25900BAD4B5 /* OnboardingCoordinator.swift in Sources */,
 				8C25177B2403C25900BAD4B5 /* OnboardingReducer.swift in Sources */,

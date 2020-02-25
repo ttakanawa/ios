@@ -38,7 +38,10 @@ public class OnboardingCoordinator: Coordinator
     func showEmailSignIn()
     {
         let vc = LoginViewController.instantiate()
-        vc.store = store
+        vc.store = store.view(
+            state: { $0 },
+            action: { .emailLogin($0) }
+        )
         vc.coordinator = self
         let nav = UINavigationController(rootViewController: vc)
         if let presented = navigationController.presentedViewController {
@@ -53,7 +56,10 @@ public class OnboardingCoordinator: Coordinator
     func showEmailSignUp()
     {
         let vc = SignupViewController.instantiate()
-        vc.store = store
+        vc.store = store.view(
+            state: { $0 },
+            action: { .emailSignup($0) }
+        )
         vc.coordinator = self
         let nav = UINavigationController(rootViewController: vc)
         if let presented = navigationController.presentedViewController {

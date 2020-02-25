@@ -8,49 +8,39 @@
 
 import Foundation
 import Architecture
-import Models
 import RxSwift
 import API
 
-public let onboardingReducer = Reducer<OnboardingState, OnboardingAction, UserAPI> { state, action, api in
+let mainReducer = Reducer<OnboardingState, OnboardingAction, UserAPI> { state, action, api in
     
     switch action {
         
-    case let .emailEntered(email):
-        state.email = email
-                
-    case let .passwordEntered(password):
-        state.password = password
+    case .emailSingInTapped:
+        break
         
-    case .loginTapped:
-        state.user = .loading
-        return loadUser(email: state.email, password: state.password, api: api)
-
-    case .signupTapped:
-        state.user = .loading
-        return loadUser(email: state.email, password: state.password, api: api)
+    case .emailLogin(_):
+        break
         
-    case let .setUser(user):
-        state.user = .loaded(user)
-        api.setAuth(token: user.apiToken)
-        
-    case let .setError(error):
-        state.user = .error(error)
+    case .emailSignup(_):
+        break
     }
-    
+
     return .empty
 }
 
-fileprivate func loadUser(email: String, password: String, api: UserAPI) -> Effect<OnboardingAction>
-{
-    return api.loginUser(email: email, password: password)
-        .map({ OnboardingAction.setUser($0) })
-        .catchError({ Observable.just(OnboardingAction.setError($0)) })
-        .toEffect()
-}
 
-fileprivate func signupUser(email: String, password: String, api: UserAPI) -> Effect<OnboardingAction>
-{
-    return Observable.empty()
-        .toEffect()
-}
+public let onboardingReducer = combine(
+    mainReducer,
+    pullback(
+        emailLoginReducer,
+        state: \OnboardingState.self,
+        action: \OnboardingAction.emailLogin,
+        environment: \UserAPI.self
+    ),
+    pullback(
+        emailSignupReducer,
+        state: \OnboardingState.self,
+        action: \OnboardingAction.emailSignup,
+        environment: \UserAPI.self
+    )
+)

@@ -15,6 +15,8 @@ import API
 import Utils
 import Assets
 
+public typealias EmailSignupStore = Store<OnboardingState, EmailSignupAction>
+
 class SignupViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Onboarding"
@@ -27,7 +29,7 @@ class SignupViewController: UIViewController, Storyboarded
     
     private var disposeBag = DisposeBag()
     
-    public weak var store: OnboardingStore!
+    public weak var store: EmailSignupStore!
     public weak var coordinator: OnboardingCoordinator!
     
     override func viewDidLoad() {
@@ -48,12 +50,12 @@ class SignupViewController: UIViewController, Storyboarded
             .disposed(by: disposeBag)
         
         emailTextField.rx.text.compactMap({ $0 })
-            .map(OnboardingAction.emailEntered)
+            .map(EmailSignupAction.emailEntered)
             .bind(onNext: store.dispatch)
             .disposed(by: disposeBag)
         
         passwordTextField.rx.text.compactMap({ $0 })
-            .map(OnboardingAction.passwordEntered)
+            .map(EmailSignupAction.passwordEntered)
             .bind(onNext: store.dispatch)
             .disposed(by: disposeBag)
         
@@ -62,7 +64,7 @@ class SignupViewController: UIViewController, Storyboarded
             .disposed(by: disposeBag)
         
         signupButton.rx.tap
-            .mapTo(OnboardingAction.loginTapped)
+            .mapTo(EmailSignupAction.signupTapped)
             .subscribe(onNext: store.dispatch)
             .disposed(by: disposeBag)
         
