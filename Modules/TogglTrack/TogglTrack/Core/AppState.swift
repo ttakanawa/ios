@@ -23,6 +23,7 @@ enum AppStatus
 public struct AppState
 {
     var appStatus: AppStatus = .unknown
+    public var route: AppRoute = .start
     public var user: Loadable<User> = .nothing
     public var entities: TimeLogEntities = TimeLogEntities()
     
@@ -39,6 +40,7 @@ extension AppState: OnboardingState
         }
         set {
             user = newValue.user
+            route = newValue.route
             localOnboardingState = newValue.localOnboardingState
         }
     }

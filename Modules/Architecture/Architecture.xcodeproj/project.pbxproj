@@ -15,6 +15,7 @@
 		8C25186C2403C61900BAD4B5 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518692403C61900BAD4B5 /* Effect.swift */; };
 		8C2518BC2403C85E00BAD4B5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518BB2403C85E00BAD4B5 /* Utils.framework */; };
 		8C2519642403CE3700BAD4B5 /* RxSwiftDep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2519632403CE3700BAD4B5 /* RxSwiftDep.framework */; };
+		8CAAAC9C2404FE9F00E9BBAF /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAAC9B2404FE9F00E9BBAF /* Routes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		8C2518872403C6A400BAD4B5 /* RxCocoaDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoaDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518BB2403C85E00BAD4B5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2519632403CE3700BAD4B5 /* RxSwiftDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CAAAC9B2404FE9F00E9BBAF /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +88,8 @@
 		8C25184F2403C60B00BAD4B5 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
-				8C2518672403C61900BAD4B5 /* BaseStore.swift */,
-				8C2518692403C61900BAD4B5 /* Effect.swift */,
-				8C2518682403C61900BAD4B5 /* Reducer.swift */,
-				8C2518502403C60B00BAD4B5 /* Architecture.h */,
+				8CAAAC9A2404FE9600E9BBAF /* App */,
+				8CAAAC992404FE8B00E9BBAF /* Core */,
 				8C2518512403C60B00BAD4B5 /* Info.plist */,
 			);
 			path = Architecture;
@@ -113,6 +113,25 @@
 				8C25187E2403C63A00BAD4B5 /* RxSwiftDep.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CAAAC992404FE8B00E9BBAF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8C2518672403C61900BAD4B5 /* BaseStore.swift */,
+				8C2518692403C61900BAD4B5 /* Effect.swift */,
+				8C2518682403C61900BAD4B5 /* Reducer.swift */,
+				8C2518502403C60B00BAD4B5 /* Architecture.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8CAAAC9A2404FE9600E9BBAF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8CAAAC9B2404FE9F00E9BBAF /* Routes.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C25186C2403C61900BAD4B5 /* Effect.swift in Sources */,
+				8CAAAC9C2404FE9F00E9BBAF /* Routes.swift in Sources */,
 				8C25186B2403C61900BAD4B5 /* Reducer.swift in Sources */,
 				8C25186A2403C61900BAD4B5 /* BaseStore.swift in Sources */,
 			);
