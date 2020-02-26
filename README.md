@@ -26,15 +26,24 @@ This is a high level overview of the different parts of the architecture.
 
 There's one global `Store` and one `AppState`. But we can *view* into the store to get sub-stores that only work on one part of the state. More on that later.
 
-There's also one main `Reducer` but multiple sub-reducers that handle a limited set of actions and only a part of the state. Those reducers are then *pulled back* and *combined* into the main reducer.
+There's also one main `Reducer` but multiple sub-reducers that handle a limited set of actions and only a part of the state. Those reducers are then *pulled back* and *combined* into the main 
+reducer.
 
-## Redux
+## Store & State
 
-## Structure
+## Reducers & Pullback
 
-### Features
+## High-order reducers
 
-### Navigation
+## Effects
 
-### Modules
+## Features
+
+## Navigation
+
+# Project Structure
+
+## Frameworks & Modules
+
+
 
