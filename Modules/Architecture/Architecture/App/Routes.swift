@@ -8,7 +8,12 @@
 
 import Foundation
 
-public enum AppRoute
+public protocol Route
+{
+    var path: String { get }
+}
+
+public enum AppRoute: Route
 {
     case onboarding(OnboardingRoute)
     case mainTab
@@ -17,21 +22,21 @@ public enum AppRoute
     {
         switch self {
         case let .onboarding(route):
-            return "root/onboarding/\(route)"
+            return "root/onboarding/\(route.path)"
         case .mainTab:
             return "root/mainTab"
         }
     }
 }
 
-public enum OnboardingRoute
+public enum OnboardingRoute: Route
 {
     case start
     case emailLogin(EmailLoginRoute)
     case emailSignup(EmailSignupRoute)
     case loading
     
-    var path: String
+    public var path: String
     {
         switch self {
         case .start:
@@ -46,11 +51,11 @@ public enum OnboardingRoute
     }
 }
 
-public enum EmailLoginRoute
+public enum EmailLoginRoute: Route
 {
     case start
     
-    var path: String
+    public var path: String
     {
         switch self {
         case .start:
@@ -59,12 +64,12 @@ public enum EmailLoginRoute
     }
 }
 
-public enum EmailSignupRoute
+public enum EmailSignupRoute: Route
 {
     case start
     case tos
     
-    var path: String
+    public var path: String
     {
         switch self {
         case .start:

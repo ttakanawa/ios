@@ -24,8 +24,7 @@ public final class AppCoordinator: Coordinator
         super.init("root")
         
         store
-            .select({ $0.route })
-            .map{ "root/\($0)"}
+            .select({ $0.route.path })
             .do(onNext: { print($0) })
             .distinctUntilChanged()
             .drive(onNext: navigate)

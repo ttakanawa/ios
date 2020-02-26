@@ -16,7 +16,7 @@ let mainReducer = Reducer<OnboardingState, OnboardingAction, UserAPI> { state, a
     switch action {
         
     case .emailSingInTapped:
-        state.route = "onboarding/emailLogin/start"
+        state.route = AppRoute.onboarding(.emailLogin(.start))
         break
         
     case .emailLogin(_):
