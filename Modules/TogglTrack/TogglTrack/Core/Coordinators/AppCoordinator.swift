@@ -30,7 +30,7 @@ public final class AppCoordinator: Coordinator
         
         store
             .select({ $0.route.path })
-            .do(onNext: { print($0) })
+            .do(onNext: { print("Route: \($0)") })
             .distinctUntilChanged()
             .drive(onNext: navigate)
             .disposed(by: disposeBag)

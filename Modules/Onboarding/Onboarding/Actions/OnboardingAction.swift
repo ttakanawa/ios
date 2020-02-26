@@ -42,3 +42,18 @@ extension OnboardingAction
         }
     }
 }
+
+extension OnboardingAction: CustomDebugStringConvertible
+{
+    public var debugDescription: String
+    {
+        switch self {
+        case .emailSingInTapped:
+            return "EmailSignInTapped"
+        case let .emailLogin(action):
+            return action.debugDescription
+        case let .emailSignup(action):
+            return action.debugDescription
+        }
+    }
+}

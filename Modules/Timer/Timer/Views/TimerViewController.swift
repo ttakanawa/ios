@@ -30,6 +30,7 @@ public class TimerViewController: UIViewController, Storyboarded
     public static var storyboardBundle = Assets.bundle
 
     private var disposeBag = DisposeBag()
+    private var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntry>>?
     
     public var store: TimerStore!
     
@@ -40,24 +41,28 @@ public class TimerViewController: UIViewController, Storyboarded
         super.viewDidLoad()
         
         tableView.rowHeight = 72
-        
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntry>>(configureCell:
-        { dataSource, tableView, indexPath, item in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TimeEntryCell", for: indexPath) as! TimeEntryCell
-            cell.descriptionLabel.text = item.description
-            cell.startLabel.text = "This is a test"
-            return cell
-        })
-        
-        store.select(timeEntries)
-            .map({ [SectionModel(model: "", items: $0 )] })
-            .drive(tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-        
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    public override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+                
+        if dataSource == nil {
+            // We should do this in ViewDidLoad, but there's a bug that causes an ugly warning. That's why we are doing it here for now
+            dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntry>>(configureCell:
+                { dataSource, tableView, indexPath, item in
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "TimeEntryCell", for: indexPath) as! TimeEntryCell
+                    cell.descriptionLabel.text = item.description
+                    cell.startLabel.text = "This is a test"
+                    return cell
+            })
+            
+            store.select(timeEntries)
+                .map({ [SectionModel(model: "", items: $0 )] })
+                .drive(tableView.rx.items(dataSource: dataSource!))
+                .disposed(by: disposeBag)
+        }
+        
         store.dispatch(.load)
     }
 }

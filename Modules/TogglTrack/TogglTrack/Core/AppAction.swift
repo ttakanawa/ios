@@ -47,3 +47,24 @@ extension AppAction
         }
     }
 }
+
+extension AppAction: CustomDebugStringConvertible
+{
+    public var debugDescription: String
+    {
+        switch self {
+        case .setBackgroundStatus:
+            return "SetBackgroundStatus"
+        case .setForegroundStatus:
+            return "SetForegroundStatus"
+        case .start:
+            return "Start"
+        case let .tabBarTapped(tab):
+            return "TabSelected: \(tab)"
+        case let .onboarding(action):
+            return action.debugDescription
+        case let .timer(action):
+            return action.debugDescription
+        }
+    }
+}

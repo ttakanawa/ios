@@ -16,3 +16,18 @@ public enum TimerAction
     case setEntities([TimeEntry])
     case setError(Error)
 }
+
+extension TimerAction: CustomDebugStringConvertible
+{
+    public var debugDescription: String
+    {
+        switch self {
+        case .load:
+            return "Timer:Load"
+        case let .setEntities(entities):
+            return "SetEntities: \(entities.count)"
+        case let .setError(error):
+            return "SetError: \(error)"
+        }
+    }
+}
