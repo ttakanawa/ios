@@ -72,13 +72,13 @@ public class SignupViewController: UIViewController, Storyboarded
             .drive(userLabel.rx.text)
             .disposed(by: disposeBag)
         
-        //             store.select(userIsLoaded)
-        //                 .filter({ $0 })
-        //                 .drive(onNext: { [weak self] _ in
-        //                     self?.dismiss(animated: true) {
-        //                         self?.coordinator.loggedIn?()
-        //                     }
-        //                 })
-        //                 .disposed(by: disposeBag)
+        self.navigationController?.presentationController?.delegate = self
+    }
+}
+
+extension SignupViewController: UIAdaptivePresentationControllerDelegate
+{
+    public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        store.dispatch(.cancel)
     }
 }

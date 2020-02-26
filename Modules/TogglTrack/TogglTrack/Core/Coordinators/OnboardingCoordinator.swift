@@ -32,6 +32,9 @@ public final class OnboardingCoordinator: Coordinator
     {
         switch route {
         case "start":
+            if rootViewController is OnboardingViewController {
+                return
+            }
             let vc = OnboardingViewController.instantiate()
             vc.store = store.view(
                 state: { $0.onboardingState },
