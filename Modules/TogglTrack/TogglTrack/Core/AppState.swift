@@ -23,7 +23,7 @@ enum AppStatus
 public struct AppState
 {
     var appStatus: AppStatus = .unknown
-    public var route: AppRoute = .onboarding(.start)
+    public var route: AppRoute = .start
     public var user: Loadable<User> = .nothing
     public var entities: TimeLogEntities = TimeLogEntities()
     

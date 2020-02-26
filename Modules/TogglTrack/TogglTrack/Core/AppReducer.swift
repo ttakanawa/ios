@@ -13,17 +13,28 @@ import Timer
 var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { state, action, environment in
     switch action
     {
-        case .setBackgroundStatus:
-            state.appStatus = .background
-            
-        case .setForegroundStatus:
-            state.appStatus = .foreground
-            
-//        case .onboarding(.setUser(_)):            
-//            return Effect.from(action: .timer(.load))
+    case .setBackgroundStatus:
+        state.appStatus = .background
         
-        case .onboarding, .timer:
-            break                    
+    case .setForegroundStatus:
+        state.appStatus = .foreground
+        
+    case .start:
+        if state.user.isLoaded {
+            state.route = .main(.timer)
+        } else {
+            state.route = .onboarding(.start)
+        }
+        
+    case let .tabBarTapped(section):
+        state.route = [
+            .main(.timer),
+            .main(.reports),
+            .main(.calendar)
+        ][section]
+        
+    case .onboarding, .timer:
+        break
     }
     
     return .empty

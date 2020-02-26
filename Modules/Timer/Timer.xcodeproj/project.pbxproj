@@ -10,7 +10,6 @@
 		8C2516C92403C1B000BAD4B5 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2516BF2403C1B000BAD4B5 /* Timer.framework */; };
 		8C2516CE2403C1B000BAD4B5 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2516CD2403C1B000BAD4B5 /* TimerTests.swift */; };
 		8C2516D02403C1B000BAD4B5 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2516C22403C1B000BAD4B5 /* Timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C2517882403C27200BAD4B5 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25177E2403C27200BAD4B5 /* TimerCoordinator.swift */; };
 		8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */; };
 		8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517812403C27200BAD4B5 /* TimerViewController.swift */; };
 		8C25178B2403C27200BAD4B5 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517832403C27200BAD4B5 /* TimerState.swift */; };
@@ -39,7 +38,6 @@
 		8C2516C82403C1B000BAD4B5 /* TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2516CD2403C1B000BAD4B5 /* TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		8C2516CF2403C1B000BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C25177E2403C27200BAD4B5 /* TimerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
 		8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryCell.swift; sourceTree = "<group>"; };
 		8C2517812403C27200BAD4B5 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		8C2517832403C27200BAD4B5 /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 		8C2516C12403C1B000BAD4B5 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				8C25177E2403C27200BAD4B5 /* TimerCoordinator.swift */,
 				8C2517842403C27200BAD4B5 /* Actions */,
 				8C2517862403C27200BAD4B5 /* Reducers */,
 				8C2517822403C27200BAD4B5 /* State */,
@@ -272,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C2517882403C27200BAD4B5 /* TimerCoordinator.swift in Sources */,
 				8C25178B2403C27200BAD4B5 /* TimerState.swift in Sources */,
 				8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */,
 				8C25178C2403C27200BAD4B5 /* TimerAction.swift in Sources */,

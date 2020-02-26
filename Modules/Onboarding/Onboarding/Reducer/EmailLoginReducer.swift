@@ -37,6 +37,7 @@ let emailLoginReducer = Reducer<OnboardingState, EmailLoginAction, UserAPI> { st
     case let .setUser(user):
         state.user = .loaded(user)
         api.setAuth(token: user.apiToken)
+        state.route = AppRoute.main(.timer)
         
     case let .setError(error):
         state.user = .error(error)

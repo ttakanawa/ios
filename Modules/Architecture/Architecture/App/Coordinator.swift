@@ -18,7 +18,8 @@ public protocol CoordinatorProtocol: AnyObject
 open class Coordinator: CoordinatorProtocol
 {
     private let route: String
-    var child: Coordinator?
+    private var currentRoute: String = ""
+    public var child: Coordinator?
      
     public init(_ route: String)
     {
@@ -32,11 +33,11 @@ open class Coordinator: CoordinatorProtocol
             if child != nil {
                 child?.finish(completion: {
                     self.child = nil
-                    self.newRoute(route: components.last!)
+                    self.newRouteIfNecessary(route: components.last!)
                 })
             }
             
-            newRoute(route: components.last!)
+            newRouteIfNecessary(route: components.last!)
             
         } else {
             let subRoute = components.components(from: route)
@@ -51,11 +52,22 @@ open class Coordinator: CoordinatorProtocol
                     self.child = nil
                     self.navigate(to: path)
                 })
+                return
             }
             
             child = childForPath(subRoute.first!)
             child?.navigate(to: subRoute.joined(separator: "/"))
         }
+    }
+    
+    private func newRouteIfNecessary(route: String)
+    {
+        guard currentRoute != route else {
+            return
+        }
+        
+        currentRoute = route
+        newRoute(route: route)
     }
     
     open func finish(completion: (() -> Void)? = nil)
@@ -71,11 +83,6 @@ open class Coordinator: CoordinatorProtocol
     open func childForPath(_ path: String) -> Coordinator?
     {
         fatalError()
-    }
-    
-    private func lastPathComponent(path: String) -> String
-    {
-        String(path.split(separator: "/").last!)
     }
 }
 

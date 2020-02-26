@@ -15,16 +15,19 @@ public protocol Route
 
 public enum AppRoute: Route
 {
+    case start
     case onboarding(OnboardingRoute)
-    case mainTab
+    case main(TabBarRoute)
     
     public var path: String
     {
         switch self {
+        case .start:
+            return "root/start"
         case let .onboarding(route):
             return "root/onboarding/\(route.path)"
-        case .mainTab:
-            return "root/mainTab"
+        case let .main(route):
+            return "root/main/\(route.path)"
         }
     }
 }
@@ -80,3 +83,21 @@ public enum EmailSignupRoute: Route
     }
 }
 
+public enum TabBarRoute: Route
+{
+    case timer
+    case reports
+    case calendar
+    
+    public var path: String
+    {
+        switch self {
+        case .timer:
+            return "timer"
+        case .reports:
+            return "reports"
+        case .calendar:
+            return "calendar"
+        }
+    }
+}

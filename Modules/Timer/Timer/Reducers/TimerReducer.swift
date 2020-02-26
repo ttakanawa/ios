@@ -17,6 +17,10 @@ public let timerReducer = Reducer<TimerState, TimerAction, Repository> { state, 
     switch action {
         
     case .load:
+        if state.entities.timeEntries.isLoaded {
+            break
+        }
+        
         state.entities.timeEntries = .loading
         return loadTimeEntries(repository)
         

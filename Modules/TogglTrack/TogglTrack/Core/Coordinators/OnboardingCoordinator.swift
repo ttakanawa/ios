@@ -13,17 +13,11 @@ import Onboarding
 public final class OnboardingCoordinator: Coordinator
 {
     private var store: Store<AppState, AppAction>
-    private var window: UIWindow
-    private var rootViewController: UIViewController? {
-        didSet {
-            window.rootViewController = rootViewController!
-            window.makeKeyAndVisible()
-        }
-    }
+    private var rootViewController: UIViewController
     
-    public init(window: UIWindow, store: Store<AppState, AppAction>) {
+    public init(rootViewController: UIViewController, store: Store<AppState, AppAction>) {
         self.store = store
-        self.window = window
+        self.rootViewController = rootViewController
         
         super.init("onboarding")
     }
@@ -32,16 +26,13 @@ public final class OnboardingCoordinator: Coordinator
     {
         switch route {
         case "start":
-            if rootViewController is OnboardingViewController {
-                return
-            }
             let vc = OnboardingViewController.instantiate()
             vc.store = store.view(
                 state: { $0.onboardingState },
                 action: { .onboarding($0) }
             )
 
-            rootViewController = vc
+            rootViewController.show(vc, sender: nil)
         default:
             fatalError("Wrong path")
             break
@@ -52,11 +43,20 @@ public final class OnboardingCoordinator: Coordinator
     {
         switch path {
         case "emailLogin":
-            return EmailLoginCoordinator(presentingViewController: rootViewController!, store: store)
+            return EmailLoginCoordinator(presentingViewController: rootViewController, store: store)
         case "emailSignup":
-            return EmailSignupCoordinator(presentingViewController: rootViewController!, store: store)
+            return EmailSignupCoordinator(presentingViewController: rootViewController, store: store)
         default:
             fatalError("Wrong path")
+        }
+    }
+    
+    public override func finish(completion: (() -> Void)? = nil)
+    {
+        if let child = child {
+            child.finish(completion: completion)
+        } else {
+            completion?()
         }
     }
 }

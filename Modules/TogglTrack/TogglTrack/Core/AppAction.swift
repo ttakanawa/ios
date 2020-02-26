@@ -14,6 +14,9 @@ public enum AppAction
 {
     case setBackgroundStatus
     case setForegroundStatus
+    case start
+    
+    case tabBarTapped(Int)
     
     case onboarding(OnboardingAction)
     case timer(TimerAction)

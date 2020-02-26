@@ -22,6 +22,8 @@ let timeEntries: (TimerState) -> [TimeEntry] = { state in
     return Array(tes.values)
 }
 
+public typealias TimerStore = Store<TimerState, TimerAction>
+
 public class TimerViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Timer"
@@ -30,7 +32,6 @@ public class TimerViewController: UIViewController, Storyboarded
     private var disposeBag = DisposeBag()
     
     public var store: TimerStore!
-    public var coordinator: TimerCoordinator!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,10 +40,6 @@ public class TimerViewController: UIViewController, Storyboarded
         super.viewDidLoad()
         
         tableView.rowHeight = 72
-    }
-    
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntry>>(configureCell:
         { dataSource, tableView, indexPath, item in
@@ -57,5 +54,10 @@ public class TimerViewController: UIViewController, Storyboarded
             .drive(tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        store.dispatch(.load)
     }
 }

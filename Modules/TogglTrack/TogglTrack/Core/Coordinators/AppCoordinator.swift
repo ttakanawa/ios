@@ -14,7 +14,12 @@ public final class AppCoordinator: Coordinator
 {
     private let window: UIWindow
     private var store: Store<AppState, AppAction>
-    
+    private var rootViewController: UINavigationController? {
+        didSet {
+            window.rootViewController = rootViewController!
+            window.makeKeyAndVisible()
+        }
+    }
     private var disposeBag = DisposeBag()
     
     public init(window: UIWindow, store: Store<AppState, AppAction>) {
@@ -29,13 +34,16 @@ public final class AppCoordinator: Coordinator
             .distinctUntilChanged()
             .drive(onNext: navigate)
             .disposed(by: disposeBag)
+        
+        store.dispatch(.start)
     }
         
     public override func newRoute(route: String)
     {
         switch route {
-        case "mainTab":
-            print("Do something with this")
+        case "start":
+            rootViewController = UINavigationController()
+            rootViewController?.navigationBar.isHidden = true
         default:
             fatalError("Wrong path")
         }
@@ -45,7 +53,9 @@ public final class AppCoordinator: Coordinator
     {
         switch path {
         case "onboarding":
-            return OnboardingCoordinator(window: window, store: store)
+            return OnboardingCoordinator(rootViewController: rootViewController!, store: store)
+        case "main":
+            return TabBarCoordinator(rootViewController: rootViewController!, store: store)
         default:
             fatalError("Wrong path")
         }
