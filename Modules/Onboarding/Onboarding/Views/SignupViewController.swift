@@ -17,7 +17,7 @@ import Assets
 
 public typealias EmailSignupStore = Store<OnboardingState, EmailSignupAction>
 
-class SignupViewController: UIViewController, Storyboarded
+public class SignupViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Onboarding"
     public static var storyboardBundle = Bundle(for: Assets.self as AnyClass)
@@ -29,15 +29,15 @@ class SignupViewController: UIViewController, Storyboarded
     
     private var disposeBag = DisposeBag()
     
-    public weak var store: EmailSignupStore!
-    public weak var coordinator: OnboardingCoordinator!
+    public var store: EmailSignupStore!
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         let button = UIBarButtonItem(title: "Login", style: .plain, target: nil, action: nil)
         button.rx.tap
-            .bind(onNext: coordinator.showEmailSignIn)
+            .mapTo(EmailSignupAction.goToLogin)
+            .bind(onNext: store.dispatch)
             .disposed(by: disposeBag)
         navigationItem.rightBarButtonItem = button
         

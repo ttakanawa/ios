@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         let window = UIWindow(frame: UIScreen.main.bounds)
         coordinator = AppCoordinator(window: window, store: store)
-        coordinator?.start()
         
         return true
     }

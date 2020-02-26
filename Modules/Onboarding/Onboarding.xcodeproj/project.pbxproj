@@ -14,7 +14,6 @@
 		8C2517772403C25900BAD4B5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25176B2403C25900BAD4B5 /* OnboardingViewController.swift */; };
 		8C2517782403C25900BAD4B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25176C2403C25900BAD4B5 /* LoginViewController.swift */; };
 		8C2517792403C25900BAD4B5 /* OnboardingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25176E2403C25900BAD4B5 /* OnboardingAction.swift */; };
-		8C25177A2403C25900BAD4B5 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25176F2403C25900BAD4B5 /* OnboardingCoordinator.swift */; };
 		8C25177B2403C25900BAD4B5 /* OnboardingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517712403C25900BAD4B5 /* OnboardingReducer.swift */; };
 		8C25177C2403C25900BAD4B5 /* OnboardingSelectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517732403C25900BAD4B5 /* OnboardingSelectors.swift */; };
 		8C25177D2403C25900BAD4B5 /* OnboardingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517752403C25900BAD4B5 /* OnboardingState.swift */; };
@@ -49,7 +48,6 @@
 		8C25176B2403C25900BAD4B5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8C25176C2403C25900BAD4B5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8C25176E2403C25900BAD4B5 /* OnboardingAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingAction.swift; sourceTree = "<group>"; };
-		8C25176F2403C25900BAD4B5 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		8C2517712403C25900BAD4B5 /* OnboardingReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingReducer.swift; sourceTree = "<group>"; };
 		8C2517732403C25900BAD4B5 /* OnboardingSelectors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSelectors.swift; sourceTree = "<group>"; };
 		8C2517752403C25900BAD4B5 /* OnboardingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingState.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 		8C2516312403C15300BAD4B5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				8C25176F2403C25900BAD4B5 /* OnboardingCoordinator.swift */,
 				8C25176D2403C25900BAD4B5 /* Actions */,
 				8C2517702403C25900BAD4B5 /* Reducer */,
 				8C2517722403C25900BAD4B5 /* Selectors */,
@@ -305,7 +302,6 @@
 				8CAAACAF2405104400E9BBAF /* EmailLoginReducer.swift in Sources */,
 				8CAAACB12405104E00E9BBAF /* EmailSignupReducer.swift in Sources */,
 				8C25177D2403C25900BAD4B5 /* OnboardingState.swift in Sources */,
-				8C25177A2403C25900BAD4B5 /* OnboardingCoordinator.swift in Sources */,
 				8C25177B2403C25900BAD4B5 /* OnboardingReducer.swift in Sources */,
 				8C25177C2403C25900BAD4B5 /* OnboardingSelectors.swift in Sources */,
 			);

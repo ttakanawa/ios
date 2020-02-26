@@ -10,7 +10,6 @@
 		8C25165D2403C17500BAD4B5 /* TogglTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2516532403C17500BAD4B5 /* TogglTrack.framework */; };
 		8C2516622403C17500BAD4B5 /* TogglTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2516612403C17500BAD4B5 /* TogglTrackTests.swift */; };
 		8C2516642403C17500BAD4B5 /* TogglTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2516562403C17500BAD4B5 /* TogglTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C2517B12403C2BC00BAD4B5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517AA2403C2BC00BAD4B5 /* AppCoordinator.swift */; };
 		8C2517B22403C2BC00BAD4B5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517AC2403C2BC00BAD4B5 /* AppState.swift */; };
 		8C2517B32403C2BC00BAD4B5 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517AD2403C2BC00BAD4B5 /* AppReducer.swift */; };
 		8C2517B42403C2BC00BAD4B5 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517AE2403C2BC00BAD4B5 /* AppAction.swift */; };
@@ -23,6 +22,10 @@
 		8C2518042403C58200BAD4B5 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2517FA2403C58200BAD4B5 /* Timer.framework */; };
 		8C2518062403C58200BAD4B5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2517FB2403C58200BAD4B5 /* Utils.framework */; };
 		8C25196A2403CE8100BAD4B5 /* RxSwiftDep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518C82403C89E00BAD4B5 /* RxSwiftDep.framework */; };
+		8CAAACB724051CCE00E9BBAF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACB624051CCE00E9BBAF /* AppCoordinator.swift */; };
+		8CAAACB924051DE800E9BBAF /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACB824051DE800E9BBAF /* OnboardingCoordinator.swift */; };
+		8CAAACBB240527D700E9BBAF /* EmailLoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACBA240527D700E9BBAF /* EmailLoginCoordinator.swift */; };
+		8CAAACBD240533DB00E9BBAF /* EmailSignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACBC240533DB00E9BBAF /* EmailSignupCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +45,6 @@
 		8C25165C2403C17500BAD4B5 /* TogglTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TogglTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2516612403C17500BAD4B5 /* TogglTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglTrackTests.swift; sourceTree = "<group>"; };
 		8C2516632403C17500BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C2517AA2403C2BC00BAD4B5 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8C2517AC2403C2BC00BAD4B5 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		8C2517AD2403C2BC00BAD4B5 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		8C2517AE2403C2BC00BAD4B5 /* AppAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
@@ -57,6 +59,10 @@
 		8C2518C72403C89E00BAD4B5 /* RxCocoaDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoaDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518C82403C89E00BAD4B5 /* RxSwiftDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518F52403CA9900BAD4B5 /* RxDatasourcesDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDatasourcesDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CAAACB624051CCE00E9BBAF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		8CAAACB824051DE800E9BBAF /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		8CAAACBA240527D700E9BBAF /* EmailLoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginCoordinator.swift; sourceTree = "<group>"; };
+		8CAAACBC240533DB00E9BBAF /* EmailSignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignupCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C008F9924054F9E000A0C32 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				8CAAACB624051CCE00E9BBAF /* AppCoordinator.swift */,
+				8CAAACB824051DE800E9BBAF /* OnboardingCoordinator.swift */,
+				8CAAACBA240527D700E9BBAF /* EmailLoginCoordinator.swift */,
+				8CAAACBC240533DB00E9BBAF /* EmailSignupCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		8C2516492403C17500BAD4B5 = {
 			isa = PBXGroup;
 			children = (
@@ -107,7 +124,6 @@
 		8C2516552403C17500BAD4B5 /* TogglTrack */ = {
 			isa = PBXGroup;
 			children = (
-				8C2517AA2403C2BC00BAD4B5 /* AppCoordinator.swift */,
 				8C2517AB2403C2BC00BAD4B5 /* Core */,
 				8C2516562403C17500BAD4B5 /* TogglTrack.h */,
 				8C2516572403C17500BAD4B5 /* Info.plist */,
@@ -127,6 +143,7 @@
 		8C2517AB2403C2BC00BAD4B5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				8C008F9924054F9E000A0C32 /* Coordinators */,
 				8C2517AC2403C2BC00BAD4B5 /* AppState.swift */,
 				8C2517AD2403C2BC00BAD4B5 /* AppReducer.swift */,
 				8C2517AE2403C2BC00BAD4B5 /* AppAction.swift */,
@@ -263,11 +280,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C2517B32403C2BC00BAD4B5 /* AppReducer.swift in Sources */,
+				8CAAACBB240527D700E9BBAF /* EmailLoginCoordinator.swift in Sources */,
+				8CAAACBD240533DB00E9BBAF /* EmailSignupCoordinator.swift in Sources */,
 				8C2517B42403C2BC00BAD4B5 /* AppAction.swift in Sources */,
-				8C2517B12403C2BC00BAD4B5 /* AppCoordinator.swift in Sources */,
 				8C2517B22403C2BC00BAD4B5 /* AppState.swift in Sources */,
+				8CAAACB724051CCE00E9BBAF /* AppCoordinator.swift in Sources */,
 				8C2517B52403C2BC00BAD4B5 /* StoreBuilder.swift in Sources */,
 				8C2517B62403C2BC00BAD4B5 /* AppEnvironment.swift in Sources */,
+				8CAAACB924051DE800E9BBAF /* OnboardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

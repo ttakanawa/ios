@@ -24,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate
         
         let window = UIWindow(windowScene: windowScene)
         coordinator = AppCoordinator(window: window, store: store)
-        coordinator?.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -30,8 +30,7 @@ public class LoginViewController: UIViewController, Storyboarded
     
     private var disposeBag = DisposeBag()
     
-    public weak var store: EmailLoginStore!
-    public weak var coordinator: OnboardingCoordinator!
+    public var store: EmailLoginStore!
 
     public override func viewDidLoad()
     {
@@ -39,9 +38,17 @@ public class LoginViewController: UIViewController, Storyboarded
                 
         let button = UIBarButtonItem(title: "SignUp", style: .plain, target: nil, action: nil)
         button.rx.tap
-            .bind(onNext: coordinator.showEmailSignUp)
+            .mapTo(EmailLoginAction.goToSignup)
+            .bind(onNext: store.dispatch)
             .disposed(by: disposeBag)        
         navigationItem.rightBarButtonItem = button
+        
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
+        cancelButton.rx.tap
+            .mapTo(EmailLoginAction.cancel)
+            .bind(onNext: store.dispatch)
+            .disposed(by: disposeBag)
+        navigationItem.leftBarButtonItem = cancelButton
         
         store.select({ $0.email })
             .drive(emailTextField.rx.text)
@@ -74,13 +81,22 @@ public class LoginViewController: UIViewController, Storyboarded
             .drive(userLabel.rx.text)
             .disposed(by: disposeBag)
         
-        store.select(userIsLoaded)
-            .filter({ $0 })
-            .drive(onNext: { [weak self] _ in
-                self?.dismiss(animated: true) {
-                    self?.coordinator.loggedIn?()
-                }
-            })
-            .disposed(by: disposeBag)
+//        store.select(userIsLoaded)
+//            .filter({ $0 })
+//            .drive(onNext: { [weak self] _ in
+//                self?.dismiss(animated: true) {
+//                    self?.coordinator.loggedIn?()
+//                }
+//            })
+//            .disposed(by: disposeBag)
+        
+        self.navigationController?.presentationController?.delegate = self
+    }
+}
+
+extension LoginViewController: UIAdaptivePresentationControllerDelegate
+{
+    public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        store.dispatch(.cancel)
     }
 }

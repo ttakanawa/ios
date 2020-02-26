@@ -24,7 +24,7 @@ public struct LocalOnboardingState
 public protocol OnboardingState
 {
     var user: Loadable<User> { get set }
-    var route: AppRoute { get set }
+    var route: String { get set }
     var localOnboardingState: LocalOnboardingState { get set }
 }
 

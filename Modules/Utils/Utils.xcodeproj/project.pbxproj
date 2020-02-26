@@ -11,7 +11,6 @@
 		8C25175E2403C21900BAD4B5 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25175D2403C21900BAD4B5 /* UtilsTests.swift */; };
 		8C2517602403C21900BAD4B5 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2517522403C21900BAD4B5 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C2517A52403C2AC00BAD4B5 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25179E2403C2AC00BAD4B5 /* Storyboarded.swift */; };
-		8C2517A62403C2AC00BAD4B5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25179F2403C2AC00BAD4B5 /* Coordinator.swift */; };
 		8C2517A72403C2AC00BAD4B5 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517A12403C2AC00BAD4B5 /* Loadable.swift */; };
 		8C2517A82403C2AC00BAD4B5 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517A32403C2AC00BAD4B5 /* Observable+Extensions.swift */; };
 		8C2517A92403C2AC00BAD4B5 /* BehaviorRelay+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517A42403C2AC00BAD4B5 /* BehaviorRelay+Extensions.swift */; };
@@ -36,7 +35,6 @@
 		8C25175D2403C21900BAD4B5 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		8C25175F2403C21900BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C25179E2403C2AC00BAD4B5 /* Storyboarded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
-		8C25179F2403C2AC00BAD4B5 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8C2517A12403C2AC00BAD4B5 /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		8C2517A32403C2AC00BAD4B5 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		8C2517A42403C2AC00BAD4B5 /* BehaviorRelay+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Extensions.swift"; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				8C25179E2403C2AC00BAD4B5 /* Storyboarded.swift */,
-				8C25179F2403C2AC00BAD4B5 /* Coordinator.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -248,7 +245,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C2517A62403C2AC00BAD4B5 /* Coordinator.swift in Sources */,
 				8C2517A92403C2AC00BAD4B5 /* BehaviorRelay+Extensions.swift in Sources */,
 				8C2517A52403C2AC00BAD4B5 /* Storyboarded.swift in Sources */,
 				8C2517A82403C2AC00BAD4B5 /* Observable+Extensions.swift in Sources */,

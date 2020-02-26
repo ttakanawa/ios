@@ -13,7 +13,7 @@ import Utils
 
 public typealias TimerStore = Store<TimerState, TimerAction>
 
-public class TimerCoordinator: Coordinator
+public class TimerCoordinator//: Coordinator
 {
     private let navigationController: UINavigationController
     private let store: TimerStore
