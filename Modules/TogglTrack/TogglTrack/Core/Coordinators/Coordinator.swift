@@ -50,7 +50,7 @@ public final class Router
                 
         if route.sameBase(as: currentRoute)
         {
-            stack.last!.coordinator.newRoute(route: currentRoute.lastComponent)
+            stack.last!.coordinator.newRoute(route: route.lastComponent)
             updateLast(route: route)
             return
         }

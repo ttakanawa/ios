@@ -16,7 +16,6 @@ public enum OnboardingAction
     case emailSignup(EmailSignupAction)
 }
 
-
 extension OnboardingAction
 {
     var emailLogin: EmailLoginAction? {
