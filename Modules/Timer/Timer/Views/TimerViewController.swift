@@ -63,6 +63,6 @@ public class TimerViewController: UIViewController, Storyboarded
                 .disposed(by: disposeBag)
         }
         
-        store.dispatch(.load)
+        store.dispatch(.load)        
     }
 }

@@ -8,7 +8,12 @@
 
 import Foundation
 
-public enum AppRoute: Equatable
+public protocol Route
+{
+    var path: String { get }
+}
+
+public enum AppRoute: Route
 {
     case start
     case onboarding(OnboardingRoute)
@@ -27,7 +32,7 @@ public enum AppRoute: Equatable
     }
 }
 
-public enum OnboardingRoute: Equatable
+public enum OnboardingRoute: Route
 {
     case start
     case emailLogin(EmailLoginRoute)
@@ -49,7 +54,7 @@ public enum OnboardingRoute: Equatable
     }
 }
 
-public enum EmailLoginRoute: Equatable
+public enum EmailLoginRoute: Route
 {
     case start
     
@@ -62,7 +67,7 @@ public enum EmailLoginRoute: Equatable
     }
 }
 
-public enum EmailSignupRoute: Equatable
+public enum EmailSignupRoute: Route
 {
     case start
     case tos
@@ -78,7 +83,7 @@ public enum EmailSignupRoute: Equatable
     }
 }
 
-public enum TabBarRoute: Equatable
+public enum TabBarRoute: Route
 {
     case timer
     case reports

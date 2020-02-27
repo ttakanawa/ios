@@ -12,18 +12,22 @@ import Onboarding
 
 public final class EmailSignupCoordinator: Coordinator
 {
+    public var route: AppRoute = .onboarding(.emailSignup(.start))
+    
+    public var rootViewController: UIViewController {
+        return navigationViewController!
+    }
+        
     private var store: Store<AppState, AppAction>
     private var presentingViewController: UIViewController
-    private var navigationVieWController: UINavigationController?
+    private var navigationViewController: UINavigationController?
         
     public init(presentingViewController: UIViewController, store: Store<AppState, AppAction>) {
         self.store = store
         self.presentingViewController = presentingViewController
-        
-        super.init("emailSignup")
     }
     
-    public override func newRoute(route: String)
+    public func newRoute(route: String)
     {
         switch route {
         case "start":
@@ -33,15 +37,15 @@ public final class EmailSignupCoordinator: Coordinator
                 action: { .onboarding(.emailSignup($0)) }
             )
             
-            navigationVieWController = UINavigationController(rootViewController: vc)
-            presentingViewController.present(navigationVieWController!, animated: true)
+            navigationViewController = UINavigationController(rootViewController: vc)
+            presentingViewController.present(navigationViewController!, animated: true)
         default:
             fatalError("Wrong path")
         }
     }
     
-    public override func finish(completion: (() -> Void)?)
+    public func finish(completion: (() -> Void)?)
     {
-        navigationVieWController?.dismiss(animated: true, completion: completion)
+        navigationViewController?.dismiss(animated: true, completion: completion)
     }
 }

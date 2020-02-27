@@ -12,52 +12,38 @@ import RxSwift
 
 public final class AppCoordinator: Coordinator
 {
+    public var route: AppRoute = .start
+    
+    public var rootViewController: UIViewController {
+        return navigationController
+    }
+    
     private let window: UIWindow
     private var store: Store<AppState, AppAction>
-    private var rootViewController: UINavigationController? {
-        didSet {
-            window.rootViewController = rootViewController!
-            window.makeKeyAndVisible()
-        }
-    }
+    private var navigationController: UINavigationController
+    
     private var disposeBag = DisposeBag()
     
-    public init(window: UIWindow, store: Store<AppState, AppAction>) {
+    public init(window: UIWindow, store: Store<AppState, AppAction>)
+    {
         self.window = window
         self.store = store
-        
-        super.init("root")
-        
-        store
-            .select({ $0.route.path })
-            .do(onNext: { print("Route: \($0)") })
-            .distinctUntilChanged()
-            .drive(onNext: navigate)
-            .disposed(by: disposeBag)
-        
-        store.dispatch(.start)
+        navigationController = UINavigationController()
+        navigationController.navigationBar.isHidden = true
     }
-        
-    public override func newRoute(route: String)
+    
+    public func newRoute(route: String)
     {
         switch route {
         case "start":
-            rootViewController = UINavigationController()
-            rootViewController?.navigationBar.isHidden = true
+            break
         default:
             fatalError("Wrong path")
         }
     }
     
-    public override func childForPath(_ path: String) -> Coordinator?
+    public func finish(completion: (() -> Void)?)
     {
-        switch path {
-        case "onboarding":
-            return OnboardingCoordinator(rootViewController: rootViewController!, store: store)
-        case "main":
-            return TabBarCoordinator(rootViewController: rootViewController!, store: store)
-        default:
-            fatalError("Wrong path")
-        }
+        fatalError("Should never complete")
     }
 }

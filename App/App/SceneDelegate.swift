@@ -9,12 +9,14 @@
 import UIKit
 import Architecture
 import TogglTrack
+import RxSwift
 
 @available(iOS 13.0, *)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate
 {
-    var coordinator: AppCoordinator?
+    var router: Router!
     var store: Store<AppState, AppAction>!
+    private var disposeBag = DisposeBag()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
     {
@@ -23,7 +25,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate
         store = (UIApplication.shared.delegate as! AppDelegate).store
         
         let window = UIWindow(windowScene: windowScene)
-        coordinator = AppCoordinator(window: window, store: store)
+        let coordinator = AppCoordinator(window: window, store: store)
+        
+        window.rootViewController = coordinator.rootViewController
+        window.makeKeyAndVisible()
+        
+        router = Router(initialCoordinator: coordinator)
+        router.delegate = self
+        
+        store
+            .select({ $0.route })
+            .do(onNext: { print("Route: \($0)") })
+            .distinctUntilChanged()
+            .drive(onNext: router.navigate)
+            .disposed(by: disposeBag)
+        
+        store.dispatch(.start)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,3 +71,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate
     }
 }
 
+extension SceneDelegate: RouterDelegate
+{
+    func coordinator(forRoute route: String, rootViewController: UIViewController) -> Coordinator
+    {
+        switch route {
+        case "onboarding":
+            return OnboardingCoordinator(rootViewController: rootViewController, store: store)
+        case "main":
+            return TabBarCoordinator(rootViewController: rootViewController, store: store)
+        case "emailLogin":
+            return EmailLoginCoordinator(presentingViewController: rootViewController, store: store)
+        case "emailSignup":
+            return EmailSignupCoordinator(presentingViewController: rootViewController, store: store)
+        default:
+            fatalError("Wrong path")
+        }
+    }
+}

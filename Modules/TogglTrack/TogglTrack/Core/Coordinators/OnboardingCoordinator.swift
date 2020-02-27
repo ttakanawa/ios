@@ -12,17 +12,17 @@ import Onboarding
 
 public final class OnboardingCoordinator: Coordinator
 {
+public var route: AppRoute = .onboarding(.start)
+    
     private var store: Store<AppState, AppAction>
-    private var rootViewController: UIViewController
+    public var rootViewController: UIViewController
     
     public init(rootViewController: UIViewController, store: Store<AppState, AppAction>) {
         self.store = store
         self.rootViewController = rootViewController
-        
-        super.init("onboarding")
     }
     
-    public override func newRoute(route: String)
+    public func newRoute(route: String)
     {
         switch route {
         case "start":
@@ -39,24 +39,9 @@ public final class OnboardingCoordinator: Coordinator
         }
     }
     
-    public override func childForPath(_ path: String) -> Coordinator?
+    public func finish(completion: (() -> Void)? = nil)
     {
-        switch path {
-        case "emailLogin":
-            return EmailLoginCoordinator(presentingViewController: rootViewController, store: store)
-        case "emailSignup":
-            return EmailSignupCoordinator(presentingViewController: rootViewController, store: store)
-        default:
-            fatalError("Wrong path")
-        }
-    }
-    
-    public override func finish(completion: (() -> Void)? = nil)
-    {
-        if let child = child {
-            child.finish(completion: completion)
-        } else {
-            completion?()
-        }
+        completion?()
+        //TODO FINISH CHILDREN
     }
 }

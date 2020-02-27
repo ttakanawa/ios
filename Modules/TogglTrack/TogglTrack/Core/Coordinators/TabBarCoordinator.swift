@@ -13,18 +13,18 @@ import RxSwift
 
 public final class TabBarCoordinator: Coordinator
 {
-    private var store: Store<AppState, AppAction>
-    private var rootViewController: UIViewController
+    public var route: AppRoute = .main(.timer)
     
+    public var rootViewController: UIViewController
+
+    private var store: Store<AppState, AppAction>
     private var tabBarController: UITabBarController
     private var disposeBag = DisposeBag()
     
     public init(rootViewController: UIViewController, store: Store<AppState, AppAction>) {
         self.store = store
         self.rootViewController = rootViewController
-        tabBarController = UITabBarController()
-        
-        super.init("main")
+        tabBarController = UITabBarController()        
         
         tabBarController.rx.didSelect
             .compactMap({ self.tabBarController.viewControllers?.firstIndex(of: $0) })
@@ -55,27 +55,29 @@ public final class TabBarCoordinator: Coordinator
         rootViewController.show(tabBarController, sender: nil)
     }
     
-    public override func newRoute(route: String)
+    public func newRoute(route: String)
     {
         rootViewController = tabBarController
         switch route {
+        
         case "timer":
-            break
+            tabBarController.selectedIndex = 0
+            
         case "reports":
-            break
+            tabBarController.selectedIndex = 1
+            
         case "calendar":
-            break
+            tabBarController.selectedIndex = 2
+            
         default:
             fatalError("Wrong path")
             break
         }
     }
     
-    public override func childForPath(_ path: String) -> Coordinator?
+    public func finish(completion: (() -> Void)?)
     {
-        switch path {
-        default:
-            fatalError("Wrong path")
-        }
+        //TODO FINISH
+        completion?()
     }
 }
