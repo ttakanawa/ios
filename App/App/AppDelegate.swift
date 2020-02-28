@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import Architecture
 import TogglTrack
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
-    var coordinator: AppCoordinator?
-    var store: Store<AppState, AppAction> = buildStore()
+    var togglTrack: TogglTrack!
+    var coordinator: AppCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
@@ -23,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         }
 
         let window = UIWindow(frame: UIScreen.main.bounds)
-        coordinator = AppCoordinator(window: window, store: store)
+        coordinator = AppCoordinator(window: window)
+        togglTrack = TogglTrack(coordinator: coordinator)
         
         return true
     }
@@ -31,13 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func applicationDidEnterBackground(_ application: UIApplication)
     {
         // Not called under iOS 13 - See SceneDelegate sceneDidEnterBackground
-        store.dispatch(.setBackgroundStatus)
+//        togglTrack.enteredBackground()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication)
     {
         // Not called under iOS 13 - See SceneDelegate sceneWillEnterForeground
-        store.dispatch(.setForegroundStatus)
+//        togglTrack.didBecomeActive()
     }
 
     // MARK: UISceneSession Lifecycle

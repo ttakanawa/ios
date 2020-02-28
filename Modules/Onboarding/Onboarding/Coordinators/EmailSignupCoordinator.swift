@@ -1,5 +1,5 @@
 //
-//  EmailLoginCoordinator.swift
+//  EmailSignupCoordinator.swift
 //  TogglTrack
 //
 //  Created by Ricardo Sánchez Sotres on 25/02/2020.
@@ -8,21 +8,20 @@
 
 import UIKit
 import Architecture
-import Onboarding
 
-public final class EmailLoginCoordinator: Coordinator
+public final class EmailSignupCoordinator: Coordinator
 {
-    public var route: AppRoute = .onboarding(.emailLogin(.start))
+    public var route: AppRoute = .onboarding(.emailSignup(.start))
     
     public var rootViewController: UIViewController {
         return navigationViewController!
     }
-    
-    private var store: Store<AppState, AppAction>
+        
+    private var store: Store<OnboardingState, EmailSignupAction>
     private var presentingViewController: UIViewController
     private var navigationViewController: UINavigationController?
         
-    public init(presentingViewController: UIViewController, store: Store<AppState, AppAction>) {
+    public init(presentingViewController: UIViewController, store: Store<OnboardingState, EmailSignupAction>) {
         self.store = store
         self.presentingViewController = presentingViewController
     }
@@ -31,11 +30,8 @@ public final class EmailLoginCoordinator: Coordinator
     {
         switch route {
         case "start":
-            let vc = LoginViewController.instantiate()
-            vc.store = store.view(
-                state: { $0.onboardingState },
-                action: { .onboarding(.emailLogin($0)) }
-            )
+            let vc = SignupViewController.instantiate()
+            vc.store = store
             
             navigationViewController = UINavigationController(rootViewController: vc)
             presentingViewController.present(navigationViewController!, animated: true)

@@ -14,15 +14,6 @@ import API
 import Repository
 import Networking
 
-public func logging<State, Action, Environment>(
-    _ reducer: Reducer<State, Action, Environment>
-) -> Reducer<State, Action, Environment> {
-    return Reducer { state, action, environment in
-        print("Action: \(action)")
-        return reducer.reduce(&state, action, environment)
-    }
-}
-
 public func buildStore() -> Store<AppState, AppAction>
 {
     let combinedReducers = combine(

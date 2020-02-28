@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8C008FA42407C05D000A0C32 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FA32407C05D000A0C32 /* Routes.swift */; };
+		8C008FA724081220000A0C32 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FA624081220000A0C32 /* Router.swift */; };
+		8C008FA924081242000A0C32 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FA824081242000A0C32 /* Coordinator.swift */; };
+		8C008FAB2408126B000A0C32 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FAA2408126B000A0C32 /* Route.swift */; };
 		8C2518572403C60C00BAD4B5 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C25184D2403C60B00BAD4B5 /* Architecture.framework */; };
 		8C25185C2403C60C00BAD4B5 /* ArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25185B2403C60C00BAD4B5 /* ArchitectureTests.swift */; };
 		8C25185E2403C60C00BAD4B5 /* Architecture.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2518502403C60B00BAD4B5 /* Architecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		8C008FA32407C05D000A0C32 /* Routes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		8C008FA624081220000A0C32 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8C008FA824081242000A0C32 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		8C008FAA2408126B000A0C32 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		8C25184D2403C60B00BAD4B5 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518502403C60B00BAD4B5 /* Architecture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Architecture.h; sourceTree = "<group>"; };
 		8C2518512403C60B00BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +72,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C008FA52408120A000A0C32 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				8C008FA624081220000A0C32 /* Router.swift */,
+				8C008FA824081242000A0C32 /* Coordinator.swift */,
+				8C008FAA2408126B000A0C32 /* Route.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
 		8C2518432403C60B00BAD4B5 = {
 			isa = PBXGroup;
 			children = (
@@ -88,8 +104,9 @@
 		8C25184F2403C60B00BAD4B5 /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
-				8CAAAC9A2404FE9600E9BBAF /* App */,
 				8CAAAC992404FE8B00E9BBAF /* Core */,
+				8C008FA52408120A000A0C32 /* Routing */,
+				8CAAAC9A2404FE9600E9BBAF /* App */,
 				8C2518512403C60B00BAD4B5 /* Info.plist */,
 			);
 			path = Architecture;
@@ -246,7 +263,10 @@
 			files = (
 				8C25186C2403C61900BAD4B5 /* Effect.swift in Sources */,
 				8C008FA42407C05D000A0C32 /* Routes.swift in Sources */,
+				8C008FA924081242000A0C32 /* Coordinator.swift in Sources */,
+				8C008FA724081220000A0C32 /* Router.swift in Sources */,
 				8C25186B2403C61900BAD4B5 /* Reducer.swift in Sources */,
+				8C008FAB2408126B000A0C32 /* Route.swift in Sources */,
 				8C25186A2403C61900BAD4B5 /* BaseStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

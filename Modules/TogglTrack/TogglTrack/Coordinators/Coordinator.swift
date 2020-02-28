@@ -41,11 +41,6 @@ public final class Router
     final public func navigate(to appRoute: AppRoute)
     {
         let route = Route(path: appRoute.path)
-        navigate(to: route)
-    }
-        
-    private func navigate(to route: Route)
-    {
         guard route != currentRoute else { return }
                 
         if route.sameBase(as: currentRoute)
@@ -62,7 +57,7 @@ public final class Router
 
         if toRemove.count > 0 {
             remove(coordinators: toRemove) {
-                self.navigate(to: route)
+                self.navigate(to: appRoute)
             }
         }
                         

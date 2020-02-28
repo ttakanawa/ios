@@ -8,16 +8,15 @@
 
 import UIKit
 import Architecture
-import Onboarding
 
 public final class OnboardingCoordinator: Coordinator
 {
 public var route: AppRoute = .onboarding(.start)
     
-    private var store: Store<AppState, AppAction>
+    private var store: Store<OnboardingState, OnboardingAction>
     public var rootViewController: UIViewController
     
-    public init(rootViewController: UIViewController, store: Store<AppState, AppAction>) {
+    public init(rootViewController: UIViewController, store: Store<OnboardingState, OnboardingAction>) {
         self.store = store
         self.rootViewController = rootViewController
     }

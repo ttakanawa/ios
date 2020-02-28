@@ -8,7 +8,6 @@
 
 import UIKit
 import Architecture
-import RxSwift
 
 public final class AppCoordinator: Coordinator
 {
@@ -18,16 +17,12 @@ public final class AppCoordinator: Coordinator
         return navigationController
     }
     
-    private let window: UIWindow
-    private var store: Store<AppState, AppAction>
+    private var window: UIWindow
     private var navigationController: UINavigationController
-    
-    private var disposeBag = DisposeBag()
-    
-    public init(window: UIWindow, store: Store<AppState, AppAction>)
+        
+    public init(window: UIWindow)
     {
         self.window = window
-        self.store = store
         navigationController = UINavigationController()
         navigationController.navigationBar.isHidden = true
     }
@@ -36,6 +31,8 @@ public final class AppCoordinator: Coordinator
     {
         switch route {
         case "start":
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
             break
         default:
             fatalError("Wrong path")
