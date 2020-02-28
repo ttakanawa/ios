@@ -42,7 +42,7 @@ It also includes the local state of all the specific modules that need local sta
 The store is built like this:
 
 ```swift
-let store: Store<AppState, AppEnvironment> = Store(
+let store: Store<AppState, AppAction> = Store(
     initialState: AppState(),
     reducer: appReducer,
     environment: appEnvironment
