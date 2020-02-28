@@ -113,6 +113,8 @@ Reducers also take an `Environment` which will contain all the dependencies they
 
 In order to dispatch actions asynchronously we will use `Effects`. Reducers return an `Effect` which is an observable of actions. The store subscribes to those effects and dispatches whatever actions it emits.
 
+There's a `toEffect` method on `Observable` which will map an `Observable` into an `Effect`.
+
 ```swift
 let emailLoginReducer = Reducer<OnboardingState, EmailLoginAction, UserAPI> { state, action, api in
     
@@ -145,8 +147,9 @@ func loadUser(email: String, password: String, api: UserAPI) -> Effect<EmailLogi
 }
 ```
 
-
 ## Pullback & Store Views
+
+
 
 ## High-order reducers
 
