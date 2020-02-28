@@ -7,16 +7,26 @@
 //
 
 import UIKit
+import Assets
+import Utils
 
-class StartEditViewController: UIViewController {
-
+class StartEditViewController: UIViewController, Storyboarded
+{
+    public static var storyboardName = "Timer"
+    public static var storyboardBundle = Assets.bundle
+    
+    @IBOutlet weak var playStopButton: PlayStopButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+    }
     /*
     // MARK: - Navigation
 

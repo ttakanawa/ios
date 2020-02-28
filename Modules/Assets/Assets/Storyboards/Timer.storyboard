@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,13 +59,88 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DZL-Ct-Chv"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Np8-Pl-CI3"/>
                     <connections>
                         <outlet property="tableView" destination="bg9-R4-8nf" id="XwN-Ug-k3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDA-iY-nAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="BbS-Qv-dhT">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <viewLayoutGuide key="safeArea" id="Qdt-yi-N3J"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="-201.44927536231884" y="37.5"/>
+            <point key="canvasLocation" x="1618.840579710145" y="37.5"/>
+        </scene>
+        <!--Start Edit View Controller-->
+        <scene sceneID="8eg-hi-Vkm">
+            <objects>
+                <viewController storyboardIdentifier="StartEditViewController" id="gUw-eo-ePL" customClass="StartEditViewController" customModule="Timer" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qeH-ce-dqG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HKo-oW-s1H">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsH-HX-Q1D">
+                                        <rect key="frame" x="16" y="18.5" width="322" height="35"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="I'm working on..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibu-Uh-OXl">
+                                                <rect key="frame" x="20" y="5.5" width="282" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.95810395077720212" green="0.95810395077720212" blue="0.95810395077720212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Ibu-Uh-OXl" firstAttribute="leading" secondItem="YsH-HX-Q1D" secondAttribute="leading" constant="20" id="4A5-gE-MbP"/>
+                                            <constraint firstItem="Ibu-Uh-OXl" firstAttribute="centerY" secondItem="YsH-HX-Q1D" secondAttribute="centerY" id="ZfZ-uH-6y7"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ibu-Uh-OXl" secondAttribute="trailing" constant="20" id="vJ9-rs-DJf"/>
+                                            <constraint firstAttribute="height" constant="35" id="yyn-dy-pmW"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="18"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xn-S9-nUw" customClass="PlayStopButton" customModule="Assets" customModuleProvider="target">
+                                        <rect key="frame" x="354" y="14" width="44" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="5cl-Op-ciG"/>
+                                            <constraint firstAttribute="width" constant="44" id="nyY-nc-AlB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1xn-S9-nUw" firstAttribute="leading" secondItem="YsH-HX-Q1D" secondAttribute="trailing" constant="16" id="23Q-xz-rg0"/>
+                                    <constraint firstItem="YsH-HX-Q1D" firstAttribute="leading" secondItem="HKo-oW-s1H" secondAttribute="leading" constant="16" id="R0V-wr-Olg"/>
+                                    <constraint firstAttribute="height" constant="72" id="XrY-1v-stl"/>
+                                    <constraint firstItem="1xn-S9-nUw" firstAttribute="centerY" secondItem="HKo-oW-s1H" secondAttribute="centerY" id="emE-f5-OwD"/>
+                                    <constraint firstAttribute="trailing" secondItem="1xn-S9-nUw" secondAttribute="trailing" constant="16" id="lCO-ze-d8G"/>
+                                    <constraint firstItem="YsH-HX-Q1D" firstAttribute="centerY" secondItem="HKo-oW-s1H" secondAttribute="centerY" id="qvs-wC-ToK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HKo-oW-s1H" firstAttribute="top" secondItem="qeH-ce-dqG" secondAttribute="top" id="0dR-Ob-loj"/>
+                            <constraint firstAttribute="trailing" secondItem="HKo-oW-s1H" secondAttribute="trailing" id="23E-Wn-N41"/>
+                            <constraint firstItem="HKo-oW-s1H" firstAttribute="leading" secondItem="qeH-ce-dqG" secondAttribute="leading" id="R1W-8x-R1y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playStopButton" destination="1xn-S9-nUw" id="nwM-UN-uCh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZvV-SO-Jt8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2482.608695652174" y="37.5"/>
         </scene>
     </scenes>
 </document>

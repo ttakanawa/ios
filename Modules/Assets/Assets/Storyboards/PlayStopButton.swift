@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayStopButton: UIView {
+public class PlayStopButton: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -17,5 +17,9 @@ class PlayStopButton: UIView {
         // Drawing code
     }
     */
-
+    
+    public override func awakeFromNib()
+    {
+        layer.cornerRadius = frame.width / 2
+    }
 }

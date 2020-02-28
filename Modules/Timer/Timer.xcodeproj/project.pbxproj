@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C008FBC24081CD6000A0C32 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FBB24081CD6000A0C32 /* BottomSheetView.swift */; };
+		8C008FBE240823D6000A0C32 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C008FBD240823D6000A0C32 /* Utils.framework */; };
+		8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FC324090C85000A0C32 /* StartEditViewController.swift */; };
 		8C2516C92403C1B000BAD4B5 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2516BF2403C1B000BAD4B5 /* Timer.framework */; };
 		8C2516CE2403C1B000BAD4B5 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2516CD2403C1B000BAD4B5 /* TimerTests.swift */; };
 		8C2516D02403C1B000BAD4B5 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2516C22403C1B000BAD4B5 /* Timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C008FBB24081CD6000A0C32 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		8C008FBD240823D6000A0C32 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C008FC324090C85000A0C32 /* StartEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditViewController.swift; sourceTree = "<group>"; };
 		8C2516BF2403C1B000BAD4B5 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2516C22403C1B000BAD4B5 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		8C2516C32403C1B000BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C2518C02403C87200BAD4B5 /* Repository.framework in Frameworks */,
+				8C008FBE240823D6000A0C32 /* Utils.framework in Frameworks */,
 				8C2518AD2403C79000BAD4B5 /* Assets.framework in Frameworks */,
 				8C2518AA2403C78600BAD4B5 /* Models.framework in Frameworks */,
 				8C2518A62403C78100BAD4B5 /* Architecture.framework in Frameworks */,
@@ -119,6 +126,8 @@
 			children = (
 				8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */,
 				8C2517812403C27200BAD4B5 /* TimerViewController.swift */,
+				8C008FBB24081CD6000A0C32 /* BottomSheetView.swift */,
+				8C008FC324090C85000A0C32 /* StartEditViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +159,7 @@
 		8C2518A42403C78100BAD4B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C008FBD240823D6000A0C32 /* Utils.framework */,
 				8C2518EE2403CA5F00BAD4B5 /* RxDatasourcesDep.framework */,
 				8C2518BF2403C87200BAD4B5 /* Repository.framework */,
 				8C2518AC2403C79000BAD4B5 /* Assets.framework */,
@@ -270,9 +280,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C25178B2403C27200BAD4B5 /* TimerState.swift in Sources */,
+				8C008FBC24081CD6000A0C32 /* BottomSheetView.swift in Sources */,
 				8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */,
 				8C25178C2403C27200BAD4B5 /* TimerAction.swift in Sources */,
 				8C25178D2403C27200BAD4B5 /* TimerReducer.swift in Sources */,
+				8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */,
 				8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,6 +32,8 @@ public class TimerViewController: UIViewController, Storyboarded
     private var disposeBag = DisposeBag()
     private var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntry>>?
     
+    private var bottomSheet: BottomSheetView!
+    
     public var store: TimerStore!
     
     @IBOutlet weak var tableView: UITableView!
@@ -40,7 +42,14 @@ public class TimerViewController: UIViewController, Storyboarded
     {
         super.viewDidLoad()
         
+        title = "Timer"
+        navigationController?.navigationBar.prefersLargeTitles = true
         tableView.rowHeight = 72
+
+        bottomSheet = BottomSheetView(parentViewController: self)
+        view.addSubview(bottomSheet)
+        let startEditViewController = StartEditViewController.instantiate()
+        bottomSheet.containedViewController = startEditViewController
     }
     
     public override func viewWillAppear(_ animated: Bool)
@@ -64,5 +73,9 @@ public class TimerViewController: UIViewController, Storyboarded
         }
         
         store.dispatch(.load)        
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 }
