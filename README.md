@@ -31,13 +31,126 @@ reducer.
 
 ## Store & State
 
-## Reducers & Pullback
+The `Store` exposes an observable which emits the whole state of the app everytime there's a change and a method to dispatch actions that will modify that state.
+
+In order for it to work it uses the app `Reducer` and the `Environment`. More on these two later.
+
+The `State` is just a struct that contains ALL the state of the application. All properties are `var`, because we are going to mutate it, but don't worry, mutations only happen in reducers. It has an initializer with no parameters which creates the initial state of the app.
+
+It also includes the local state of all the specific modules that need local state. More on this later.
+
+The store is built like this:
+
+```swift
+let store: Store<AppState, AppEnvironment> = Store(
+    initialState: AppState(),
+    reducer: appReducer,
+    environment: appEnvironment
+)
+```
+
+actions are dispatched like this:
+
+```swift
+store.dispatch(AppAction.start)
+```
+
+and views can subscribe directly to the state or through the select method which takes a closure to map part of the state, and also to not repeat events if the elements are `Equatable`
+
+```swift
+store.state
+    .subscribe(onNext: { print("The whole state: \($0) ) })
+    .disposed(by: disposeBag)
+
+// or
+
+store.select({ $0.email })
+    .drive(emailTextField.rx.text)
+    .disposed(by: disposeBag)
+```
+
+The store can be "viewed into", which means that we'll treat a generic store as if it was a more specific one which deals with only part of the app state and a subset of the actions. More on STORE VIEWS.
+
+## Actions
+
+Actions are enums, which makes it easier to discover which actions are available and also add the certainty that we are handling all of them in reducers.
+
+These enums are embeded into each other starting with the `AppAction`
+
+```swift
+public enum AppAction
+{
+    case start
+
+    case onboarding(OnboardingAction)
+    case timer(TimerAction)
+}
+```
+
+So to dispatch an `OnboardingAction` to a store that takes `AppActions` we would do
+
+```swift
+store.dispatch(.onboading(.start))
+```
+
+But if the store is a view that takes `OnboardingActions` we'd do it like this:
+
+```swift
+store.dispatch(.start)
+```
+
+## Reducers & Effects
+
+Reducers are functions with this shape:
+
+```swift
+(inout StateType, ActionType, Environment) -> Effect<ActionType>
+```
+
+The idea is they take the state and an action and modify the state depending on the action and its payload.
+
+Reducers also take an `Environment` which will contain all the dependencies they need to do their tasks (Repository, API, Keychain...).
+
+In order to dispatch actions asynchronously we will use `Effects`. Reducers return an `Effect` which is an observable of actions. The store subscribes to those effects and dispatches whatever actions it emits.
+
+```swift
+let emailLoginReducer = Reducer<OnboardingState, EmailLoginAction, UserAPI> { state, action, api in
+    
+    switch action {
+    
+    //...
+    
+    case .loginTapped:
+        state.user = .loading
+        return loadUser(email: state.email, password: state.password, api: api)
+        
+    case let .setUser(user):
+        state.user = .loaded(user)
+        api.setAuth(token: user.apiToken)
+        state.route = AppRoute.main(.timer)
+        
+    case let .setError(error):
+        state.user = .error(error)
+    }
+    
+    return .empty
+}
+
+func loadUser(email: String, password: String, api: UserAPI) -> Effect<EmailLoginAction>
+{
+    return api.loginUser(email: email, password: password)
+        .map({ EmailLoginAction.setUser($0) })
+        .catchError({ Observable.just(EmailLoginAction.setError($0)) })
+        .toEffect()
+}
+```
+
+
+## Pullback & Store Views
 
 ## High-order reducers
 
-## Effects
-
-## Features
+## Features & Local State
 
 ## Navigation
 
