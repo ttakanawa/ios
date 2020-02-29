@@ -9,23 +9,35 @@
 import UIKit
 import Assets
 import Utils
+import Architecture
 
-class StartEditViewController: UIViewController, Storyboarded
+public typealias StartEditStore = Store<TimerState, TimerAction>
+
+public class StartEditViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Timer"
     public static var storyboardBundle = Assets.bundle
     
     @IBOutlet weak var playStopButton: PlayStopButton!
+    @IBOutlet weak var descriptionField: UITextField!
     
-    override func viewDidLoad() {
+    public var store: StartEditStore!
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool)
+    public override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
+    }
+    
+    public override func resignFirstResponder() -> Bool
+    {
+        descriptionField.resignFirstResponder()
+        return super.resignFirstResponder()
     }
     /*
     // MARK: - Navigation

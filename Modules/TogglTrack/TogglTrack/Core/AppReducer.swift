@@ -23,7 +23,7 @@ var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { stat
         if state.user.isLoaded {
             state.route = .main(.timer)
         } else {
-            state.route = .main(.timer)
+            state.route = .onboarding(.start)
         }
         
     case let .tabBarTapped(section):

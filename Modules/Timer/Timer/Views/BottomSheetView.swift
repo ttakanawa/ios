@@ -113,15 +113,17 @@ class BottomSheetView: UIView
     {
         guard let userInfo = notification.userInfo else { return }
         let keyboardFrame =  (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-                        
-        self.bottomConstraint.constant = -keyboardFrame.height + 10 + safeAreaLayoutGuide.layoutFrame.height
+        
+        let barHeight = parentViewController.tabBarController!.tabBar.frame.height
+        
+        self.bottomConstraint.constant = -keyboardFrame.height + 10 + barHeight
         self.superview?.layoutIfNeeded()
     }
     
     @objc
     func keyboardWillHide(notification: NSNotification)
     {
-        self.heightConstraint.constant = 10
+        self.bottomConstraint.constant = 10
         self.superview?.layoutIfNeeded()
     }
 }

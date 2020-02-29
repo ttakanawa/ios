@@ -10,6 +10,8 @@
 		8C008FBC24081CD6000A0C32 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FBB24081CD6000A0C32 /* BottomSheetView.swift */; };
 		8C008FBE240823D6000A0C32 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C008FBD240823D6000A0C32 /* Utils.framework */; };
 		8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FC324090C85000A0C32 /* StartEditViewController.swift */; };
+		8C008FD024093FF8000A0C32 /* StartEditAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FCF24093FF8000A0C32 /* StartEditAction.swift */; };
+		8C008FD22409407B000A0C32 /* StartEditReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FD12409407B000A0C32 /* StartEditReducer.swift */; };
 		8C2516C92403C1B000BAD4B5 /* Timer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2516BF2403C1B000BAD4B5 /* Timer.framework */; };
 		8C2516CE2403C1B000BAD4B5 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2516CD2403C1B000BAD4B5 /* TimerTests.swift */; };
 		8C2516D02403C1B000BAD4B5 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2516C22403C1B000BAD4B5 /* Timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +40,8 @@
 		8C008FBB24081CD6000A0C32 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		8C008FBD240823D6000A0C32 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C008FC324090C85000A0C32 /* StartEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditViewController.swift; sourceTree = "<group>"; };
+		8C008FCF24093FF8000A0C32 /* StartEditAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditAction.swift; sourceTree = "<group>"; };
+		8C008FD12409407B000A0C32 /* StartEditReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditReducer.swift; sourceTree = "<group>"; };
 		8C2516BF2403C1B000BAD4B5 /* Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2516C22403C1B000BAD4B5 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		8C2516C32403C1B000BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				8C2517852403C27200BAD4B5 /* TimerAction.swift */,
+				8C008FCF24093FF8000A0C32 /* StartEditAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				8C2517872403C27200BAD4B5 /* TimerReducer.swift */,
+				8C008FD12409407B000A0C32 /* StartEditReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -283,8 +289,10 @@
 				8C008FBC24081CD6000A0C32 /* BottomSheetView.swift in Sources */,
 				8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */,
 				8C25178C2403C27200BAD4B5 /* TimerAction.swift in Sources */,
+				8C008FD22409407B000A0C32 /* StartEditReducer.swift in Sources */,
 				8C25178D2403C27200BAD4B5 /* TimerReducer.swift in Sources */,
 				8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */,
+				8C008FD024093FF8000A0C32 /* StartEditAction.swift in Sources */,
 				8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

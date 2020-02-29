@@ -37,6 +37,15 @@ public final class TabBarCoordinator: Coordinator
             state: { $0.timerState },
             action: { .timer($0) }
         )
+        
+        //TODO We should find a better way to inject modules into modules
+        let startEdit = StartEditViewController.instantiate()
+        startEdit.store = store.view(
+            state: { $0.timerState },
+            action: { .timer($0) }
+        )
+        timer.startEditViewController = startEdit
+        
         let timerNav = UINavigationController(rootViewController: timer)
         timerNav.tabBarItem = UITabBarItem(title: "Timer", image: nil, tag: 0)
         

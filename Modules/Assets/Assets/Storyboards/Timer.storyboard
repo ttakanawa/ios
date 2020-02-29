@@ -135,6 +135,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionField" destination="Ibu-Uh-OXl" id="XEL-ak-sKD"/>
                         <outlet property="playStopButton" destination="1xn-S9-nUw" id="nwM-UN-uCh"/>
                     </connections>
                 </viewController>

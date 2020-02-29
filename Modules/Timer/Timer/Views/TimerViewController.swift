@@ -35,6 +35,7 @@ public class TimerViewController: UIViewController, Storyboarded
     private var bottomSheet: BottomSheetView!
     
     public var store: TimerStore!
+    public var startEditViewController: StartEditViewController!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -48,7 +49,6 @@ public class TimerViewController: UIViewController, Storyboarded
 
         bottomSheet = BottomSheetView(parentViewController: self)
         view.addSubview(bottomSheet)
-        let startEditViewController = StartEditViewController.instantiate()
         bottomSheet.containedViewController = startEditViewController
     }
     
