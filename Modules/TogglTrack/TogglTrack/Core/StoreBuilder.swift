@@ -18,14 +18,12 @@ public func buildStore() -> Store<AppState, AppAction>
 {
     let combinedReducers = combine(
         globalReducer,
-        pullback(
-            onboardingReducer,
+        onboardingReducer.pullback(
             state: \AppState.onboardingState,
             action: \AppAction.onboarding,
             environment: \AppEnvironment.userAPI
         ),
-        pullback(
-            timerReducer,
+        timerReducer.pullback(
             state: \AppState.timerState,
             action: \AppAction.timer,
             environment: \AppEnvironment.repository

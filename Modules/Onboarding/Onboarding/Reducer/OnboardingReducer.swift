@@ -32,16 +32,10 @@ let mainReducer = Reducer<OnboardingState, OnboardingAction, UserAPI> { state, a
 
 public let onboardingReducer = combine(
     mainReducer,
-    pullback(
-        emailLoginReducer,
-        state: \OnboardingState.self,
-        action: \OnboardingAction.emailLogin,
-        environment: \UserAPI.self
+    emailLoginReducer.pullback(
+        action: \OnboardingAction.emailLogin
     ),
-    pullback(
-        emailSignupReducer,
-        state: \OnboardingState.self,
-        action: \OnboardingAction.emailSignup,
-        environment: \UserAPI.self
+    emailSignupReducer.pullback(
+        action: \OnboardingAction.emailSignup
     )
 )
