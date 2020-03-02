@@ -55,6 +55,12 @@ public class TimerViewController: UIViewController, Storyboarded
     public override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
+        store.dispatch(.load)
+    }
+    
+    public override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
                 
         if dataSource == nil {
             // We should do this in ViewDidLoad, but there's a bug that causes an ugly warning. That's why we are doing it here for now
@@ -71,11 +77,5 @@ public class TimerViewController: UIViewController, Storyboarded
                 .drive(tableView.rx.items(dataSource: dataSource!))
                 .disposed(by: disposeBag)
         }
-        
-        store.dispatch(.load)        
-    }
-    
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
 }
