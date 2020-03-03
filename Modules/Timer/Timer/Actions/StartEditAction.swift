@@ -14,6 +14,7 @@ public enum StartEditAction
     case descriptionEntered(String)
     case startTapped
     case timeEntryStarted(TimeEntry)
+    case setError(Error)
 }
 
 
@@ -32,6 +33,8 @@ extension StartEditAction: CustomDebugStringConvertible
         case let .timeEntryStarted(te):
             return "TimeEntryStarted: \(te.description)"
         
+        case let .setError(error):
+            return "SetError: \(error)"
         }
     }
 }

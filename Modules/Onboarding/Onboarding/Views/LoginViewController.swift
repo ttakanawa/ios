@@ -83,6 +83,14 @@ public class LoginViewController: UIViewController, Storyboarded
         
         self.navigationController?.presentationController?.delegate = self
     }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        store.dispatch(.emailEntered("ricardo@toggl.com"))
+        store.dispatch(.passwordEntered("password"))
+        store.dispatch(.loginTapped)
+    }
 }
 
 extension LoginViewController: UIAdaptivePresentationControllerDelegate

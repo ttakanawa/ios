@@ -37,6 +37,16 @@ public extension Loadable
             return false
         }
     }
+    
+    var value: Value?
+    {
+        switch self {
+        case let .loaded(value):
+            return value
+        default:
+            return nil
+        }
+    }
 }
 
 extension Loadable: CustomStringConvertible where Value: CustomStringConvertible

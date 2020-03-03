@@ -28,7 +28,11 @@ public class StartEditViewController: UIViewController, Storyboarded
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        store.select({ $0.description })
+            .drive(descriptionField.rx.text)
+            .disposed(by: disposeBag)
+        
         playStopButton.rx.tap
             .mapTo(StartEditAction.startTapped)
             .subscribe(onNext: store.dispatch)

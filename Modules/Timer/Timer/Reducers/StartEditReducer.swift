@@ -20,21 +20,37 @@ public let startEditReducer = Reducer<TimerState, StartEditAction, Repository> {
         state.description = description
         
     case .startTapped:
-        break
+        guard let defaultWorkspace = state.user.value?.defaultWorkspace else {
+            fatalError("No default workspace")
+        }
+        
+        let timeEntry = TimeEntry(
+            id: state.entities.timeEntries.count,
+            description: state.description,
+            start: Date(),
+            duration: -1,
+            billable: false,
+            workspaceId: defaultWorkspace
+        )
+        
+        return startTimeEntry(timeEntry, repository: repository)
         
     case let .timeEntryStarted(timeEntry):
-//        state.entities.timeEntries[timeEntry.id] = timeEntry
+        state.description = ""
+        state.entities.timeEntries[timeEntry.id] = timeEntry
+
+    case let .setError(error):
         break
     }
     
     return .empty
 }
 
-//
-//fileprivate func startTimeEntry(_ repository: Repository) -> Effect<StartEditAction>
-//{
-//    return repository.sta()
-//        .map({ TimerAction.setEntities($0) })
-//        .catchError({ Observable.just(TimerAction.setError($0)) })
-//        .toEffect()
-//}
+
+func startTimeEntry(_ timeEntry: TimeEntry, repository: Repository) -> Effect<StartEditAction>
+{
+    return repository.addTimeEntry(timeEntry: timeEntry)
+        .mapTo(StartEditAction.timeEntryStarted(timeEntry))
+        .catchError({ Observable.just(StartEditAction.setError($0)) })
+        .toEffect()
+}

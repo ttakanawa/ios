@@ -13,6 +13,15 @@ import API
 
 public class Repository
 {
+    // These mock the DB
+    private var workspaces = [Workspace]()
+    private var clients = [Client]()
+    private var timeEntries = [TimeEntry]()
+    private var projects = [Project]()
+    private var tasks = [Task]()
+    private var tags = [Tag]()
+    // ------------------------
+    
     private let api: TimelineAPI
     
     public init(api: TimelineAPI)
@@ -22,31 +31,67 @@ public class Repository
     
     public func getWorkspaces() -> Observable<[Workspace]>
     {
-        return api.loadWorkspaces()
+        if workspaces.isEmpty {
+            return api.loadWorkspaces()
+                .do(onNext: { self.workspaces = $0 })
+        }
+        
+        return Observable.just(workspaces)
     }
     
     public func getClients() -> Observable<[Client]>
     {
-        return api.loadClients()
+        if clients.isEmpty {
+            return api.loadClients()
+                .do(onNext: { self.clients = $0 })
+        }
+        
+        return Observable.just(clients)
     }
     
     public func getTimeEntries() -> Observable<[TimeEntry]>
     {
-        return api.loadEntries()
+        if timeEntries.isEmpty {
+            return api.loadEntries()
+                .do(onNext: { self.timeEntries = $0 })
+        }
+        
+        return Observable.just(timeEntries)
     }
     
     public func getProjects() -> Observable<[Project]>
     {
-        return api.loadProjects()
+        if projects.isEmpty {
+            return api.loadProjects()
+                .do(onNext: { self.projects = $0 })
+        }
+        
+        return Observable.just(projects)
     }
     
     public func getTasks() -> Observable<[Task]>
     {
-        return api.loadTasks()
+        if tasks.isEmpty {
+            return api.loadTasks()
+                .do(onNext: { self.tasks = $0 })
+        }
+        
+        return Observable.just(tasks)
     }
     
     public func getTags() -> Observable<[Tag]>
     {
-        return api.loadTags()
+        if tags.isEmpty {
+            return api.loadTags()
+                .do(onNext: { self.tags = $0 })
+        }
+        
+        return Observable.just(tags)
+    }
+    
+    public func addTimeEntry(timeEntry: TimeEntry) -> Observable<Void>
+    {
+        timeEntries.append(timeEntry)
+        return Observable.just(())
     }
 }

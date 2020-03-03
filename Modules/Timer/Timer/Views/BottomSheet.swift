@@ -63,7 +63,7 @@ class BottomSheet: UIViewController
         layedOut = true
         
         view.layer.cornerRadius = 10
-        view.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
+        view.layer.shadowColor = UIColor.black.withAlphaComponent(0.4).cgColor
         view.layer.shadowOffset = CGSize(width: 0, height: -6)
         view.layer.shadowRadius = 10.0
         view.layer.shadowOpacity = 0.2

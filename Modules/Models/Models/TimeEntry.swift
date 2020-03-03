@@ -20,6 +20,22 @@ public struct TimeEntry: Entity
     public var projectId: Int?
     public var taskId: Int?
     public var tagIds: [Int]?
+    
+    public init (
+        id: Int,
+        description: String,
+        start: Date,
+        duration: Double,
+        billable: Bool,
+        workspaceId: Int
+    ) {
+        self.id = id
+        self.description = description
+        self.start = start
+        self.duration = duration
+        self.billable = billable
+        self.workspaceId = workspaceId
+    }
 }
 
 extension TimeEntry: Codable

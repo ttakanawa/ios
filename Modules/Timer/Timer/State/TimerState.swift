@@ -21,6 +21,7 @@ public struct LocalTimerState
 
 public protocol TimerState
 {
+    var user: Loadable<User> { get set }
     var entities: TimeLogEntities { get set }
     var localTimerState: LocalTimerState { get set }
 }
