@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Client: Codable, Identifiable, Equatable
+public struct Client: Codable, Entity
 {
     public var id: Int
     public var name: String

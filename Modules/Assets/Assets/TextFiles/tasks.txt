@@ -1,0 +1,110 @@
+[
+  {
+    "id": 18324217,
+    "name": "UI/UX",
+    "workspace_id": 356965,
+    "project_id": 42881345,
+    "user_id": null,
+    "active": true,
+    "at": "2018-02-09T10:54:46+00:00",
+    "server_deleted_at": null,
+    "estimated_seconds": 0,
+    "tracked_seconds": 154691000
+  },
+  {
+    "id": 18324218,
+    "name": "Creating issues in GH",
+    "workspace_id": 356965,
+    "project_id": 42881345,
+    "user_id": null,
+    "active": true,
+    "at": "2018-02-09T10:54:50+00:00",
+    "server_deleted_at": null,
+    "estimated_seconds": 0,
+    "tracked_seconds": 25375000
+  },
+  {
+    "id": 18324219,
+    "name": "Preparing design files (Zeplin)",
+    "workspace_id": 356965,
+    "project_id": 42881345,
+    "user_id": null,
+    "active": true,
+    "at": "2018-02-09T10:54:54+00:00",
+    "server_deleted_at": null,
+    "estimated_seconds": 0,
+    "tracked_seconds": 1629000
+  },
+  {
+    "id": 18324220,
+    "name": "Writing a brief/doc",
+    "workspace_id": 356965,
+    "project_id": 42881345,
+    "user_id": null,
+    "active": true,
+    "at": "2018-02-09T10:54:58+00:00",
+    "server_deleted_at": null,
+    "estimated_seconds": 0,
+    "tracked_seconds": 4134000
+  },
+  {
+    "id": 18521683,
+    "name": "Marketing",
+    "workspace_id": 356965,
+    "project_id": 42881345,
+    "user_id": null,
+    "active": true,
+    "at": "2018-02-23T11:49:44+00:00",
+    "server_deleted_at": null,
+    "estimated_seconds": 0,
+    "tracked_seconds": 2523000
+  },
+  {
+    "id": 28211534,
+    "name": "On-site Meetings",
+    "workspace_id": 356965,
+    "project_id": 56095512,
+    "user_id": null,
+    "active": true,
+    "at": "2020-02-11T20:43:53+00:00",
+    "server_deleted_at": null,
+    "estimated_seconds": 36000,
+    "tracked_seconds": 0
+  },
+  {
+    "id": 28850832,
+    "name": "Research",
+    "workspace_id": 356965,
+    "project_id": 157486909,
+    "user_id": null,
+    "active": true,
+    "at": "2020-02-25T17:17:05+00:00",
+    "server_deleted_at": null,
+    "estimated_seconds": 0,
+    "tracked_seconds": 0
+  },
+  {
+    "id": 28850861,
+    "name": "Ample Coffee Breaks",
+    "workspace_id": 356965,
+    "project_id": 157486909,
+    "user_id": null,
+    "active": true,
+    "at": "2020-02-25T17:17:32+00:00",
+    "server_deleted_at": null,
+    "estimated_seconds": 36000,
+    "tracked_seconds": 0
+  },
+  {
+    "id": 28850835,
+    "name": "Coding",
+    "workspace_id": 356965,
+    "project_id": 157486909,
+    "user_id": null,
+    "active": true,
+    "at": "2020-02-25T17:17:35+00:00",
+    "server_deleted_at": null,
+    "estimated_seconds": 360000,
+    "tracked_seconds": 0
+  }
+]

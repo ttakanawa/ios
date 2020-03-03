@@ -11,7 +11,8 @@ import UIKit
 class TimeEntryCell: UITableViewCell {
 
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var projectClientTaskLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,4 @@ class TimeEntryCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

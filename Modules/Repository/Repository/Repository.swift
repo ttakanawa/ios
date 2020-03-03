@@ -20,8 +20,33 @@ public class Repository
         self.api = api
     }
     
+    public func getWorkspaces() -> Observable<[Workspace]>
+    {
+        return api.loadWorkspaces()
+    }
+    
+    public func getClients() -> Observable<[Client]>
+    {
+        return api.loadClients()
+    }
+    
     public func getTimeEntries() -> Observable<[TimeEntry]>
     {
         return api.loadEntries()
+    }
+    
+    public func getProjects() -> Observable<[Project]>
+    {
+        return api.loadProjects()
+    }
+    
+    public func getTasks() -> Observable<[Task]>
+    {
+        return api.loadTasks()
+    }
+    
+    public func getTags() -> Observable<[Tag]>
+    {
+        return api.loadTags()
     }
 }

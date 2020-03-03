@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct TimeEntry: Equatable, Identifiable
+public struct TimeEntry: Entity
 {
     public var id: Int
     public var description: String

@@ -12,8 +12,9 @@ import Models
 public enum TimerAction
 {
     case load
+    case finishedLoading
     
-    case setEntities([TimeEntry])
+    case setEntities([Entity])
     case setError(Error)
 }
 
@@ -22,12 +23,20 @@ extension TimerAction: CustomDebugStringConvertible
     public var debugDescription: String
     {
         switch self {
+       
         case .load:
-            return "Timer:Load"
+            return "Load"
+            
+        case .finishedLoading:
+            return "FinishedLoading"
+       
         case let .setEntities(entities):
-            return "SetEntities: \(entities.count)"
+            guard let first = entities.first else { return "SetEntities: 0" } // TODO Extract specific type from array
+            return "SetEntities (\(type(of: first))): \(entities.count)"
+        
         case let .setError(error):
             return "SetError: \(error)"
+        
         }
     }
 }

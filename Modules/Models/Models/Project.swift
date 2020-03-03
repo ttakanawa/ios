@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Project: Codable, Identifiable, Equatable
+public struct Project: Codable, Entity
 {
     public var id: Int
     public var name: String

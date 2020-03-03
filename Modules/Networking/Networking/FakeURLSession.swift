@@ -18,6 +18,7 @@ public class FakeURLSession: URLSessionProtocol
         "projects" : "projects",
         "clients" : "clients",
         "tags" : "tags",
+        "tasks": "tasks",
         "me" : "me"
     ]
     

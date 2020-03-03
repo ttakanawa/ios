@@ -15,11 +15,29 @@ import RxDataSources
 import Utils
 import Assets
 
-let timeEntries: (TimerState) -> [TimeEntry] = { state in
+let timeEntries: (TimerState) -> [TimeEntryViewModel] = { state in
     
-    guard case let .loaded(tes) = state.entities.timeEntries else { return [] }
-    
-    return Array(tes.values)
+    guard case .loaded(_) = state.entities.loading else { return [] }
+    return state.entities.timeEntries.values.compactMap({ timeEntry in
+        
+        guard let workspace = state.entities.getWorkspace(timeEntry.workspaceId) else {
+//            fatalError("Workspace missing")
+            //TODO This shouldn't happen, what should we do here?
+            print("Workspace missing: \(timeEntry)")
+            return nil
+        }
+        
+        let project = state.entities.getProject(timeEntry.projectId)
+        
+        return TimeEntryViewModel(
+            timeEntry: timeEntry,
+            workspace: workspace,
+            project: project,
+            client: state.entities.getClient(project?.clientId),
+            task: state.entities.getTask(timeEntry.taskId),
+            tags: timeEntry.tagIds?.compactMap(state.entities.getTag)
+        )
+    })
 }
 
 public typealias TimerStore = Store<TimerState, TimerAction>
@@ -30,7 +48,7 @@ public class TimerViewController: UIViewController, Storyboarded
     public static var storyboardBundle = Assets.bundle
 
     private var disposeBag = DisposeBag()
-    private var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntry>>?
+    private var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntryViewModel>>?
     
     private var bottomSheet: BottomSheetView!
     
@@ -64,11 +82,14 @@ public class TimerViewController: UIViewController, Storyboarded
                 
         if dataSource == nil {
             // We should do this in ViewDidLoad, but there's a bug that causes an ugly warning. That's why we are doing it here for now
-            dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntry>>(configureCell:
+            dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntryViewModel>>(configureCell:
                 { dataSource, tableView, indexPath, item in
                     let cell = tableView.dequeueReusableCell(withIdentifier: "TimeEntryCell", for: indexPath) as! TimeEntryCell
                     cell.descriptionLabel.text = item.description
-                    cell.startLabel.text = "This is a test"
+                    cell.descriptionLabel.textColor = item.descriptionColor
+                    cell.projectClientTaskLabel.textColor = item.projectColor
+                    cell.projectClientTaskLabel.text = item.projectTaskClient
+                    cell.durationLabel.text = item.durationString
                     return cell
             })
             

@@ -17,35 +17,45 @@ public let timerReducer = Reducer<TimerState, TimerAction, Repository> { state, 
     switch action {
         
     case .load:
-        if state.entities.timeEntries.isLoaded {
+        if state.entities.loading.isLoaded {
             break
         }
         
-        state.entities.timeEntries = .loading
-        return loadTimeEntries(repository)
+        state.entities.loading = .loading
+        return loadEntities(repository)
         
-    case let .setEntities(timeEntries):
-        let dict: [TimeEntry.ID: TimeEntry] = timeEntries.reduce([:], { acc, e in
+    case .finishedLoading:
+        state.entities.loading = .loaded(())
+        
+    case let .setEntities(entities):
+        
+        let dict: [Int: Entity] = entities.reduce([:], { acc, e in
             var acc = acc
             acc[e.id] = e
             return acc
         })
         
-        state.entities.timeEntries = .loaded(dict)
+        state.entities.set(entities: dict)
         
     case let .setError(error):
-        state.entities.timeEntries = .error(error)
-        break
+        state.entities.loading = .error(error)
     }
     
     return .empty
 }
 
 
-fileprivate func loadTimeEntries(_ repository: Repository) -> Effect<TimerAction>
+fileprivate func loadEntities(_ repository: Repository) -> Effect<TimerAction>
 {
-    return repository.getTimeEntries()
-        .map({ TimerAction.setEntities($0) })
-        .catchError({ Observable.just(TimerAction.setError($0)) })
-        .toEffect()
+    Observable.merge(
+        repository.getWorkspaces().map(TimerAction.setEntities),
+        repository.getClients().map(TimerAction.setEntities),
+        repository.getTimeEntries().map(TimerAction.setEntities),
+        repository.getProjects().map(TimerAction.setEntities),
+        repository.getTasks().map(TimerAction.setEntities),
+        repository.getTags().map(TimerAction.setEntities)
+    )
+    .concat(Observable.just(TimerAction.finishedLoading))
+    .catchError({ Observable.just(TimerAction.setError($0)) })
+    .toEffect()
 }

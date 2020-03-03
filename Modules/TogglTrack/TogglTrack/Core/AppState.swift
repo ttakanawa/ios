@@ -25,7 +25,7 @@ public struct AppState
     var appStatus: AppStatus = .unknown
     public var route: AppRoute = .start
     public var user: Loadable<User> = .nothing
-    public var entities: TimeLogEntities = TimeLogEntities()
+    public var entities: TimeLogEntities =  TimeLogEntities()
     
     public var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
     public var localTimerState: LocalTimerState = LocalTimerState()
