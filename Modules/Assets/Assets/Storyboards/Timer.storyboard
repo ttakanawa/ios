@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Timer View Controller-->
+        <!--Time Log View Controller-->
         <scene sceneID="uN7-Qg-FCr">
             <objects>
-                <viewController storyboardIdentifier="TimerViewController" id="MyD-lN-1Wj" customClass="TimerViewController" customModule="Timer" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeLogViewController" id="MyD-lN-1Wj" customClass="TimeLogViewController" customModule="Timer" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uqw-pe-Wsa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Np8-Pl-CI3"/>
                     <connections>
-                        <outlet property="tableView" destination="bg9-R4-8nf" id="XwN-Ug-k3Z"/>
+                        <outlet property="tableView" destination="bg9-R4-8nf" id="1nv-6k-yub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EDA-iY-nAV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -90,7 +90,7 @@
                     <viewLayoutGuide key="safeArea" id="Qdt-yi-N3J"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1618.840579710145" y="37.5"/>
+            <point key="canvasLocation" x="1613" y="-163"/>
         </scene>
         <!--Start Edit View Controller-->
         <scene sceneID="8eg-hi-Vkm">
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvV-SO-Jt8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2482.608695652174" y="37.5"/>
+            <point key="canvasLocation" x="2351" y="-163"/>
         </scene>
     </scenes>
 </document>

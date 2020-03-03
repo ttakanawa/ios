@@ -32,7 +32,7 @@ public final class TabBarCoordinator: Coordinator
             .subscribe(onNext: store.dispatch)            
             .disposed(by: disposeBag)
         
-        let timer = TimerViewController.instantiate()
+        let timer = TimerViewController()
         timer.store = store.view(
             state: { $0.timerState },
             action: { .timer($0) }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C008FBC24081CD6000A0C32 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FBB24081CD6000A0C32 /* BottomSheetView.swift */; };
+		8C008FBC24081CD6000A0C32 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FBB24081CD6000A0C32 /* BottomSheet.swift */; };
 		8C008FBE240823D6000A0C32 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C008FBD240823D6000A0C32 /* Utils.framework */; };
 		8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FC324090C85000A0C32 /* StartEditViewController.swift */; };
 		8C008FD024093FF8000A0C32 /* StartEditAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FCF24093FF8000A0C32 /* StartEditAction.swift */; };
@@ -24,6 +24,7 @@
 		8C2518AA2403C78600BAD4B5 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A92403C78600BAD4B5 /* Models.framework */; };
 		8C2518AD2403C79000BAD4B5 /* Assets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518AC2403C79000BAD4B5 /* Assets.framework */; };
 		8C2518C02403C87200BAD4B5 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518BF2403C87200BAD4B5 /* Repository.framework */; };
+		8CB54533240E7DA100154473 /* TimeLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54532240E7DA100154473 /* TimeLogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C008FBB24081CD6000A0C32 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		8C008FBB24081CD6000A0C32 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		8C008FBD240823D6000A0C32 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C008FC324090C85000A0C32 /* StartEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditViewController.swift; sourceTree = "<group>"; };
 		8C008FCF24093FF8000A0C32 /* StartEditAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditAction.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		8C2518AC2403C79000BAD4B5 /* Assets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Assets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518BF2403C87200BAD4B5 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518EE2403CA5F00BAD4B5 /* RxDatasourcesDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDatasourcesDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB54532240E7DA100154473 /* TimeLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +132,9 @@
 			children = (
 				8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */,
 				8C2517812403C27200BAD4B5 /* TimerViewController.swift */,
-				8C008FBB24081CD6000A0C32 /* BottomSheetView.swift */,
+				8C008FBB24081CD6000A0C32 /* BottomSheet.swift */,
 				8C008FC324090C85000A0C32 /* StartEditViewController.swift */,
+				8CB54532240E7DA100154473 /* TimeLogViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,9 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C25178B2403C27200BAD4B5 /* TimerState.swift in Sources */,
-				8C008FBC24081CD6000A0C32 /* BottomSheetView.swift in Sources */,
+				8C008FBC24081CD6000A0C32 /* BottomSheet.swift in Sources */,
 				8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */,
 				8C25178C2403C27200BAD4B5 /* TimerAction.swift in Sources */,
+				8CB54533240E7DA100154473 /* TimeLogViewController.swift in Sources */,
 				8C008FD22409407B000A0C32 /* StartEditReducer.swift in Sources */,
 				8C25178D2403C27200BAD4B5 /* TimerReducer.swift in Sources */,
 				8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */,
