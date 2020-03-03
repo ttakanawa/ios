@@ -94,6 +94,7 @@
 		8C008F9924054F9E000A0C32 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				8CAAACB624051CCE00E9BBAF /* AppCoordinator.swift */,
 				8C008F9C2406744C000A0C32 /* TabBarCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -142,7 +143,6 @@
 		8C2517AB2403C2BC00BAD4B5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8CAAACB624051CCE00E9BBAF /* AppCoordinator.swift */,
 				8C2517AC2403C2BC00BAD4B5 /* AppState.swift */,
 				8C2517AD2403C2BC00BAD4B5 /* AppReducer.swift */,
 				8C2517AE2403C2BC00BAD4B5 /* AppAction.swift */,
