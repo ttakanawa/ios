@@ -27,6 +27,11 @@ public func buildStore() -> Store<AppState, AppAction>
             state: \AppState.timerState,
             action: \AppAction.timer,
             environment: \AppEnvironment.repository
+        ),
+        startEditReducer.pullback(
+            state: \AppState.timerState,
+            action: \AppAction.startEdit,
+            environment: \AppEnvironment.repository
         )
     )
     let appReducer = logging(combinedReducers)

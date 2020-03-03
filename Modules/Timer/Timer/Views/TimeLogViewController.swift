@@ -24,7 +24,6 @@ let timeEntries: (TimerState) -> [TimeEntryViewModel] = { state in
         guard let workspace = state.entities.getWorkspace(timeEntry.workspaceId) else {
 //            fatalError("Workspace missing")
             //TODO This shouldn't happen, what should we do here?
-            print("Workspace missing: \(timeEntry)")
             return nil
         }
         

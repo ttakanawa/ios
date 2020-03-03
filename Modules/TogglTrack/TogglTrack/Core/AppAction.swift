@@ -20,6 +20,7 @@ public enum AppAction
     
     case onboarding(OnboardingAction)
     case timer(TimerAction)
+    case startEdit(StartEditAction)
 }
 
 extension AppAction
@@ -46,6 +47,18 @@ extension AppAction
             self = .timer(newValue)
         }
     }
+    
+    var startEdit: StartEditAction?
+    {
+        get {
+            guard case let .startEdit(value) = self else { return nil }
+            return value
+        }
+        set {
+            guard case .startEdit = self, let newValue = newValue else { return }
+            self = .startEdit(newValue)
+        }
+    }
 }
 
 extension AppAction: CustomDebugStringConvertible
@@ -64,6 +77,8 @@ extension AppAction: CustomDebugStringConvertible
         case let .onboarding(action):
             return action.debugDescription
         case let .timer(action):
+            return action.debugDescription
+        case let .startEdit(action):
             return action.debugDescription
         }
     }

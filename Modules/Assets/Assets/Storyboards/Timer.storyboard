@@ -104,10 +104,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsH-HX-Q1D">
-                                        <rect key="frame" x="16" y="18.5" width="322" height="35"/>
+                                        <rect key="frame" x="16" y="18.5" width="318" height="35"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="I'm working on..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibu-Uh-OXl">
-                                                <rect key="frame" x="20" y="5.5" width="282" height="24"/>
+                                                <rect key="frame" x="20" y="5.5" width="278" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -125,23 +125,23 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xn-S9-nUw" customClass="PlayStopButton" customModule="Assets" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zx-W8-JOp">
                                         <rect key="frame" x="354" y="14" width="44" height="44"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="5cl-Op-ciG"/>
-                                            <constraint firstAttribute="width" constant="44" id="nyY-nc-AlB"/>
+                                            <constraint firstAttribute="width" constant="44" id="3Ze-30-50j"/>
+                                            <constraint firstAttribute="height" constant="44" id="OGA-y2-BN0"/>
                                         </constraints>
-                                    </view>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="1xn-S9-nUw" firstAttribute="leading" secondItem="YsH-HX-Q1D" secondAttribute="trailing" constant="16" id="23Q-xz-rg0"/>
+                                    <constraint firstItem="5zx-W8-JOp" firstAttribute="top" secondItem="HKo-oW-s1H" secondAttribute="top" constant="14" id="OE6-FA-SwN"/>
                                     <constraint firstItem="YsH-HX-Q1D" firstAttribute="leading" secondItem="HKo-oW-s1H" secondAttribute="leading" constant="16" id="R0V-wr-Olg"/>
                                     <constraint firstAttribute="height" constant="72" id="XrY-1v-stl"/>
-                                    <constraint firstItem="1xn-S9-nUw" firstAttribute="centerY" secondItem="HKo-oW-s1H" secondAttribute="centerY" id="emE-f5-OwD"/>
-                                    <constraint firstAttribute="trailing" secondItem="1xn-S9-nUw" secondAttribute="trailing" constant="16" id="lCO-ze-d8G"/>
+                                    <constraint firstItem="5zx-W8-JOp" firstAttribute="leading" secondItem="YsH-HX-Q1D" secondAttribute="trailing" constant="20" id="hHy-Lw-jBs"/>
                                     <constraint firstItem="YsH-HX-Q1D" firstAttribute="centerY" secondItem="HKo-oW-s1H" secondAttribute="centerY" id="qvs-wC-ToK"/>
+                                    <constraint firstAttribute="trailing" secondItem="5zx-W8-JOp" secondAttribute="trailing" constant="16" id="r38-hg-K3V"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -155,12 +155,12 @@
                     </view>
                     <connections>
                         <outlet property="descriptionField" destination="Ibu-Uh-OXl" id="XEL-ak-sKD"/>
-                        <outlet property="playStopButton" destination="1xn-S9-nUw" id="nwM-UN-uCh"/>
+                        <outlet property="playStopButton" destination="5zx-W8-JOp" id="EcO-4d-bYn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZvV-SO-Jt8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2351" y="-163"/>
+            <point key="canvasLocation" x="2350.7246376811595" y="-163.39285714285714"/>
         </scene>
     </scenes>
 </document>

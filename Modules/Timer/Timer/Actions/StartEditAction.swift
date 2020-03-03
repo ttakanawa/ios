@@ -15,3 +15,23 @@ public enum StartEditAction
     case startTapped
     case timeEntryStarted(TimeEntry)
 }
+
+
+extension StartEditAction: CustomDebugStringConvertible
+{
+    public var debugDescription: String
+    {
+        switch self {
+       
+        case let .descriptionEntered(description):
+            return "DescriptionEntered \(description)"
+            
+        case .startTapped:
+            return "StartTapped"
+       
+        case let .timeEntryStarted(te):
+            return "TimeEntryStarted: \(te.description)"
+        
+        }
+    }
+}

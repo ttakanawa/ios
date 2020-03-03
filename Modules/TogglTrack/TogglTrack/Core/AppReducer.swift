@@ -33,7 +33,7 @@ var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { stat
             .main(.calendar)
         ][section]
         
-    case .onboarding, .timer:
+    case .onboarding, .timer, .startEdit:
         break
     }
     
