@@ -40,7 +40,9 @@ let timeEntries: (TimerState) -> [TimeEntryViewModel] = { state in
     })
 }
 
-class TimeLogViewController: UIViewController, Storyboarded
+public typealias TimeLogStore = Store<TimerState, TimerAction>
+
+public class TimeLogViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Timer"
     public static var storyboardBundle = Assets.bundle
@@ -50,9 +52,10 @@ class TimeLogViewController: UIViewController, Storyboarded
     private var disposeBag = DisposeBag()
     private var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntryViewModel>>?
 
-    public var store: TimerStore!
+    public var store: TimeLogStore!
 
-    override func viewDidLoad() {
+    public override func viewDidLoad()
+    {
         super.viewDidLoad()
         tableView.rowHeight = 72
     }
@@ -79,5 +82,11 @@ class TimeLogViewController: UIViewController, Storyboarded
                 .drive(tableView.rx.items(dataSource: dataSource!))
                 .disposed(by: disposeBag)
         }
+    }
+    
+    public override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        store.dispatch(.load)
     }
 }

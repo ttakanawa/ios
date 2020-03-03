@@ -14,16 +14,13 @@ import RxSwift
 import Utils
 import Assets
 
-public typealias TimerStore = Store<TimerState, TimerAction>
-
 public class TimerViewController: UIViewController
 {    
-    private var bottomSheet: BottomSheet!
-    private var timeLog: TimeLogViewController!
-    
-    public var store: TimerStore!
     public var startEditViewController: StartEditViewController!
-        
+    public var timeLogViewController: TimeLogViewController!
+
+    private var bottomSheet: BottomSheet!
+    
     public override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -31,25 +28,17 @@ public class TimerViewController: UIViewController
         title = "Timer"
         navigationController?.navigationBar.prefersLargeTitles = true
 
-        timeLog = TimeLogViewController.instantiate()
-        timeLog.store = store
-        install(timeLog)
+        install(timeLogViewController)
         
         bottomSheet = BottomSheet(viewController: startEditViewController)
         install(bottomSheet, customConstraints: true)
-    }
-    
-    public override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        store.dispatch(.load)
     }
     
     public override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
         
-        timeLog.additionalSafeAreaInsets.bottom = bottomSheet.view.frame.height
+        timeLogViewController.additionalSafeAreaInsets.bottom = bottomSheet.view.frame.height
     }
 }
 

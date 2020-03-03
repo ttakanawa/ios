@@ -10,5 +10,5 @@ import Foundation
 
 public protocol Entity
 {
-    var id: Int { get }
+    var id: Int { get }
 }

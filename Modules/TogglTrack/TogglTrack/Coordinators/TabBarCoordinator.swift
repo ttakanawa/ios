@@ -32,18 +32,21 @@ public final class TabBarCoordinator: Coordinator
             .subscribe(onNext: store.dispatch)            
             .disposed(by: disposeBag)
         
-        let timer = TimerViewController()
-        timer.store = store.view(
+        let timerLog = TimeLogViewController.instantiate()
+        timerLog.store = store.view(
             state: { $0.timerState },
             action: { .timer($0) }
         )
         
-        //TODO We should find a better way to inject modules into modules
         let startEdit = StartEditViewController.instantiate()
         startEdit.store = store.view(
             state: { $0.timerState },
             action: { .startEdit($0) }
         )
+
+        // TODO We should find a better way to inject modules into modules
+        let timer = TimerViewController()
+        timer.timeLogViewController = timerLog
         timer.startEditViewController = startEdit
         
         let timerNav = UINavigationController(rootViewController: timer)
