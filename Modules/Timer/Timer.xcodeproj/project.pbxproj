@@ -18,13 +18,14 @@
 		8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */; };
 		8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517812403C27200BAD4B5 /* TimerViewController.swift */; };
 		8C25178B2403C27200BAD4B5 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517832403C27200BAD4B5 /* TimerState.swift */; };
-		8C25178C2403C27200BAD4B5 /* TimerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517852403C27200BAD4B5 /* TimerAction.swift */; };
-		8C25178D2403C27200BAD4B5 /* TimerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517872403C27200BAD4B5 /* TimerReducer.swift */; };
+		8C25178C2403C27200BAD4B5 /* TimeLogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517852403C27200BAD4B5 /* TimeLogAction.swift */; };
+		8C25178D2403C27200BAD4B5 /* TimeLogReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */; };
 		8C2518A62403C78100BAD4B5 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A52403C78100BAD4B5 /* Architecture.framework */; };
 		8C2518AA2403C78600BAD4B5 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A92403C78600BAD4B5 /* Models.framework */; };
 		8C2518AD2403C79000BAD4B5 /* Assets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518AC2403C79000BAD4B5 /* Assets.framework */; };
 		8C2518C02403C87200BAD4B5 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518BF2403C87200BAD4B5 /* Repository.framework */; };
 		8CB54533240E7DA100154473 /* TimeLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54532240E7DA100154473 /* TimeLogViewController.swift */; };
+		8CB54535240EA67400154473 /* StartEditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54534240EA67400154473 /* StartEditState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,14 +53,15 @@
 		8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryCell.swift; sourceTree = "<group>"; };
 		8C2517812403C27200BAD4B5 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		8C2517832403C27200BAD4B5 /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
-		8C2517852403C27200BAD4B5 /* TimerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerAction.swift; sourceTree = "<group>"; };
-		8C2517872403C27200BAD4B5 /* TimerReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerReducer.swift; sourceTree = "<group>"; };
+		8C2517852403C27200BAD4B5 /* TimeLogAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogAction.swift; sourceTree = "<group>"; };
+		8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogReducer.swift; sourceTree = "<group>"; };
 		8C2518A52403C78100BAD4B5 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518A92403C78600BAD4B5 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518AC2403C79000BAD4B5 /* Assets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Assets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518BF2403C87200BAD4B5 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518EE2403CA5F00BAD4B5 /* RxDatasourcesDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDatasourcesDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CB54532240E7DA100154473 /* TimeLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogViewController.swift; sourceTree = "<group>"; };
+		8CB54534240EA67400154473 /* StartEditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				8C2517832403C27200BAD4B5 /* TimerState.swift */,
+				8CB54534240EA67400154473 /* StartEditState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -150,7 +153,7 @@
 		8C2517842403C27200BAD4B5 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
-				8C2517852403C27200BAD4B5 /* TimerAction.swift */,
+				8C2517852403C27200BAD4B5 /* TimeLogAction.swift */,
 				8C008FCF24093FF8000A0C32 /* StartEditAction.swift */,
 			);
 			path = Actions;
@@ -159,7 +162,7 @@
 		8C2517862403C27200BAD4B5 /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
-				8C2517872403C27200BAD4B5 /* TimerReducer.swift */,
+				8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */,
 				8C008FD12409407B000A0C32 /* StartEditReducer.swift */,
 			);
 			path = Reducers;
@@ -291,12 +294,13 @@
 				8C25178B2403C27200BAD4B5 /* TimerState.swift in Sources */,
 				8C008FBC24081CD6000A0C32 /* BottomSheet.swift in Sources */,
 				8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */,
-				8C25178C2403C27200BAD4B5 /* TimerAction.swift in Sources */,
+				8C25178C2403C27200BAD4B5 /* TimeLogAction.swift in Sources */,
 				8CB54533240E7DA100154473 /* TimeLogViewController.swift in Sources */,
 				8C008FD22409407B000A0C32 /* StartEditReducer.swift in Sources */,
-				8C25178D2403C27200BAD4B5 /* TimerReducer.swift in Sources */,
+				8C25178D2403C27200BAD4B5 /* TimeLogReducer.swift in Sources */,
 				8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */,
 				8C008FD024093FF8000A0C32 /* StartEditAction.swift in Sources */,
+				8CB54535240EA67400154473 /* StartEditState.swift in Sources */,
 				8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

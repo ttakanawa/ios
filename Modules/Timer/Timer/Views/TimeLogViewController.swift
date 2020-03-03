@@ -41,7 +41,7 @@ let timeEntries: (TimerState) -> [TimeEntryViewModel] = { state in
         })
 }
 
-public typealias TimeLogStore = Store<TimerState, TimerAction>
+public typealias TimeLogStore = Store<TimerState, TimeLogAction>
 
 public class TimeLogViewController: UIViewController, Storyboarded
 {

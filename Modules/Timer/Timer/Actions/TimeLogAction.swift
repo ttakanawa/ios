@@ -1,5 +1,5 @@
 //
-//  TimerAction.swift
+//  TimeLogAction.swift
 //  Timer
 //
 //  Created by Ricardo Sánchez Sotres on 19/02/2020.
@@ -9,7 +9,7 @@
 import Foundation
 import Models
 
-public enum TimerAction
+public enum TimeLogAction
 {
     case load
     case finishedLoading
@@ -18,7 +18,7 @@ public enum TimerAction
     case setError(Error)
 }
 
-extension TimerAction: CustomDebugStringConvertible
+extension TimeLogAction: CustomDebugStringConvertible
 {
     public var debugDescription: String
     {

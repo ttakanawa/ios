@@ -40,7 +40,7 @@ public final class TabBarCoordinator: Coordinator
         
         let startEdit = StartEditViewController.instantiate()
         startEdit.store = store.view(
-            state: { $0.timerState },
+            state: { $0.startEditState },
             action: { .startEdit($0) }
         )
 

@@ -1,5 +1,5 @@
 //
-//  TimerReducer.swift
+//  TimeLogReducer.swift
 //  Timer
 //
 //  Created by Ricardo Sánchez Sotres on 19/02/2020.
@@ -12,7 +12,7 @@ import Models
 import RxSwift
 import Repository
 
-public let timerReducer = Reducer<TimerState, TimerAction, Repository> { state, action, repository in
+public let timeLogReducer = Reducer<TimerState, TimeLogAction, Repository> { state, action, repository in
     
     switch action {
         
@@ -45,17 +45,17 @@ public let timerReducer = Reducer<TimerState, TimerAction, Repository> { state, 
 }
 
 
-fileprivate func loadEntities(_ repository: Repository) -> Effect<TimerAction>
+fileprivate func loadEntities(_ repository: Repository) -> Effect<TimeLogAction>
 {
     Observable.merge(
-        repository.getWorkspaces().map(TimerAction.setEntities),
-        repository.getClients().map(TimerAction.setEntities),
-        repository.getTimeEntries().map(TimerAction.setEntities),
-        repository.getProjects().map(TimerAction.setEntities),
-        repository.getTasks().map(TimerAction.setEntities),
-        repository.getTags().map(TimerAction.setEntities)
+        repository.getWorkspaces().map(TimeLogAction.setEntities),
+        repository.getClients().map(TimeLogAction.setEntities),
+        repository.getTimeEntries().map(TimeLogAction.setEntities),
+        repository.getProjects().map(TimeLogAction.setEntities),
+        repository.getTasks().map(TimeLogAction.setEntities),
+        repository.getTags().map(TimeLogAction.setEntities)
     )
-    .concat(Observable.just(TimerAction.finishedLoading))
-    .catchError({ Observable.just(TimerAction.setError($0)) })
+    .concat(Observable.just(.finishedLoading))
+    .catchError({ Observable.just(.setError($0)) })
     .toEffect()
 }

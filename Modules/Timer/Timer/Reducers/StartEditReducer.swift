@@ -12,7 +12,7 @@ import Models
 import RxSwift
 import Repository
 
-public let startEditReducer = Reducer<TimerState, StartEditAction, Repository> { state, action, repository in
+public let startEditReducer = Reducer<StartEditState, StartEditAction, Repository> { state, action, repository in
     
     switch action {
         

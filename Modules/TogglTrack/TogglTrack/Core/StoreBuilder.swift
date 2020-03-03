@@ -23,13 +23,13 @@ public func buildStore() -> Store<AppState, AppAction>
             action: \AppAction.onboarding,
             environment: \AppEnvironment.userAPI
         ),
-        timerReducer.pullback(
+        timeLogReducer.pullback(
             state: \AppState.timerState,
             action: \AppAction.timer,
             environment: \AppEnvironment.repository
         ),
         startEditReducer.pullback(
-            state: \AppState.timerState,
+            state: \AppState.startEditState,
             action: \AppAction.startEdit,
             environment: \AppEnvironment.repository
         )

@@ -10,31 +10,7 @@ import Foundation
 import Models
 import Utils
 
-public struct LocalTimerState
-{
-    internal var description: String = ""
-    
-    public init()
-    {
-    }
-}
-
 public protocol TimerState
 {
-    var user: Loadable<User> { get set }
     var entities: TimeLogEntities { get set }
-    var localTimerState: LocalTimerState { get set }
-}
-
-extension TimerState
-{
-    internal var description: String
-    {
-        get {
-            localTimerState.description
-        }
-        set {
-            localTimerState.description = newValue
-        }
-    }
 }

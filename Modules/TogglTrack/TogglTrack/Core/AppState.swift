@@ -28,7 +28,7 @@ public struct AppState
     public var entities: TimeLogEntities =  TimeLogEntities()
     
     public var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
-    public var localTimerState: LocalTimerState = LocalTimerState()
+    public var localStartEditState: LocalStartEditState = LocalStartEditState()
 }
 
 // Module specific states
@@ -56,7 +56,21 @@ extension AppState: TimerState
         }
         set {
             entities = newValue.entities
-            localTimerState = newValue.localTimerState
+        }
+    }
+}
+
+
+extension AppState: StartEditState
+{
+    var startEditState: StartEditState
+    {
+        get {
+            self
+        }
+        set {
+            entities = newValue.entities
+            localStartEditState = newValue.localStartEditState
         }
     }
 }
