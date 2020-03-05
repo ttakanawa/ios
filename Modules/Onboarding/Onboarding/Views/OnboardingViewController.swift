@@ -37,8 +37,7 @@ public class OnboardingViewController: UIViewController, Storyboarded
         emailSignInButton.rx.tap
             .mapTo(OnboardingAction.emailSingInTapped)
             .subscribe(onNext: store.dispatch)
-            .disposed(by: disposeBag)
-                
+            .disposed(by: disposeBag)                
     }
 }
 

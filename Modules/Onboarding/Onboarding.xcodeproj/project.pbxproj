@@ -24,6 +24,8 @@
 		8C2518B12403C79F00BAD4B5 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518B02403C79F00BAD4B5 /* Models.framework */; };
 		8C2518B42403C7A300BAD4B5 /* Assets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518B32403C7A300BAD4B5 /* Assets.framework */; };
 		8C2518C42403C88500BAD4B5 /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518C32403C88500BAD4B5 /* API.framework */; };
+		8C509CF72411665200B6DF30 /* EmailLoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509CF62411665200B6DF30 /* EmailLoginFeature.swift */; };
+		8C509CF92411668000B6DF30 /* EmailSignupFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509CF82411668000B6DF30 /* EmailSignupFeature.swift */; };
 		8CAAACAB24050FC700E9BBAF /* EmailLoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACAA24050FC700E9BBAF /* EmailLoginAction.swift */; };
 		8CAAACAD24050FFF00E9BBAF /* EmailSignupAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACAC24050FFF00E9BBAF /* EmailSignupAction.swift */; };
 		8CAAACAF2405104400E9BBAF /* EmailLoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACAE2405104400E9BBAF /* EmailLoginReducer.swift */; };
@@ -62,6 +64,8 @@
 		8C2518B02403C79F00BAD4B5 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518B32403C7A300BAD4B5 /* Assets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Assets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518C32403C88500BAD4B5 /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C509CF62411665200B6DF30 /* EmailLoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginFeature.swift; sourceTree = "<group>"; };
+		8C509CF82411668000B6DF30 /* EmailSignupFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignupFeature.swift; sourceTree = "<group>"; };
 		8CAAACAA24050FC700E9BBAF /* EmailLoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginAction.swift; sourceTree = "<group>"; };
 		8CAAACAC24050FFF00E9BBAF /* EmailSignupAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignupAction.swift; sourceTree = "<group>"; };
 		8CAAACAE2405104400E9BBAF /* EmailLoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginReducer.swift; sourceTree = "<group>"; };
@@ -105,7 +109,6 @@
 		8C2516252403C15300BAD4B5 = {
 			isa = PBXGroup;
 			children = (
-				8CB545CB241108EB00154473 /* OnboardingFeature.swift */,
 				8C2516312403C15300BAD4B5 /* Onboarding */,
 				8C25163C2403C15300BAD4B5 /* OnboardingTests */,
 				8C2516302403C15300BAD4B5 /* Products */,
@@ -125,6 +128,7 @@
 		8C2516312403C15300BAD4B5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				8C509CF3241165E200B6DF30 /* Features */,
 				8C008FB0240816EA000A0C32 /* Coordinators */,
 				8C25176D2403C25900BAD4B5 /* Actions */,
 				8C2517702403C25900BAD4B5 /* Reducer */,
@@ -201,6 +205,16 @@
 				8C2518A02403C75000BAD4B5 /* Architecture.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C509CF3241165E200B6DF30 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				8CB545CB241108EB00154473 /* OnboardingFeature.swift */,
+				8C509CF62411665200B6DF30 /* EmailLoginFeature.swift */,
+				8C509CF82411668000B6DF30 /* EmailSignupFeature.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +330,7 @@
 				8CB545CC241108EB00154473 /* OnboardingFeature.swift in Sources */,
 				8C2517782403C25900BAD4B5 /* LoginViewController.swift in Sources */,
 				8C008FB2240816F2000A0C32 /* OnboardingCoordinator.swift in Sources */,
+				8C509CF92411668000B6DF30 /* EmailSignupFeature.swift in Sources */,
 				8C2517762403C25900BAD4B5 /* SignupViewController.swift in Sources */,
 				8C008FB624081AA1000A0C32 /* EmailSignupCoordinator.swift in Sources */,
 				8CAAACAB24050FC700E9BBAF /* EmailLoginAction.swift in Sources */,
@@ -328,6 +343,7 @@
 				8C25177D2403C25900BAD4B5 /* OnboardingState.swift in Sources */,
 				8C25177B2403C25900BAD4B5 /* OnboardingReducer.swift in Sources */,
 				8C25177C2403C25900BAD4B5 /* OnboardingSelectors.swift in Sources */,
+				8C509CF72411665200B6DF30 /* EmailLoginFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

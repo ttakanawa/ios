@@ -12,8 +12,7 @@ import Models
 public enum TimeLogAction
 {
     case load
-    case finishedLoading
-    
+    case finishedLoading    
     case setEntities([Entity])
     case setError(Error)
 }

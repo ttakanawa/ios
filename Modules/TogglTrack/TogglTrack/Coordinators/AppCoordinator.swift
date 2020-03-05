@@ -11,36 +11,66 @@ import Architecture
 
 public final class AppCoordinator: Coordinator
 {
-    public var route: AppRoute = .start
+    public var rootViewController: UIViewController!
     
-    public var rootViewController: UIViewController {
-        return navigationController
-    }
-    
-    private var window: UIWindow
-    private var navigationController: UINavigationController
+    private var store: Store<AppState, AppAction>
+    private var navigationController: UINavigationController!
+    private var features: [String: BaseFeature<AppState, AppAction, AppEnvironment>]
         
-    public init(window: UIWindow)
+    public init(store: Store<AppState, AppAction>, features: [String: BaseFeature<AppState, AppAction, AppEnvironment>])
     {
-        self.window = window
-        navigationController = UINavigationController()
-        navigationController.navigationBar.isHidden = true
+        self.store = store
+        self.features = features
     }
     
-    public func newRoute(route: String)
+    public func start(window: UIWindow)
     {
+        self.navigationController = UINavigationController()
+        navigationController.view.backgroundColor = .purple
+        rootViewController = navigationController
+        window.rootViewController = rootViewController
+        window.makeKeyAndVisible()        
+    }
+    
+    public func start(presentingViewController: UIViewController)
+    {
+        fatalError("user start(window:) for the main coordinator")
+    }
+    
+    public func newRoute(route: String) -> Coordinator?
+    {
+        guard let route = AppRoute(rawValue: route) else { fatalError() }
+        
         switch route {
-        case "start":
-            window.rootViewController = navigationController
-            window.makeKeyAndVisible()
-            break
-        default:
-            fatalError("Wrong path")
+        
+        case .onboarding:
+            return features[route.rawValue]!.mainCoordinator(store: store)
+            
+        case .loading:
+            let vc = LoadingViewController()
+            vc.view.backgroundColor = .red
+            vc.store = store
+            rootViewController.show(vc, sender: nil)
+            return nil
+            
+        case .main:
+            return nil
+        
         }
     }
     
     public func finish(completion: (() -> Void)?)
     {
         fatalError("Should never complete")
+    }
+}
+
+class LoadingViewController: UIViewController
+{
+    public var store: Store<AppState, AppAction>!
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
     }
 }

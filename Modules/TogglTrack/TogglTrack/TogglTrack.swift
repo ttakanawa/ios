@@ -13,31 +13,27 @@ import Onboarding
 import API
 import Repository
 import Networking
+import Models
 
 public class TogglTrack
 {
     private let store: Store<AppState, AppAction>!
+    private let appCoordinator: AppCoordinator
     private let router: Router
     private var disposeBag = DisposeBag()
-    
-    public init(coordinator: AppCoordinator)
+
+    public init(window: UIWindow)
     {
-        let onboardingFeature = FeatureLocator.feature(for: "onboarding")
-        
-        let combinedReducers = combine(
-            globalReducer,
-            onboardingFeature.reducer
-        )
-        let appReducer = logging(combinedReducers)
-        
+        let appFeature = AppFeature()
+                
         store = Store(
             initialState: AppState(),
-            reducer: appReducer,
+            reducer: logging(appFeature.reducer),
             environment: AppEnvironment()
         )
         
-        self.router = Router(initialCoordinator: coordinator)
-        router.delegate = self
+        appCoordinator = appFeature.mainCoordinator(store: store) as! AppCoordinator
+        router = Router(initialRoute: "root", initialCoordinator: appCoordinator)
                 
         store
             .select({ $0.route })
@@ -45,45 +41,8 @@ public class TogglTrack
             .distinctUntilChanged()
             .drive(onNext: router.navigate)
             .disposed(by: disposeBag)
-
-        store.dispatch(.start)
-    }
-}
-
-extension TogglTrack: RouterDelegate
-{
-    public func coordinator(forRoute route: String, rootViewController: UIViewController) -> Coordinator
-    {
-        switch route {
-        case "onboarding":
-            return FeatureLocator.feature(for: "onboarding").mainCoordinator(rootViewController: rootViewController, store: store)
-            
-        case "emailLogin":
-            return EmailLoginCoordinator(
-                presentingViewController: rootViewController,
-                store: store.view(
-                    state: { $0.onboardingState },
-                    action: { .onboarding(.emailLogin($0)) }
-                )
-            )
         
-        case "emailSignup":
-            return EmailSignupCoordinator(
-                presentingViewController: rootViewController,
-                store: store.view(
-                    state: { $0.onboardingState },
-                    action: { .onboarding(.emailSignup($0)) }
-                )
-            )
-
-        case "main":
-            return TabBarCoordinator(
-                rootViewController: rootViewController,
-                store: store
-            )
-            
-        default:
-            fatalError("Wrong path")
-        }
+        appCoordinator.start(window: window)
+        store.dispatch(.start)
     }
 }

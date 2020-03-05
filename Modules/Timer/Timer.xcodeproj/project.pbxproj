@@ -24,6 +24,7 @@
 		8C2518AA2403C78600BAD4B5 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A92403C78600BAD4B5 /* Models.framework */; };
 		8C2518AD2403C79000BAD4B5 /* Assets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518AC2403C79000BAD4B5 /* Assets.framework */; };
 		8C2518C02403C87200BAD4B5 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518BF2403C87200BAD4B5 /* Repository.framework */; };
+		8C509D062411704000B6DF30 /* TimerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D052411704000B6DF30 /* TimerFeature.swift */; };
 		8CB54533240E7DA100154473 /* TimeLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54532240E7DA100154473 /* TimeLogViewController.swift */; };
 		8CB54535240EA67400154473 /* StartEditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54534240EA67400154473 /* StartEditState.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		8C2518AC2403C79000BAD4B5 /* Assets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Assets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518BF2403C87200BAD4B5 /* Repository.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Repository.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518EE2403CA5F00BAD4B5 /* RxDatasourcesDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDatasourcesDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C509D052411704000B6DF30 /* TimerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFeature.swift; sourceTree = "<group>"; };
 		8CB54532240E7DA100154473 /* TimeLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogViewController.swift; sourceTree = "<group>"; };
 		8CB54534240EA67400154473 /* StartEditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 		8C2516C12403C1B000BAD4B5 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				8C509D042411702D00B6DF30 /* Features */,
 				8C2517842403C27200BAD4B5 /* Actions */,
 				8C2517862403C27200BAD4B5 /* Reducers */,
 				8C2517822403C27200BAD4B5 /* State */,
@@ -179,6 +182,14 @@
 				8C2518A52403C78100BAD4B5 /* Architecture.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C509D042411702D00B6DF30 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				8C509D052411704000B6DF30 /* TimerFeature.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 				8C008FD22409407B000A0C32 /* StartEditReducer.swift in Sources */,
 				8C25178D2403C27200BAD4B5 /* TimeLogReducer.swift in Sources */,
 				8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */,
+				8C509D062411704000B6DF30 /* TimerFeature.swift in Sources */,
 				8C008FD024093FF8000A0C32 /* StartEditAction.swift in Sources */,
 				8CB54535240EA67400154473 /* StartEditState.swift in Sources */,
 				8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */,

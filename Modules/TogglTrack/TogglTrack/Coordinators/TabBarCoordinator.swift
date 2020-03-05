@@ -13,9 +13,7 @@ import RxSwift
 
 public final class TabBarCoordinator: Coordinator
 {
-    public var route: AppRoute = .main(.timer)
-    
-    public var rootViewController: UIViewController
+    public var rootViewController: UIViewController!
 
     private var store: Store<AppState, AppAction>
     private var tabBarController: UITabBarController
@@ -67,24 +65,30 @@ public final class TabBarCoordinator: Coordinator
         rootViewController.show(tabBarController, sender: nil)
     }
     
-    public func newRoute(route: String)
+    public func start(presentingViewController: UIViewController)
     {
-        rootViewController = tabBarController
-        switch route {
         
-        case "timer":
-            tabBarController.selectedIndex = 0
-            
-        case "reports":
-            tabBarController.selectedIndex = 1
-            
-        case "calendar":
-            tabBarController.selectedIndex = 2
-            
-        default:
-            fatalError("Wrong path")
-            break
-        }
+    }
+    
+    public func newRoute(route: String) -> Coordinator?
+    {
+        return nil
+//        rootViewController = tabBarController
+//        switch route {
+//        
+//        case "timer":
+//            tabBarController.selectedIndex = 0
+//            
+//        case "reports":
+//            tabBarController.selectedIndex = 1
+//            
+//        case "calendar":
+//            tabBarController.selectedIndex = 2
+//            
+//        default:
+//            fatalError("Wrong path")
+//            break
+//        }
     }
     
     public func finish(completion: (() -> Void)?)

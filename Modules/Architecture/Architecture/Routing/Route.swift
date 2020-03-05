@@ -8,21 +8,26 @@
 
 import Foundation
 
-struct Route: Equatable
+public struct Route: Equatable
 {
-    let path: String
-    let components: [String]
+    public let path: String
+    public let components: [String]
     
-    init(path: String)
+    public init(path: String)
     {
         self.path = path
         components = path.split(separator: "/").map(String.init)
     }
     
-    init(components: [String])
+    public init(components: [String])
     {
         path = components.joined(separator: "/")
         self.components = components
+    }
+    
+    public func append(component: String) -> Route
+    {
+        return Route(components: components + [component])
     }
     
     public func sameBase(as otherRoute: Route) -> Bool

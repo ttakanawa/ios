@@ -25,7 +25,7 @@
 		8CAAACB724051CCE00E9BBAF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACB624051CCE00E9BBAF /* AppCoordinator.swift */; };
 		8CB545BF2410FFA500154473 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545BC2410FFA500154473 /* AppState.swift */; };
 		8CB545C52410FFF500154473 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545C42410FFF500154473 /* AppAction.swift */; };
-		8CB545CE24110CE300154473 /* FeatureLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545CD24110CE300154473 /* FeatureLocator.swift */; };
+		8CB545D024113B4600154473 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545CF24113B4600154473 /* AppFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,7 @@
 		8CAAACB624051CCE00E9BBAF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		8CB545BC2410FFA500154473 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		8CB545C42410FFF500154473 /* AppAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
-		8CB545CD24110CE300154473 /* FeatureLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureLocator.swift; sourceTree = "<group>"; };
+		8CB545CF24113B4600154473 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +122,10 @@
 		8C2516552403C17500BAD4B5 /* TogglTrack */ = {
 			isa = PBXGroup;
 			children = (
-				8CB545C62411022A00154473 /* Features */,
 				8C008FAC24081357000A0C32 /* TogglTrack.swift */,
+				8CB545C62411022A00154473 /* Features */,
+				8C509CFC24116BD000B6DF30 /* State */,
+				8C509CFF24116CA400B6DF30 /* Actions */,
 				8C008F9924054F9E000A0C32 /* Coordinators */,
 				8C2517AB2403C2BC00BAD4B5 /* Core */,
 				8C2516562403C17500BAD4B5 /* TogglTrack.h */,
@@ -144,8 +146,6 @@
 		8C2517AB2403C2BC00BAD4B5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8CB545C42410FFF500154473 /* AppAction.swift */,
-				8CB545BC2410FFA500154473 /* AppState.swift */,
 				8C2517AD2403C2BC00BAD4B5 /* AppReducer.swift */,
 				8C2517B02403C2BC00BAD4B5 /* AppEnvironment.swift */,
 				8C008FAE2408163D000A0C32 /* LoggingReducer.swift */,
@@ -169,10 +169,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8C509CFC24116BD000B6DF30 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				8CB545BC2410FFA500154473 /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		8C509CFF24116CA400B6DF30 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				8CB545C42410FFF500154473 /* AppAction.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		8CB545C62411022A00154473 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				8CB545CD24110CE300154473 /* FeatureLocator.swift */,
+				8CB545CF24113B4600154473 /* AppFeature.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -287,12 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CB545CE24110CE300154473 /* FeatureLocator.swift in Sources */,
 				8C2517B32403C2BC00BAD4B5 /* AppReducer.swift in Sources */,
 				8C008FAF2408163D000A0C32 /* LoggingReducer.swift in Sources */,
 				8CAAACB724051CCE00E9BBAF /* AppCoordinator.swift in Sources */,
 				8CB545BF2410FFA500154473 /* AppState.swift in Sources */,
 				8CB545C52410FFF500154473 /* AppAction.swift in Sources */,
+				8CB545D024113B4600154473 /* AppFeature.swift in Sources */,
 				8C2517B62403C2BC00BAD4B5 /* AppEnvironment.swift in Sources */,
 				8C008F9D2406744C000A0C32 /* TabBarCoordinator.swift in Sources */,
 				8C008FAD24081357000A0C32 /* TogglTrack.swift in Sources */,

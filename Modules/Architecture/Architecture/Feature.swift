@@ -15,19 +15,35 @@ public protocol Feature
     associatedtype Environment
     
     var reducer: Reducer<State, Action, Environment> { get }
-    func mainCoordinator(rootViewController: UIViewController, store: Store<State, Action>) -> Coordinator
+    func mainCoordinator(store: Store<State, Action>) -> Coordinator
 }
 
 open class BaseFeature<State, Action, Environment>: Feature
 {
-    public init() {
+    public init()
+    {
     }
     
-    open var reducer: Reducer<State, Action, Environment> { fatalError() }
-    
-    open func mainCoordinator(rootViewController: UIViewController, store: Store<State, Action>) -> Coordinator
+    open var reducer: Reducer<State, Action, Environment>
     {
         fatalError()
+    }
+    
+    open func mainCoordinator(store: Store<State, Action>) -> Coordinator
+    {
+        fatalError()
+    }
+    
+    public func wrap<GlobalState, GlobalAction, GlobalEnvironment>(
+        pullback: @escaping (Reducer<State, Action, Environment>) -> Reducer<GlobalState, GlobalAction, GlobalEnvironment>,
+        viewStore: @escaping (Store<GlobalState, GlobalAction>) -> Store<State, Action>
+    ) -> BaseFeature<GlobalState, GlobalAction, GlobalEnvironment>
+    {
+        return FeatureWrapper<GlobalState, GlobalAction, GlobalEnvironment, State, Action, Environment>(
+            feature: self,
+            pullback: pullback,
+            viewStore: viewStore
+        )
     }
 }
 
@@ -53,8 +69,8 @@ public class FeatureWrapper<GlobalState, GlobalAction, GlobalEnvironment, State,
         self.pullback = pullback
     }
         
-    override public func mainCoordinator(rootViewController: UIViewController, store: Store<GlobalState, GlobalAction>) -> Coordinator
+    override public func mainCoordinator(store: Store<GlobalState, GlobalAction>) -> Coordinator
     {
-        feature.mainCoordinator(rootViewController: rootViewController, store: viewStore(store))
+        feature.mainCoordinator(store: viewStore(store))
     }
 }

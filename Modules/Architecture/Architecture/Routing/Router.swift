@@ -8,84 +8,45 @@
 
 import UIKit
 
-public protocol RouterDelegate
-{
-    func coordinator(forRoute: String, rootViewController: UIViewController) -> Coordinator
-}
-
 public final class Router
 {
-    public var delegate: RouterDelegate?
-    
-    private var stack: [(route: Route, coordinator: Coordinator)]
+    private var stack: [(route: String, coordinator: Coordinator)]
     private var currentRoute: Route {
-        return stack.last!.route
+        return Route(components: stack.map({ $0.route }))
     }
      
-    public init(initialCoordinator: Coordinator)
+    public init(initialRoute: String, initialCoordinator: Coordinator)
     {
-        let route = Route(path: initialCoordinator.route.path)
-        stack = [(route: route, coordinator: initialCoordinator)]
-        initialCoordinator.newRoute(route: route.lastComponent)
+        stack = [(route: initialRoute, coordinator: initialCoordinator)]
     }
     
-    final public func navigate(to appRoute: AppRoute)
+    final public func navigate(to route: Route)
     {
-        let route = Route(path: appRoute.path)
         guard route != currentRoute else { return }
-                
-        if route.sameBase(as: currentRoute)
-        {
-            stack.last!.coordinator.newRoute(route: route.lastComponent)
-            updateLast(route: route)
-            return
-        }
-    
+        print("Go to: \(route.path)")
+
         let toRemove: [Coordinator] = stack.enumerated().compactMap { i, element in
-            if route[i] == element.route.secondToLastComponent { return nil }
+            guard i < route.components.count else { return element.coordinator }
+            if route[i] == element.route { return nil }
             return element.coordinator
         }
 
         if toRemove.count > 0 {
-            remove(coordinators: toRemove) {
-                self.navigate(to: appRoute)
+            toRemove.last?.finish {
+                self.stack.removeLast()
+                self.navigate(to: route)
             }
-        }
-                        
-        let difference = route.difference(with: currentRoute).dropLast()
-        for component in difference
-        {
-            guard let coordinator = self.coordinatorForPath(component) else { return }
-            self.stack.append((route: Route(path: coordinator.route.path), coordinator: coordinator))
-            let route = Route(path: coordinator.route.path)
-            coordinator.newRoute(route: route.lastComponent)
-        }
-        
-        updateLast(route: route)
-    }
-    
-    private func remove(coordinators: [Coordinator], then: @escaping () -> ())
-    {
-        guard let lastToRemove = coordinators.last else {
-            then()
             return
         }
-        
-        lastToRemove.finish {
-            self.stack.removeLast()
-            self.remove(coordinators: coordinators.dropLast(), then: then)
+
+        let toAdd = route.difference(with: currentRoute)
+        if let component = toAdd.first
+        {
+            if let coordinator = self.stack.last!.coordinator.newRoute(route: component) {
+                coordinator.start(presentingViewController: stack.last!.coordinator.rootViewController)
+                self.stack.append((route: component, coordinator: coordinator))
+                self.navigate(to: route)
+            }
         }
-    }
-    
-    private func coordinatorForPath(_ path: String) -> Coordinator?
-    {
-        let rootViewController = stack.last!.coordinator.rootViewController
-        return delegate?.coordinator(forRoute: path, rootViewController: rootViewController)        
-    }
-    
-    private func updateLast(route: Route)
-    {
-        let currentCoordinator = stack.last!.coordinator
-        stack = stack.dropLast() + [(route: route, coordinator: currentCoordinator)]
     }
 }

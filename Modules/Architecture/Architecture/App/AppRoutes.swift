@@ -8,91 +8,27 @@
 
 import Foundation
 
-public enum AppRoute: Equatable
+public enum AppRoute: String
 {
-    case start
-    case onboarding(OnboardingRoute)
-    case main(TabBarRoute)
-    
-    public var path: String
-    {
-        switch self {
-        case .start:
-            return "root/start"
-        case let .onboarding(route):
-            return "root/onboarding/\(route.path)"
-        case let .main(route):
-            return "root/main/\(route.path)"
-        }
-    }
-}
-
-public enum OnboardingRoute: Equatable
-{
-    case start
-    case emailLogin(EmailLoginRoute)
-    case emailSignup(EmailSignupRoute)
+    case onboarding
     case loading
-    
-    public var path: String
-    {
-        switch self {
-        case .start:
-            return "start"
-        case let .emailLogin(route):
-            return "emailLogin/\(route)"
-        case let .emailSignup(route):
-            return "emailSignup/\(route)"
-        case .loading:
-            return "loading"
-        }
-    }
+    case main
 }
 
-public enum EmailLoginRoute: Equatable
+public enum OnboardingRoute: String
 {
-    case start
-    
-    public var path: String
-    {
-        switch self {
-        case .start:
-            return "start"
-        }
-    }
+    case emailLogin
+    case emailSignup
 }
 
-public enum EmailSignupRoute: Equatable
+public enum EmailSignupRoute: String
 {
-    case start
     case tos
-    
-    public var path: String
-    {
-        switch self {
-        case .start:
-            return "start"
-        case .tos:
-            return "tos"
-        }
-    }
 }
 
-public enum TabBarRoute: Equatable
+public enum TabBarRoute: String
 {
     case timer
     case reports
     case calendar
-    
-    public var path: String
-    {
-        switch self {
-        case .timer:
-            return "timer"
-        case .reports:
-            return "reports"
-        case .calendar:
-            return "calendar"
-        }
-    }
 }

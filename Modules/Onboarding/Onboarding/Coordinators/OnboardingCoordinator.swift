@@ -8,29 +8,39 @@
 
 import UIKit
 import Architecture
+import API
 
 public final class OnboardingCoordinator: Coordinator
-{
-    public var route: AppRoute = .onboarding(.start)
-    
+{    
     private var store: Store<OnboardingState, OnboardingAction>
-    public var rootViewController: UIViewController
+    public var rootViewController: UIViewController!
     
-    public init(rootViewController: UIViewController, store: Store<OnboardingState, OnboardingAction>) {
+    private var features: [String: BaseFeature<OnboardingState, OnboardingAction, UserAPI>]
+    
+    public init(store: Store<OnboardingState, OnboardingAction>, features: [String: BaseFeature<OnboardingState, OnboardingAction, UserAPI>])
+    {
         self.store = store
-        self.rootViewController = rootViewController
+        self.features = features
     }
     
-    public func newRoute(route: String)
+    public func start(presentingViewController: UIViewController)
     {
+        let vc = OnboardingViewController.instantiate()
+        vc.store = store
+        presentingViewController.show(vc, sender: nil)
+        self.rootViewController = vc
+    }
+    
+    public func newRoute(route: String) -> Coordinator?
+    {
+        guard let route = OnboardingRoute(rawValue: route) else { fatalError() }
+        
         switch route {
-        case "start":
-            let vc = OnboardingViewController.instantiate()
-            vc.store = store
-            rootViewController.show(vc, sender: nil)
-        default:
-            fatalError("Wrong path")
-            break
+        
+        case .emailLogin:
+            return features[route.rawValue]?.mainCoordinator(store: store)
+        case .emailSignup:
+            return features[route.rawValue]?.mainCoordinator(store: store)
         }
     }
     

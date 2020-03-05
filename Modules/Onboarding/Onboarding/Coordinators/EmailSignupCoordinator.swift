@@ -11,37 +11,41 @@ import Architecture
 
 public final class EmailSignupCoordinator: Coordinator
 {
-    public var route: AppRoute = .onboarding(.emailSignup(.start))
-    
-    public var rootViewController: UIViewController {
-        return navigationViewController!
-    }
+    public var rootViewController: UIViewController!
         
     private var store: Store<OnboardingState, EmailSignupAction>
-    private var presentingViewController: UIViewController
-    private var navigationViewController: UINavigationController?
+    private var navigationController: UINavigationController?
         
-    public init(presentingViewController: UIViewController, store: Store<OnboardingState, EmailSignupAction>) {
+    public init(store: Store<OnboardingState, EmailSignupAction>) {
         self.store = store
-        self.presentingViewController = presentingViewController
     }
     
-    public func newRoute(route: String)
+    public func start(presentingViewController: UIViewController)
     {
-        switch route {
-        case "start":
-            let vc = SignupViewController.instantiate()
-            vc.store = store
-            
-            navigationViewController = UINavigationController(rootViewController: vc)
-            presentingViewController.present(navigationViewController!, animated: true)
-        default:
-            fatalError("Wrong path")
-        }
+        let vc = SignupViewController.instantiate()
+        vc.store = store
+        self.navigationController = UINavigationController(rootViewController: vc)
+        self.rootViewController = navigationController
+        presentingViewController.present(navigationController!, animated: true)
+    }
+    
+    public func newRoute(route: String) -> Coordinator?
+    {
+        return nil
+//        switch route {
+//        case "start":
+//            let vc = SignupViewController.instantiate()
+//            vc.store = store
+//
+//            navigationViewController = UINavigationController(rootViewController: vc)
+//            presentingViewController.present(navigationViewController!, animated: true)
+//        default:
+//            fatalError("Wrong path")
+//        }
     }
     
     public func finish(completion: (() -> Void)?)
     {
-        navigationViewController?.dismiss(animated: true, completion: completion)
+        navigationController?.dismiss(animated: true, completion: completion)
     }
 }

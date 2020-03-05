@@ -9,6 +9,7 @@
 import Foundation
 import Onboarding
 import Timer
+import Models
 
 public enum AppAction
 {

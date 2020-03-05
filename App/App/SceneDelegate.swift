@@ -13,16 +13,15 @@ import TogglTrack
 class SceneDelegate: UIResponder, UIWindowSceneDelegate
 {
     var togglTrack: TogglTrack!
-    var coordinator: AppCoordinator!
+    var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions)
     {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         // If we ever want to have multiple windows we should share the store and not create one for every TogglTrack instance
-        let window = UIWindow(windowScene: windowScene)
-        coordinator = AppCoordinator(window: window)
-        togglTrack = TogglTrack(coordinator: coordinator)
+        window = UIWindow(windowScene: windowScene)
+        togglTrack = TogglTrack(window: window!)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

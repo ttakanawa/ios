@@ -13,7 +13,6 @@ import RxSwift
 import Repository
 
 public let timeLogReducer = Reducer<TimerState, TimeLogAction, Repository> { state, action, repository in
-    
     switch action {
         
     case .load:

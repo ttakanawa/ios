@@ -10,8 +10,8 @@ import UIKit
 
 public protocol Coordinator: AnyObject
 {
-    var route: AppRoute { get }
-    var rootViewController: UIViewController { get }
+    var rootViewController: UIViewController! { get }
+    func start(presentingViewController: UIViewController)
     func finish(completion: (() -> Void)?)
-    func newRoute(route: String)
+    func newRoute(route: String) -> Coordinator?
 }

@@ -66,8 +66,15 @@ public struct Reducer<StateType, ActionType, EnvironmentType>
 public func combine<State, Action, Environment>(
     _ reducers: Reducer<State, Action, Environment>...
 ) -> Reducer<State, Action, Environment> {
+    combine(reducers)
+}
+
+public func combine<State, Action, Environment>(
+    _ reducers: [Reducer<State, Action, Environment>]
+) -> Reducer<State, Action, Environment> {
     return Reducer { state, action, environment in
         let effects = reducers.map{ $0.reduce(&state, action, environment)}
         return Effect.from(effects: effects)
     }
 }
+

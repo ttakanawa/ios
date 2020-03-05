@@ -13,7 +13,7 @@ import TogglTrack
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var togglTrack: TogglTrack!
-    var coordinator: AppCoordinator!
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
@@ -21,9 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             return true
         }
 
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        coordinator = AppCoordinator(window: window)
-        togglTrack = TogglTrack(coordinator: coordinator)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        togglTrack = TogglTrack(window: window!)
         
         return true
     }
