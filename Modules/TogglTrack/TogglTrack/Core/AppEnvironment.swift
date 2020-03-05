@@ -9,6 +9,7 @@
 import Foundation
 import API
 import Repository
+import Networking
 
 public struct AppEnvironment
 {
@@ -19,6 +20,12 @@ public struct AppEnvironment
     {
         self.api = api
         self.repository = repository
+    }
+    
+    public init()
+    {
+        self.api = API(urlSession: FakeURLSession())
+        self.repository = Repository(api: api)
     }
 }
 

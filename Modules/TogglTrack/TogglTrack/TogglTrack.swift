@@ -30,18 +30,10 @@ public class TogglTrack
         )
         let appReducer = logging(combinedReducers)
         
-        // let api = API(urlSession: URLSession(configuration: URLSessionConfiguration.default))
-        let api = API(urlSession: FakeURLSession())
-        let repository = Repository(api: api)
-        let appEnvironment = AppEnvironment(
-            api: api,
-            repository: repository
-        )
-        
         store = Store(
             initialState: AppState(),
             reducer: appReducer,
-            environment: appEnvironment
+            environment: AppEnvironment()
         )
         
         self.router = Router(initialCoordinator: coordinator)
