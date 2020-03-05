@@ -11,7 +11,7 @@ import Architecture
 
 public final class OnboardingCoordinator: Coordinator
 {
-public var route: AppRoute = .onboarding(.start)
+    public var route: AppRoute = .onboarding(.start)
     
     private var store: Store<OnboardingState, OnboardingAction>
     public var rootViewController: UIViewController

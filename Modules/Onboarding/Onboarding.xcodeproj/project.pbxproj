@@ -28,6 +28,7 @@
 		8CAAACAD24050FFF00E9BBAF /* EmailSignupAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACAC24050FFF00E9BBAF /* EmailSignupAction.swift */; };
 		8CAAACAF2405104400E9BBAF /* EmailLoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACAE2405104400E9BBAF /* EmailLoginReducer.swift */; };
 		8CAAACB12405104E00E9BBAF /* EmailSignupReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACB02405104E00E9BBAF /* EmailSignupReducer.swift */; };
+		8CB545CC241108EB00154473 /* OnboardingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545CB241108EB00154473 /* OnboardingFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		8CAAACAC24050FFF00E9BBAF /* EmailSignupAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignupAction.swift; sourceTree = "<group>"; };
 		8CAAACAE2405104400E9BBAF /* EmailLoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginReducer.swift; sourceTree = "<group>"; };
 		8CAAACB02405104E00E9BBAF /* EmailSignupReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignupReducer.swift; sourceTree = "<group>"; };
+		8CB545CB241108EB00154473 /* OnboardingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		8C2516252403C15300BAD4B5 = {
 			isa = PBXGroup;
 			children = (
+				8CB545CB241108EB00154473 /* OnboardingFeature.swift */,
 				8C2516312403C15300BAD4B5 /* Onboarding */,
 				8C25163C2403C15300BAD4B5 /* OnboardingTests */,
 				8C2516302403C15300BAD4B5 /* Products */,
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CB545CC241108EB00154473 /* OnboardingFeature.swift in Sources */,
 				8C2517782403C25900BAD4B5 /* LoginViewController.swift in Sources */,
 				8C008FB2240816F2000A0C32 /* OnboardingCoordinator.swift in Sources */,
 				8C2517762403C25900BAD4B5 /* SignupViewController.swift in Sources */,

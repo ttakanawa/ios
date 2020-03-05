@@ -10,20 +10,43 @@ import UIKit
 import Architecture
 import RxSwift
 import Onboarding
+import API
+import Repository
+import Networking
 
 public class TogglTrack
 {
-    private let store: Store<AppState, AppAction>
+    private let store: Store<AppState, AppAction>!
     private let router: Router
     private var disposeBag = DisposeBag()
     
     public init(coordinator: AppCoordinator)
     {
-        store = buildStore()
+        let onboardingFeature = FeatureLocator.feature(for: "onboarding")
         
-        router = Router(initialCoordinator: coordinator)
+        let combinedReducers = combine(
+            globalReducer,
+            onboardingFeature.reducer
+        )
+        let appReducer = logging(combinedReducers)
+        
+        // let api = API(urlSession: URLSession(configuration: URLSessionConfiguration.default))
+        let api = API(urlSession: FakeURLSession())
+        let repository = Repository(api: api)
+        let appEnvironment = AppEnvironment(
+            api: api,
+            repository: repository
+        )
+        
+        store = Store(
+            initialState: AppState(),
+            reducer: appReducer,
+            environment: appEnvironment
+        )
+        
+        self.router = Router(initialCoordinator: coordinator)
         router.delegate = self
-
+                
         store
             .select({ $0.route })
             .do(onNext: { print("Route: \($0.path)") })
@@ -41,13 +64,7 @@ extension TogglTrack: RouterDelegate
     {
         switch route {
         case "onboarding":
-            return OnboardingCoordinator(
-                rootViewController: rootViewController,
-                store: store.view(
-                    state: { $0.onboardingState },
-                    action: { .onboarding($0) }
-                )
-            )
+            return FeatureLocator.feature(for: "onboarding").mainCoordinator(rootViewController: rootViewController, store: store)
             
         case "emailLogin":
             return EmailLoginCoordinator(

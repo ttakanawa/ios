@@ -13,10 +13,7 @@
 		8C25165D2403C17500BAD4B5 /* TogglTrack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2516532403C17500BAD4B5 /* TogglTrack.framework */; };
 		8C2516622403C17500BAD4B5 /* TogglTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2516612403C17500BAD4B5 /* TogglTrackTests.swift */; };
 		8C2516642403C17500BAD4B5 /* TogglTrack.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2516562403C17500BAD4B5 /* TogglTrack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C2517B22403C2BC00BAD4B5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517AC2403C2BC00BAD4B5 /* AppState.swift */; };
 		8C2517B32403C2BC00BAD4B5 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517AD2403C2BC00BAD4B5 /* AppReducer.swift */; };
-		8C2517B42403C2BC00BAD4B5 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517AE2403C2BC00BAD4B5 /* AppAction.swift */; };
-		8C2517B52403C2BC00BAD4B5 /* StoreBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517AF2403C2BC00BAD4B5 /* StoreBuilder.swift */; };
 		8C2517B62403C2BC00BAD4B5 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517B02403C2BC00BAD4B5 /* AppEnvironment.swift */; };
 		8C2517FC2403C58200BAD4B5 /* API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2517F62403C58200BAD4B5 /* API.framework */; };
 		8C2517FE2403C58200BAD4B5 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2517F72403C58200BAD4B5 /* Networking.framework */; };
@@ -26,6 +23,9 @@
 		8C2518062403C58200BAD4B5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2517FB2403C58200BAD4B5 /* Utils.framework */; };
 		8C25196A2403CE8100BAD4B5 /* RxSwiftDep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518C82403C89E00BAD4B5 /* RxSwiftDep.framework */; };
 		8CAAACB724051CCE00E9BBAF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAAACB624051CCE00E9BBAF /* AppCoordinator.swift */; };
+		8CB545BF2410FFA500154473 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545BC2410FFA500154473 /* AppState.swift */; };
+		8CB545C52410FFF500154473 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545C42410FFF500154473 /* AppAction.swift */; };
+		8CB545CE24110CE300154473 /* FeatureLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545CD24110CE300154473 /* FeatureLocator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +48,7 @@
 		8C25165C2403C17500BAD4B5 /* TogglTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TogglTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2516612403C17500BAD4B5 /* TogglTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglTrackTests.swift; sourceTree = "<group>"; };
 		8C2516632403C17500BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C2517AC2403C2BC00BAD4B5 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		8C2517AD2403C2BC00BAD4B5 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
-		8C2517AE2403C2BC00BAD4B5 /* AppAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
-		8C2517AF2403C2BC00BAD4B5 /* StoreBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreBuilder.swift; sourceTree = "<group>"; };
 		8C2517B02403C2BC00BAD4B5 /* AppEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		8C2517F62403C58200BAD4B5 /* API.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = API.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2517F72403C58200BAD4B5 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +60,9 @@
 		8C2518C82403C89E00BAD4B5 /* RxSwiftDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518F52403CA9900BAD4B5 /* RxDatasourcesDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDatasourcesDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAAACB624051CCE00E9BBAF /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		8CB545BC2410FFA500154473 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		8CB545C42410FFF500154473 /* AppAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		8CB545CD24110CE300154473 /* FeatureLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureLocator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +122,7 @@
 		8C2516552403C17500BAD4B5 /* TogglTrack */ = {
 			isa = PBXGroup;
 			children = (
+				8CB545C62411022A00154473 /* Features */,
 				8C008FAC24081357000A0C32 /* TogglTrack.swift */,
 				8C008F9924054F9E000A0C32 /* Coordinators */,
 				8C2517AB2403C2BC00BAD4B5 /* Core */,
@@ -143,10 +144,9 @@
 		8C2517AB2403C2BC00BAD4B5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8C2517AC2403C2BC00BAD4B5 /* AppState.swift */,
+				8CB545C42410FFF500154473 /* AppAction.swift */,
+				8CB545BC2410FFA500154473 /* AppState.swift */,
 				8C2517AD2403C2BC00BAD4B5 /* AppReducer.swift */,
-				8C2517AE2403C2BC00BAD4B5 /* AppAction.swift */,
-				8C2517AF2403C2BC00BAD4B5 /* StoreBuilder.swift */,
 				8C2517B02403C2BC00BAD4B5 /* AppEnvironment.swift */,
 				8C008FAE2408163D000A0C32 /* LoggingReducer.swift */,
 			);
@@ -167,6 +167,14 @@
 				8C2517FB2403C58200BAD4B5 /* Utils.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CB545C62411022A00154473 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				8CB545CD24110CE300154473 /* FeatureLocator.swift */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,12 +287,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CB545CE24110CE300154473 /* FeatureLocator.swift in Sources */,
 				8C2517B32403C2BC00BAD4B5 /* AppReducer.swift in Sources */,
-				8C2517B42403C2BC00BAD4B5 /* AppAction.swift in Sources */,
 				8C008FAF2408163D000A0C32 /* LoggingReducer.swift in Sources */,
-				8C2517B22403C2BC00BAD4B5 /* AppState.swift in Sources */,
 				8CAAACB724051CCE00E9BBAF /* AppCoordinator.swift in Sources */,
-				8C2517B52403C2BC00BAD4B5 /* StoreBuilder.swift in Sources */,
+				8CB545BF2410FFA500154473 /* AppState.swift in Sources */,
+				8CB545C52410FFF500154473 /* AppAction.swift in Sources */,
 				8C2517B62403C2BC00BAD4B5 /* AppEnvironment.swift in Sources */,
 				8C008F9D2406744C000A0C32 /* TabBarCoordinator.swift in Sources */,
 				8C008FAD24081357000A0C32 /* TogglTrack.swift in Sources */,

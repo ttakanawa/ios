@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C008FA42407C05D000A0C32 /* AppRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FA32407C05D000A0C32 /* AppRoutes.swift */; };
 		8C008FA724081220000A0C32 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FA624081220000A0C32 /* Router.swift */; };
 		8C008FA924081242000A0C32 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FA824081242000A0C32 /* Coordinator.swift */; };
 		8C008FAB2408126B000A0C32 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C008FAA2408126B000A0C32 /* Route.swift */; };
@@ -19,6 +18,8 @@
 		8C25186C2403C61900BAD4B5 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518692403C61900BAD4B5 /* Effect.swift */; };
 		8C2518BC2403C85E00BAD4B5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518BB2403C85E00BAD4B5 /* Utils.framework */; };
 		8C2519642403CE3700BAD4B5 /* RxSwiftDep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2519632403CE3700BAD4B5 /* RxSwiftDep.framework */; };
+		8CB545B52410FE1900154473 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545B42410FE1900154473 /* Feature.swift */; };
+		8CB545C32410FFF100154473 /* AppRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB545C22410FFF100154473 /* AppRoutes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C008FA32407C05D000A0C32 /* AppRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRoutes.swift; sourceTree = "<group>"; };
 		8C008FA624081220000A0C32 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8C008FA824081242000A0C32 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		8C008FAA2408126B000A0C32 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		8C2518872403C6A400BAD4B5 /* RxCocoaDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoaDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518BB2403C85E00BAD4B5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2519632403CE3700BAD4B5 /* RxSwiftDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB545B42410FE1900154473 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		8CB545C22410FFF100154473 /* AppRoutes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRoutes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				8C008FA52408120A000A0C32 /* Routing */,
 				8CAAAC9A2404FE9600E9BBAF /* App */,
 				8C2518512403C60B00BAD4B5 /* Info.plist */,
+				8CB545B42410FE1900154473 /* Feature.swift */,
 			);
 			path = Architecture;
 			sourceTree = "<group>";
@@ -146,7 +149,7 @@
 		8CAAAC9A2404FE9600E9BBAF /* App */ = {
 			isa = PBXGroup;
 			children = (
-				8C008FA32407C05D000A0C32 /* AppRoutes.swift */,
+				8CB545C22410FFF100154473 /* AppRoutes.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -262,11 +265,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C25186C2403C61900BAD4B5 /* Effect.swift in Sources */,
-				8C008FA42407C05D000A0C32 /* AppRoutes.swift in Sources */,
 				8C008FA924081242000A0C32 /* Coordinator.swift in Sources */,
 				8C008FA724081220000A0C32 /* Router.swift in Sources */,
+				8CB545B52410FE1900154473 /* Feature.swift in Sources */,
 				8C25186B2403C61900BAD4B5 /* Reducer.swift in Sources */,
 				8C008FAB2408126B000A0C32 /* Route.swift in Sources */,
+				8CB545C32410FFF100154473 /* AppRoutes.swift in Sources */,
 				8C25186A2403C61900BAD4B5 /* BaseStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

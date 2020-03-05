@@ -89,7 +89,7 @@ public class LoginViewController: UIViewController, Storyboarded
         
         store.dispatch(.emailEntered("ricardo@toggl.com"))
         store.dispatch(.passwordEntered("password"))
-        store.dispatch(.loginTapped)
+//        store.dispatch(.loginTapped)
     }
 }
 
