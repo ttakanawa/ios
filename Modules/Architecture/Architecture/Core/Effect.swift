@@ -43,10 +43,21 @@ public struct Effect<Action>: ObservableType
     }
 }
 
-public extension Observable
+public extension ObservableConvertibleType
 {
     func toEffect() -> Effect<Element>
     {
-        return Effect(observable: self)
+        return Effect(observable: self.asObservable())
+    }
+    
+    func toEffect<Action>(
+        map mapOutput: @escaping (Element) -> Action,
+        catch catchErrors: @escaping (Error) -> Action
+    ) -> Effect<Action>
+    {
+        return self.asObservable()
+            .map(mapOutput)
+            .catchError{ Observable<Action>.just(catchErrors($0)) }
+            .toEffect()
     }
 }

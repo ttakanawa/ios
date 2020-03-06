@@ -16,12 +16,11 @@ let timeLogReducer = Reducer<TimeLogState, TimeLogAction, Repository> { state, a
     switch action {
         
     case let .cellSwipedLeft(timeEntryId):
-        return deleteTimeEntry(repository, timeEntryId: timeEntryId)
+        fatalError("Handled in common reducer")
         
-    case let .timeEntryDeleted(timeEntryId):
-        state.entities.timeEntries[timeEntryId] = nil
-        return .empty
-        
+    case let .cellSwipedRight(timeEntryId):
+        fatalError("Handled in common reducer")
+
     case .load:
         if state.entities.loading.isLoaded {
             break
@@ -64,12 +63,4 @@ fileprivate func loadEntities(_ repository: Repository) -> Effect<TimeLogAction>
     .concat(Observable.just(.finishedLoading))
     .catchError({ Observable.just(.setError($0)) })
     .toEffect()
-}
-
-fileprivate func deleteTimeEntry(_ repository: Repository, timeEntryId: Int) -> Effect<TimeLogAction>
-{
-    repository.deleteTimeEntry(timeEntryId: timeEntryId)
-        .mapTo(TimeLogAction.timeEntryDeleted(timeEntryId))
-        .catchError({ Observable.just(.setError($0)) })
-        .toEffect()
 }

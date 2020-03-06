@@ -35,6 +35,7 @@
 		8C509D202412874100B6DF30 /* TimeEntriesSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */; };
 		8C509D232412876A00B6DF30 /* TimeEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */; };
 		8C509D252412879200B6DF30 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D242412879200B6DF30 /* DayViewModel.swift */; };
+		8C509D2E2412B10C00B6DF30 /* TimeEntryCreationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D2D2412B10C00B6DF30 /* TimeEntryCreationReducer.swift */; };
 		8CB54533240E7DA100154473 /* TimeLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54532240E7DA100154473 /* TimeLogViewController.swift */; };
 		8CB54535240EA67400154473 /* StartEditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54534240EA67400154473 /* StartEditState.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesSelector.swift; sourceTree = "<group>"; };
 		8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryViewModel.swift; sourceTree = "<group>"; };
 		8C509D242412879200B6DF30 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
+		8C509D2D2412B10C00B6DF30 /* TimeEntryCreationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryCreationReducer.swift; sourceTree = "<group>"; };
 		8CB54532240E7DA100154473 /* TimeLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogViewController.swift; sourceTree = "<group>"; };
 		8CB54534240EA67400154473 /* StartEditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 				8C2517842403C27200BAD4B5 /* Actions */,
 				8C2517862403C27200BAD4B5 /* Reducers */,
 				8C2517822403C27200BAD4B5 /* State */,
+				8C509D2F2412BBF700B6DF30 /* Effects */,
 				8C509D212412875600B6DF30 /* ViewModels */,
 				8C509D1E2412872D00B6DF30 /* Selectors */,
 				8C25177F2403C27200BAD4B5 /* Views */,
@@ -193,6 +196,7 @@
 			children = (
 				8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */,
 				8C008FD12409407B000A0C32 /* StartEditReducer.swift */,
+				8C509D2D2412B10C00B6DF30 /* TimeEntryCreationReducer.swift */,
 			);
 			path = Reducers;
 			sourceTree = "<group>";
@@ -244,6 +248,13 @@
 				8C509D242412879200B6DF30 /* DayViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8C509D2F2412BBF700B6DF30 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Effects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +384,7 @@
 				8CB54535240EA67400154473 /* StartEditState.swift in Sources */,
 				8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */,
 				8C509D202412874100B6DF30 /* TimeEntriesSelector.swift in Sources */,
+				8C509D2E2412B10C00B6DF30 /* TimeEntryCreationReducer.swift in Sources */,
 				8C509D152412603800B6DF30 /* TimerState.swift in Sources */,
 				8C509D0E2412567900B6DF30 /* TimerAction.swift in Sources */,
 				8C509D1B241264A200B6DF30 /* TimerCoordinator.swift in Sources */,

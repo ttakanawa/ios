@@ -12,7 +12,7 @@ import Models
 public enum TimeLogAction
 {
     case cellSwipedLeft(Int)
-    case timeEntryDeleted(Int)
+    case cellSwipedRight(Int)
     
     case load
     case finishedLoading    
@@ -28,10 +28,10 @@ extension TimeLogAction: CustomDebugStringConvertible
        
         case let .cellSwipedLeft(timeEntryId):
             return "CellSwipedLeft: \(timeEntryId)"
-            
-        case let .timeEntryDeleted(timeEntryId):
-            return "TimeEntryDeleted: \(timeEntryId)"
-            
+
+        case let .cellSwipedRight(timeEntryId):
+            return "CellSwipedRight: \(timeEntryId)"
+
         case .load:
             return "Load"
             

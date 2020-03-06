@@ -24,8 +24,8 @@ public struct AppEnvironment
     
     public init()
     {
-//        self.api = API(urlSession: FakeURLSession())
-        self.api = API(urlSession: URLSession(configuration: URLSessionConfiguration.default))
+        self.api = API(urlSession: FakeURLSession())
+//        self.api = API(urlSession: URLSession(configuration: URLSessionConfiguration.default))
         self.repository = Repository(api: api)
     }
 }

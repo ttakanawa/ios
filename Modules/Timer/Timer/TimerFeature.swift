@@ -9,13 +9,13 @@
 import Foundation
 import Architecture
 
-public let timerReducer = combine(
+public let timerReducer = startify(combine(
     timeLogReducer.pullback(
         state: \TimerState.timeLogState,
         action: \TimerAction.timeLog),
     startEditReducer.pullback(
         state: \TimerState.startEditState,
-        action: \TimerAction.startEdit)
+        action: \TimerAction.startEdit))
 )
 
 public class TimerFeature: BaseFeature<TimerState, TimerAction>

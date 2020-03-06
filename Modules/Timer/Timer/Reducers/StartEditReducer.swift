@@ -20,37 +20,9 @@ let startEditReducer = Reducer<StartEditState, StartEditAction, Repository> { st
         state.description = description
         
     case .startTapped:
-        guard let defaultWorkspace = state.user.value?.defaultWorkspace else {
-            fatalError("No default workspace")
-        }
-        
-        let timeEntry = TimeEntry(
-            id: state.entities.timeEntries.count,
-            description: state.description,
-            start: Date(),
-            duration: -1,
-            billable: false,
-            workspaceId: defaultWorkspace
-        )
-        
-        return startTimeEntry(timeEntry, repository: repository)
-        
-    case let .timeEntryStarted(timeEntry):
-        state.description = ""
-        state.entities.timeEntries[timeEntry.id] = timeEntry
+        fatalError("Handled in common reducer")
 
-    case let .setError(error):
-        break
     }
     
     return .empty
-}
-
-
-func startTimeEntry(_ timeEntry: TimeEntry, repository: Repository) -> Effect<StartEditAction>
-{
-    return repository.addTimeEntry(timeEntry: timeEntry)
-        .mapTo(StartEditAction.timeEntryStarted(timeEntry))
-        .catchError({ Observable.just(StartEditAction.setError($0)) })
-        .toEffect()
 }

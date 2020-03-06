@@ -58,13 +58,11 @@ public class TimeLogViewController: UIViewController, Storyboarded
               return dataSource.sectionModels[index].dayString
             }
             
-            tableView.rx.modelDeleted(TimeEntryViewModel.self)
-                .map({ TimeLogAction.cellSwipedLeft($0.id)})
-                .subscribe(onNext: store.dispatch)
-                .disposed(by: disposeBag)
-            
             store.select(timeEntriesSelector)
                 .drive(tableView.rx.items(dataSource: dataSource!))
+                .disposed(by: disposeBag)
+            
+            tableView.rx.setDelegate(self)
                 .disposed(by: disposeBag)
         }
     }
@@ -76,6 +74,27 @@ public class TimeLogViewController: UIViewController, Storyboarded
     }
 }
 
+extension TimeLogViewController: UITableViewDelegate
+{
+    public func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+        let action = UIContextualAction(style: .normal, title: "Continue") { action, view, completed in
+            let timeEntryId = self.dataSource.sectionModels[indexPath.section].items[indexPath.item].id
+            self.store.dispatch(TimeLogAction.cellSwipedRight(timeEntryId))
+        }
+        action.backgroundColor = .green
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+
+    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completed in
+            let timeEntryId = self.dataSource.sectionModels[indexPath.section].items[indexPath.item].id
+            self.store.dispatch(TimeLogAction.cellSwipedLeft(timeEntryId))
+        }
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+}
 
 
 // ANIMATED DATASOURCE EXTENSIONS

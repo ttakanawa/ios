@@ -15,7 +15,6 @@ let timeEntriesSelector: (TimeLogState) -> [DayViewModel] = { state in
         .sorted(by: { $0.start > $1.start })
         .compactMap({ timeEntry in
             guard let workspace = state.entities.getWorkspace(timeEntry.workspaceId) else {
-                print("Workspace missing")
                 //fatalError("Workspace missing")
                 //TODO This shouldn't happen, what should we do here?
                 return nil
