@@ -9,11 +9,9 @@
 import UIKit
 import Architecture
 
-public final class OnboardingCoordinator: Coordinator
+public final class OnboardingCoordinator: BaseCoordinator
 {    
     private var store: Store<OnboardingState, OnboardingAction>
-    public var rootViewController: UIViewController!
-    
     private var features: [String: BaseFeature<OnboardingState, OnboardingAction>]
     
     public init(store: Store<OnboardingState, OnboardingAction>, features: [String: BaseFeature<OnboardingState, OnboardingAction>])
@@ -22,7 +20,7 @@ public final class OnboardingCoordinator: Coordinator
         self.features = features
     }
     
-    public func start(presentingViewController: UIViewController)
+    public override func present(from presentingViewController: UIViewController)
     {
         let vc = OnboardingViewController.instantiate()
         vc.store = store
@@ -30,7 +28,7 @@ public final class OnboardingCoordinator: Coordinator
         self.rootViewController = vc
     }
     
-    public func newRoute(route: String) -> Coordinator?
+    public override func newRoute(route: String) -> Coordinator?
     {
         guard let route = OnboardingRoute(rawValue: route) else { fatalError() }
         
@@ -41,11 +39,5 @@ public final class OnboardingCoordinator: Coordinator
         case .emailSignup:
             return features[route.rawValue]?.mainCoordinator(store: store)
         }
-    }
-    
-    public func finish(completion: (() -> Void)? = nil)
-    {
-        completion?()
-        //TODO FINISH CHILDREN
     }
 }

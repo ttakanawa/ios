@@ -43,7 +43,7 @@ public final class Router
         if let component = toAdd.first
         {
             if let coordinator = self.stack.last!.coordinator.newRoute(route: component) {
-                coordinator.start(presentingViewController: stack.last!.coordinator.rootViewController)
+                coordinator.present(from: stack.last!.coordinator.rootViewController)
                 self.stack.append((route: component, coordinator: coordinator))
                 self.navigate(to: route)
             }

@@ -41,6 +41,13 @@ public class AppFeature: BaseFeature<AppState, AppAction>
     ]
     
     public override func mainCoordinator(store: Store<AppState, AppAction>) -> Coordinator {
-        return AppCoordinator(store: store, features: features)
+        return AppCoordinator(
+            store: store,
+            onboardingCoordinator: features[AppRoute.onboarding.rawValue]!.mainCoordinator(store: store),
+            tabBarCoordinator: TabBarCoordinator(
+                store: store,
+                timerCoordinator: features[AppRoute.main.rawValue]!.mainCoordinator(store: store) as! TimerCoordinator
+            )
+        )
     }
 }

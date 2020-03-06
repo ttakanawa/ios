@@ -9,31 +9,19 @@
 import UIKit
 import Architecture
 
-public final class StartEditCoordinator: Coordinator
+public final class StartEditCoordinator: BaseCoordinator
 {
     private var store: Store<StartEditState, StartEditAction>
-    public var rootViewController: UIViewController!
         
     public init(store: Store<StartEditState, StartEditAction>)
     {
         self.store = store
     }
     
-    public func start(presentingViewController: UIViewController)
+    public override func start()
     {
         let vc = StartEditViewController.instantiate()
         vc.store = store
         self.rootViewController = vc
-    }
-    
-    public func newRoute(route: String) -> Coordinator?
-    {
-        return nil
-    }
-    
-    public func finish(completion: (() -> Void)? = nil)
-    {
-        completion?()
-        //TODO FINISH CHILDREN
     }
 }

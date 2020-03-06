@@ -9,27 +9,23 @@
 import UIKit
 import Architecture
 
-public final class EmailLoginCoordinator: Coordinator
+public final class EmailLoginCoordinator: NavigationCoordinator
 {
-    public var rootViewController: UIViewController!
-    
     private var store: Store<OnboardingState, EmailLoginAction>
-    private var navigationController: UINavigationController?
         
     public init(store: Store<OnboardingState, EmailLoginAction>) {
         self.store = store
+        super.init()
     }
     
-    public func start(presentingViewController: UIViewController)
+    public override func start()
     {
         let vc = LoginViewController.instantiate()
         vc.store = store
-        self.navigationController = UINavigationController(rootViewController: vc)
-        self.rootViewController = navigationController
-        presentingViewController.present(navigationController!, animated: true)
+        navigationController.pushViewController(vc, animated: true)
     }
     
-    public func newRoute(route: String) -> Coordinator?
+    override public func newRoute(route: String) -> Coordinator?
     {
         guard let route = OnboardingRoute(rawValue: route) else { fatalError() }
         
@@ -45,10 +41,5 @@ public final class EmailLoginCoordinator: Coordinator
 //        default:
 //            fatalError("Wrong path")
 //        }
-    }
-    
-    public func finish(completion: (() -> Void)?)
-    {
-        navigationController?.dismiss(animated: true, completion: completion)
     }
 }

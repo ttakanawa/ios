@@ -11,18 +11,21 @@ import Architecture
 import Timer
 import RxSwift
 
-public final class TabBarCoordinator: Coordinator
+public final class TabBarCoordinator: BaseCoordinator
 {
-    public var rootViewController: UIViewController!
-
     private var store: Store<AppState, AppAction>
     private var tabBarController: UITabBarController
     private var disposeBag = DisposeBag()
     
-    public init(rootViewController: UIViewController, store: Store<AppState, AppAction>) {
+    public init(
+        store: Store<AppState, AppAction>,
+        timerCoordinator: TimerCoordinator
+    )
+    {
         self.store = store
-        self.rootViewController = rootViewController
-        tabBarController = UITabBarController()        
+        self.tabBarController = UITabBarController()
+        
+        super.init()
         
         tabBarController.rx.didSelect
             .compactMap({ self.tabBarController.viewControllers?.firstIndex(of: $0) })
@@ -30,11 +33,9 @@ public final class TabBarCoordinator: Coordinator
             .subscribe(onNext: store.dispatch)            
             .disposed(by: disposeBag)
 
-        let timer = UIViewController()
-        timer.view.backgroundColor = .blue
-        
-        let timerNav = UINavigationController(rootViewController: timer)
-        timerNav.tabBarItem = UITabBarItem(title: "Timer", image: nil, tag: 0)
+        timerCoordinator.start()
+        let timer = timerCoordinator.rootViewController!
+        timer.tabBarItem = UITabBarItem(title: "Timer", image: nil, tag: 0)
         
         let reports = UIViewController()
         reports.view.backgroundColor = .orange
@@ -46,15 +47,21 @@ public final class TabBarCoordinator: Coordinator
         let calendarNav = UINavigationController(rootViewController: calendar)
         calendarNav.tabBarItem = UITabBarItem(title: "Calendar", image: nil, tag: 2)
 
-        tabBarController.setViewControllers([timerNav, reportsNav, calendarNav], animated: false)
+        tabBarController.setViewControllers([timer, reportsNav, calendarNav], animated: false)
     }
     
-    public func start(presentingViewController: UIViewController)
+    public override func present(from presentingViewController: UIViewController)
+    {
+        presentingViewController.show(tabBarController, sender: nil)
+        rootViewController = tabBarController
+    }
+    
+    public override func start()
     {
         rootViewController.show(tabBarController, sender: nil)
     }
     
-    public func newRoute(route: String) -> Coordinator?
+    public override func newRoute(route: String) -> Coordinator?
     {
         return nil
 //        rootViewController = tabBarController
@@ -73,11 +80,5 @@ public final class TabBarCoordinator: Coordinator
 //            fatalError("Wrong path")
 //            break
 //        }
-    }
-    
-    public func finish(completion: (() -> Void)?)
-    {
-        //TODO FINISH
-        completion?()
     }
 }

@@ -9,42 +9,41 @@
 import UIKit
 import Architecture
 
-public final class AppCoordinator: Coordinator
+public final class AppCoordinator: NavigationCoordinator
 {
-    public var rootViewController: UIViewController!
+    private let store: Store<AppState, AppAction>
+    private let onboardingCoordinator: Coordinator
+    private let tabBarCoordinator: Coordinator
     
-    private var store: Store<AppState, AppAction>
-    private var navigationController: UINavigationController!
-    private var features: [String: BaseFeature<AppState, AppAction>]
-        
-    public init(store: Store<AppState, AppAction>, features: [String: BaseFeature<AppState, AppAction>])
+    public init(
+        store: Store<AppState, AppAction>,
+        onboardingCoordinator: Coordinator,
+        tabBarCoordinator: Coordinator)
     {
         self.store = store
-        self.features = features
+        self.onboardingCoordinator = onboardingCoordinator
+        self.tabBarCoordinator = tabBarCoordinator
     }
     
     public func start(window: UIWindow)
     {
-        self.navigationController = UINavigationController()
-        navigationController.view.backgroundColor = .purple
-        rootViewController = navigationController
         window.rootViewController = rootViewController
         window.makeKeyAndVisible()        
     }
     
-    public func start(presentingViewController: UIViewController)
+    public override func start()
     {
         fatalError("user start(window:) for the main coordinator")
     }
     
-    public func newRoute(route: String) -> Coordinator?
+    public override func newRoute(route: String) -> Coordinator?
     {
         guard let route = AppRoute(rawValue: route) else { fatalError() }
         
         switch route {
         
         case .onboarding:
-            return features[route.rawValue]!.mainCoordinator(store: store)
+            return onboardingCoordinator
             
         case .loading:
             let vc = LoadingViewController()
@@ -54,12 +53,12 @@ public final class AppCoordinator: Coordinator
             return nil
             
         case .main:
-            return features[route.rawValue]!.mainCoordinator(store: store)
+            return tabBarCoordinator
             
         }
     }
     
-    public func finish(completion: (() -> Void)?)
+    public override func finish(completion: (() -> Void)?)
     {
         fatalError("Should never complete")
     }

@@ -9,10 +9,9 @@
 import UIKit
 import Architecture
 
-public final class TimerCoordinator: Coordinator
+public final class TimerCoordinator: NavigationCoordinator
 {
     private var store: Store<TimerState, TimerAction>
-    public var rootViewController: UIViewController!
     
     private let timeLogCoordinator: TimeLogCoordinator
     private let startEditCoordinator: StartEditCoordinator
@@ -24,25 +23,13 @@ public final class TimerCoordinator: Coordinator
         self.startEditCoordinator = startEditCoordinator
     }
     
-    public func start(presentingViewController: UIViewController)
+    public override func start()
     {
-        timeLogCoordinator.start(presentingViewController: presentingViewController)
-        startEditCoordinator.start(presentingViewController: presentingViewController)
+        timeLogCoordinator.start()
+        startEditCoordinator.start()
         let vc = TimerViewController()
         vc.timeLogViewController = timeLogCoordinator.rootViewController as? TimeLogViewController
         vc.startEditViewController = startEditCoordinator.rootViewController as? StartEditViewController
-        presentingViewController.show(vc, sender: nil)
-        self.rootViewController = vc
-    }
-    
-    public func newRoute(route: String) -> Coordinator?
-    {
-        return nil
-    }
-    
-    public func finish(completion: (() -> Void)? = nil)
-    {
-        completion?()
-        //TODO FINISH CHILDREN
+        navigationController.pushViewController(vc, animated: true)
     }
 }

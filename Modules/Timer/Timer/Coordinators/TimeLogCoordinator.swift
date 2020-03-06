@@ -9,31 +9,18 @@
 import UIKit
 import Architecture
 
-public final class TimeLogCoordinator: Coordinator
+public final class TimeLogCoordinator: BaseCoordinator
 {
     private var store: Store<TimeLogState, TimeLogAction>
-    public var rootViewController: UIViewController!
-        
     public init(store: Store<TimeLogState, TimeLogAction>)
     {
         self.store = store
     }
     
-    public func start(presentingViewController: UIViewController)
+    public override func start()
     {
         let vc = TimeLogViewController.instantiate()
         vc.store = store
         self.rootViewController = vc
-    }
-    
-    public func newRoute(route: String) -> Coordinator?
-    {
-        return nil
-    }
-    
-    public func finish(completion: (() -> Void)? = nil)
-    {
-        completion?()
-        //TODO FINISH CHILDREN
     }
 }
