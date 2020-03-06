@@ -15,32 +15,6 @@ import RxSwift
 import RxDataSources
 import Models
 
-// TODO Move this somewhere else
-let timeEntries: (TimeLogState) -> [TimeEntryViewModel] = { state in
-    
-    guard case .loaded(_) = state.entities.loading else { return [] }
-    return state.entities.timeEntries.values
-        .sorted(by: { $0.start > $1.start })
-        .compactMap({ timeEntry in            
-            guard let workspace = state.entities.getWorkspace(timeEntry.workspaceId) else {
-                //            fatalError("Workspace missing")
-                //TODO This shouldn't happen, what should we do here?
-                return nil
-            }
-            
-            let project = state.entities.getProject(timeEntry.projectId)
-            
-            return TimeEntryViewModel(
-                timeEntry: timeEntry,
-                workspace: workspace,
-                project: project,
-                client: state.entities.getClient(project?.clientId),
-                task: state.entities.getTask(timeEntry.taskId),
-                tags: timeEntry.tagIds?.compactMap(state.entities.getTag)
-            )
-        })
-}
-
 public typealias TimeLogStore = Store<TimeLogState, TimeLogAction>
 
 public class TimeLogViewController: UIViewController, Storyboarded
@@ -51,7 +25,7 @@ public class TimeLogViewController: UIViewController, Storyboarded
     @IBOutlet weak var tableView: UITableView!
     
     private var disposeBag = DisposeBag()
-    private var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntryViewModel>>?
+    private var dataSource: RxTableViewSectionedAnimatedDataSource<DayViewModel>!
 
     public var store: TimeLogStore!
 
@@ -67,7 +41,7 @@ public class TimeLogViewController: UIViewController, Storyboarded
                 
         if dataSource == nil {
             // We should do this in ViewDidLoad, but there's a bug that causes an ugly warning. That's why we are doing it here for now
-            dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TimeEntryViewModel>>(configureCell:
+            dataSource = RxTableViewSectionedAnimatedDataSource<DayViewModel>(configureCell:
                 { dataSource, tableView, indexPath, item in
                     let cell = tableView.dequeueReusableCell(withIdentifier: "TimeEntryCell", for: indexPath) as! TimeEntryCell
                     cell.descriptionLabel.text = item.description
@@ -78,8 +52,11 @@ public class TimeLogViewController: UIViewController, Storyboarded
                     return cell
             })
             
-            store.select(timeEntries)
-                .map({ [SectionModel(model: "", items: $0 )] })
+            dataSource.titleForHeaderInSection = { dataSource, index in
+              return dataSource.sectionModels[index].dayString
+            }
+            
+            store.select(timeEntriesSelector)
                 .drive(tableView.rx.items(dataSource: dataSource!))
                 .disposed(by: disposeBag)
         }
@@ -90,4 +67,24 @@ public class TimeLogViewController: UIViewController, Storyboarded
         super.viewWillAppear(animated)
         store.dispatch(.load)
     }
+}
+
+
+
+// ANIMATED DATASOURCE EXTENSIONS
+
+extension TimeEntryViewModel: IdentifiableType
+{
+    public var identity: Int { id }
+}
+
+extension DayViewModel: AnimatableSectionModelType
+{
+    public init(original: DayViewModel, items: [TimeEntryViewModel]) {
+        self = original
+        self.timeEntries = items
+    }
+    
+    public var identity: Date { day }
+    public var items: [TimeEntryViewModel] { timeEntries }
 }
