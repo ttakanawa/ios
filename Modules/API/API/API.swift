@@ -98,39 +98,39 @@ extension API: UserAPI
 
 extension API: TimelineAPI
 {
-    public func loadEntries() -> Observable<[TimeEntry]>
+    public func loadEntries() -> Single<[TimeEntry]>
     {
         let endpoint: Endpoint<[TimeEntry]> = createEntitiesEndpoint(path: "me/time_entries")
-        return urlSession.load(endpoint)
+        return urlSession.load(endpoint).asSingle()
     }
     
-    public func loadWorkspaces() -> Observable<[Workspace]>
+    public func loadWorkspaces() -> Single<[Workspace]>
     {
         let endpoint: Endpoint<[Workspace]> = createEntitiesEndpoint(path: "me/workspaces")
-        return urlSession.load(endpoint)
+        return urlSession.load(endpoint).asSingle()
     }
     
-    public func loadClients() -> Observable<[Client]>
+    public func loadClients() -> Single<[Client]>
     {
         let endpoint: Endpoint<[Client]> = createEntitiesEndpoint(path: "me/clients")
-        return urlSession.load(endpoint)
+        return urlSession.load(endpoint).asSingle()
     }
     
-    public func loadProjects() -> Observable<[Project]>
+    public func loadProjects() -> Single<[Project]>
     {
         let endpoint: Endpoint<[Project]> = createEntitiesEndpoint(path: "me/projects")
-        return urlSession.load(endpoint)
+        return urlSession.load(endpoint).asSingle()
     }
     
-    public func loadTags() -> Observable<[Tag]>
+    public func loadTags() -> Single<[Tag]>
     {
         let endpoint: Endpoint<[Tag]> = createEntitiesEndpoint(path: "me/tags")
-        return urlSession.load(endpoint)
+        return urlSession.load(endpoint).asSingle()
     }
     
-    public func loadTasks() -> Observable<[Task]>
+    public func loadTasks() -> Single<[Task]>
     {
         let endpoint: Endpoint<[Task]> = createEntitiesEndpoint(path: "me/tasks")
-        return urlSession.load(endpoint)
+        return urlSession.load(endpoint).asSingle()
     }
 }

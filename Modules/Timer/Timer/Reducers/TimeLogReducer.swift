@@ -52,13 +52,14 @@ let timeLogReducer = Reducer<TimeLogState, TimeLogAction, Repository> { state, a
 
 fileprivate func loadEntities(_ repository: Repository) -> Effect<TimeLogAction>
 {
-    Observable.merge(
-        repository.getWorkspaces().map(TimeLogAction.setEntities),
-        repository.getClients().map(TimeLogAction.setEntities),
-        repository.getTimeEntries().map(TimeLogAction.setEntities),
-        repository.getProjects().map(TimeLogAction.setEntities),
-        repository.getTasks().map(TimeLogAction.setEntities),
-        repository.getTags().map(TimeLogAction.setEntities)
+    //TODO Shouldn't need to do all that `asObservable`
+    return Observable.merge(
+        repository.getWorkspaces().map(TimeLogAction.setEntities).asObservable(),
+        repository.getClients().map(TimeLogAction.setEntities).asObservable(),
+        repository.getTimeEntries().map(TimeLogAction.setEntities).asObservable(),
+        repository.getProjects().map(TimeLogAction.setEntities).asObservable(),
+        repository.getTasks().map(TimeLogAction.setEntities).asObservable(),
+        repository.getTags().map(TimeLogAction.setEntities).asObservable()
     )
     .concat(Observable.just(.finishedLoading))
     .catchError({ Observable.just(.setError($0)) })

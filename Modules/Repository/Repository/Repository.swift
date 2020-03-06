@@ -29,75 +29,75 @@ public class Repository
         self.api = api
     }
     
-    public func getWorkspaces() -> Observable<[Workspace]>
+    public func getWorkspaces() -> Single<[Workspace]>
     {
         if workspaces.isEmpty {
             return api.loadWorkspaces()
-                .do(onNext: { self.workspaces = $0 })
+                .do(onSuccess: { self.workspaces = $0 })
         }
         
-        return Observable.just(workspaces)
+        return Single.just(workspaces)
     }
     
-    public func getClients() -> Observable<[Client]>
+    public func getClients() -> Single<[Client]>
     {
         if clients.isEmpty {
             return api.loadClients()
-                .do(onNext: { self.clients = $0 })
+                .do(onSuccess: { self.clients = $0 })
         }
         
-        return Observable.just(clients)
+        return Single.just(clients)
     }
     
-    public func getTimeEntries() -> Observable<[TimeEntry]>
+    public func getTimeEntries() -> Single<[TimeEntry]>
     {
         if timeEntries.isEmpty {
             return api.loadEntries()
-                .do(onNext: { self.timeEntries = $0 })
+                .do(onSuccess: { self.timeEntries = $0 })
         }
         
-        return Observable.just(timeEntries)
+        return Single.just(timeEntries)
     }
     
-    public func getProjects() -> Observable<[Project]>
+    public func getProjects() -> Single<[Project]>
     {
         if projects.isEmpty {
             return api.loadProjects()
-                .do(onNext: { self.projects = $0 })
+                .do(onSuccess: { self.projects = $0 })
         }
         
-        return Observable.just(projects)
+        return Single.just(projects)
     }
     
-    public func getTasks() -> Observable<[Task]>
+    public func getTasks() -> Single<[Task]>
     {
         if tasks.isEmpty {
             return api.loadTasks()
-                .do(onNext: { self.tasks = $0 })
+                .do(onSuccess: { self.tasks = $0 })
         }
         
-        return Observable.just(tasks)
+        return Single.just(tasks)
     }
     
-    public func getTags() -> Observable<[Tag]>
+    public func getTags() -> Single<[Tag]>
     {
         if tags.isEmpty {
             return api.loadTags()
-                .do(onNext: { self.tags = $0 })
+                .do(onSuccess: { self.tags = $0 })
         }
         
-        return Observable.just(tags)
+        return Single.just(tags)
     }
     
-    public func addTimeEntry(timeEntry: TimeEntry) -> Observable<Void>
+    public func addTimeEntry(timeEntry: TimeEntry) -> Single<Void>
     {
         timeEntries.append(timeEntry)
-        return Observable.just(())
+        return Single.just(())
     }
     
-    public func deleteTimeEntry(timeEntryId: Int) -> Observable<Void>
+    public func deleteTimeEntry(timeEntryId: Int) -> Single<Void>
     {
         timeEntries = timeEntries.filter { $0.id != timeEntryId }
-        return Observable.just(())
+        return Single.just(())
     }
 }

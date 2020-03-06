@@ -9,10 +9,10 @@
 import Foundation
 import RxSwift
 
-extension ObservableType
+extension ObservableConvertibleType
 {
     public func mapTo<Result>(_ value: Result) -> Observable<Result>
     {
-        return map { _ in value }
+        return asObservable().map { _ in value }
     }
 }

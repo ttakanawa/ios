@@ -12,10 +12,10 @@ import RxSwift
 
 public protocol TimelineAPI
 {
-    func loadEntries() -> Observable<[TimeEntry]>
-    func loadWorkspaces() -> Observable<[Workspace]>
-    func loadClients() -> Observable<[Client]>
-    func loadProjects() -> Observable<[Project]>
-    func loadTags() -> Observable<[Tag]>
-    func loadTasks() -> Observable<[Task]>
+    func loadEntries() -> Single<[TimeEntry]>
+    func loadWorkspaces() -> Single<[Workspace]>
+    func loadClients() -> Single<[Client]>
+    func loadProjects() -> Single<[Project]>
+    func loadTags() -> Single<[Tag]>
+    func loadTasks() -> Single<[Task]>
 }
