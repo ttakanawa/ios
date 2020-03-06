@@ -59,7 +59,7 @@ and views can subscribe directly to the state or through the select method which
 
 ```swift
 store.state
-    .subscribe(onNext: { print("The whole state: \($0) ) })
+    .subscribe(onNext: { print("The whole state: \($0)") })
     .disposed(by: disposeBag)
 
 // or
@@ -149,11 +149,13 @@ func loadUser(email: String, password: String, api: UserAPI) -> Effect<EmailLogi
 
 ## Pullback & Store Views
 
-
-
 ## High-order reducers
 
-## Features & Local State
+## Local State
+
+## Coordinators
+
+## Features
 
 ## Navigation
 
