@@ -52,9 +52,16 @@ public class TimeLogViewController: UIViewController, Storyboarded
                     return cell
             })
             
+            dataSource.canEditRowAtIndexPath = { _, _ in true }
+            
             dataSource.titleForHeaderInSection = { dataSource, index in
               return dataSource.sectionModels[index].dayString
             }
+            
+            tableView.rx.modelDeleted(TimeEntryViewModel.self)
+                .map({ TimeLogAction.cellSwipedLeft($0.id)})
+                .subscribe(onNext: store.dispatch)
+                .disposed(by: disposeBag)
             
             store.select(timeEntriesSelector)
                 .drive(tableView.rx.items(dataSource: dataSource!))

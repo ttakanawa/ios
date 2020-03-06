@@ -15,6 +15,13 @@ import Repository
 let timeLogReducer = Reducer<TimeLogState, TimeLogAction, Repository> { state, action, repository in
     switch action {
         
+    case let .cellSwipedLeft(timeEntryId):
+        return deleteTimeEntry(repository, timeEntryId: timeEntryId)
+        
+    case let .timeEntryDeleted(timeEntryId):
+        state.entities.timeEntries[timeEntryId] = nil
+        return .empty
+        
     case .load:
         if state.entities.loading.isLoaded {
             break
@@ -43,7 +50,6 @@ let timeLogReducer = Reducer<TimeLogState, TimeLogAction, Repository> { state, a
     return .empty
 }
 
-
 fileprivate func loadEntities(_ repository: Repository) -> Effect<TimeLogAction>
 {
     Observable.merge(
@@ -57,4 +63,12 @@ fileprivate func loadEntities(_ repository: Repository) -> Effect<TimeLogAction>
     .concat(Observable.just(.finishedLoading))
     .catchError({ Observable.just(.setError($0)) })
     .toEffect()
+}
+
+fileprivate func deleteTimeEntry(_ repository: Repository, timeEntryId: Int) -> Effect<TimeLogAction>
+{
+    repository.deleteTimeEntry(timeEntryId: timeEntryId)
+        .mapTo(TimeLogAction.timeEntryDeleted(timeEntryId))
+        .catchError({ Observable.just(.setError($0)) })
+        .toEffect()
 }

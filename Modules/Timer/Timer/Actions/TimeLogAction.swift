@@ -11,6 +11,9 @@ import Models
 
 public enum TimeLogAction
 {
+    case cellSwipedLeft(Int)
+    case timeEntryDeleted(Int)
+    
     case load
     case finishedLoading    
     case setEntities([Entity])
@@ -23,6 +26,12 @@ extension TimeLogAction: CustomDebugStringConvertible
     {
         switch self {
        
+        case let .cellSwipedLeft(timeEntryId):
+            return "CellSwipedLeft: \(timeEntryId)"
+            
+        case let .timeEntryDeleted(timeEntryId):
+            return "TimeEntryDeleted: \(timeEntryId)"
+            
         case .load:
             return "Load"
             
@@ -35,7 +44,6 @@ extension TimeLogAction: CustomDebugStringConvertible
         
         case let .setError(error):
             return "SetError: \(error)"
-        
         }
     }
 }

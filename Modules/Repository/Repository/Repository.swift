@@ -94,4 +94,10 @@ public class Repository
         timeEntries.append(timeEntry)
         return Observable.just(())
     }
+    
+    public func deleteTimeEntry(timeEntryId: Int) -> Observable<Void>
+    {
+        timeEntries = timeEntries.filter { $0.id != timeEntryId }
+        return Observable.just(())
+    }
 }
