@@ -41,16 +41,12 @@ public final class AppCoordinator: NavigationCoordinator
         guard let route = AppRoute(rawValue: route) else { fatalError() }
         
         switch route {
-        
+
+        case .loading:
+            return nil
+            
         case .onboarding:
             return onboardingCoordinator
-            
-        case .loading:
-            let vc = LoadingViewController()
-            vc.view.backgroundColor = .red
-            vc.store = store
-            rootViewController.show(vc, sender: nil)
-            return nil
             
         case .main:
             return tabBarCoordinator

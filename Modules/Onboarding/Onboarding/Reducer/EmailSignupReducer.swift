@@ -17,11 +17,11 @@ let emailSignupReducer = Reducer<OnboardingState, EmailSignupAction, UserAPI> { 
     switch action {
     
     case .goToLogin:
-        state.route = Route(path: "root/onboarding/emailLogin")
+        state.route = OnboardingRoute.emailLogin
         break
     
     case .cancel:
-        state.route = Route(path: "root/onboarding")
+        state.route = AppRoute.onboarding
         break
     
     case let .emailEntered(email):

@@ -10,7 +10,7 @@ import UIKit
 import Architecture
 
 public let onboardingReducer = combine(
-    onboardingScreenReducer,
+    mainOnboardingReducer,
     emailLoginReducer.pullback(action: \OnboardingAction.emailLogin),
     emailSignupReducer.pullback(action: \OnboardingAction.emailSignup)
 )

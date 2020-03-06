@@ -10,24 +10,24 @@ import UIKit
 
 public final class Router
 {
-    private var stack: [(route: String, coordinator: Coordinator)]
-    private var currentRoute: Route {
-        return Route(components: stack.map({ $0.route }))
+    private var stack: [(component: String, coordinator: Coordinator)]
+    private var currentPath: String {
+        return stack.map({ $0.component }).joined(separator: "/")
     }
      
-    public init(initialRoute: String, initialCoordinator: Coordinator)
+    public init(initialCoordinator: Coordinator)
     {
-        stack = [(route: initialRoute, coordinator: initialCoordinator)]
+        stack = [(component: "root", coordinator: initialCoordinator)]
     }
     
-    final public func navigate(to route: Route)
+    final public func navigate(to route: String)
     {
-        guard route != currentRoute else { return }
-        print("Go to: \(route.path)")
+        guard route != currentPath else { return }
+        print("Go to: \(route)")
 
         let toRemove: [Coordinator] = stack.enumerated().compactMap { i, element in
             guard i < route.components.count else { return element.coordinator }
-            if route[i] == element.route { return nil }
+            if route[i] == element.component { return nil }
             return element.coordinator
         }
 
@@ -39,14 +39,42 @@ public final class Router
             return
         }
 
-        let toAdd = route.difference(with: currentRoute)
+        let toAdd = route.difference(with: currentPath)
         if let component = toAdd.first
         {
             if let coordinator = self.stack.last!.coordinator.newRoute(route: component) {
                 coordinator.present(from: stack.last!.coordinator.rootViewController)
-                self.stack.append((route: component, coordinator: coordinator))
+                self.stack.append((component: component, coordinator: coordinator))
                 self.navigate(to: route)
             }
         }
+    }
+}
+
+typealias Path = String
+
+extension Path
+{
+    var components: [String]
+    {
+        return self.split(separator: "/").map(String.init)
+    }
+        
+    subscript(index: Int) -> String
+    {
+        return components[index]
+    }
+    
+    func difference(with otherPath: String) -> [String]
+    {
+        let pathComponents = otherPath.split(separator: "/")
+        return components
+            .enumerated()
+            .compactMap { i, component in
+                if i >= pathComponents.count { return component }
+                return component == pathComponents[i]
+                    ? nil
+                    : component
+            }
     }
 }

@@ -8,57 +8,16 @@
 
 import Foundation
 
-public struct Route: Equatable
+public protocol Route
 {
-    public let path: String
-    public let components: [String]
-    
-    public init(path: String)
+    var path: String { get }
+    var root: Route? { get }
+}
+
+public extension Route where Self: RawRepresentable, Self.RawValue == String
+{
+    var path: String
     {
-        self.path = path
-        components = path.split(separator: "/").map(String.init)
-    }
-    
-    public init(components: [String])
-    {
-        path = components.joined(separator: "/")
-        self.components = components
-    }
-    
-    public func append(component: String) -> Route
-    {
-        return Route(components: components + [component])
-    }
-    
-    public func sameBase(as otherRoute: Route) -> Bool
-    {
-        return components.dropLast() == otherRoute.components.dropLast()
-    }
-    
-    public func difference(with otherRoute: Route) -> [String]
-    {
-        return components
-            .enumerated()
-            .compactMap { i, component in
-                if i >= otherRoute.components.count { return component }
-                return component == otherRoute[i]
-                    ? nil
-                    : component
-            }
-    }
-    
-    public var lastComponent: String
-    {
-        return components.last!
-    }
-    
-    public var secondToLastComponent: String
-    {
-        return components[components.count - 2]
-    }
-    
-    subscript(index: Int) -> String
-    {
-        return components[index]
+        return "\(root?.path ?? "root")/\(self.rawValue)"
     }
 }

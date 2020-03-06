@@ -8,26 +8,34 @@
 
 import Foundation
 
-public enum AppRoute: String
+public enum AppRoute: String, Route
 {
-    case onboarding
+    public var root: Route? { nil }
+    
     case loading
+    case onboarding
     case main
 }
 
-public enum OnboardingRoute: String
+public enum OnboardingRoute: String, Route
 {
+    public var root: Route? { AppRoute.onboarding }
+    
     case emailLogin
     case emailSignup
 }
 
-public enum EmailSignupRoute: String
+public enum EmailSignupRoute: String, Route
 {
+    public var root: Route? { OnboardingRoute.emailSignup }
+    
     case tos
 }
 
-public enum TabBarRoute: String
+public enum TabBarRoute: String, Route
 {
+    public var root: Route? { AppRoute.main }
+    
     case timer
     case reports
     case calendar

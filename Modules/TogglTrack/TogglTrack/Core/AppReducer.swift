@@ -21,17 +21,17 @@ var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { stat
         
     case .start:
         if state.user.isLoaded {
-            state.route = Route(path: "root")
+            state.route = AppRoute.main
         } else {
-            state.route = Route(path: "root/onboarding")
+            state.route = AppRoute.onboarding
         }
         
     case let .tabBarTapped(section):
-//        state.route = [
-//            .main(.timer),
-//            .main(.reports),
-//            .main(.calendar)
-//        ][section]
+        state.route = [
+            TabBarRoute.timer,
+            TabBarRoute.reports,
+            TabBarRoute.calendar
+        ][section]
         break
         
     case .onboarding, .timer, .startEdit:

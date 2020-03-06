@@ -33,12 +33,12 @@ public class TogglTrack
         )
         
         appCoordinator = appFeature.mainCoordinator(store: store) as! AppCoordinator
-        router = Router(initialRoute: "root", initialCoordinator: appCoordinator)
+        router = Router(initialCoordinator: appCoordinator)
                 
         store
-            .select({ $0.route })
-            .do(onNext: { print("Route: \($0.path)") })
+            .select({ $0.route.path })
             .distinctUntilChanged()
+            .do(onNext: { print("Route: \($0)") })
             .drive(onNext: router.navigate)
             .disposed(by: disposeBag)
         

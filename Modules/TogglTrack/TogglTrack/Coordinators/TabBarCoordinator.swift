@@ -58,22 +58,21 @@ public final class MainCoordinator: TabBarCoordinator
     
     public override func newRoute(route: String) -> Coordinator?
     {
-        return nil
-        rootViewController = tabBarController
+        guard let route = TabBarRoute(rawValue: route) else { fatalError() }
+
         switch route {
             
-        case "timer":
+        case .timer:
             tabBarController.selectedIndex = 0
             
-        case "reports":
+        case .reports:
             tabBarController.selectedIndex = 1
             
-        case "calendar":
+        case .calendar:
             tabBarController.selectedIndex = 2
-            
-        default:
-            fatalError("Wrong path")
-            break
+
         }
+        
+        return nil
     }
 }

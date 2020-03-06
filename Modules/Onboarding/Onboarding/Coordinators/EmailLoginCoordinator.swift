@@ -24,22 +24,4 @@ public final class EmailLoginCoordinator: NavigationCoordinator
         vc.store = store
         navigationController.pushViewController(vc, animated: true)
     }
-    
-    override public func newRoute(route: String) -> Coordinator?
-    {
-        guard let route = OnboardingRoute(rawValue: route) else { fatalError() }
-        
-        return nil
-//
-//        switch route {
-//        case "start":
-//            let vc = LoginViewController.instantiate()
-//            vc.store = store
-//
-//            navigationViewController = UINavigationController(rootViewController: vc)
-//            presentingViewController.present(navigationViewController!, animated: true)
-//        default:
-//            fatalError("Wrong path")
-//        }
-    }
 }
