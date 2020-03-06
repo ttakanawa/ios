@@ -69,3 +69,30 @@ open class NavigationCoordinator: BaseCoordinator
         navigationController.dismiss(animated: true, completion: completion)
     }
 }
+
+open class TabBarCoordinator: BaseCoordinator
+{
+    public let tabBarController = UITabBarController()
+    
+    override public init()
+    {
+        super.init()
+        rootViewController = tabBarController
+    }
+    
+    override public func present(from presentingViewController: UIViewController)
+    {
+        start()
+        presentingViewController.show(tabBarController, sender: self)
+    }
+    
+    override open func start()
+    {
+        
+    }
+    
+    open override func finish(completion: (() -> Void)?)
+    {
+        tabBarController.dismiss(animated: true, completion: completion)
+    }
+}

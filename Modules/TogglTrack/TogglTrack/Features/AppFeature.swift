@@ -44,7 +44,7 @@ public class AppFeature: BaseFeature<AppState, AppAction>
         return AppCoordinator(
             store: store,
             onboardingCoordinator: features[AppRoute.onboarding.rawValue]!.mainCoordinator(store: store),
-            tabBarCoordinator: TabBarCoordinator(
+            tabBarCoordinator: MainCoordinator(
                 store: store,
                 timerCoordinator: features[AppRoute.main.rawValue]!.mainCoordinator(store: store) as! TimerCoordinator
             )

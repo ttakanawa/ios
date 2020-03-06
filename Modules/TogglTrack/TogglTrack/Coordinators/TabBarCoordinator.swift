@@ -11,11 +11,12 @@ import Architecture
 import Timer
 import RxSwift
 
-public final class TabBarCoordinator: BaseCoordinator
+public final class MainCoordinator: TabBarCoordinator
 {
     private var store: Store<AppState, AppAction>
-    private var tabBarController: UITabBarController
     private var disposeBag = DisposeBag()
+    
+    private let timerCoordinator: TimerCoordinator
     
     public init(
         store: Store<AppState, AppAction>,
@@ -23,7 +24,7 @@ public final class TabBarCoordinator: BaseCoordinator
     )
     {
         self.store = store
-        self.tabBarController = UITabBarController()
+        self.timerCoordinator = timerCoordinator
         
         super.init()
         
@@ -33,6 +34,11 @@ public final class TabBarCoordinator: BaseCoordinator
             .subscribe(onNext: store.dispatch)            
             .disposed(by: disposeBag)
 
+
+    }
+    
+    public override func start()
+    {
         timerCoordinator.start()
         let timer = timerCoordinator.rootViewController!
         timer.tabBarItem = UITabBarItem(title: "Timer", image: nil, tag: 0)
@@ -50,35 +56,24 @@ public final class TabBarCoordinator: BaseCoordinator
         tabBarController.setViewControllers([timer, reportsNav, calendarNav], animated: false)
     }
     
-    public override func present(from presentingViewController: UIViewController)
-    {
-        presentingViewController.show(tabBarController, sender: nil)
-        rootViewController = tabBarController
-    }
-    
-    public override func start()
-    {
-        rootViewController.show(tabBarController, sender: nil)
-    }
-    
     public override func newRoute(route: String) -> Coordinator?
     {
         return nil
-//        rootViewController = tabBarController
-//        switch route {
-//        
-//        case "timer":
-//            tabBarController.selectedIndex = 0
-//            
-//        case "reports":
-//            tabBarController.selectedIndex = 1
-//            
-//        case "calendar":
-//            tabBarController.selectedIndex = 2
-//            
-//        default:
-//            fatalError("Wrong path")
-//            break
-//        }
+        rootViewController = tabBarController
+        switch route {
+            
+        case "timer":
+            tabBarController.selectedIndex = 0
+            
+        case "reports":
+            tabBarController.selectedIndex = 1
+            
+        case "calendar":
+            tabBarController.selectedIndex = 2
+            
+        default:
+            fatalError("Wrong path")
+            break
+        }
     }
 }
