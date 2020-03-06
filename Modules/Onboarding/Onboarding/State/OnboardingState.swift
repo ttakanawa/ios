@@ -21,11 +21,17 @@ public struct LocalOnboardingState
     }
 }
 
-public protocol OnboardingState
+public struct OnboardingState
 {
-    var user: Loadable<User> { get set }
-    var route: Route { get set }
-    var localOnboardingState: LocalOnboardingState { get set }
+    public var user: Loadable<User>
+    public var route: Route
+    public var localOnboardingState: LocalOnboardingState
+    
+    public init(user: Loadable<User>, route: Route, localOnboardingState: LocalOnboardingState) {
+        self.user = user
+        self.route = route
+        self.localOnboardingState = localOnboardingState
+    }
 }
 
 extension OnboardingState

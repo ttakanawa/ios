@@ -128,6 +128,7 @@
 		8C2516312403C15300BAD4B5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				8CB545CB241108EB00154473 /* OnboardingFeature.swift */,
 				8C509CF3241165E200B6DF30 /* Features */,
 				8C008FB0240816EA000A0C32 /* Coordinators */,
 				8C25176D2403C25900BAD4B5 /* Actions */,
@@ -210,7 +211,6 @@
 		8C509CF3241165E200B6DF30 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				8CB545CB241108EB00154473 /* OnboardingFeature.swift */,
 				8C509CF62411665200B6DF30 /* EmailLoginFeature.swift */,
 				8C509CF82411668000B6DF30 /* EmailSignupFeature.swift */,
 			);

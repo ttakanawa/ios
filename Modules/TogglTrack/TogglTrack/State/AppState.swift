@@ -28,16 +28,20 @@ public struct AppState
     public var entities: TimeLogEntities =  TimeLogEntities()
     
     public var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
-    public var localStartEditState: LocalStartEditState = LocalStartEditState()
+    public var localTimerState: LocalTimerState = LocalTimerState()
 }
 
 // Module specific states
-extension AppState: OnboardingState
+extension AppState
 {
     var onboardingState: OnboardingState
     {
         get {
-            self
+            OnboardingState(
+                user: user,
+                route: route,
+                localOnboardingState: localOnboardingState
+            )
         }
         set {
             user = newValue.user
@@ -45,32 +49,21 @@ extension AppState: OnboardingState
             localOnboardingState = newValue.localOnboardingState
         }
     }
-}
-
-extension AppState: TimerState
-{
+    
     var timerState: TimerState
     {
         get {
-            self
+            TimerState(
+                user: user,
+                entities: entities,
+                localTimerState: localTimerState
+            )
         }
+        
         set {
+            user = newValue.user
             entities = newValue.entities
-        }
-    }
-}
-
-
-extension AppState: StartEditState
-{
-    var startEditState: StartEditState
-    {
-        get {
-            self
-        }
-        set {
-            entities = newValue.entities
-            localStartEditState = newValue.localStartEditState
+            localTimerState = newValue.localTimerState
         }
     }
 }

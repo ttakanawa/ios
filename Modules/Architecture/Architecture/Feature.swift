@@ -12,21 +12,14 @@ public protocol Feature
 {
     associatedtype State
     associatedtype Action
-    associatedtype Environment
     
-    var reducer: Reducer<State, Action, Environment> { get }
     func mainCoordinator(store: Store<State, Action>) -> Coordinator
 }
 
-open class BaseFeature<State, Action, Environment>: Feature
+open class BaseFeature<State, Action>: Feature
 {
     public init()
     {
-    }
-    
-    open var reducer: Reducer<State, Action, Environment>
-    {
-        fatalError()
     }
     
     open func mainCoordinator(store: Store<State, Action>) -> Coordinator
@@ -34,39 +27,30 @@ open class BaseFeature<State, Action, Environment>: Feature
         fatalError()
     }
     
-    public func wrap<GlobalState, GlobalAction, GlobalEnvironment>(
-        pullback: @escaping (Reducer<State, Action, Environment>) -> Reducer<GlobalState, GlobalAction, GlobalEnvironment>,
+    public func view<GlobalState, GlobalAction>(
         viewStore: @escaping (Store<GlobalState, GlobalAction>) -> Store<State, Action>
-    ) -> BaseFeature<GlobalState, GlobalAction, GlobalEnvironment>
+    ) -> BaseFeature<GlobalState, GlobalAction>
     {
-        return FeatureWrapper<GlobalState, GlobalAction, GlobalEnvironment, State, Action, Environment>(
+        return FeatureWrapper<GlobalState, GlobalAction, State, Action>(
             feature: self,
-            pullback: pullback,
             viewStore: viewStore
         )
     }
 }
 
 
-public class FeatureWrapper<GlobalState, GlobalAction, GlobalEnvironment, State, Action, Environment>: BaseFeature<GlobalState, GlobalAction, GlobalEnvironment>
+public class FeatureWrapper<GlobalState, GlobalAction, State, Action>: BaseFeature<GlobalState, GlobalAction>
 {
-    private var feature: BaseFeature<State, Action, Environment>
+    private var feature: BaseFeature<State, Action>
     private var viewStore: (Store<GlobalState, GlobalAction>) -> Store<State, Action>
-    private var pullback: (Reducer<State, Action, Environment>) -> Reducer<GlobalState, GlobalAction, GlobalEnvironment>
-    
-    override public var reducer: Reducer<GlobalState, GlobalAction, GlobalEnvironment> {
-        pullback(feature.reducer)
-    }
-    
+        
     public init(
-        feature: BaseFeature<State, Action, Environment>,
-        pullback: @escaping (Reducer<State, Action, Environment>) -> Reducer<GlobalState, GlobalAction, GlobalEnvironment>,
+        feature: BaseFeature<State, Action>,
         viewStore: @escaping (Store<GlobalState, GlobalAction>) -> Store<State, Action>
     )
     {
         self.feature = feature
         self.viewStore = viewStore
-        self.pullback = pullback
     }
         
     override public func mainCoordinator(store: Store<GlobalState, GlobalAction>) -> Coordinator

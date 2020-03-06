@@ -8,16 +8,15 @@
 
 import UIKit
 import Architecture
-import API
 
 public final class OnboardingCoordinator: Coordinator
 {    
     private var store: Store<OnboardingState, OnboardingAction>
     public var rootViewController: UIViewController!
     
-    private var features: [String: BaseFeature<OnboardingState, OnboardingAction, UserAPI>]
+    private var features: [String: BaseFeature<OnboardingState, OnboardingAction>]
     
-    public init(store: Store<OnboardingState, OnboardingAction>, features: [String: BaseFeature<OnboardingState, OnboardingAction, UserAPI>])
+    public init(store: Store<OnboardingState, OnboardingAction>, features: [String: BaseFeature<OnboardingState, OnboardingAction>])
     {
         self.store = store
         self.features = features

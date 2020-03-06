@@ -29,23 +29,9 @@ public final class TabBarCoordinator: Coordinator
             .map(AppAction.tabBarTapped)
             .subscribe(onNext: store.dispatch)            
             .disposed(by: disposeBag)
-        
-        let timerLog = TimeLogViewController.instantiate()
-        timerLog.store = store.view(
-            state: { $0.timerState },
-            action: { .timer($0) }
-        )
-        
-        let startEdit = StartEditViewController.instantiate()
-        startEdit.store = store.view(
-            state: { $0.startEditState },
-            action: { .startEdit($0) }
-        )
 
-        // TODO We should find a better way to inject modules into modules
-        let timer = TimerViewController()
-        timer.timeLogViewController = timerLog
-        timer.startEditViewController = startEdit
+        let timer = UIViewController()
+        timer.view.backgroundColor = .blue
         
         let timerNav = UINavigationController(rootViewController: timer)
         timerNav.tabBarItem = UITabBarItem(title: "Timer", image: nil, tag: 0)
@@ -61,13 +47,11 @@ public final class TabBarCoordinator: Coordinator
         calendarNav.tabBarItem = UITabBarItem(title: "Calendar", image: nil, tag: 2)
 
         tabBarController.setViewControllers([timerNav, reportsNav, calendarNav], animated: false)
-        
-        rootViewController.show(tabBarController, sender: nil)
     }
     
     public func start(presentingViewController: UIViewController)
     {
-        
+        rootViewController.show(tabBarController, sender: nil)
     }
     
     public func newRoute(route: String) -> Coordinator?

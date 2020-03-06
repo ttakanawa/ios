@@ -8,15 +8,10 @@
 
 import Foundation
 import Architecture
-import API
 
-public class EmailSignupFeature: BaseFeature<OnboardingState, EmailSignupAction, UserAPI>
+class EmailSignupFeature: BaseFeature<OnboardingState, EmailSignupAction>
 {
-    public override var reducer: Reducer<OnboardingState, EmailSignupAction, UserAPI> {
-        return emailSignupReducer
-    }
-    
-    public override func mainCoordinator(store: Store<OnboardingState, EmailSignupAction>) -> Coordinator {
+    override func mainCoordinator(store: Store<OnboardingState, EmailSignupAction>) -> Coordinator {
         return EmailSignupCoordinator(store: store)
     }
 }

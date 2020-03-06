@@ -11,7 +11,7 @@ import Architecture
 import RxSwift
 import API
 
-let onboardingReducer = Reducer<OnboardingState, OnboardingAction, UserAPI> { state, action, api in
+let onboardingScreenReducer = Reducer<OnboardingState, OnboardingAction, UserAPI> { state, action, api in
     
     switch action {
         

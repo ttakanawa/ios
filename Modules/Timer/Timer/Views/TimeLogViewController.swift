@@ -16,7 +16,7 @@ import RxDataSources
 import Models
 
 // TODO Move this somewhere else
-let timeEntries: (TimerState) -> [TimeEntryViewModel] = { state in
+let timeEntries: (TimeLogState) -> [TimeEntryViewModel] = { state in
     
     guard case .loaded(_) = state.entities.loading else { return [] }
     return state.entities.timeEntries.values
@@ -41,7 +41,7 @@ let timeEntries: (TimerState) -> [TimeEntryViewModel] = { state in
         })
 }
 
-public typealias TimeLogStore = Store<TimerState, TimeLogAction>
+public typealias TimeLogStore = Store<TimeLogState, TimeLogAction>
 
 public class TimeLogViewController: UIViewController, Storyboarded
 {

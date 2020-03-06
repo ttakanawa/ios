@@ -20,7 +20,7 @@ public enum AppAction
     case tabBarTapped(Int)
     
     case onboarding(OnboardingAction)
-    case timer(TimeLogAction)
+    case timer(TimerAction)
     case startEdit(StartEditAction)
 }
 
@@ -37,7 +37,7 @@ extension AppAction
         }
     }
     
-    var timer: TimeLogAction?
+    var timer: TimerAction?
     {
         get {
             guard case let .timer(value) = self else { return nil }

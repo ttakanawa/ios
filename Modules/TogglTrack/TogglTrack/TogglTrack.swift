@@ -28,7 +28,7 @@ public class TogglTrack
                 
         store = Store(
             initialState: AppState(),
-            reducer: logging(appFeature.reducer),
+            reducer: logging(appReducer),
             environment: AppEnvironment()
         )
         

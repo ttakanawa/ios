@@ -15,9 +15,9 @@ public final class AppCoordinator: Coordinator
     
     private var store: Store<AppState, AppAction>
     private var navigationController: UINavigationController!
-    private var features: [String: BaseFeature<AppState, AppAction, AppEnvironment>]
+    private var features: [String: BaseFeature<AppState, AppAction>]
         
-    public init(store: Store<AppState, AppAction>, features: [String: BaseFeature<AppState, AppAction, AppEnvironment>])
+    public init(store: Store<AppState, AppAction>, features: [String: BaseFeature<AppState, AppAction>])
     {
         self.store = store
         self.features = features
@@ -54,8 +54,8 @@ public final class AppCoordinator: Coordinator
             return nil
             
         case .main:
-            return nil
-        
+            return features[route.rawValue]!.mainCoordinator(store: store)
+            
         }
     }
     
