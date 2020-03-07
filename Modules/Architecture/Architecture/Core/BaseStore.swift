@@ -56,8 +56,9 @@ public final class Store<State, Action>
         
     public func dispatch(_ action: Action)
     {
-        // TODO Check or switch to Main Thread
-        _dispatch?(action)
+        DispatchQueue.main.async { [weak self] in
+            self?._dispatch?(action)
+        }
     }
 }
 
