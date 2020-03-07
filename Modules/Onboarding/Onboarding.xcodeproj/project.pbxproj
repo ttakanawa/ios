@@ -96,16 +96,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C008FB0240816EA000A0C32 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				8C008FB1240816F2000A0C32 /* OnboardingCoordinator.swift */,
-				8C008FB324081A6C000A0C32 /* EmailLoginCoordinator.swift */,
-				8C008FB524081AA1000A0C32 /* EmailSignupCoordinator.swift */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
 		8C2516252403C15300BAD4B5 = {
 			isa = PBXGroup;
 			children = (
@@ -128,14 +118,10 @@
 		8C2516312403C15300BAD4B5 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				8CB545CB241108EB00154473 /* OnboardingFeature.swift */,
-				8C509CF3241165E200B6DF30 /* Features */,
-				8C008FB0240816EA000A0C32 /* Coordinators */,
-				8C25176D2403C25900BAD4B5 /* Actions */,
-				8C2517702403C25900BAD4B5 /* Reducer */,
-				8C2517722403C25900BAD4B5 /* Selectors */,
-				8C2517742403C25900BAD4B5 /* State */,
-				8C2517692403C25900BAD4B5 /* Views */,
+				8C509D332413E20000B6DF30 /* Common */,
+				8C509D302413E1D500B6DF30 /* Onboarding */,
+				8C509D322413E1E300B6DF30 /* EmailSignup */,
+				8C509D312413E1DD00B6DF30 /* EmailLogin */,
 				8C2516322403C15300BAD4B5 /* Onboarding.h */,
 				8C2516332403C15300BAD4B5 /* Info.plist */,
 			);
@@ -151,52 +137,6 @@
 			path = OnboardingTests;
 			sourceTree = "<group>";
 		};
-		8C2517692403C25900BAD4B5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8C25176A2403C25900BAD4B5 /* SignupViewController.swift */,
-				8C25176B2403C25900BAD4B5 /* OnboardingViewController.swift */,
-				8C25176C2403C25900BAD4B5 /* LoginViewController.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		8C25176D2403C25900BAD4B5 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				8C25176E2403C25900BAD4B5 /* OnboardingAction.swift */,
-				8CAAACAA24050FC700E9BBAF /* EmailLoginAction.swift */,
-				8CAAACAC24050FFF00E9BBAF /* EmailSignupAction.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
-		8C2517702403C25900BAD4B5 /* Reducer */ = {
-			isa = PBXGroup;
-			children = (
-				8C2517712403C25900BAD4B5 /* OnboardingReducer.swift */,
-				8CAAACAE2405104400E9BBAF /* EmailLoginReducer.swift */,
-				8CAAACB02405104E00E9BBAF /* EmailSignupReducer.swift */,
-			);
-			path = Reducer;
-			sourceTree = "<group>";
-		};
-		8C2517722403C25900BAD4B5 /* Selectors */ = {
-			isa = PBXGroup;
-			children = (
-				8C2517732403C25900BAD4B5 /* OnboardingSelectors.swift */,
-			);
-			path = Selectors;
-			sourceTree = "<group>";
-		};
-		8C2517742403C25900BAD4B5 /* State */ = {
-			isa = PBXGroup;
-			children = (
-				8C2517752403C25900BAD4B5 /* OnboardingState.swift */,
-			);
-			path = State;
-			sourceTree = "<group>";
-		};
 		8C25189F2403C75000BAD4B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,13 +148,73 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8C509CF3241165E200B6DF30 /* Features */ = {
+		8C509D302413E1D500B6DF30 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				8C509CF62411665200B6DF30 /* EmailLoginFeature.swift */,
-				8C509CF82411668000B6DF30 /* EmailSignupFeature.swift */,
+				8C509D3B2413E33900B6DF30 /* Views */,
+				8CB545CB241108EB00154473 /* OnboardingFeature.swift */,
+				8C008FB1240816F2000A0C32 /* OnboardingCoordinator.swift */,
+				8C25176E2403C25900BAD4B5 /* OnboardingAction.swift */,
+				8C2517712403C25900BAD4B5 /* OnboardingReducer.swift */,
 			);
-			path = Features;
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		8C509D312413E1DD00B6DF30 /* EmailLogin */ = {
+			isa = PBXGroup;
+			children = (
+				8C509D3D2413E34600B6DF30 /* Views */,
+				8C509CF62411665200B6DF30 /* EmailLoginFeature.swift */,
+				8C008FB324081A6C000A0C32 /* EmailLoginCoordinator.swift */,
+				8CAAACAA24050FC700E9BBAF /* EmailLoginAction.swift */,
+				8CAAACAE2405104400E9BBAF /* EmailLoginReducer.swift */,
+			);
+			path = EmailLogin;
+			sourceTree = "<group>";
+		};
+		8C509D322413E1E300B6DF30 /* EmailSignup */ = {
+			isa = PBXGroup;
+			children = (
+				8C509D3C2413E33F00B6DF30 /* Views */,
+				8C509CF82411668000B6DF30 /* EmailSignupFeature.swift */,
+				8C008FB524081AA1000A0C32 /* EmailSignupCoordinator.swift */,
+				8CAAACAC24050FFF00E9BBAF /* EmailSignupAction.swift */,
+				8CAAACB02405104E00E9BBAF /* EmailSignupReducer.swift */,
+			);
+			path = EmailSignup;
+			sourceTree = "<group>";
+		};
+		8C509D332413E20000B6DF30 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8C2517732403C25900BAD4B5 /* OnboardingSelectors.swift */,
+				8C2517752403C25900BAD4B5 /* OnboardingState.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8C509D3B2413E33900B6DF30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C25176B2403C25900BAD4B5 /* OnboardingViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8C509D3C2413E33F00B6DF30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C25176A2403C25900BAD4B5 /* SignupViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8C509D3D2413E34600B6DF30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C25176C2403C25900BAD4B5 /* LoginViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

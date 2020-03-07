@@ -135,15 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				8C509D092412509F00B6DF30 /* TimerFeature.swift */,
-				8C509D042411702D00B6DF30 /* Features */,
-				8C509D0F2412590F00B6DF30 /* Coordinators */,
-				8C2517842403C27200BAD4B5 /* Actions */,
-				8C2517862403C27200BAD4B5 /* Reducers */,
-				8C2517822403C27200BAD4B5 /* State */,
-				8C509D2F2412BBF700B6DF30 /* Effects */,
-				8C509D212412875600B6DF30 /* ViewModels */,
-				8C509D1E2412872D00B6DF30 /* Selectors */,
-				8C25177F2403C27200BAD4B5 /* Views */,
+				8C509D362413E2C000B6DF30 /* Common */,
+				8C509D342413E29300B6DF30 /* TimeLog */,
+				8C509D352413E29B00B6DF30 /* StartEdit */,
 				8C2516C22403C1B000BAD4B5 /* Timer.h */,
 				8C2516C32403C1B000BAD4B5 /* Info.plist */,
 			);
@@ -159,48 +153,6 @@
 			path = TimerTests;
 			sourceTree = "<group>";
 		};
-		8C25177F2403C27200BAD4B5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */,
-				8C2517812403C27200BAD4B5 /* TimerViewController.swift */,
-				8C008FBB24081CD6000A0C32 /* BottomSheet.swift */,
-				8C008FC324090C85000A0C32 /* StartEditViewController.swift */,
-				8CB54532240E7DA100154473 /* TimeLogViewController.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		8C2517822403C27200BAD4B5 /* State */ = {
-			isa = PBXGroup;
-			children = (
-				8C509D142412603800B6DF30 /* TimerState.swift */,
-				8C2517832403C27200BAD4B5 /* TimeLogState.swift */,
-				8CB54534240EA67400154473 /* StartEditState.swift */,
-			);
-			path = State;
-			sourceTree = "<group>";
-		};
-		8C2517842403C27200BAD4B5 /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				8C509D0D2412567900B6DF30 /* TimerAction.swift */,
-				8C2517852403C27200BAD4B5 /* TimeLogAction.swift */,
-				8C008FCF24093FF8000A0C32 /* StartEditAction.swift */,
-			);
-			path = Actions;
-			sourceTree = "<group>";
-		};
-		8C2517862403C27200BAD4B5 /* Reducers */ = {
-			isa = PBXGroup;
-			children = (
-				8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */,
-				8C008FD12409407B000A0C32 /* StartEditReducer.swift */,
-				8C509D2D2412B10C00B6DF30 /* TimeEntryCreationReducer.swift */,
-			);
-			path = Reducers;
-			sourceTree = "<group>";
-		};
 		8C2518A42403C78100BAD4B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,47 +166,79 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8C509D042411702D00B6DF30 /* Features */ = {
+		8C509D342413E29300B6DF30 /* TimeLog */ = {
 			isa = PBXGroup;
 			children = (
-				8C509D162412641600B6DF30 /* TimeLogFeature.swift */,
-				8C509D182412644300B6DF30 /* StartEditFeature.swift */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		8C509D0F2412590F00B6DF30 /* Coordinators */ = {
-			isa = PBXGroup;
-			children = (
-				8C509D1A241264A200B6DF30 /* TimerCoordinator.swift */,
-				8C509D102412591E00B6DF30 /* TimeLogCoordinator.swift */,
-				8C509D1224125AB500B6DF30 /* StartEditCoordinator.swift */,
-			);
-			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		8C509D1E2412872D00B6DF30 /* Selectors */ = {
-			isa = PBXGroup;
-			children = (
+				8C509D382413E31100B6DF30 /* Views */,
+				8C509D372413E2E200B6DF30 /* ViewModels */,
 				8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */,
+				8C2517832403C27200BAD4B5 /* TimeLogState.swift */,
+				8C509D162412641600B6DF30 /* TimeLogFeature.swift */,
+				8C509D102412591E00B6DF30 /* TimeLogCoordinator.swift */,
+				8C2517852403C27200BAD4B5 /* TimeLogAction.swift */,
+				8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */,
 			);
-			path = Selectors;
+			path = TimeLog;
 			sourceTree = "<group>";
 		};
-		8C509D212412875600B6DF30 /* ViewModels */ = {
+		8C509D352413E29B00B6DF30 /* StartEdit */ = {
 			isa = PBXGroup;
 			children = (
-				8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */,
+				8C509D3A2413E31F00B6DF30 /* Views */,
+				8CB54534240EA67400154473 /* StartEditState.swift */,
+				8C509D182412644300B6DF30 /* StartEditFeature.swift */,
+				8C509D1224125AB500B6DF30 /* StartEditCoordinator.swift */,
+				8C008FCF24093FF8000A0C32 /* StartEditAction.swift */,
+				8C008FD12409407B000A0C32 /* StartEditReducer.swift */,
+			);
+			path = StartEdit;
+			sourceTree = "<group>";
+		};
+		8C509D362413E2C000B6DF30 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8C509D392413E31700B6DF30 /* Views */,
+				8C509D142412603800B6DF30 /* TimerState.swift */,
+				8C509D2D2412B10C00B6DF30 /* TimeEntryCreationReducer.swift */,
+				8C509D0D2412567900B6DF30 /* TimerAction.swift */,
+				8C509D1A241264A200B6DF30 /* TimerCoordinator.swift */,
+				8C008FBB24081CD6000A0C32 /* BottomSheet.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8C509D372413E2E200B6DF30 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
 				8C509D242412879200B6DF30 /* DayViewModel.swift */,
+				8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		8C509D2F2412BBF700B6DF30 /* Effects */ = {
+		8C509D382413E31100B6DF30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CB54532240E7DA100154473 /* TimeLogViewController.swift */,
+				8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */,
 			);
-			path = Effects;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8C509D392413E31700B6DF30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C2517812403C27200BAD4B5 /* TimerViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8C509D3A2413E31F00B6DF30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C008FC324090C85000A0C32 /* StartEditViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
