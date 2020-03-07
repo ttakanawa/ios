@@ -11,10 +11,6 @@ import Models
 
 public enum TimerAction
 {
-    case timeEntryAdded(TimeEntry)
-    case timeEntryDeleted(Int)
-    case setError(Error)
-    
     case timeLog(TimeLogAction)
     case startEdit(StartEditAction)
 }
@@ -52,15 +48,6 @@ extension TimerAction: CustomDebugStringConvertible
     {
         switch self {
        
-        case let .timeEntryAdded(timeEntry):
-            return "TimeEntryAdded: \(timeEntry.description)"
-
-        case let .timeEntryDeleted(id):
-            return "TimeEntryDeleted: \(id)"
-            
-        case let .setError(error):
-            return "SetError: \(error)"
-
         case let .timeLog(action):
             return action.debugDescription
             

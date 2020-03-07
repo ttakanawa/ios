@@ -15,9 +15,11 @@ var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { stat
     {
     case .setBackgroundStatus:
         state.appStatus = .background
+        return .empty
         
     case .setForegroundStatus:
         state.appStatus = .foreground
+        return .empty
         
     case .start:
         if state.user.isLoaded {
@@ -25,6 +27,7 @@ var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { stat
         } else {
             state.route = AppRoute.onboarding
         }
+        return .empty
         
     case let .tabBarTapped(section):
         state.route = [
@@ -32,11 +35,9 @@ var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { stat
             TabBarRoute.reports,
             TabBarRoute.calendar
         ][section]
-        break
+        return .empty
         
     case .onboarding, .timer, .startEdit:
-        break
+        return .empty
     }
-    
-    return .empty
 }

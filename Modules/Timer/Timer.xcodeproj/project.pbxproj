@@ -35,7 +35,6 @@
 		8C509D202412874100B6DF30 /* TimeEntriesSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */; };
 		8C509D232412876A00B6DF30 /* TimeEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */; };
 		8C509D252412879200B6DF30 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D242412879200B6DF30 /* DayViewModel.swift */; };
-		8C509D2E2412B10C00B6DF30 /* TimeEntryCreationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D2D2412B10C00B6DF30 /* TimeEntryCreationReducer.swift */; };
 		8CB54533240E7DA100154473 /* TimeLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54532240E7DA100154473 /* TimeLogViewController.swift */; };
 		8CB54535240EA67400154473 /* StartEditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54534240EA67400154473 /* StartEditState.swift */; };
 /* End PBXBuildFile section */
@@ -83,7 +82,6 @@
 		8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesSelector.swift; sourceTree = "<group>"; };
 		8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryViewModel.swift; sourceTree = "<group>"; };
 		8C509D242412879200B6DF30 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
-		8C509D2D2412B10C00B6DF30 /* TimeEntryCreationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryCreationReducer.swift; sourceTree = "<group>"; };
 		8CB54532240E7DA100154473 /* TimeLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogViewController.swift; sourceTree = "<group>"; };
 		8CB54534240EA67400154473 /* StartEditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,11 +169,11 @@
 			children = (
 				8C509D382413E31100B6DF30 /* Views */,
 				8C509D372413E2E200B6DF30 /* ViewModels */,
+				8C2517852403C27200BAD4B5 /* TimeLogAction.swift */,
 				8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */,
 				8C2517832403C27200BAD4B5 /* TimeLogState.swift */,
 				8C509D162412641600B6DF30 /* TimeLogFeature.swift */,
 				8C509D102412591E00B6DF30 /* TimeLogCoordinator.swift */,
-				8C2517852403C27200BAD4B5 /* TimeLogAction.swift */,
 				8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */,
 			);
 			path = TimeLog;
@@ -185,10 +183,10 @@
 			isa = PBXGroup;
 			children = (
 				8C509D3A2413E31F00B6DF30 /* Views */,
+				8C008FCF24093FF8000A0C32 /* StartEditAction.swift */,
 				8CB54534240EA67400154473 /* StartEditState.swift */,
 				8C509D182412644300B6DF30 /* StartEditFeature.swift */,
 				8C509D1224125AB500B6DF30 /* StartEditCoordinator.swift */,
-				8C008FCF24093FF8000A0C32 /* StartEditAction.swift */,
 				8C008FD12409407B000A0C32 /* StartEditReducer.swift */,
 			);
 			path = StartEdit;
@@ -199,7 +197,6 @@
 			children = (
 				8C509D392413E31700B6DF30 /* Views */,
 				8C509D142412603800B6DF30 /* TimerState.swift */,
-				8C509D2D2412B10C00B6DF30 /* TimeEntryCreationReducer.swift */,
 				8C509D0D2412567900B6DF30 /* TimerAction.swift */,
 				8C509D1A241264A200B6DF30 /* TimerCoordinator.swift */,
 				8C008FBB24081CD6000A0C32 /* BottomSheet.swift */,
@@ -368,7 +365,6 @@
 				8CB54535240EA67400154473 /* StartEditState.swift in Sources */,
 				8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */,
 				8C509D202412874100B6DF30 /* TimeEntriesSelector.swift in Sources */,
-				8C509D2E2412B10C00B6DF30 /* TimeEntryCreationReducer.swift in Sources */,
 				8C509D152412603800B6DF30 /* TimerState.swift in Sources */,
 				8C509D0E2412567900B6DF30 /* TimerAction.swift in Sources */,
 				8C509D1B241264A200B6DF30 /* TimerCoordinator.swift in Sources */,

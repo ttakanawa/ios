@@ -25,7 +25,7 @@ public class TogglTrack
     public init(window: UIWindow)
     {
         let appFeature = AppFeature()
-                
+        
         store = Store(
             initialState: AppState(),
             reducer: logging(appReducer),

@@ -13,6 +13,8 @@ public enum StartEditAction
 {
     case descriptionEntered(String)
     case startTapped
+    case timeEntryAdded(TimeEntry)
+    case setError(Error)
 }
 
 
@@ -27,7 +29,12 @@ extension StartEditAction: CustomDebugStringConvertible
             
         case .startTapped:
             return "StartTapped"
-
+            
+        case let .timeEntryAdded(timeEntry):
+            return "TimeEntryAdded: \(timeEntry.description)"
+                        
+        case let .setError(error):
+            return "SetError: \(error)"
         }
     }
 }
