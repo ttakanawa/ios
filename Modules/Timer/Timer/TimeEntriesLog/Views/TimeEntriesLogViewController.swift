@@ -84,7 +84,7 @@ extension TimeEntriesLogViewController: UITableViewDelegate
     {
         let action = UIContextualAction(style: .normal, title: "Continue") { action, view, completed in
             let timeEntryId = self.dataSource.sectionModels[indexPath.section].items[indexPath.item].id
-            self.store.dispatch(TimeEntriesLogAction.cellSwipedRight(timeEntryId))
+            self.store.dispatch(TimeEntriesLogAction.timeEntrySwiped(.right, timeEntryId))
         }
         action.backgroundColor = .green
         return UISwipeActionsConfiguration(actions: [action])
@@ -94,7 +94,7 @@ extension TimeEntriesLogViewController: UITableViewDelegate
     {
         let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completed in
             let timeEntryId = self.dataSource.sectionModels[indexPath.section].items[indexPath.item].id
-            self.store.dispatch(TimeEntriesLogAction.cellSwipedLeft(timeEntryId))
+            self.store.dispatch(TimeEntriesLogAction.timeEntrySwiped(.left, timeEntryId))
         }
         return UISwipeActionsConfiguration(actions: [action])
     }

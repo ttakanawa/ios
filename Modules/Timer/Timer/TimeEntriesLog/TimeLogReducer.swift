@@ -19,12 +19,14 @@ let timeEntriesLogReducer = Reducer<TimeEntriesLogState, TimeEntriesLogAction, R
         guard let timeEntry = state.entities.timeEntries[timeEntryId] else { fatalError() }
         return continueTimeEntry(repository, timeEntry: timeEntry)
         
-    case let .cellSwipedLeft(timeEntryId):
-        return deleteTimeEntry(repository, timeEntryId: timeEntryId)
-        
-    case let .cellSwipedRight(timeEntryId):
-        guard let timeEntry = state.entities.timeEntries[timeEntryId] else { fatalError() }
-        return continueTimeEntry(repository, timeEntry: timeEntry)
+    case let .timeEntrySwiped(direction, timeEntryId):
+        switch direction {
+        case .left:
+            return deleteTimeEntry(repository, timeEntryId: timeEntryId)
+        case .right:
+            guard let timeEntry = state.entities.timeEntries[timeEntryId] else { fatalError() }
+            return continueTimeEntry(repository, timeEntry: timeEntry)
+        }
         
     case let .timeEntryDeleted(timeEntryId):
         state.entities.timeEntries[timeEntryId] = nil

@@ -9,11 +9,16 @@
 import Foundation
 import Models
 
+public enum SwipeDirection
+{
+    case left
+    case right
+}
+
 public enum TimeEntriesLogAction
 {
     case continueButtonTapped(Int)
-    case cellSwipedLeft(Int)
-    case cellSwipedRight(Int)
+    case timeEntrySwiped(SwipeDirection, Int)
     
     case timeEntryDeleted(Int)
     case timeEntryAdded(TimeEntry)
@@ -33,11 +38,8 @@ extension TimeEntriesLogAction: CustomDebugStringConvertible
         case let .continueButtonTapped(timeEntryId):
             return "ContinueButtonTapped: \(timeEntryId)"
        
-        case let .cellSwipedLeft(timeEntryId):
-            return "CellSwipedLeft: \(timeEntryId)"
-
-        case let .cellSwipedRight(timeEntryId):
-            return "CellSwipedRight: \(timeEntryId)"
+        case let .timeEntrySwiped(direction, timeEntryId):
+            return "TimeEntrySwiped \(direction): \(timeEntryId)"
 
         case let .timeEntryDeleted(timeEntryId):
             return "TimeEntryDeleted: \(timeEntryId)"
