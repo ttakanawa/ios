@@ -147,11 +147,131 @@ func loadUser(email: String, password: String, api: UserAPI) -> Effect<EmailLogi
 }
 ```
 
-## Pullback & Store Views
+## Pullback
+
+There will be one app level reducer that gets injected into the store. This reducer will take the whole `AppState` the complete set of `AppActions` and the complete `AppEnvironments`. 
+
+The rest of the reducers will only handle one part of that state, for a particular subset of the actions and using only the part of the environment they need.
+
+This will aid in modularity. But in order to merge those reducers with the app level one, their types need to be compatible. That's what `pullback` is for. It converts a specific reducer into a global one.
+
+```swift
+public struct Reducer<StateType, ActionType, EnvironmentType>
+{
+    //...
+
+    public func pullback<GlobalState, GlobalAction, GlobalEnvironment>(
+        state: WritableKeyPath<GlobalState, StateType>,
+        action: WritableKeyPath<GlobalAction, ActionType?>,
+        environment: KeyPath<GlobalEnvironment, EnvironmentType>
+    ) -> Reducer<GlobalState, GlobalAction, GlobalEnvironment>
+    {
+        //...
+    }
+}
+```
+
+This method on `Reducer` takes a `WritableKeyPath` from the whole state to a part of it, a `WritableKeyPath` from the app actions to a specific type of action and a `KeyPath` from the app environment to the environment the reducer needs. 
+
+Note: For structs keypaths work automatically, but actions are enums, and for keypaths to work we need to add all that boilerplate with getters and setters. Another approach we could consider in the future is using [case paths](https://github.com/pointfreeco/swift-case-paths).
+
+After we've transformed the reducer we can use `combine` to merge it with other reducers to create one single reducer that will be injected into the store.
+
+## Store Views
+
+Similarly to reducers and pullback, the store it self can be "mapped" into a specific type of store that only holds some part of the state and only handles some subset of actions. Only this operation is not exactly "map", so it's called `view`.
+
+```swift
+public class Store<State, Action>
+{
+    //...
+
+    public func view<ViewState, ViewAction>(
+    state toLocalState: @escaping (State) -> ViewState,
+    action toGlobalAction: @escaping (ViewAction) -> Action?
+    ) -> Store<ViewState, ViewAction>
+    {
+        //...
+    }
+}
+```
+
+This method on `Store` takes two closures, one to map the global state into local state and another one to the the opposite for the actions.
+
+Different modules or features of the app will use different store views so they will only be able to listen to changes to parts of the state and will only be able to dispatch certain actions.
+
+## Local State
+
+Some features will have the need of adding some state to be handled by their reducer, but maybe that state is not necessary for the rest of the application. This is the case of the email and password texts in the onboarding reducer, for example. 
+
+To deal with this kind of state we do the following:
+- In the module's state use a public struct with all internal properties to store the needed local state
+- We store that property in the global state. So that state in the end is part of the global state and it behaves the same way, but can only be accessed from the module that needs it.
+
+This is the state in the Onboarding module
+```swift
+public struct LocalOnboardingState
+{
+    internal var email: String = ""
+    internal var password: String = ""
+    
+    public init()
+    {
+    }
+}
+
+public struct OnboardingState
+{
+    public var user: Loadable<User>
+    public var route: Route
+    public var localOnboardingState: LocalOnboardingState
+    
+    public init(user: Loadable<User>, route: Route, localOnboardingState: LocalOnboardingState) {
+        self.user = user
+        self.route = route
+        self.localOnboardingState = localOnboardingState
+    }
+}
+```
+
+This is how it looks in the global app state
+```swift
+public struct AppState
+{
+    // Othe properties...
+
+    public var route: Route = AppRoute.loading
+    public var user: Loadable<User> = .nothing
+    
+    public var localOnboardingState: LocalOnboardingState = LocalOnboardingState()
+}
+
+// Module specific states
+extension AppState
+{
+    var onboardingState: OnboardingState
+    {
+        get {
+            OnboardingState(
+                user: user,
+                route: route,
+                localOnboardingState: localOnboardingState
+            )
+        }
+        set {
+            user = newValue.user
+            route = newValue.route
+            localOnboardingState = newValue.localOnboardingState
+        }
+    }
+
+    //... 
+}
+```
+
+As you can see the state is mapped from the global one to the local one and back while passing also the local struct.
 
 ## High-order reducers
-
-## Local State
 
 ## Coordinators
 
