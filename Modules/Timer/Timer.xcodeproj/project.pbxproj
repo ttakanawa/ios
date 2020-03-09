@@ -19,7 +19,7 @@
 		8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517812403C27200BAD4B5 /* TimerViewController.swift */; };
 		8C25178B2403C27200BAD4B5 /* TimeEntriesLogState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517832403C27200BAD4B5 /* TimeEntriesLogState.swift */; };
 		8C25178C2403C27200BAD4B5 /* TimeEntriesLogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517852403C27200BAD4B5 /* TimeEntriesLogAction.swift */; };
-		8C25178D2403C27200BAD4B5 /* TimeLogReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */; };
+		8C25178D2403C27200BAD4B5 /* TimeEntriesLogReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517872403C27200BAD4B5 /* TimeEntriesLogReducer.swift */; };
 		8C2518A62403C78100BAD4B5 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A52403C78100BAD4B5 /* Architecture.framework */; };
 		8C2518AA2403C78600BAD4B5 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A92403C78600BAD4B5 /* Models.framework */; };
 		8C2518AD2403C79000BAD4B5 /* Assets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518AC2403C79000BAD4B5 /* Assets.framework */; };
@@ -65,7 +65,7 @@
 		8C2517812403C27200BAD4B5 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		8C2517832403C27200BAD4B5 /* TimeEntriesLogState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogState.swift; sourceTree = "<group>"; };
 		8C2517852403C27200BAD4B5 /* TimeEntriesLogAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogAction.swift; sourceTree = "<group>"; };
-		8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogReducer.swift; sourceTree = "<group>"; };
+		8C2517872403C27200BAD4B5 /* TimeEntriesLogReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogReducer.swift; sourceTree = "<group>"; };
 		8C2518A52403C78100BAD4B5 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518A92403C78600BAD4B5 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518AC2403C79000BAD4B5 /* Assets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Assets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,7 +174,7 @@
 				8C2517832403C27200BAD4B5 /* TimeEntriesLogState.swift */,
 				8C509D162412641600B6DF30 /* TimeEntriesLogFeature.swift */,
 				8C509D102412591E00B6DF30 /* TimeEntriesLogCoordinator.swift */,
-				8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */,
+				8C2517872403C27200BAD4B5 /* TimeEntriesLogReducer.swift */,
 			);
 			path = TimeEntriesLog;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 				8C509D172412641600B6DF30 /* TimeEntriesLogFeature.swift in Sources */,
 				8CB54533240E7DA100154473 /* TimeEntriesLogViewController.swift in Sources */,
 				8C008FD22409407B000A0C32 /* StartEditReducer.swift in Sources */,
-				8C25178D2403C27200BAD4B5 /* TimeLogReducer.swift in Sources */,
+				8C25178D2403C27200BAD4B5 /* TimeEntriesLogReducer.swift in Sources */,
 				8C509D112412591E00B6DF30 /* TimeEntriesLogCoordinator.swift in Sources */,
 				8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */,
 				8C509D252412879200B6DF30 /* DayViewModel.swift in Sources */,
