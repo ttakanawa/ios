@@ -5,16 +5,8 @@ import Onboarding
 import Timer
 import Utils
 
-enum AppStatus
-{
-    case unknown
-    case foreground
-    case background
-}
-
 public struct AppState
 {
-    var appStatus: AppStatus = .unknown
     public var route: Route = AppRoute.loading
     public var user: Loadable<User> = .nothing
     public var entities: TimeLogEntities =  TimeLogEntities()

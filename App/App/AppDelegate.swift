@@ -22,13 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func applicationDidEnterBackground(_ application: UIApplication)
     {
         // Not called under iOS 13 - See SceneDelegate sceneDidEnterBackground
-//        togglTrack.enteredBackground()
     }
     
     func applicationDidBecomeActive(_ application: UIApplication)
     {
         // Not called under iOS 13 - See SceneDelegate sceneWillEnterForeground
-//        togglTrack.didBecomeActive()
     }
 
     // MARK: UISceneSession Lifecycle

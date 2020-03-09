@@ -24,20 +24,11 @@ let emailSignupReducer = Reducer<OnboardingState, EmailSignupAction, UserAPI> { 
         
     case .signupTapped:
         state.user = .loading
-        return signupUser(email: state.email, password: state.password, api: api)
+        return .empty
 
-    case let .setUser(user):
-        state.user = .loaded(user)
-        api.setAuth(token: user.apiToken)
-        
     case let .setError(error):
         state.user = .error(error)
     }
     
-    return .empty
-}
-
-fileprivate func signupUser(email: String, password: String, api: UserAPI) -> Effect<EmailSignupAction>
-{
     return .empty
 }

@@ -5,8 +5,6 @@ import Models
 
 public enum AppAction
 {
-    case setBackgroundStatus
-    case setForegroundStatus
     case start
     
     case tabBarTapped(Int)
@@ -59,10 +57,6 @@ extension AppAction: CustomDebugStringConvertible
     public var debugDescription: String
     {
         switch self {
-        case .setBackgroundStatus:
-            return "SetBackgroundStatus"
-        case .setForegroundStatus:
-            return "SetForegroundStatus"
         case .start:
             return "Start"
         case let .tabBarTapped(tab):

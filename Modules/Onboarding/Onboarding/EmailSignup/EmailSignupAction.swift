@@ -10,7 +10,6 @@ public enum EmailSignupAction
     case passwordEntered(String)
     case signupTapped
     
-    case setUser(User)
     case setError(Error)
 }
 
@@ -29,8 +28,6 @@ extension EmailSignupAction: CustomDebugStringConvertible
             return "PasswordEntered: \(password.map({ _ in "*" }).joined())"
         case .signupTapped:
             return "SignupTapped"
-        case let .setUser(user):
-            return "SetUser: \(user.id)"
         case let .setError(error):
             return "SetError: \(error)"
         }
