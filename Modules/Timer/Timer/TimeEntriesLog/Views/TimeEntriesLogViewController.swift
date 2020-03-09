@@ -66,6 +66,11 @@ public class TimeEntriesLogViewController: UIViewController, Storyboarded
                 .drive(tableView.rx.items(dataSource: dataSource!))
                 .disposed(by: disposeBag)
             
+            tableView.rx.modelSelected(TimeEntryViewModel.self)
+                .map({ timeEntry in TimeEntriesLogAction.timeEntryTapped(timeEntry.id) })
+                .subscribe(onNext: store.dispatch)
+                .disposed(by: disposeBag)
+            
             tableView.rx.setDelegate(self)
                 .disposed(by: disposeBag)
         }

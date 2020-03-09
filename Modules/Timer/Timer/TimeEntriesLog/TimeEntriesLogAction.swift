@@ -19,6 +19,7 @@ public enum TimeEntriesLogAction
 {
     case continueButtonTapped(Int)
     case timeEntrySwiped(SwipeDirection, Int)
+    case timeEntryTapped(Int)
     
     case timeEntryDeleted(Int)
     case timeEntryAdded(TimeEntry)
@@ -40,6 +41,9 @@ extension TimeEntriesLogAction: CustomDebugStringConvertible
        
         case let .timeEntrySwiped(direction, timeEntryId):
             return "TimeEntrySwiped \(direction): \(timeEntryId)"
+            
+        case let .timeEntryTapped(timeEntryId):
+            return "TimeEntryTapped: \(timeEntryId)"
 
         case let .timeEntryDeleted(timeEntryId):
             return "TimeEntryDeleted: \(timeEntryId)"

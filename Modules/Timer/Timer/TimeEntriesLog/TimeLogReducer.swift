@@ -28,6 +28,10 @@ let timeEntriesLogReducer = Reducer<TimeEntriesLogState, TimeEntriesLogAction, R
             return continueTimeEntry(repository, timeEntry: timeEntry)
         }
         
+    case let .timeEntryTapped(timeEntryId):
+        //TODO Probably change the route to show the selected TE...
+        return .empty
+        
     case let .timeEntryDeleted(timeEntryId):
         state.entities.timeEntries[timeEntryId] = nil
         return .empty
