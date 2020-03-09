@@ -34,10 +34,10 @@ public struct TimerState
 
 extension TimerState
 {
-    internal var timeLogState: TimeLogState
+    internal var timeLogState: TimeEntriesLogState
     {
         get {
-            TimeLogState(entities: entities)
+            TimeEntriesLogState(entities: entities)
         }
         set {
             entities = newValue.entities

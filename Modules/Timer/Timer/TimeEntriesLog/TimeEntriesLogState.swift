@@ -1,5 +1,5 @@
 //
-//  TimerState.swift
+//  TimeEntriesLogState.swift
 //  Timer
 //
 //  Created by Ricardo Sánchez Sotres on 19/02/2020.
@@ -10,7 +10,7 @@ import Foundation
 import Models
 import Utils
 
-public struct TimeLogState
+public struct TimeEntriesLogState
 {
     var entities: TimeLogEntities
 }

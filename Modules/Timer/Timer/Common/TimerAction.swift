@@ -11,13 +11,13 @@ import Models
 
 public enum TimerAction
 {
-    case timeLog(TimeLogAction)
+    case timeLog(TimeEntriesLogAction)
     case startEdit(StartEditAction)
 }
 
 extension TimerAction
 {
-    var timeLog: TimeLogAction? {
+    var timeLog: TimeEntriesLogAction? {
         get {
             guard case let .timeLog(value) = self else { return nil }
             return value

@@ -1,5 +1,5 @@
 //
-//  TimeLogViewController.swift
+//  TimeEntriesLogViewController.swift
 //  Timer
 //
 //  Created by Ricardo Sánchez Sotres on 03/03/2020.
@@ -15,9 +15,9 @@ import RxSwift
 import RxDataSources
 import Models
 
-public typealias TimeLogStore = Store<TimeLogState, TimeLogAction>
+public typealias TimeEntriesLogStore = Store<TimeEntriesLogState, TimeEntriesLogAction>
 
-public class TimeLogViewController: UIViewController, Storyboarded
+public class TimeEntriesLogViewController: UIViewController, Storyboarded
 {
     public static var storyboardName = "Timer"
     public static var storyboardBundle = Assets.bundle
@@ -27,7 +27,7 @@ public class TimeLogViewController: UIViewController, Storyboarded
     private var disposeBag = DisposeBag()
     private var dataSource: RxTableViewSectionedAnimatedDataSource<DayViewModel>!
 
-    public var store: TimeLogStore!
+    public var store: TimeEntriesLogStore!
 
     public override func viewDidLoad()
     {
@@ -42,13 +42,17 @@ public class TimeLogViewController: UIViewController, Storyboarded
         if dataSource == nil {
             // We should do this in ViewDidLoad, but there's a bug that causes an ugly warning. That's why we are doing it here for now
             dataSource = RxTableViewSectionedAnimatedDataSource<DayViewModel>(configureCell:
-                { dataSource, tableView, indexPath, item in
+                { [weak self] dataSource, tableView, indexPath, item in
                     let cell = tableView.dequeueReusableCell(withIdentifier: "TimeEntryCell", for: indexPath) as! TimeEntryCell
                     cell.descriptionLabel.text = item.description
                     cell.descriptionLabel.textColor = item.descriptionColor
                     cell.projectClientTaskLabel.textColor = item.projectColor
                     cell.projectClientTaskLabel.text = item.projectTaskClient
                     cell.durationLabel.text = item.durationString
+                    cell.continueButton.rx.tap
+                        .mapTo(TimeEntriesLogAction.continueButtonTapped(item.id))
+                        .subscribe(onNext: self?.store.dispatch)
+                        .disposed(by: cell.disposeBag)
                     return cell
             })
             
@@ -74,13 +78,13 @@ public class TimeLogViewController: UIViewController, Storyboarded
     }
 }
 
-extension TimeLogViewController: UITableViewDelegate
+extension TimeEntriesLogViewController: UITableViewDelegate
 {
     public func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {
         let action = UIContextualAction(style: .normal, title: "Continue") { action, view, completed in
             let timeEntryId = self.dataSource.sectionModels[indexPath.section].items[indexPath.item].id
-            self.store.dispatch(TimeLogAction.cellSwipedRight(timeEntryId))
+            self.store.dispatch(TimeEntriesLogAction.cellSwipedRight(timeEntryId))
         }
         action.backgroundColor = .green
         return UISwipeActionsConfiguration(actions: [action])
@@ -90,7 +94,7 @@ extension TimeLogViewController: UITableViewDelegate
     {
         let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completed in
             let timeEntryId = self.dataSource.sectionModels[indexPath.section].items[indexPath.item].id
-            self.store.dispatch(TimeLogAction.cellSwipedLeft(timeEntryId))
+            self.store.dispatch(TimeEntriesLogAction.cellSwipedLeft(timeEntryId))
         }
         return UISwipeActionsConfiguration(actions: [action])
     }

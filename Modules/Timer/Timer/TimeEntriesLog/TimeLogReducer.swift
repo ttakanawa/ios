@@ -1,5 +1,5 @@
 //
-//  TimeLogReducer.swift
+//  TimeEntriesLogReducer.swift
 //  Timer
 //
 //  Created by Ricardo Sánchez Sotres on 19/02/2020.
@@ -12,8 +12,12 @@ import Models
 import RxSwift
 import Repository
 
-let timeLogReducer = Reducer<TimeLogState, TimeLogAction, Repository> { state, action, repository in
+let timeEntriesLogReducer = Reducer<TimeEntriesLogState, TimeEntriesLogAction, Repository> { state, action, repository in
     switch action {
+        
+    case let .continueButtonTapped(timeEntryId):
+        guard let timeEntry = state.entities.timeEntries[timeEntryId] else { fatalError() }
+        return continueTimeEntry(repository, timeEntry: timeEntry)
         
     case let .cellSwipedLeft(timeEntryId):
         return deleteTimeEntry(repository, timeEntryId: timeEntryId)
@@ -58,32 +62,32 @@ let timeLogReducer = Reducer<TimeLogState, TimeLogAction, Repository> { state, a
     }
 }
 
-fileprivate func loadEntities(_ repository: Repository) -> Effect<TimeLogAction>
+fileprivate func loadEntities(_ repository: Repository) -> Effect<TimeEntriesLogAction>
 {
     //TODO Shouldn't need to do all that `asObservable`
     return Observable.merge(
-        repository.getWorkspaces().map(TimeLogAction.setEntities).asObservable(),
-        repository.getClients().map(TimeLogAction.setEntities).asObservable(),
-        repository.getTimeEntries().map(TimeLogAction.setEntities).asObservable(),
-        repository.getProjects().map(TimeLogAction.setEntities).asObservable(),
-        repository.getTasks().map(TimeLogAction.setEntities).asObservable(),
-        repository.getTags().map(TimeLogAction.setEntities).asObservable()
+        repository.getWorkspaces().map(TimeEntriesLogAction.setEntities).asObservable(),
+        repository.getClients().map(TimeEntriesLogAction.setEntities).asObservable(),
+        repository.getTimeEntries().map(TimeEntriesLogAction.setEntities).asObservable(),
+        repository.getProjects().map(TimeEntriesLogAction.setEntities).asObservable(),
+        repository.getTasks().map(TimeEntriesLogAction.setEntities).asObservable(),
+        repository.getTags().map(TimeEntriesLogAction.setEntities).asObservable()
     )
     .concat(Observable.just(.finishedLoading))
     .catchError({ Observable.just(.setError($0)) })
     .toEffect()
 }
 
-fileprivate func deleteTimeEntry(_ repository: Repository, timeEntryId: Int) -> Effect<TimeLogAction>
+fileprivate func deleteTimeEntry(_ repository: Repository, timeEntryId: Int) -> Effect<TimeEntriesLogAction>
 {
     repository.deleteTimeEntry(timeEntryId: timeEntryId)
     .toEffect(
-        map: { TimeLogAction.timeEntryDeleted(timeEntryId) },
-        catch: { TimeLogAction.setError($0)}
+        map: { TimeEntriesLogAction.timeEntryDeleted(timeEntryId) },
+        catch: { TimeEntriesLogAction.setError($0)}
     )
 }
 
-fileprivate func continueTimeEntry(_ repository: Repository, timeEntry: TimeEntry) -> Effect<TimeLogAction>
+fileprivate func continueTimeEntry(_ repository: Repository, timeEntry: TimeEntry) -> Effect<TimeEntriesLogAction>
 {
     var copy = timeEntry
     copy.id = UUID().hashValue
@@ -92,7 +96,7 @@ fileprivate func continueTimeEntry(_ repository: Repository, timeEntry: TimeEntr
     
     return repository.addTimeEntry(timeEntry: copy)
     .toEffect(
-        map: { TimeLogAction.timeEntryAdded(copy) },
-        catch: { TimeLogAction.setError($0)}
+        map: { TimeEntriesLogAction.timeEntryAdded(copy) },
+        catch: { TimeEntriesLogAction.setError($0)}
     )
 }

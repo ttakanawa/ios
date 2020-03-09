@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Time Log View Controller-->
+        <!--Time Entries Log View Controller-->
         <scene sceneID="uN7-Qg-FCr">
             <objects>
-                <viewController storyboardIdentifier="TimeLogViewController" id="MyD-lN-1Wj" customClass="TimeLogViewController" customModule="Timer" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeEntriesLogViewController" id="MyD-lN-1Wj" customClass="TimeEntriesLogViewController" customModule="Timer" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uqw-pe-Wsa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fX6-dN-zWc">
-                                                    <rect key="frame" x="20" y="11" width="294" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="252" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hww-Qc-bFn">
-                                                    <rect key="frame" x="324" y="13" width="70" height="17"/>
+                                                    <rect key="frame" x="282" y="13" width="70" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="tYD-VS-TPz"/>
                                                     </constraints>
@@ -47,19 +47,30 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E97-7i-kLN">
+                                                    <rect key="frame" x="362" y="16" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="584-cF-EX8"/>
+                                                        <constraint firstAttribute="width" constant="40" id="XlS-yq-EeW"/>
+                                                    </constraints>
+                                                    <state key="normal" title="▶️"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="E97-7i-kLN" firstAttribute="centerY" secondItem="0j9-8D-Ze1" secondAttribute="centerY" id="DID-re-LSd"/>
                                                 <constraint firstAttribute="bottom" secondItem="kdP-wT-g9i" secondAttribute="bottom" constant="15" id="IhB-dC-ub6"/>
                                                 <constraint firstItem="fX6-dN-zWc" firstAttribute="leading" secondItem="0j9-8D-Ze1" secondAttribute="leading" constant="20" id="JSr-A0-kTh"/>
+                                                <constraint firstAttribute="trailing" secondItem="E97-7i-kLN" secondAttribute="trailing" constant="12" id="Jn2-jN-tPv"/>
                                                 <constraint firstAttribute="trailing" secondItem="kdP-wT-g9i" secondAttribute="trailing" constant="20" id="LPw-GC-Vqk"/>
                                                 <constraint firstItem="hww-Qc-bFn" firstAttribute="leading" secondItem="fX6-dN-zWc" secondAttribute="trailing" constant="10" id="TMs-8P-riT"/>
                                                 <constraint firstItem="kdP-wT-g9i" firstAttribute="leading" secondItem="0j9-8D-Ze1" secondAttribute="leading" constant="20" id="TTW-hH-5rk"/>
                                                 <constraint firstItem="hww-Qc-bFn" firstAttribute="centerY" secondItem="fX6-dN-zWc" secondAttribute="centerY" id="UnD-IL-UWz"/>
-                                                <constraint firstAttribute="trailing" secondItem="hww-Qc-bFn" secondAttribute="trailing" constant="20" id="a45-Az-RHB"/>
                                                 <constraint firstItem="fX6-dN-zWc" firstAttribute="top" secondItem="0j9-8D-Ze1" secondAttribute="top" constant="11" id="b3q-Sf-YYe"/>
+                                                <constraint firstItem="E97-7i-kLN" firstAttribute="leading" secondItem="hww-Qc-bFn" secondAttribute="trailing" constant="10" id="qai-63-HAe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="continueButton" destination="E97-7i-kLN" id="oz6-EC-i8I"/>
                                             <outlet property="descriptionLabel" destination="fX6-dN-zWc" id="eEj-AN-U84"/>
                                             <outlet property="durationLabel" destination="hww-Qc-bFn" id="7Hb-PQ-4al"/>
                                             <outlet property="projectClientTaskLabel" destination="kdP-wT-g9i" id="yH2-Wq-07w"/>

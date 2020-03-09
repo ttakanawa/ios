@@ -17,8 +17,8 @@
 		8C2516D02403C1B000BAD4B5 /* Timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2516C22403C1B000BAD4B5 /* Timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */; };
 		8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517812403C27200BAD4B5 /* TimerViewController.swift */; };
-		8C25178B2403C27200BAD4B5 /* TimeLogState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517832403C27200BAD4B5 /* TimeLogState.swift */; };
-		8C25178C2403C27200BAD4B5 /* TimeLogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517852403C27200BAD4B5 /* TimeLogAction.swift */; };
+		8C25178B2403C27200BAD4B5 /* TimeEntriesLogState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517832403C27200BAD4B5 /* TimeEntriesLogState.swift */; };
+		8C25178C2403C27200BAD4B5 /* TimeEntriesLogAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517852403C27200BAD4B5 /* TimeEntriesLogAction.swift */; };
 		8C25178D2403C27200BAD4B5 /* TimeLogReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */; };
 		8C2518A62403C78100BAD4B5 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A52403C78100BAD4B5 /* Architecture.framework */; };
 		8C2518AA2403C78600BAD4B5 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518A92403C78600BAD4B5 /* Models.framework */; };
@@ -26,16 +26,16 @@
 		8C2518C02403C87200BAD4B5 /* Repository.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518BF2403C87200BAD4B5 /* Repository.framework */; };
 		8C509D0A2412509F00B6DF30 /* TimerFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D092412509F00B6DF30 /* TimerFeature.swift */; };
 		8C509D0E2412567900B6DF30 /* TimerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D0D2412567900B6DF30 /* TimerAction.swift */; };
-		8C509D112412591E00B6DF30 /* TimeLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D102412591E00B6DF30 /* TimeLogCoordinator.swift */; };
+		8C509D112412591E00B6DF30 /* TimeEntriesLogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D102412591E00B6DF30 /* TimeEntriesLogCoordinator.swift */; };
 		8C509D1324125AB500B6DF30 /* StartEditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D1224125AB500B6DF30 /* StartEditCoordinator.swift */; };
 		8C509D152412603800B6DF30 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D142412603800B6DF30 /* TimerState.swift */; };
-		8C509D172412641600B6DF30 /* TimeLogFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D162412641600B6DF30 /* TimeLogFeature.swift */; };
+		8C509D172412641600B6DF30 /* TimeEntriesLogFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D162412641600B6DF30 /* TimeEntriesLogFeature.swift */; };
 		8C509D192412644300B6DF30 /* StartEditFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D182412644300B6DF30 /* StartEditFeature.swift */; };
 		8C509D1B241264A200B6DF30 /* TimerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D1A241264A200B6DF30 /* TimerCoordinator.swift */; };
 		8C509D202412874100B6DF30 /* TimeEntriesSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */; };
 		8C509D232412876A00B6DF30 /* TimeEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */; };
 		8C509D252412879200B6DF30 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D242412879200B6DF30 /* DayViewModel.swift */; };
-		8CB54533240E7DA100154473 /* TimeLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54532240E7DA100154473 /* TimeLogViewController.swift */; };
+		8CB54533240E7DA100154473 /* TimeEntriesLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54532240E7DA100154473 /* TimeEntriesLogViewController.swift */; };
 		8CB54535240EA67400154473 /* StartEditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54534240EA67400154473 /* StartEditState.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,8 +63,8 @@
 		8C2516CF2403C1B000BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryCell.swift; sourceTree = "<group>"; };
 		8C2517812403C27200BAD4B5 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		8C2517832403C27200BAD4B5 /* TimeLogState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogState.swift; sourceTree = "<group>"; };
-		8C2517852403C27200BAD4B5 /* TimeLogAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogAction.swift; sourceTree = "<group>"; };
+		8C2517832403C27200BAD4B5 /* TimeEntriesLogState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogState.swift; sourceTree = "<group>"; };
+		8C2517852403C27200BAD4B5 /* TimeEntriesLogAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogAction.swift; sourceTree = "<group>"; };
 		8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogReducer.swift; sourceTree = "<group>"; };
 		8C2518A52403C78100BAD4B5 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2518A92403C78600BAD4B5 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,16 +73,16 @@
 		8C2518EE2403CA5F00BAD4B5 /* RxDatasourcesDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDatasourcesDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C509D092412509F00B6DF30 /* TimerFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFeature.swift; sourceTree = "<group>"; };
 		8C509D0D2412567900B6DF30 /* TimerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerAction.swift; sourceTree = "<group>"; };
-		8C509D102412591E00B6DF30 /* TimeLogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogCoordinator.swift; sourceTree = "<group>"; };
+		8C509D102412591E00B6DF30 /* TimeEntriesLogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogCoordinator.swift; sourceTree = "<group>"; };
 		8C509D1224125AB500B6DF30 /* StartEditCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditCoordinator.swift; sourceTree = "<group>"; };
 		8C509D142412603800B6DF30 /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
-		8C509D162412641600B6DF30 /* TimeLogFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogFeature.swift; sourceTree = "<group>"; };
+		8C509D162412641600B6DF30 /* TimeEntriesLogFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogFeature.swift; sourceTree = "<group>"; };
 		8C509D182412644300B6DF30 /* StartEditFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditFeature.swift; sourceTree = "<group>"; };
 		8C509D1A241264A200B6DF30 /* TimerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCoordinator.swift; sourceTree = "<group>"; };
 		8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesSelector.swift; sourceTree = "<group>"; };
 		8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryViewModel.swift; sourceTree = "<group>"; };
 		8C509D242412879200B6DF30 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
-		8CB54532240E7DA100154473 /* TimeLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogViewController.swift; sourceTree = "<group>"; };
+		8CB54532240E7DA100154473 /* TimeEntriesLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogViewController.swift; sourceTree = "<group>"; };
 		8CB54534240EA67400154473 /* StartEditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +134,7 @@
 			children = (
 				8C509D092412509F00B6DF30 /* TimerFeature.swift */,
 				8C509D362413E2C000B6DF30 /* Common */,
-				8C509D342413E29300B6DF30 /* TimeLog */,
+				8C509D342413E29300B6DF30 /* TimeEntriesLog */,
 				8C509D352413E29B00B6DF30 /* StartEdit */,
 				8C2516C22403C1B000BAD4B5 /* Timer.h */,
 				8C2516C32403C1B000BAD4B5 /* Info.plist */,
@@ -164,19 +164,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8C509D342413E29300B6DF30 /* TimeLog */ = {
+		8C509D342413E29300B6DF30 /* TimeEntriesLog */ = {
 			isa = PBXGroup;
 			children = (
 				8C509D382413E31100B6DF30 /* Views */,
 				8C509D372413E2E200B6DF30 /* ViewModels */,
-				8C2517852403C27200BAD4B5 /* TimeLogAction.swift */,
+				8C2517852403C27200BAD4B5 /* TimeEntriesLogAction.swift */,
 				8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */,
-				8C2517832403C27200BAD4B5 /* TimeLogState.swift */,
-				8C509D162412641600B6DF30 /* TimeLogFeature.swift */,
-				8C509D102412591E00B6DF30 /* TimeLogCoordinator.swift */,
+				8C2517832403C27200BAD4B5 /* TimeEntriesLogState.swift */,
+				8C509D162412641600B6DF30 /* TimeEntriesLogFeature.swift */,
+				8C509D102412591E00B6DF30 /* TimeEntriesLogCoordinator.swift */,
 				8C2517872403C27200BAD4B5 /* TimeLogReducer.swift */,
 			);
-			path = TimeLog;
+			path = TimeEntriesLog;
 			sourceTree = "<group>";
 		};
 		8C509D352413E29B00B6DF30 /* StartEdit */ = {
@@ -216,7 +216,7 @@
 		8C509D382413E31100B6DF30 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8CB54532240E7DA100154473 /* TimeLogViewController.swift */,
+				8CB54532240E7DA100154473 /* TimeEntriesLogViewController.swift */,
 				8C2517802403C27200BAD4B5 /* TimeEntryCell.swift */,
 			);
 			path = Views;
@@ -348,16 +348,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C25178B2403C27200BAD4B5 /* TimeLogState.swift in Sources */,
+				8C25178B2403C27200BAD4B5 /* TimeEntriesLogState.swift in Sources */,
 				8C509D0A2412509F00B6DF30 /* TimerFeature.swift in Sources */,
 				8C008FBC24081CD6000A0C32 /* BottomSheet.swift in Sources */,
 				8C25178A2403C27200BAD4B5 /* TimerViewController.swift in Sources */,
-				8C25178C2403C27200BAD4B5 /* TimeLogAction.swift in Sources */,
-				8C509D172412641600B6DF30 /* TimeLogFeature.swift in Sources */,
-				8CB54533240E7DA100154473 /* TimeLogViewController.swift in Sources */,
+				8C25178C2403C27200BAD4B5 /* TimeEntriesLogAction.swift in Sources */,
+				8C509D172412641600B6DF30 /* TimeEntriesLogFeature.swift in Sources */,
+				8CB54533240E7DA100154473 /* TimeEntriesLogViewController.swift in Sources */,
 				8C008FD22409407B000A0C32 /* StartEditReducer.swift in Sources */,
 				8C25178D2403C27200BAD4B5 /* TimeLogReducer.swift in Sources */,
-				8C509D112412591E00B6DF30 /* TimeLogCoordinator.swift in Sources */,
+				8C509D112412591E00B6DF30 /* TimeEntriesLogCoordinator.swift in Sources */,
 				8C008FC424090C85000A0C32 /* StartEditViewController.swift in Sources */,
 				8C509D252412879200B6DF30 /* DayViewModel.swift in Sources */,
 				8C008FD024093FF8000A0C32 /* StartEditAction.swift in Sources */,

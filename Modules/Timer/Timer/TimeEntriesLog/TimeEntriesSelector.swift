@@ -8,7 +8,7 @@
 
 import Models
 
-let timeEntriesSelector: (TimeLogState) -> [DayViewModel] = { state in
+let timeEntriesSelector: (TimeEntriesLogState) -> [DayViewModel] = { state in
     
     guard case .loaded(_) = state.entities.loading else { return [] }
     return state.entities.timeEntries.values

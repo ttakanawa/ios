@@ -1,5 +1,5 @@
 //
-//  TimeLogAction.swift
+//  TimeEntriesLogAction.swift
 //  Timer
 //
 //  Created by Ricardo Sánchez Sotres on 19/02/2020.
@@ -9,11 +9,12 @@
 import Foundation
 import Models
 
-public enum TimeLogAction
+public enum TimeEntriesLogAction
 {
+    case continueButtonTapped(Int)
     case cellSwipedLeft(Int)
     case cellSwipedRight(Int)
-        
+    
     case timeEntryDeleted(Int)
     case timeEntryAdded(TimeEntry)
     
@@ -23,11 +24,14 @@ public enum TimeLogAction
     case setError(Error)
 }
 
-extension TimeLogAction: CustomDebugStringConvertible
+extension TimeEntriesLogAction: CustomDebugStringConvertible
 {
     public var debugDescription: String
     {
         switch self {
+            
+        case let .continueButtonTapped(timeEntryId):
+            return "ContinueButtonTapped: \(timeEntryId)"
        
         case let .cellSwipedLeft(timeEntryId):
             return "CellSwipedLeft: \(timeEntryId)"

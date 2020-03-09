@@ -10,7 +10,7 @@ import Foundation
 import Architecture
 
 public let timerReducer = combine(
-    timeLogReducer.pullback(
+    timeEntriesLogReducer.pullback(
         state: \TimerState.timeLogState,
         action: \TimerAction.timeLog),
     startEditReducer.pullback(
@@ -21,7 +21,7 @@ public let timerReducer = combine(
 public class TimerFeature: BaseFeature<TimerState, TimerAction>
 {
     let features: [String: BaseFeature<TimerState, TimerAction>] = [
-        "log": TimeLogFeature()
+        "log": TimeEntriesLogFeature()
             .view { $0.view(
                 state: { $0.timeLogState },
                 action: { TimerAction.timeLog($0) })
@@ -36,7 +36,7 @@ public class TimerFeature: BaseFeature<TimerState, TimerAction>
     public override func mainCoordinator(store: Store<TimerState, TimerAction>) -> Coordinator {
         return TimerCoordinator(
             store: store,
-            timeLogCoordinator: features["log"]!.mainCoordinator(store: store) as! TimeLogCoordinator,
+            timeLogCoordinator: features["log"]!.mainCoordinator(store: store) as! TimeEntriesLogCoordinator,
             startEditCoordinator: features["startEdit"]!.mainCoordinator(store: store) as! StartEditCoordinator
         )
     }

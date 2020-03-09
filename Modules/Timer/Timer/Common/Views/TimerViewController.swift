@@ -17,7 +17,7 @@ import Assets
 public class TimerViewController: UIViewController
 {    
     public var startEditViewController: StartEditViewController!
-    public var timeLogViewController: TimeLogViewController!
+    public var timeLogViewController: TimeEntriesLogViewController!
 
     private var bottomSheet: BottomSheet!
     
