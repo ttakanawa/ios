@@ -1,11 +1,3 @@
-//
-//  TimeEntryViewModel.swift
-//  Models
-//
-//  Created by Ricardo Sánchez Sotres on 03/03/2020.
-//  Copyright © 2020 Ricardo Sánchez Sotres. All rights reserved.
-//
-
 import UIKit
 import Models
 

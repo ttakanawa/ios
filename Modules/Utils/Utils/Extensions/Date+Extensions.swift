@@ -1,11 +1,3 @@
-//
-//  Date+Extensions.swift
-//  Utils
-//
-//  Created by Ricardo Sánchez Sotres on 06/03/2020.
-//  Copyright © 2020 Ricardo Sánchez Sotres. All rights reserved.
-//
-
 import Foundation
 
 private let shortTimeFormatter: DateFormatter = {

@@ -1,11 +1,3 @@
-//
-//  BottomSheetView.swift
-//  Timer
-//
-//  Created by Ricardo Sánchez Sotres on 27/02/2020.
-//  Copyright © 2020 Ricardo Sánchez Sotres. All rights reserved.
-//
-
 import UIKit
 import Utils
 import Assets

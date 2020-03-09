@@ -1,11 +1,3 @@
-//
-//  RepositoryTests.swift
-//  RepositoryTests
-//
-//  Created by Ricardo Sánchez Sotres on 24/02/2020.
-//  Copyright © 2020 Ricardo Sánchez Sotres. All rights reserved.
-//
-
 import XCTest
 @testable import Repository
 

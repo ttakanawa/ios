@@ -1,11 +1,3 @@
-//
-//  FakeURLSession.swift
-//  TogglWatch Tests
-//
-//  Created by Ricardo Sánchez Sotres on 11/11/2019.
-//  Copyright © 2019 Toggl. All rights reserved.
-//
-
 import Foundation
 import RxSwift
 import Assets

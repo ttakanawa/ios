@@ -1,11 +1,3 @@
-//
-//  AppFeature.swift
-//  TogglTrack
-//
-//  Created by Ricardo Sánchez Sotres on 05/03/2020.
-//  Copyright © 2020 Ricardo Sánchez Sotres. All rights reserved.
-//
-
 import Foundation
 import Architecture
 import Onboarding

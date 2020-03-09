@@ -1,11 +1,3 @@
-//
-//  OnboardingViewController.swift
-//  Onboarding
-//
-//  Created by Ricardo Sánchez Sotres on 14/02/2020.
-//  Copyright © 2020 Ricardo Sánchez Sotres. All rights reserved.
-//
-
 import UIKit
 import Architecture
 import Models
