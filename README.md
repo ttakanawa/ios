@@ -1,2 +1,2 @@
-# ios
+# iOS
 Toggl's iOS app
