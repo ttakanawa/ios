@@ -35,6 +35,7 @@
 		8C509D202412874100B6DF30 /* TimeEntriesSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */; };
 		8C509D232412876A00B6DF30 /* TimeEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */; };
 		8C509D252412879200B6DF30 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C509D242412879200B6DF30 /* DayViewModel.swift */; };
+		8CAE6524241793E700C88294 /* TimeEntryViewModelsSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAE6523241793E700C88294 /* TimeEntryViewModelsSelector.swift */; };
 		8CB54533240E7DA100154473 /* TimeEntriesLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54532240E7DA100154473 /* TimeEntriesLogViewController.swift */; };
 		8CB54535240EA67400154473 /* StartEditState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB54534240EA67400154473 /* StartEditState.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		8C509D1F2412874100B6DF30 /* TimeEntriesSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesSelector.swift; sourceTree = "<group>"; };
 		8C509D222412876A00B6DF30 /* TimeEntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntryViewModel.swift; sourceTree = "<group>"; };
 		8C509D242412879200B6DF30 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
+		8CAE6523241793E700C88294 /* TimeEntryViewModelsSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryViewModelsSelector.swift; sourceTree = "<group>"; };
 		8CB54532240E7DA100154473 /* TimeEntriesLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesLogViewController.swift; sourceTree = "<group>"; };
 		8CB54534240EA67400154473 /* StartEditState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartEditState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +202,7 @@
 				8C509D0D2412567900B6DF30 /* TimerAction.swift */,
 				8C509D1A241264A200B6DF30 /* TimerCoordinator.swift */,
 				8C008FBB24081CD6000A0C32 /* BottomSheet.swift */,
+				8CAE6523241793E700C88294 /* TimeEntryViewModelsSelector.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				8C008FD024093FF8000A0C32 /* StartEditAction.swift in Sources */,
 				8C509D232412876A00B6DF30 /* TimeEntryViewModel.swift in Sources */,
 				8CB54535240EA67400154473 /* StartEditState.swift in Sources */,
+				8CAE6524241793E700C88294 /* TimeEntryViewModelsSelector.swift in Sources */,
 				8C2517892403C27200BAD4B5 /* TimeEntryCell.swift in Sources */,
 				8C509D202412874100B6DF30 /* TimeEntriesSelector.swift in Sources */,
 				8C509D152412603800B6DF30 /* TimerState.swift in Sources */,
