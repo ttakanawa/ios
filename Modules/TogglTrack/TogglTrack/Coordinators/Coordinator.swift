@@ -10,46 +10,40 @@ import UIKit
 import RxSwift
 import Architecture
 
-public protocol Coordinator: AnyObject
-{
+public protocol Coordinator: AnyObject {
     var route: AppRoute { get }
     var rootViewController: UIViewController { get }
     func finish(completion: (() -> Void)?)
     func newRoute(route: String)
 }
 
-public protocol RouterDelegate
-{
+public protocol RouterDelegate {
     func coordinator(forRoute: String, rootViewController: UIViewController) -> Coordinator
 }
 
-public final class Router
-{
-    public var delegate: RouterDelegate?
-    
+public final class Router {
+    public weak var delegate: RouterDelegate?
+
     private var stack: [(route: Route, coordinator: Coordinator)]
     private var disposeBag = DisposeBag()
     private var currentRoute: Route {
         return stack.last!.route
     }
-     
-    public init(initialCoordinator: Coordinator)
-    {
+
+    public init(initialCoordinator: Coordinator) {
         stack = [(route: Route(path: initialCoordinator.route.path), coordinator: initialCoordinator)]
     }
-    
-    final public func navigate(to appRoute: AppRoute)
-    {
+
+    final public func navigate(to appRoute: AppRoute) {
         let route = Route(path: appRoute.path)
         guard route != currentRoute else { return }
-                
-        if route.sameBase(as: currentRoute)
-        {
+
+        if route.sameBase(as: currentRoute) {
             stack.last!.coordinator.newRoute(route: route.lastComponent)
             updateLast(route: route)
             return
         }
-    
+
         let toRemove: [Coordinator] = stack.enumerated().compactMap { i, element in
             if route[i] == element.route.secondToLastComponent { return nil }
             return element.coordinator
@@ -60,69 +54,60 @@ public final class Router
                 self.navigate(to: appRoute)
             }
         }
-                        
+
         let difference = route.difference(with: currentRoute).dropLast()
-        for component in difference
-        {
+        for component in difference {
             guard let coordinator = self.coordinatorForPath(component) else { return }
             self.stack.append((route: Route(path: coordinator.route.path), coordinator: coordinator))
             let route = Route(path: coordinator.route.path)
             coordinator.newRoute(route: route.lastComponent)
         }
-        
+
         updateLast(route: route)
     }
-    
-    private func remove(coordinators: [Coordinator], then: @escaping () -> ())
-    {
+
+    private func remove(coordinators: [Coordinator], then: @escaping () -> Void) {
         guard let lastToRemove = coordinators.last else {
             then()
             return
         }
-        
+
         lastToRemove.finish {
             self.stack.removeLast()
             self.remove(coordinators: coordinators.dropLast(), then: then)
         }
     }
-    
-    private func coordinatorForPath(_ path: String) -> Coordinator?
-    {
+
+    private func coordinatorForPath(_ path: String) -> Coordinator? {
         let rootViewController = stack.last!.coordinator.rootViewController
-        return delegate?.coordinator(forRoute: path, rootViewController: rootViewController)        
+        return delegate?.coordinator(forRoute: path, rootViewController: rootViewController)
     }
-    
-    private func updateLast(route: Route)
-    {
+
+    private func updateLast(route: Route) {
         let currentCoordinator = stack.last!.coordinator
         stack = stack.dropLast() + [(route: route, coordinator: currentCoordinator)]
     }
 }
 
-struct Route: Equatable
-{
+struct Route: Equatable {
     let path: String
     let components: [String]
-    
-    init(path: String)
-    {
+
+    init(path: String) {
         self.path = path
         components = path.split(separator: "/").map(String.init)
     }
-    
-    init(components: [String])
-    {
+
+    init(components: [String]) {
         path = components.joined(separator: "/")
         self.components = components
     }
-    
-    public func sameBase(as otherRoute: Route) -> Bool
-    {
+
+    public func sameBase(as otherRoute: Route) -> Bool {
         return components.dropLast() == otherRoute.components.dropLast()
     }
-    
-    public func difference(with otherRoute: Route) -> [String]
-    {
+
+    public func difference(with otherRoute: Route) -> [String] {
         return components
             .enumerated()
             .compactMap { i, component in
@@ -132,19 +117,16 @@ struct Route: Equatable
                     : component
             }
     }
-    
-    public var lastComponent: String
-    {
+
+    public var lastComponent: String {
         return components.last!
     }
-    
-    public var secondToLastComponent: String
-    {
+
+    public var secondToLastComponent: String {
         return components[components.count - 2]
     }
-    
-    subscript(index: Int) -> String
-    {
+
+    subscript(index: Int) -> String {
         return components[index]
     }
 }

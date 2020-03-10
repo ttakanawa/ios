@@ -7,9 +7,9 @@ class TimeEntryCell: UITableViewCell {
     @IBOutlet weak var projectClientTaskLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
-    
+
     var disposeBag = DisposeBag()
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

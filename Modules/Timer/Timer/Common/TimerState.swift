@@ -2,21 +2,18 @@ import Foundation
 import Models
 import Utils
 
-public struct LocalTimerState
-{
+public struct LocalTimerState {
     internal var description: String = ""
-    
-    public init()
-    {
+
+    public init() {
     }
 }
 
-public struct TimerState
-{
+public struct TimerState {
     public var user: Loadable<User>
     public var entities: TimeLogEntities
     public var localTimerState: LocalTimerState
-    
+
     public init(user: Loadable<User>, entities: TimeLogEntities, localTimerState: LocalTimerState) {
         self.user = user
         self.entities = entities
@@ -24,10 +21,8 @@ public struct TimerState
     }
 }
 
-extension TimerState
-{
-    internal var timeLogState: TimeEntriesLogState
-    {
+extension TimerState {
+    internal var timeLogState: TimeEntriesLogState {
         get {
             TimeEntriesLogState(entities: entities)
         }
@@ -35,9 +30,8 @@ extension TimerState
             entities = newValue.entities
         }
     }
-    
-    internal var startEditState: StartEditState
-    {
+
+    internal var startEditState: StartEditState {
         get {
             StartEditState(
                 user: user,

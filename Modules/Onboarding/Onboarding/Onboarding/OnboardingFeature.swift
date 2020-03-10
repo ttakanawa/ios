@@ -7,8 +7,7 @@ public let onboardingReducer = combine(
     emailSignupReducer.pullback(action: \OnboardingAction.emailSignup)
 )
 
-public class OnboardingFeature: BaseFeature<OnboardingState, OnboardingAction>
-{
+public class OnboardingFeature: BaseFeature<OnboardingState, OnboardingAction> {
     let features = [
         OnboardingRoute.emailLogin.rawValue: EmailLoginFeature()
         .view { $0.view(
@@ -21,7 +20,7 @@ public class OnboardingFeature: BaseFeature<OnboardingState, OnboardingAction>
                 action: { OnboardingAction.emailSignup($0) })
         }
     ]
-    
+
     public override func mainCoordinator(store: Store<OnboardingState, OnboardingAction>) -> Coordinator {
         return OnboardingCoordinator(store: store, features: features)
     }

@@ -1,7 +1,7 @@
 import Models
 
 let timeEntriesSelector: (TimeEntriesLogState) -> [DayViewModel] = { state in
-    
+
     guard case .loaded(_) = state.entities.loading else { return [] }
     return state.entities.timeEntries.values
         .sorted(by: { $0.start > $1.start })
@@ -11,9 +11,9 @@ let timeEntriesSelector: (TimeEntriesLogState) -> [DayViewModel] = { state in
                 //TODO This shouldn't happen, what should we do here?
                 return nil
             }
-            
+
             let project = state.entities.getProject(timeEntry.projectId)
-            
+
             return TimeEntryViewModel(
                 timeEntry: timeEntry,
                 workspace: workspace,

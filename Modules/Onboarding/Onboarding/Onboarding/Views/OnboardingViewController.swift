@@ -9,27 +9,24 @@ import Assets
 
 public typealias OnboardingStore = Store<OnboardingState, OnboardingAction>
 
-public class OnboardingViewController: UIViewController, Storyboarded
-{
+public class OnboardingViewController: UIViewController, Storyboarded {
     public static var storyboardName = "Onboarding"
     public static var storyboardBundle = Assets.bundle
-    
+
     @IBOutlet weak var emailSignInButton: UIButton!
 
     private var disposeBag = DisposeBag()
-    
+
     public var store: OnboardingStore!
 
-    public override func viewDidLoad()
-    {
+    public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         navigationController?.isNavigationBarHidden = true
-        
+
         emailSignInButton.rx.tap
             .mapTo(OnboardingAction.emailSingInTapped)
             .subscribe(onNext: store.dispatch)
-            .disposed(by: disposeBag)                
+            .disposed(by: disposeBag)
     }
 }
-

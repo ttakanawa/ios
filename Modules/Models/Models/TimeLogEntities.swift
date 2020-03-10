@@ -1,24 +1,21 @@
 import Foundation
 import Utils
 
-public struct TimeLogEntities
-{
+public struct TimeLogEntities {
     public var loading: Loadable<Void> = .nothing
-    
+
     public var workspaces = [Int: Workspace]()
     public var clients = [Int: Client]()
     public var timeEntries = [Int: TimeEntry]()
     public var projects = [Int: Project]()
     public var tasks = [Int: Task]()
     public var tags = [Int: Tag]()
-    
-    public init()
-    {
-        
+
+    public init() {
+
     }
-    
-    public mutating func set(entities: [Int: Entity])
-    {
+
+    public mutating func set(entities: [Int: Entity]) {
         switch entities.values.first! {
         case _ as Workspace:
             workspaces = entities as! [Int: Workspace]
@@ -36,39 +33,33 @@ public struct TimeLogEntities
             break
         }
     }
-    
-    public func getWorkspace(_ id: Int?) -> Workspace?
-    {
+
+    public func getWorkspace(_ id: Int?) -> Workspace? {
         guard let id = id else { return nil }
         return workspaces[id]
     }
-    
-    public func getClient(_ id: Int?) -> Client?
-    {
+
+    public func getClient(_ id: Int?) -> Client? {
         guard let id = id else { return nil }
         return clients[id]
     }
-    
-    public func getTimeEntry(_ id: Int?) -> TimeEntry?
-    {
+
+    public func getTimeEntry(_ id: Int?) -> TimeEntry? {
         guard let id = id else { return nil }
         return timeEntries[id]
     }
-    
-    public func getProject(_ id: Int?) -> Project?
-    {
+
+    public func getProject(_ id: Int?) -> Project? {
         guard let id = id else { return nil }
         return projects[id]
     }
-    
-    public func getTask(_ id: Int?) -> Task?
-    {
+
+    public func getTask(_ id: Int?) -> Task? {
         guard let id = id else { return nil }
         return tasks[id]
     }
-    
-    public func getTag(_ id: Int?) -> Tag?
-    {
+
+    public func getTag(_ id: Int?) -> Tag? {
         guard let id = id else { return nil }
         return tags[id]
     }

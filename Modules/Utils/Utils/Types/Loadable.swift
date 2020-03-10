@@ -1,27 +1,23 @@
 import Foundation
 
-public enum Loadable<Value>
-{
+public enum Loadable<Value> {
     case nothing
     case loading
     case error(Error)
     case loaded(Value)
 }
 
-public extension Loadable
-{
-    var isLoaded: Bool
-    {
+public extension Loadable {
+    var isLoaded: Bool {
         switch self {
-        case .loaded(_):
+        case .loaded:
             return true
         default:
             return false
         }
     }
-    
-    var isLoading: Bool
-    {
+
+    var isLoading: Bool {
         switch self {
         case .loading:
             return true
@@ -29,9 +25,8 @@ public extension Loadable
             return false
         }
     }
-    
-    var value: Value?
-    {
+
+    var value: Value? {
         switch self {
         case let .loaded(value):
             return value
@@ -41,10 +36,8 @@ public extension Loadable
     }
 }
 
-extension Loadable: CustomStringConvertible where Value: CustomStringConvertible
-{
-    public var description: String
-    {
+extension Loadable: CustomStringConvertible where Value: CustomStringConvertible {
+    public var description: String {
         switch self {
             case .nothing:
                 return "empty"
@@ -57,4 +50,3 @@ extension Loadable: CustomStringConvertible where Value: CustomStringConvertible
         }
     }
 }
-

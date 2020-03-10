@@ -1,23 +1,20 @@
 import Foundation
 import Models
 
-public enum EmailLoginAction
-{
+public enum EmailLoginAction {
     case goToSignup
     case cancel
-    
+
     case emailEntered(String)
     case passwordEntered(String)
     case loginTapped
-    
+
     case setUser(User)
     case setError(Error)
 }
 
-extension EmailLoginAction: CustomDebugStringConvertible
-{
-    public var debugDescription: String
-    {
+extension EmailLoginAction: CustomDebugStringConvertible {
+    public var debugDescription: String {
         switch self {
         case .goToSignup:
             return "GoToSignUp"

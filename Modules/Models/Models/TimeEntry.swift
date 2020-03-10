@@ -1,7 +1,6 @@
 import Foundation
 
-public struct TimeEntry: Entity
-{
+public struct TimeEntry: Entity {
     public var id: Int
     public var description: String
     public var start: Date
@@ -12,7 +11,7 @@ public struct TimeEntry: Entity
     public var projectId: Int?
     public var taskId: Int?
     public var tagIds: [Int]?
-    
+
     public init (
         id: Int,
         description: String,
@@ -30,48 +29,43 @@ public struct TimeEntry: Entity
     }
 }
 
-extension TimeEntry: Codable
-{
+extension TimeEntry: Codable {
     private var createdWith: String { "AppleWatchApp" }
-    
-    private var encodedDuration: Int64
-    {
+
+    private var encodedDuration: Int64 {
         guard duration >= 0 else { return Int64(-start.timeIntervalSince1970) }
         return Int64(duration)
     }
 
-    private enum CodingKeys: String, CodingKey
-    {
+    private enum CodingKeys: String, CodingKey {
         case id
         case description
         case start
         case duration
         case billable
-        
+
         case workspaceId = "workspace_id"
         case projectId = "project_id"
         case taskId = "task_id"
         case tagIds = "tag_ids"
     }
-    
-    private enum EncodeKeys: String, CodingKey
-    {
+
+    private enum EncodeKeys: String, CodingKey {
         case description
         case start
         case billable
         case duration
-        
+
         case workspaceId = "workspace_id"
         case projectId = "project_id"
         case taskId = "task_id"
         case tagIds = "tag_ids"
         case createdWith = "created_with"
     }
-    
-    public func encode(to encoder: Encoder) throws
-    {
+
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: EncodeKeys.self)
-        
+
         try container.encode(description, forKey: .description)
 //        try container.encode(start.toServerEncodedDateString(), forKey: .start)
         try container.encode(billable, forKey: .billable)

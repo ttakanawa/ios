@@ -8,19 +8,16 @@
 
 import Foundation
 
-public protocol Route
-{
+public protocol Route {
     var path: String { get }
 }
 
-public enum AppRoute: Route
-{
+public enum AppRoute: Route {
     case start
     case onboarding(OnboardingRoute)
     case main(TabBarRoute)
-    
-    public var path: String
-    {
+
+    public var path: String {
         switch self {
         case .start:
             return "root/start"
@@ -32,15 +29,13 @@ public enum AppRoute: Route
     }
 }
 
-public enum OnboardingRoute: Route
-{
+public enum OnboardingRoute: Route {
     case start
     case emailLogin(EmailLoginRoute)
     case emailSignup(EmailSignupRoute)
     case loading
-    
-    public var path: String
-    {
+
+    public var path: String {
         switch self {
         case .start:
             return "start"
@@ -54,12 +49,10 @@ public enum OnboardingRoute: Route
     }
 }
 
-public enum EmailLoginRoute: Route
-{
+public enum EmailLoginRoute: Route {
     case start
-    
-    public var path: String
-    {
+
+    public var path: String {
         switch self {
         case .start:
             return "start"
@@ -67,13 +60,11 @@ public enum EmailLoginRoute: Route
     }
 }
 
-public enum EmailSignupRoute: Route
-{
+public enum EmailSignupRoute: Route {
     case start
     case tos
-    
-    public var path: String
-    {
+
+    public var path: String {
         switch self {
         case .start:
             return "start"
@@ -83,14 +74,12 @@ public enum EmailSignupRoute: Route
     }
 }
 
-public enum TabBarRoute: Route
-{
+public enum TabBarRoute: Route {
     case timer
     case reports
     case calendar
-    
-    public var path: String
-    {
+
+    public var path: String {
         switch self {
         case .timer:
             return "timer"

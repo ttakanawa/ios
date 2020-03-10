@@ -22,35 +22,30 @@ private let encoderDateFormatter: DateFormatter =
     return formatter
 }()
 
-extension Date
-{
-    public func ignoreTimeComponents() -> Date
-    {
-        let units : NSCalendar.Unit = [ .year, .month, .day];
-        let calendar = Calendar.current;
+extension Date {
+    public func ignoreTimeComponents() -> Date {
+        let units: NSCalendar.Unit = [ .year, .month, .day]
+        let calendar = Calendar.current
         return calendar.date(from: (calendar as NSCalendar).components(units, from: self))!
     }
-    
-    public func toDayString() -> String
-    {
+
+    public func toDayString() -> String {
         if Calendar.current.isDateInToday(self) {
             return "Today"
         }
-        
+
         if Calendar.current.isDateInYesterday(self) {
             return "Yesterday"
         }
-        
+
         return simpleDateFormatter.string(from: self)
     }
-    
-    public func toTimeString() -> String
-    {
+
+    public func toTimeString() -> String {
         return shortTimeFormatter.string(from: self)
     }
-    
-    public func toServerEncodedDateString() -> String
-    {
+
+    public func toServerEncodedDateString() -> String {
         return encoderDateFormatter.string(from: self).replacingOccurrences(of: "+0000", with: "+00:00")
     }
 }

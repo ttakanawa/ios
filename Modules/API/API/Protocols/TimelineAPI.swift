@@ -2,8 +2,7 @@ import Foundation
 import Models
 import RxSwift
 
-public protocol TimelineAPI
-{
+public protocol TimelineAPI {
     func loadEntries() -> Single<[TimeEntry]>
     func loadWorkspaces() -> Single<[Workspace]>
     func loadClients() -> Single<[Client]>
