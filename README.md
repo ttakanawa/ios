@@ -99,6 +99,18 @@ But if the store is a view that takes `OnboardingActions` we'd do it like this:
 store.dispatch(.start)
 ```
 
+## Batching actions
+
+Sometimes we might want to dispacth multiple actions one after another. It might not be efficient to emit state changes after each of of those actions, also it might cause problems with some animations, that's why there's the `batch` method on `Store`.
+
+```swift
+public func batch(_ actions: [Action])
+```
+
+It takes an array of actions and executes all of them before emiting the new state. It's worth noting that the state itself will update, so every action will get the updated state, but it won't be emitted outside of the store until all of them are done.
+
+TODO: Something we should look into is what happens with the Effects resulting from those actions. Maybe it makes sense to always batch all actions emitted from an effect.
+
 ## Reducers & Effects
 
 Reducers are functions with this shape:
@@ -282,6 +294,3 @@ As you can see the state is mapped from the global one to the local one and back
 # Project Structure
 
 ## Frameworks & Modules
-
-
-
