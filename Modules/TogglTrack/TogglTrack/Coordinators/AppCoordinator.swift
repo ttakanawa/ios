@@ -39,8 +39,6 @@ public final class AppCoordinator: NavigationCoordinator
             return nil
             
         case .onboarding:
-            _ = store.state.drive(onNext: { print("New c: \($0.c)") })
-            store.batch([AppAction.incr, .incr, .incr, .incr])
             return onboardingCoordinator
             
         case .main:

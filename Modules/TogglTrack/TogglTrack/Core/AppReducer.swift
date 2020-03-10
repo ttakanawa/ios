@@ -13,10 +13,6 @@ var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { stat
         }
         return .empty
         
-    case .incr:
-        state.c += 1
-        return .empty
-        
     case let .tabBarTapped(section):
         state.route = [
             TabBarRoute.timer,
