@@ -33,6 +33,11 @@ public struct Effect<Action>: ObservableType
     {
         return Effect(observable: Observable.just(action))
     }
+    
+    public func asObservable() -> Observable<Action>
+    {
+        return observable
+    }
 }
 
 public extension ObservableConvertibleType

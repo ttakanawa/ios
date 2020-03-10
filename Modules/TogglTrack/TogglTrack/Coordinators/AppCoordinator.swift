@@ -20,7 +20,8 @@ public final class AppCoordinator: NavigationCoordinator
     public func start(window: UIWindow)
     {
         window.rootViewController = rootViewController
-        window.makeKeyAndVisible()        
+        window.makeKeyAndVisible()
+        
     }
     
     public override func start()
@@ -38,6 +39,8 @@ public final class AppCoordinator: NavigationCoordinator
             return nil
             
         case .onboarding:
+            _ = store.state.drive(onNext: { print("New c: \($0.c)") })
+            store.batch([AppAction.incr, .incr, .incr, .incr])
             return onboardingCoordinator
             
         case .main:

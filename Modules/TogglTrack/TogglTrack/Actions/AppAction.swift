@@ -6,6 +6,7 @@ import Models
 public enum AppAction
 {
     case start
+    case incr
     
     case tabBarTapped(Int)
     
@@ -59,6 +60,8 @@ extension AppAction: CustomDebugStringConvertible
         switch self {
         case .start:
             return "Start"
+        case .incr:
+            return "Incr"
         case let .tabBarTapped(tab):
             return "TabSelected: \(tab)"
         case let .onboarding(action):

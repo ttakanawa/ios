@@ -9,9 +9,9 @@ public final class Store<State, Action>
     private var disposeBag: DisposeBag = DisposeBag()
     
     public var state: Driver<State>
-    public var _dispatch: ((Action) -> Void)?
+    public var _dispatch: (([Action]) -> Void)?
             
-    private init(dispatch: @escaping (Action) -> Void, stateObservable: Driver<State>)
+    private init(dispatch: @escaping ([Action]) -> Void, stateObservable: Driver<State>)
     {
         _dispatch = dispatch
         state = stateObservable
@@ -22,10 +22,17 @@ public final class Store<State, Action>
         let behaviorRelay = BehaviorRelay(value: initialState)
         state = behaviorRelay.asDriver()
         
-        _dispatch = { action in
-            let effect = reducer.reduce(&behaviorRelay.settableValue, action, environment)
+        _dispatch = { actions in
+            var tempState = behaviorRelay.value
+            var effects = [Effect<Action>]()
+            for action in actions {
+                let effect = reducer.reduce(&tempState, action, environment)
+                effects.append(effect)
+            }
             
-            _ = effect
+            behaviorRelay.accept(tempState)
+            
+            _ = Observable.concat(effects.map{ $0.asObservable() })
                 .observeOn(MainScheduler.instance)
                 .subscribe(onNext: self.dispatch)
                 .disposed(by: self.disposeBag)
@@ -38,20 +45,29 @@ public final class Store<State, Action>
     ) -> Store<ViewState, ViewAction>
     {
         return Store<ViewState, ViewAction>(
-            dispatch: { action in
-                guard let globalAction = toGlobalAction(action) else { return }
-                self.dispatch(globalAction)
+            dispatch: { actions in
+                self.batch(
+                    actions.compactMap(toGlobalAction)
+                )
             },
             stateObservable: state.map(toLocalState)
         )
     }
-        
+     
     public func dispatch(_ action: Action)
     {
         DispatchQueue.main.async { [weak self] in
-            self?._dispatch?(action)
+            self?._dispatch?([action])
         }
     }
+    
+    public func batch(_ actions: [Action])
+    {
+        DispatchQueue.main.async { [weak self] in
+            self?._dispatch?(actions)
+        }
+    }
+
 }
 
 extension Store

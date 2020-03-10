@@ -35,6 +35,6 @@ public class TogglTrack
             .disposed(by: disposeBag)
         
         appCoordinator.start(window: window)
-        store.dispatch(.start)
+        store.dispatch(.start)                
     }
 }

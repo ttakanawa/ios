@@ -7,6 +7,7 @@ import Utils
 
 public struct AppState
 {
+    public var c: Int = 0
     public var route: Route = AppRoute.loading
     public var user: Loadable<User> = .nothing
     public var entities: TimeLogEntities =  TimeLogEntities()
