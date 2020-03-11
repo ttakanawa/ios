@@ -78,10 +78,6 @@ public class LoginViewController: UIViewController, Storyboarded
     
     public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        store.dispatch(.emailEntered("ricardo@toggl.com"))
-        store.dispatch(.passwordEntered("password"))
-//        store.dispatch(.loginTapped)
     }
 }
 
