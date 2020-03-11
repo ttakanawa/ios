@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:App/App.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "Modules">
+      <FileRef
+         location = "group:Modules/Assets/Assets.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Modules/TogglTrack/TogglTrack.xcodeproj">
+      </FileRef>
+      <Group
+         location = "container:"
+         name = "Features">
+         <FileRef
+            location = "group:Modules/Onboarding/Onboarding.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Modules/Timer/Timer.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "Core">
+         <FileRef
+            location = "group:Modules/Architecture/Architecture.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Modules/Models/Models.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "Services">
+         <FileRef
+            location = "group:Modules/Networking/Networking.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Modules/API/API.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:Modules/Repository/Repository.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "Common">
+         <FileRef
+            location = "group:Modules/Utils/Utils.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "Dependencies">
+         <FileRef
+            location = "group:Modules/RxSwiftDep/RxSwiftDep.xcodeproj">
+         </FileRef>
+      </Group>
+   </Group>
+</Workspace>
