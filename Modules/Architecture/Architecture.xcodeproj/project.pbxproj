@@ -13,7 +13,7 @@
 		8C2518572403C60C00BAD4B5 /* Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C25184D2403C60B00BAD4B5 /* Architecture.framework */; };
 		8C25185C2403C60C00BAD4B5 /* ArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25185B2403C60C00BAD4B5 /* ArchitectureTests.swift */; };
 		8C25185E2403C60C00BAD4B5 /* Architecture.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C2518502403C60B00BAD4B5 /* Architecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C25186A2403C61900BAD4B5 /* BaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518672403C61900BAD4B5 /* BaseStore.swift */; };
+		8C25186A2403C61900BAD4B5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518672403C61900BAD4B5 /* Store.swift */; };
 		8C25186B2403C61900BAD4B5 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518682403C61900BAD4B5 /* Reducer.swift */; };
 		8C25186C2403C61900BAD4B5 /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518692403C61900BAD4B5 /* Effect.swift */; };
 		8C2518BC2403C85E00BAD4B5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518BB2403C85E00BAD4B5 /* Utils.framework */; };
@@ -42,7 +42,7 @@
 		8C2518562403C60C00BAD4B5 /* ArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C25185B2403C60C00BAD4B5 /* ArchitectureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitectureTests.swift; sourceTree = "<group>"; };
 		8C25185D2403C60C00BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C2518672403C61900BAD4B5 /* BaseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStore.swift; sourceTree = "<group>"; };
+		8C2518672403C61900BAD4B5 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		8C2518682403C61900BAD4B5 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		8C2518692403C61900BAD4B5 /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		8C25187E2403C63A00BAD4B5 /* RxSwiftDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +138,7 @@
 		8CAAAC992404FE8B00E9BBAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				8C2518672403C61900BAD4B5 /* BaseStore.swift */,
+				8C2518672403C61900BAD4B5 /* Store.swift */,
 				8C2518692403C61900BAD4B5 /* Effect.swift */,
 				8C2518682403C61900BAD4B5 /* Reducer.swift */,
 				8C2518502403C60B00BAD4B5 /* Architecture.h */,
@@ -271,7 +271,7 @@
 				8C25186B2403C61900BAD4B5 /* Reducer.swift in Sources */,
 				8C008FAB2408126B000A0C32 /* Route.swift in Sources */,
 				8CB545C32410FFF100154473 /* AppRoutes.swift in Sources */,
-				8C25186A2403C61900BAD4B5 /* BaseStore.swift in Sources */,
+				8C25186A2403C61900BAD4B5 /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
