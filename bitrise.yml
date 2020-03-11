@@ -1,0 +1,75 @@
+---
+format_version: '8'
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: ios
+trigger_map:
+- push_branch: "*"
+  workflow: health
+workflows:
+  base:
+    steps:
+    - activate-ssh-key@4.0.5:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@4.0.18: {}
+    - certificate-and-profile-installer@1.10.3: {}
+    - recreate-user-schemes@1.0.2:
+        inputs:
+        - project_path: "$BITRISE_PROJECT_PATH"
+  health:
+    steps:
+    - build-router-start@0.11.3:
+        inputs:
+        - workflows: |-
+            health-tests
+            health-compile
+            health-linter
+        - access_token: "$HEALTH_CHECKS_ACCESS_TOKEN"
+    - github-status@2.2.2:
+        inputs:
+        - status_identifier: Bitrise Health Checks
+        - auth_token: "$GITHUB_STATUS_KEY"
+  health-tests:
+    steps:
+    - xcode-test@2.4.1:
+        inputs:
+        - project_path: "$BITRISE_PROJECT_PATH"
+        - scheme: "$BITRISE_SCHEME"
+    - github-status@2.2.2:
+        inputs:
+        - status_identifier: Unit Tests
+        - auth_token: "$GITHUB_STATUS_KEY"
+    - deploy-to-bitrise-io@1.9.6: {}
+  health-compile:
+    steps:
+    - xcode-build-for-simulator@0.11.2: {}
+    - github-status@2.2.2:
+        inputs:
+        - status_identifier: Compiler Check
+        - auth_token: "$GITHUB_STATUS_KEY"
+  health-linter:
+    steps:
+    - script@1.1.6:
+        inputs:
+        - content: |
+            #!/usr/bin/env bash
+            # fail if any commands fails
+            set -e
+            # debug log
+            set -x
+
+            # write your script here
+    - github-status@2.2.2:
+        inputs:
+        - status_identifier: Linter Check
+        - auth_token: "$GITHUB_STATUS_KEY"
+app:
+  envs:
+  - opts:
+      is_expand: false
+    BITRISE_PROJECT_PATH: TogglTrackiOS.xcworkspace
+  - opts:
+      is_expand: false
+    BITRISE_SCHEME: App
+  - opts:
+      is_expand: false
+    BITRISE_EXPORT_METHOD: development
