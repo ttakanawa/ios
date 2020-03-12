@@ -3,8 +3,7 @@ import Onboarding
 import Timer
 import Models
 
-public enum AppAction
-{
+public enum AppAction {
     case start
     
     case tabBarTapped(Int)
@@ -14,8 +13,8 @@ public enum AppAction
     case startEdit(StartEditAction)
 }
 
-extension AppAction
-{
+extension AppAction {
+    
     var onboarding: OnboardingAction? {
         get {
             guard case let .onboarding(value) = self else { return nil }
@@ -27,8 +26,7 @@ extension AppAction
         }
     }
     
-    var timer: TimerAction?
-    {
+    var timer: TimerAction? {
         get {
             guard case let .timer(value) = self else { return nil }
             return value
@@ -39,8 +37,7 @@ extension AppAction
         }
     }
     
-    var startEdit: StartEditAction?
-    {
+    var startEdit: StartEditAction? {
         get {
             guard case let .startEdit(value) = self else { return nil }
             return value
@@ -52,10 +49,9 @@ extension AppAction
     }
 }
 
-extension AppAction: CustomDebugStringConvertible
-{
-    public var debugDescription: String
-    {
+extension AppAction: CustomDebugStringConvertible {
+    
+    public var debugDescription: String {
         switch self {
         case .start:
             return "Start"

@@ -1,27 +1,23 @@
 import UIKit
 import Architecture
 
-public final class OnboardingCoordinator: BaseCoordinator
-{    
+public final class OnboardingCoordinator: BaseCoordinator {
     private var store: Store<OnboardingState, OnboardingAction>
     private var features: [String: BaseFeature<OnboardingState, OnboardingAction>]
     
-    public init(store: Store<OnboardingState, OnboardingAction>, features: [String: BaseFeature<OnboardingState, OnboardingAction>])
-    {
+    public init(store: Store<OnboardingState, OnboardingAction>, features: [String: BaseFeature<OnboardingState, OnboardingAction>]) {
         self.store = store
         self.features = features
     }
     
-    public override func present(from presentingViewController: UIViewController)
-    {
-        let vc = OnboardingViewController.instantiate()
-        vc.store = store
-        presentingViewController.show(vc, sender: nil)
-        self.rootViewController = vc
+    public override func present(from presentingViewController: UIViewController) {
+        let viewController = OnboardingViewController.instantiate()
+        viewController.store = store
+        presentingViewController.show(viewController, sender: nil)
+        self.rootViewController = viewController
     }
     
-    public override func newRoute(route: String) -> Coordinator?
-    {
+    public override func newRoute(route: String) -> Coordinator? {
         guard let route = OnboardingRoute(rawValue: route) else { fatalError() }
         
         switch route {

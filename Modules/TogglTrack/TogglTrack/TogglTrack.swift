@@ -7,15 +7,14 @@ import Repository
 import Networking
 import Models
 
-public class TogglTrack
-{
+public class TogglTrack {
     private let store: Store<AppState, AppAction>!
     private let appCoordinator: AppCoordinator
     private let router: Router
     private var disposeBag = DisposeBag()
 
-    public init(window: UIWindow)
-    {
+    public init(window: UIWindow) {
+        
         let appFeature = AppFeature()
         
         store = Store(
@@ -24,7 +23,7 @@ public class TogglTrack
             environment: AppEnvironment()
         )
         
-        appCoordinator = appFeature.mainCoordinator(store: store) as! AppCoordinator
+        appCoordinator = (appFeature.mainCoordinator(store: store) as? AppCoordinator)!
         router = Router(initialCoordinator: appCoordinator)
                 
         store

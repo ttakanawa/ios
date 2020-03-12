@@ -9,8 +9,8 @@ import Models
 
 public typealias TimeEntriesLogStore = Store<TimeEntriesLogState, TimeEntriesLogAction>
 
-public class TimeEntriesLogViewController: UIViewController, Storyboarded
-{
+public class TimeEntriesLogViewController: UIViewController, Storyboarded {
+    
     public static var storyboardName = "Timer"
     public static var storyboardBundle = Assets.bundle
 
@@ -21,21 +21,21 @@ public class TimeEntriesLogViewController: UIViewController, Storyboarded
 
     public var store: TimeEntriesLogStore!
 
-    public override func viewDidLoad()
-    {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 72
     }
     
-    public override func viewDidAppear(_ animated: Bool)
-    {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
                 
         if dataSource == nil {
             // We should do this in ViewDidLoad, but there's a bug that causes an ugly warning. That's why we are doing it here for now
-            dataSource = RxTableViewSectionedAnimatedDataSource<DayViewModel>(configureCell:
-                { [weak self] dataSource, tableView, indexPath, item in
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "TimeEntryCell", for: indexPath) as! TimeEntryCell
+            dataSource = RxTableViewSectionedAnimatedDataSource<DayViewModel>(
+                configureCell: { [weak self] _, tableView, indexPath, item in
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: "TimeEntryCell", for: indexPath) as? TimeEntryCell else {
+                        fatalError("Wrong cell type")                        
+                    }
                     cell.descriptionLabel.text = item.description
                     cell.descriptionLabel.textColor = item.descriptionColor
                     cell.projectClientTaskLabel.textColor = item.projectColor
@@ -68,18 +68,16 @@ public class TimeEntriesLogViewController: UIViewController, Storyboarded
         }
     }
     
-    public override func viewWillAppear(_ animated: Bool)
-    {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         store.dispatch(.load)
     }
 }
 
-extension TimeEntriesLogViewController: UITableViewDelegate
-{
-    public func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
-    {
-        let action = UIContextualAction(style: .normal, title: "Continue") { action, view, completed in
+extension TimeEntriesLogViewController: UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: "Continue") { _, _, _ in
             let timeEntryId = self.dataSource.sectionModels[indexPath.section].items[indexPath.item].id
             self.store.dispatch(TimeEntriesLogAction.timeEntrySwiped(.right, timeEntryId))
         }
@@ -87,9 +85,8 @@ extension TimeEntriesLogViewController: UITableViewDelegate
         return UISwipeActionsConfiguration(actions: [action])
     }
 
-    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
-    {
-        let action = UIContextualAction(style: .destructive, title: "Delete") { action, view, completed in
+    public func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
             let timeEntryId = self.dataSource.sectionModels[indexPath.section].items[indexPath.item].id
             self.store.dispatch(TimeEntriesLogAction.timeEntrySwiped(.left, timeEntryId))
         }
@@ -97,16 +94,14 @@ extension TimeEntriesLogViewController: UITableViewDelegate
     }
 }
 
-
 // ANIMATED DATASOURCE EXTENSIONS
 
-extension TimeEntryViewModel: IdentifiableType
-{
+extension TimeEntryViewModel: IdentifiableType {
     public var identity: Int { id }
 }
 
-extension DayViewModel: AnimatableSectionModelType
-{
+extension DayViewModel: AnimatableSectionModelType {
+    
     public init(original: DayViewModel, items: [TimeEntryViewModel]) {
         self = original
         self.timeEntries = items

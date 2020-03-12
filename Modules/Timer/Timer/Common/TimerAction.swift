@@ -1,14 +1,12 @@
 import Foundation
 import Models
 
-public enum TimerAction
-{
+public enum TimerAction {
     case timeLog(TimeEntriesLogAction)
     case startEdit(StartEditAction)
 }
 
-extension TimerAction
-{
+extension TimerAction {
     var timeLog: TimeEntriesLogAction? {
         get {
             guard case let .timeLog(value) = self else { return nil }
@@ -20,8 +18,7 @@ extension TimerAction
         }
     }
     
-    var startEdit: StartEditAction?
-    {
+    var startEdit: StartEditAction? {
         get {
             guard case let .startEdit(value) = self else { return nil }
             return value
@@ -33,19 +30,16 @@ extension TimerAction
     }
 }
 
-
-extension TimerAction: CustomDebugStringConvertible
-{
-    public var debugDescription: String
-    {
+extension TimerAction: CustomDebugStringConvertible {
+    
+    public var debugDescription: String {
+        
         switch self {
-       
         case let .timeLog(action):
             return action.debugDescription
             
         case let .startEdit(action):
-            return action.debugDescription               
-        
+            return action.debugDescription
         }
     }
 }

@@ -3,8 +3,7 @@ import Architecture
 import Timer
 import RxSwift
 
-public final class MainCoordinator: TabBarCoordinator
-{
+public final class MainCoordinator: TabBarCoordinator {
     private var store: Store<AppState, AppAction>
     private var disposeBag = DisposeBag()
     
@@ -13,8 +12,7 @@ public final class MainCoordinator: TabBarCoordinator
     public init(
         store: Store<AppState, AppAction>,
         timerCoordinator: TimerCoordinator
-    )
-    {
+    ) {
         self.store = store
         self.timerCoordinator = timerCoordinator
         
@@ -25,12 +23,10 @@ public final class MainCoordinator: TabBarCoordinator
             .map(AppAction.tabBarTapped)
             .subscribe(onNext: store.dispatch)            
             .disposed(by: disposeBag)
-
-
     }
     
-    public override func start()
-    {
+    public override func start() {
+        
         timerCoordinator.start()
         let timer = timerCoordinator.rootViewController!
         timer.tabBarItem = UITabBarItem(title: "Timer", image: nil, tag: 0)
@@ -48,8 +44,8 @@ public final class MainCoordinator: TabBarCoordinator
         tabBarController.setViewControllers([timer, reportsNav, calendarNav], animated: false)
     }
     
-    public override func newRoute(route: String) -> Coordinator?
-    {
+    public override func newRoute(route: String) -> Coordinator? {
+        
         guard let route = TabBarRoute(rawValue: route) else { fatalError() }
 
         switch route {

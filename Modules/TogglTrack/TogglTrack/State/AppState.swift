@@ -5,8 +5,7 @@ import Onboarding
 import Timer
 import Utils
 
-public struct AppState
-{
+public struct AppState {
     public var route: Route = AppRoute.loading
     public var user: Loadable<User> = .nothing
     public var entities: TimeLogEntities =  TimeLogEntities()
@@ -16,10 +15,8 @@ public struct AppState
 }
 
 // Module specific states
-extension AppState
-{
-    var onboardingState: OnboardingState
-    {
+extension AppState {
+    var onboardingState: OnboardingState {
         get {
             OnboardingState(
                 user: user,
@@ -34,8 +31,7 @@ extension AppState
         }
     }
     
-    var timerState: TimerState
-    {
+    var timerState: TimerState {
         get {
             TimerState(
                 user: user,

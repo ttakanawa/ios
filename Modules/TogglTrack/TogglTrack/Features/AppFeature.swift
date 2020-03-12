@@ -17,8 +17,8 @@ let appReducer = combine(
     )
 )
 
-public class AppFeature: BaseFeature<AppState, AppAction>
-{    
+public class AppFeature: BaseFeature<AppState, AppAction> {
+    
     let features: [String: BaseFeature<AppState, AppAction>] = [
         AppRoute.onboarding.rawValue: OnboardingFeature()
             .view { $0.view(
@@ -38,7 +38,7 @@ public class AppFeature: BaseFeature<AppState, AppAction>
             onboardingCoordinator: features[AppRoute.onboarding.rawValue]!.mainCoordinator(store: store),
             tabBarCoordinator: MainCoordinator(
                 store: store,
-                timerCoordinator: features[AppRoute.main.rawValue]!.mainCoordinator(store: store) as! TimerCoordinator
+                timerCoordinator: (features[AppRoute.main.rawValue]!.mainCoordinator(store: store) as? TimerCoordinator)!
             )
         )
     }

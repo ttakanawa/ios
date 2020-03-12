@@ -1,9 +1,8 @@
 import UIKit
 
-public extension UIViewController
-{
-    func install(_ child: UIViewController, customConstraints: Bool = false)
-    {
+public extension UIViewController {
+    
+    func install(_ child: UIViewController, customConstraints: Bool = false) {
         addChild(child)
 
         child.view.translatesAutoresizingMaskIntoConstraints = false

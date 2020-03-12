@@ -18,7 +18,7 @@
 		8C25187B2403C62E00BAD4B5 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518732403C62E00BAD4B5 /* Project.swift */; };
 		8C25187C2403C62E00BAD4B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518742403C62E00BAD4B5 /* User.swift */; };
 		8C38E2422419008400C9E053 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C38E2412419008400C9E053 /* Loadable.swift */; };
-		8C38E244241900EF00C9E053 /* TimeLogEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C38E243241900EF00C9E053 /* TimeLogEntities.swift */; };
+		8C5A8C95241A8EC5003DC3D0 /* TimeLogEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5A8C94241A8EC5003DC3D0 /* TimeLogEntities.swift */; };
 		8CB5452C240D6F5B00154473 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5452B240D6F5B00154473 /* Entity.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +48,7 @@
 		8C2518742403C62E00BAD4B5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C2518832403C66B00BAD4B5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C38E2412419008400C9E053 /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
-		8C38E243241900EF00C9E053 /* TimeLogEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeLogEntities.swift; path = ../../../../new_ios/Modules/Models/Models/TimeLogEntities.swift; sourceTree = "<group>"; };
+		8C5A8C94241A8EC5003DC3D0 /* TimeLogEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogEntities.swift; sourceTree = "<group>"; };
 		8CB5452B240D6F5B00154473 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +102,7 @@
 				8C25186D2403C62E00BAD4B5 /* TimeEntry.swift */,
 				8C2518742403C62E00BAD4B5 /* User.swift */,
 				8C25186F2403C62E00BAD4B5 /* Workspace.swift */,
-				8C38E243241900EF00C9E053 /* TimeLogEntities.swift */,
+				8C5A8C94241A8EC5003DC3D0 /* TimeLogEntities.swift */,
 				8C25182C2403C5FC00BAD4B5 /* Models.h */,
 				8C25182D2403C5FC00BAD4B5 /* Info.plist */,
 			);
@@ -252,7 +252,7 @@
 				8C25187A2403C62E00BAD4B5 /* Task.swift in Sources */,
 				8C25187B2403C62E00BAD4B5 /* Project.swift in Sources */,
 				8C2518752403C62E00BAD4B5 /* TimeEntry.swift in Sources */,
-				8C38E244241900EF00C9E053 /* TimeLogEntities.swift in Sources */,
+				8C5A8C95241A8EC5003DC3D0 /* TimeLogEntities.swift in Sources */,
 				8C38E2422419008400C9E053 /* Loadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

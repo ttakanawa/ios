@@ -7,8 +7,7 @@ public let onboardingReducer = combine(
     emailSignupReducer.pullback(action: \OnboardingAction.emailSignup)
 )
 
-public class OnboardingFeature: BaseFeature<OnboardingState, OnboardingAction>
-{
+public class OnboardingFeature: BaseFeature<OnboardingState, OnboardingAction> {
     let features = [
         OnboardingRoute.emailLogin.rawValue: EmailLoginFeature()
         .view { $0.view(

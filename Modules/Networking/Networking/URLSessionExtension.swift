@@ -1,28 +1,23 @@
 import Foundation
 import RxSwift
 
-public struct NoTokenError: Error
-{
+public struct NoTokenError: Error {
     public init() { }
 }
 
-public enum NetworkingError: Error
-{
+public enum NetworkingError: Error {
     case noData
     case wrongStatus(Int, HTTPURLResponse?)
     case unknown
 }
 
-
-public protocol URLSessionProtocol
-{
+public protocol URLSessionProtocol {
     func load<A>(_ endpoint: Endpoint<A>) -> Observable<A>
 }
 
-extension URLSession: URLSessionProtocol
-{
-    public func load<A>(_ endpoint: Endpoint<A>) -> Observable<A>
-    {
+extension URLSession: URLSessionProtocol {
+    
+    public func load<A>(_ endpoint: Endpoint<A>) -> Observable<A> {
         return Observable.create { observer in
             
             let task = self.dataTask(with: endpoint.request) { data, response, error in
@@ -47,9 +42,7 @@ extension URLSession: URLSessionProtocol
                         observer.onNext(result)
                     } catch {
                         observer.onError(error)
-                    }
-                    
-                    
+                    }                    
                 } else {
                     observer.onError(NetworkingError.wrongStatus(response.statusCode, response))
                 }

@@ -1,7 +1,7 @@
 import Foundation
 
-public struct Project: Codable, Entity
-{
+public struct Project: Codable, Entity {
+    
     public var id: Int
     public var name: String
     public var isPrivate: Bool

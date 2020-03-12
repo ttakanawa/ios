@@ -2,9 +2,8 @@ import Foundation
 import Architecture
 import Timer
 
-var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { state, action, environment in
-    switch action
-    {
+var globalReducer: Reducer<AppState, AppAction, AppEnvironment> = Reducer { state, action, _ in
+    switch action {
     case .start:
         if state.user.isLoaded {
             state.route = AppRoute.main

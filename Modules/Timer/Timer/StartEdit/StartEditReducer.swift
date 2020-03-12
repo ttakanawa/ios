@@ -39,10 +39,9 @@ let startEditReducer = Reducer<StartEditState, StartEditAction, Repository> { st
     return .empty
 }
 
-func startTimeEntry(_ timeEntry: TimeEntry, repository: Repository) -> Effect<StartEditAction>
-{
+func startTimeEntry(_ timeEntry: TimeEntry, repository: Repository) -> Effect<StartEditAction> {
     return repository.addTimeEntry(timeEntry: timeEntry)
         .toEffect(
             map: { StartEditAction.timeEntryAdded(timeEntry) },
-            catch: { StartEditAction.setError($0)} )
+            catch: { StartEditAction.setError($0) })
 }

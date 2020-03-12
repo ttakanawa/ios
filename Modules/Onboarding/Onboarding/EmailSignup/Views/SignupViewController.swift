@@ -9,8 +9,8 @@ import Assets
 
 public typealias EmailSignupStore = Store<OnboardingState, EmailSignupAction>
 
-public class SignupViewController: UIViewController, Storyboarded
-{
+public class SignupViewController: UIViewController, Storyboarded {
+    
     public static var storyboardName = "Onboarding"
     public static var storyboardBundle = Bundle(for: Assets.self as AnyClass)
 
@@ -68,8 +68,7 @@ public class SignupViewController: UIViewController, Storyboarded
     }
 }
 
-extension SignupViewController: UIAdaptivePresentationControllerDelegate
-{
+extension SignupViewController: UIAdaptivePresentationControllerDelegate {
     public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         store.dispatch(.cancel)
     }

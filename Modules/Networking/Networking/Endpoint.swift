@@ -1,9 +1,8 @@
 import Foundation
 
-public struct Endpoint<A>
-{
-    public enum Method: String
-    {
+public struct Endpoint<A> {
+    
+    public enum Method: String {
         case get = "GET"
         case post = "POST"
         case put = "PUT"
@@ -20,13 +19,12 @@ public struct Endpoint<A>
     public init(_ method: Method,
                 url: URL,
                 body: Data? = nil,
-                headers: [String:String] = [:],
+                headers: [String: String] = [:],
                 timeOutInterval: TimeInterval = 10,
-                query: [String:String] = [:],
+                query: [String: String] = [:],
                 parse: @escaping ParserClosure
-    )
-    {
-        var requestUrl : URL
+    ) {
+        var requestUrl: URL
         if query.isEmpty {
             requestUrl = url
         } else {
@@ -53,36 +51,38 @@ public struct Endpoint<A>
     }
 }
 
-extension Endpoint where A: Decodable
-{
-    public init(json method: Method, url: URL, headers: [String: String] = [:], query: [String: String] = [:], decoder: JSONDecoder = JSONDecoder())
-    {
+extension Endpoint where A: Decodable {
+    public init(json method: Method, url: URL, headers: [String: String] = [:], query: [String: String] = [:], decoder: JSONDecoder = JSONDecoder()) {
         self.init(method, url: url, body: nil, headers: headers, query: query) { data in
             guard let dat = data else { throw NetworkingError.unknown }
             return try decoder.decode(A.self, from: dat)
         }
     }
     
-    public init<B: Encodable>(json method: Method, url: URL, body: B? = nil, headers: [String: String] = [:], query: [String: String] = [:], decoder: JSONDecoder = JSONDecoder())
-    {
-        let b = body.map { try! JSONEncoder().encode($0) }
-        self.init(method, url: url, body: b, headers: headers, query: query) { data in
+    public init<B: Encodable>(
+        json method: Method,
+        url: URL,
+        body: B? = nil,
+        headers: [String: String] = [:],
+        query: [String: String] = [:],
+        decoder: JSONDecoder = JSONDecoder()) throws {
+        
+        let encodedBody = try body.map { try JSONEncoder().encode($0) }
+        self.init(method, url: url, body: encodedBody, headers: headers, query: query) { data in
             guard let dat = data else { throw NetworkingError.unknown }
             return try decoder.decode(A.self, from: dat)
         }
     }
  }
 
-extension Endpoint where A == ()
-{
-    public init(_ method: Method, url: URL, headers: [String:String] = [:], query: [String:String] = [:])
-    {
+extension Endpoint where A == () {
+    
+    public init(_ method: Method, url: URL, headers: [String: String] = [:], query: [String: String] = [:]) {
         self.init(method, url: url, headers: headers, query: query, parse: { _ in return })
     }
     
-    public init<B: Encodable>(json method: Method, url: URL, body: B, headers: [String:String] = [:], query: [String:String] = [:])
-    {
-        let b = try! JSONEncoder().encode(body)
-        self.init(method, url: url, body: b, headers: headers, query: query, parse: { _ in return })
+    public init<B: Encodable>(json method: Method, url: URL, body: B, headers: [String: String] = [:], query: [String: String] = [:]) throws {
+        let encodedBody = try JSONEncoder().encode(body)
+        self.init(method, url: url, body: encodedBody, headers: headers, query: query, parse: { _ in return })
     }
 }

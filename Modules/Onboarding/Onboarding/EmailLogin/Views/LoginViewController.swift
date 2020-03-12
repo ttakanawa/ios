@@ -9,9 +9,8 @@ import Assets
 
 public typealias EmailLoginStore = Store<OnboardingState, EmailLoginAction>
 
-
-public class LoginViewController: UIViewController, Storyboarded
-{
+public class LoginViewController: UIViewController, Storyboarded {
+    
     public static var storyboardName = "Onboarding"
     public static var storyboardBundle = Assets.bundle
 
@@ -24,8 +23,7 @@ public class LoginViewController: UIViewController, Storyboarded
     
     public var store: EmailLoginStore!
 
-    public override func viewDidLoad()
-    {
+    public override func viewDidLoad() {
         super.viewDidLoad()
                 
         let button = UIBarButtonItem(title: "SignUp", style: .plain, target: nil, action: nil)
@@ -81,8 +79,7 @@ public class LoginViewController: UIViewController, Storyboarded
     }
 }
 
-extension LoginViewController: UIAdaptivePresentationControllerDelegate
-{
+extension LoginViewController: UIAdaptivePresentationControllerDelegate {
     public func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         store.dispatch(.cancel)
     }

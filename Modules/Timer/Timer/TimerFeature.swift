@@ -10,8 +10,8 @@ public let timerReducer = combine(
         action: \TimerAction.startEdit)
 )
 
-public class TimerFeature: BaseFeature<TimerState, TimerAction>
-{
+public class TimerFeature: BaseFeature<TimerState, TimerAction> {
+    
     let features: [String: BaseFeature<TimerState, TimerAction>] = [
         "log": TimeEntriesLogFeature()
             .view { $0.view(
@@ -28,8 +28,8 @@ public class TimerFeature: BaseFeature<TimerState, TimerAction>
     public override func mainCoordinator(store: Store<TimerState, TimerAction>) -> Coordinator {
         return TimerCoordinator(
             store: store,
-            timeLogCoordinator: features["log"]!.mainCoordinator(store: store) as! TimeEntriesLogCoordinator,
-            startEditCoordinator: features["startEdit"]!.mainCoordinator(store: store) as! StartEditCoordinator
+            timeLogCoordinator: (features["log"]!.mainCoordinator(store: store) as? TimeEntriesLogCoordinator)!,
+            startEditCoordinator: (features["startEdit"]!.mainCoordinator(store: store) as? StartEditCoordinator)!
         )
     }
 }

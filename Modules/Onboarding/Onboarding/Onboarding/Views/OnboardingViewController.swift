@@ -9,8 +9,7 @@ import Assets
 
 public typealias OnboardingStore = Store<OnboardingState, OnboardingAction>
 
-public class OnboardingViewController: UIViewController, Storyboarded
-{
+public class OnboardingViewController: UIViewController, Storyboarded {
     public static var storyboardName = "Onboarding"
     public static var storyboardBundle = Assets.bundle
     
@@ -20,8 +19,7 @@ public class OnboardingViewController: UIViewController, Storyboarded
     
     public var store: OnboardingStore!
 
-    public override func viewDidLoad()
-    {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.isNavigationBarHidden = true
@@ -32,4 +30,3 @@ public class OnboardingViewController: UIViewController, Storyboarded
             .disposed(by: disposeBag)                
     }
 }
-

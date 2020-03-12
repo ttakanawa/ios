@@ -1,7 +1,7 @@
 import Foundation
 
-public struct Task: Codable, Entity
-{
+public struct Task: Codable, Entity {
+    
     public var id: Int
     public var name: String
     public var active: Bool
@@ -12,8 +12,7 @@ public struct Task: Codable, Entity
     public var workspaceId: Int
     public var userId: Int?
 
-    enum CodingKeys: String, CodingKey
-    {
+    enum CodingKeys: String, CodingKey {
         case id
         case name
         case active

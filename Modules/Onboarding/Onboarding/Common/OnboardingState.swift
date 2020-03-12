@@ -3,18 +3,15 @@ import Models
 import Architecture
 import Utils
 
-public struct LocalOnboardingState
-{
+public struct LocalOnboardingState {
     internal var email: String = ""
     internal var password: String = ""
     
-    public init()
-    {
+    public init() {
     }
 }
 
-public struct OnboardingState
-{
+public struct OnboardingState {
     public var user: Loadable<User>
     public var route: Route
     public var localOnboardingState: LocalOnboardingState
@@ -26,10 +23,8 @@ public struct OnboardingState
     }
 }
 
-extension OnboardingState
-{
-    internal var email: String
-    {
+extension OnboardingState {
+    internal var email: String {
         get {
             localOnboardingState.email
         }
@@ -38,8 +33,7 @@ extension OnboardingState
         }
     }
     
-    internal var password: String
-    {
+    internal var password: String {
         get {
             localOnboardingState.password
         }

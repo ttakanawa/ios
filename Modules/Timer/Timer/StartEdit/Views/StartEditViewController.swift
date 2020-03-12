@@ -7,8 +7,7 @@ import RxCocoa
 
 public typealias StartEditStore = Store<StartEditState, StartEditAction>
 
-public class StartEditViewController: UIViewController, Storyboarded
-{
+public class StartEditViewController: UIViewController, Storyboarded {
     public static var storyboardName = "Timer"
     public static var storyboardBundle = Assets.bundle
     
@@ -36,13 +35,11 @@ public class StartEditViewController: UIViewController, Storyboarded
             .disposed(by: disposeBag)
     }
     
-    public override func viewDidAppear(_ animated: Bool)
-    {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    public override func resignFirstResponder() -> Bool
-    {
+    public override func resignFirstResponder() -> Bool {
         descriptionField.resignFirstResponder()
         return super.resignFirstResponder()
     }

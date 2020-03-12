@@ -2,8 +2,8 @@ import UIKit
 import Utils
 import Assets
 
-class BottomSheet: UIViewController
-{
+class BottomSheet: UIViewController {
+    
     private var bottomConstraint: NSLayoutConstraint!
     private var heightConstraint: NSLayoutConstraint!
     
@@ -16,27 +16,34 @@ class BottomSheet: UIViewController
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(viewController: UIViewController)
-    {
+    init(viewController: UIViewController) {
         containedViewController = viewController
         super.init(nibName: nil, bundle: nil)
     }
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
+        
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(panGesture))
         view.addGestureRecognizer(gesture)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
         
         view.backgroundColor = .white
         
         install(containedViewController)
     }
     
-    override func didMove(toParent parent: UIViewController?)
-    {
+    override func didMove(toParent parent: UIViewController?) {
+        
         guard let parent = parent else { return }
                 
         view.leadingAnchor.constraint(equalTo: parent.view.leadingAnchor).isActive = true
@@ -47,8 +54,8 @@ class BottomSheet: UIViewController
         heightConstraint.isActive = true
     }
     
-    override func viewDidLayoutSubviews()
-    {
+    override func viewDidLayoutSubviews() {
+        
         super.viewDidLayoutSubviews()
         
         guard !layedOut else { return }
@@ -62,8 +69,8 @@ class BottomSheet: UIViewController
     }
     
     @objc
-    func panGesture(recognizer: UIPanGestureRecognizer)
-    {
+    func panGesture(recognizer: UIPanGestureRecognizer) {
+        
         let translation = recognizer.translation(in: view)
         
         switch recognizer.state {
@@ -82,7 +89,7 @@ class BottomSheet: UIViewController
                     self.heightConstraint.constant = self.stops.first!
                     self.view.superview?.layoutIfNeeded()
             },
-                completion:  nil)
+                completion: nil)
         default:
             break
         }
@@ -91,10 +98,10 @@ class BottomSheet: UIViewController
     }
     
     @objc
-    func keyboardWillShow(notification: NSNotification)
-    {
+    func keyboardWillShow(notification: NSNotification) {
+        
         guard let userInfo = notification.userInfo else { return }
-        let keyboardFrame =  (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardFrame =  (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
         
         let keyboardFrameInView = parent!.view.convert(keyboardFrame, from: nil)
         let safeAreaFrame = parent!.view.safeAreaLayoutGuide.layoutFrame
@@ -107,8 +114,8 @@ class BottomSheet: UIViewController
     }
     
     @objc
-    func keyboardWillHide(notification: NSNotification)
-    {
+    func keyboardWillHide(notification: NSNotification) {
+        
         UIView.animate(withDuration: 0.3) {
             self.parent?.additionalSafeAreaInsets.bottom = 0
             self.parent?.view.layoutIfNeeded()

@@ -1,14 +1,12 @@
 import Foundation
 import Models
 
-public enum SwipeDirection
-{
+public enum SwipeDirection {
     case left
     case right
 }
 
-public enum TimeEntriesLogAction
-{
+public enum TimeEntriesLogAction {
     case continueButtonTapped(Int)
     case timeEntrySwiped(SwipeDirection, Int)
     case timeEntryTapped(Int)
@@ -22,10 +20,9 @@ public enum TimeEntriesLogAction
     case setError(Error)
 }
 
-extension TimeEntriesLogAction: CustomDebugStringConvertible
-{
-    public var debugDescription: String
-    {
+extension TimeEntriesLogAction: CustomDebugStringConvertible {
+    
+    public var debugDescription: String {
         switch self {
             
         case let .continueButtonTapped(timeEntryId):

@@ -1,8 +1,7 @@
 import Foundation
 import Models
 
-public enum EmailLoginAction
-{
+public enum EmailLoginAction {
     case goToSignup
     case cancel
     
@@ -14,10 +13,8 @@ public enum EmailLoginAction
     case setError(Error)
 }
 
-extension EmailLoginAction: CustomDebugStringConvertible
-{
-    public var debugDescription: String
-    {
+extension EmailLoginAction: CustomDebugStringConvertible {
+    public var debugDescription: String {
         switch self {
         case .goToSignup:
             return "GoToSignUp"

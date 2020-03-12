@@ -2,22 +2,22 @@ import Foundation
 import RxSwift
 import Assets
 
-public class FakeURLSession: URLSessionProtocol
-{
-    var requests : [String:String]  = [
-        "time_entries" : "timeentries",
-        "workspaces" : "workspaces",
-        "projects" : "projects",
-        "clients" : "clients",
-        "tags" : "tags",
+public class FakeURLSession: URLSessionProtocol {
+    
+    var requests: [String: String]  = [
+        "time_entries": "timeentries",
+        "workspaces": "workspaces",
+        "projects": "projects",
+        "clients": "clients",
+        "tags": "tags",
         "tasks": "tasks",
-        "me" : "me"
+        "me": "me"
     ]
     
     public init() {}
     
-    public func load<A>(_ endpoint: Endpoint<A>) -> Observable<A>
-    {
+    public func load<A>(_ endpoint: Endpoint<A>) -> Observable<A> {
+        
         let bundle = Assets.bundle
         guard let resource = requests[endpoint.request.url!.lastPathComponent],
             let path = bundle.path(forResource: resource, ofType: "txt") else {

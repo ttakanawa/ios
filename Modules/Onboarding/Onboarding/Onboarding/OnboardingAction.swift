@@ -1,15 +1,13 @@
 import Foundation
 import Models
 
-public enum OnboardingAction
-{
+public enum OnboardingAction {
     case emailSingInTapped    
     case emailLogin(EmailLoginAction)
     case emailSignup(EmailSignupAction)
 }
 
-extension OnboardingAction
-{
+extension OnboardingAction {
     var emailLogin: EmailLoginAction? {
         get {
             guard case let .emailLogin(value) = self else { return nil }
@@ -21,8 +19,7 @@ extension OnboardingAction
         }
     }
     
-    var emailSignup: EmailSignupAction?
-    {
+    var emailSignup: EmailSignupAction? {
         get {
             guard case let .emailSignup(value) = self else { return nil }
             return value
@@ -34,10 +31,8 @@ extension OnboardingAction
     }
 }
 
-extension OnboardingAction: CustomDebugStringConvertible
-{
-    public var debugDescription: String
-    {
+extension OnboardingAction: CustomDebugStringConvertible {
+    public var debugDescription: String {
         switch self {
         case .emailSingInTapped:
             return "EmailSignInTapped"

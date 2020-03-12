@@ -1,10 +1,9 @@
 import UIKit
 import Models
 
-public struct TimeEntryViewModel: Equatable
-{
-    public static func == (lhs: TimeEntryViewModel, rhs: TimeEntryViewModel) -> Bool
-    {
+public struct TimeEntryViewModel: Equatable {
+    
+    public static func == (lhs: TimeEntryViewModel, rhs: TimeEntryViewModel) -> Bool {
         return lhs.description == rhs.description && lhs.projectTaskClient == rhs.projectTaskClient && lhs.billable == rhs.billable
             && lhs.start == rhs.start && lhs.duration == rhs.duration
             && lhs.end == rhs.end && lhs.isRunning == rhs.isRunning //&& lhs.tags == rhs.tags
@@ -33,8 +32,8 @@ public struct TimeEntryViewModel: Equatable
         project: Project? = nil,
         client: Client? = nil,
         task: Task? = nil,
-        tags: [Tag]? = nil)
-    {
+        tags: [Tag]? = nil) {
+        
         // TODO some of this properties could be lazy
         
         self.id = timeEntry.id
@@ -59,8 +58,7 @@ public struct TimeEntryViewModel: Equatable
 }
 
 // TODO Move this somewhere else for reuse
-func getProjectTaskClient(from project:Project?, task: Task?, client: Client?) -> String
-{
+func getProjectTaskClient(from project: Project?, task: Task?, client: Client?) -> String {
     var value = ""
     if let project = project { value.append(project.name) }
     if let task = task { value.append(": " + task.name) }
@@ -85,20 +83,20 @@ extension TimeInterval {
 }
 
 // TODO Move this somewhere else
-extension UIColor
-{
+extension UIColor {
+    
     convenience init(hex: String) {
-        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        var cString: String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
-        if (cString.hasPrefix("#")) {
+        if cString.hasPrefix("#") {
             cString.remove(at: cString.startIndex)
         }
         
-        if ((cString.count) != 6) {
+        if (cString.count) != 6 {
             fatalError("Color string must be 6 chars long")
         }
         
-        var rgbValue:UInt64 = 0
+        var rgbValue: UInt64 = 0
         Scanner(string: cString).scanHexInt64(&rgbValue)
                 
         self.init(

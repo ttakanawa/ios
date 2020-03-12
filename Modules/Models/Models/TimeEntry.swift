@@ -1,7 +1,7 @@
 import Foundation
 
-public struct TimeEntry: Entity
-{
+public struct TimeEntry: Entity {
+    
     public var id: Int
     public var description: String
     public var start: Date
@@ -30,18 +30,16 @@ public struct TimeEntry: Entity
     }
 }
 
-extension TimeEntry: Codable
-{
+extension TimeEntry: Codable {
+    
     private var createdWith: String { "AppleWatchApp" }
     
-    private var encodedDuration: Int64
-    {
+    private var encodedDuration: Int64 {
         guard duration >= 0 else { return Int64(-start.timeIntervalSince1970) }
         return Int64(duration)
     }
 
-    private enum CodingKeys: String, CodingKey
-    {
+    private enum CodingKeys: String, CodingKey {
         case id
         case description
         case start
@@ -54,8 +52,7 @@ extension TimeEntry: Codable
         case tagIds = "tag_ids"
     }
     
-    private enum EncodeKeys: String, CodingKey
-    {
+    private enum EncodeKeys: String, CodingKey {
         case description
         case start
         case billable
@@ -68,8 +65,7 @@ extension TimeEntry: Codable
         case createdWith = "created_with"
     }
     
-    public func encode(to encoder: Encoder) throws
-    {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: EncodeKeys.self)
         
         try container.encode(description, forKey: .description)

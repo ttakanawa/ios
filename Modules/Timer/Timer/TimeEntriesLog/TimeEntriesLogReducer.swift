@@ -45,9 +45,9 @@ let timeEntriesLogReducer = Reducer<TimeEntriesLogState, TimeEntriesLogAction, R
         return .empty
         
     case let .setEntities(entities):        
-        let dict: [Int: Entity] = entities.reduce([:], { acc, e in
+        let dict: [Int: Entity] = entities.reduce([:], { acc, entity in
             var acc = acc
-            acc[e.id] = e
+            acc[entity.id] = entity
             return acc
         })
         
@@ -60,8 +60,7 @@ let timeEntriesLogReducer = Reducer<TimeEntriesLogState, TimeEntriesLogAction, R
     }
 }
 
-fileprivate func loadEntities(_ repository: Repository) -> Effect<TimeEntriesLogAction>
-{
+private func loadEntities(_ repository: Repository) -> Effect<TimeEntriesLogAction> {
     //TODO Shouldn't need to do all that `asObservable`
     return Observable.merge(
         repository.getWorkspaces().map(TimeEntriesLogAction.setEntities).asObservable(),
@@ -76,8 +75,7 @@ fileprivate func loadEntities(_ repository: Repository) -> Effect<TimeEntriesLog
     .toEffect()
 }
 
-fileprivate func deleteTimeEntry(_ repository: Repository, timeEntryId: Int) -> Effect<TimeEntriesLogAction>
-{
+private func deleteTimeEntry(_ repository: Repository, timeEntryId: Int) -> Effect<TimeEntriesLogAction> {
     repository.deleteTimeEntry(timeEntryId: timeEntryId)
     .toEffect(
         map: { TimeEntriesLogAction.timeEntryDeleted(timeEntryId) },
@@ -85,8 +83,8 @@ fileprivate func deleteTimeEntry(_ repository: Repository, timeEntryId: Int) -> 
     )
 }
 
-fileprivate func continueTimeEntry(_ repository: Repository, timeEntry: TimeEntry) -> Effect<TimeEntriesLogAction>
-{
+private func continueTimeEntry(_ repository: Repository, timeEntry: TimeEntry) -> Effect<TimeEntriesLogAction> {
+    
     var copy = timeEntry
     copy.id = UUID().hashValue
     copy.start = Date()

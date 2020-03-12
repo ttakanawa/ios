@@ -6,15 +6,13 @@ import RxSwift
 import Utils
 import Assets
 
-public class TimerViewController: UIViewController
-{    
+public class TimerViewController: UIViewController {
     public var startEditViewController: StartEditViewController!
     public var timeLogViewController: TimeEntriesLogViewController!
 
     private var bottomSheet: BottomSheet!
     
-    public override func viewDidLoad()
-    {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Timer"
@@ -26,10 +24,8 @@ public class TimerViewController: UIViewController
         install(bottomSheet, customConstraints: true)
     }
     
-    public override func viewDidLayoutSubviews()
-    {
+    public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         timeLogViewController.additionalSafeAreaInsets.bottom = bottomSheet.view.frame.height
     }
 }

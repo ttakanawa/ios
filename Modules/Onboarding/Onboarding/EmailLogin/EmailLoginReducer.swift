@@ -10,11 +10,9 @@ let emailLoginReducer = Reducer<OnboardingState, EmailLoginAction, UserAPI> { st
     
     case .goToSignup:
         state.route = OnboardingRoute.emailSignup
-        break
     
     case .cancel:
         state.route = AppRoute.onboarding
-        break
     
     case let .emailEntered(email):
         state.email = email
@@ -38,8 +36,7 @@ let emailLoginReducer = Reducer<OnboardingState, EmailLoginAction, UserAPI> { st
     return .empty
 }
 
-fileprivate func loadUser(email: String, password: String, api: UserAPI) -> Effect<EmailLoginAction>
-{
+private func loadUser(email: String, password: String, api: UserAPI) -> Effect<EmailLoginAction> {
     return api.loginUser(email: email, password: password)
         .map({ EmailLoginAction.setUser($0) })
         .catchError({ Observable.just(EmailLoginAction.setError($0)) })
