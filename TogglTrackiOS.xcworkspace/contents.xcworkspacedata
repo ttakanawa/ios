@@ -53,12 +53,8 @@
             location = "group:Modules/Utils/Utils.xcodeproj">
          </FileRef>
       </Group>
-      <Group
-         location = "container:"
-         name = "Dependencies">
-         <FileRef
-            location = "group:Modules/RxSwiftDep/RxSwiftDep.xcodeproj">
-         </FileRef>
-      </Group>
    </Group>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>

@@ -11,14 +11,14 @@
 		8C2518382403C5FC00BAD4B5 /* ModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518372403C5FC00BAD4B5 /* ModelsTests.swift */; };
 		8C25183A2403C5FC00BAD4B5 /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C25182C2403C5FC00BAD4B5 /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C2518752403C62E00BAD4B5 /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25186D2403C62E00BAD4B5 /* TimeEntry.swift */; };
-		8C2518762403C62E00BAD4B5 /* TimeLogEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25186E2403C62E00BAD4B5 /* TimeLogEntities.swift */; };
 		8C2518772403C62E00BAD4B5 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C25186F2403C62E00BAD4B5 /* Workspace.swift */; };
 		8C2518782403C62E00BAD4B5 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518702403C62E00BAD4B5 /* Tag.swift */; };
 		8C2518792403C62E00BAD4B5 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518712403C62E00BAD4B5 /* Client.swift */; };
 		8C25187A2403C62E00BAD4B5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518722403C62E00BAD4B5 /* Task.swift */; };
 		8C25187B2403C62E00BAD4B5 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518732403C62E00BAD4B5 /* Project.swift */; };
 		8C25187C2403C62E00BAD4B5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518742403C62E00BAD4B5 /* User.swift */; };
-		8C2518842403C66B00BAD4B5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2518832403C66B00BAD4B5 /* Utils.framework */; };
+		8C38E2422419008400C9E053 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C38E2412419008400C9E053 /* Loadable.swift */; };
+		8C38E244241900EF00C9E053 /* TimeLogEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C38E243241900EF00C9E053 /* TimeLogEntities.swift */; };
 		8CB5452C240D6F5B00154473 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB5452B240D6F5B00154473 /* Entity.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,6 @@
 		8C2518372403C5FC00BAD4B5 /* ModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTests.swift; sourceTree = "<group>"; };
 		8C2518392403C5FC00BAD4B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C25186D2403C62E00BAD4B5 /* TimeEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
-		8C25186E2403C62E00BAD4B5 /* TimeLogEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLogEntities.swift; sourceTree = "<group>"; };
 		8C25186F2403C62E00BAD4B5 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
 		8C2518702403C62E00BAD4B5 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		8C2518712403C62E00BAD4B5 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
@@ -48,6 +47,8 @@
 		8C2518732403C62E00BAD4B5 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		8C2518742403C62E00BAD4B5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C2518832403C66B00BAD4B5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C38E2412419008400C9E053 /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		8C38E243241900EF00C9E053 /* TimeLogEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeLogEntities.swift; path = ../../../../new_ios/Modules/Models/Models/TimeLogEntities.swift; sourceTree = "<group>"; };
 		8CB5452B240D6F5B00154473 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +57,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C2518842403C66B00BAD4B5 /* Utils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,16 +93,16 @@
 		8C25182B2403C5FC00BAD4B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8CB5452F240E4D2D00154473 /* View */,
+				8C38E2402419003100C9E053 /* Types */,
 				8CB5452B240D6F5B00154473 /* Entity.swift */,
 				8C2518712403C62E00BAD4B5 /* Client.swift */,
 				8C2518732403C62E00BAD4B5 /* Project.swift */,
 				8C2518702403C62E00BAD4B5 /* Tag.swift */,
 				8C2518722403C62E00BAD4B5 /* Task.swift */,
 				8C25186D2403C62E00BAD4B5 /* TimeEntry.swift */,
-				8C25186E2403C62E00BAD4B5 /* TimeLogEntities.swift */,
 				8C2518742403C62E00BAD4B5 /* User.swift */,
 				8C25186F2403C62E00BAD4B5 /* Workspace.swift */,
+				8C38E243241900EF00C9E053 /* TimeLogEntities.swift */,
 				8C25182C2403C5FC00BAD4B5 /* Models.h */,
 				8C25182D2403C5FC00BAD4B5 /* Info.plist */,
 			);
@@ -126,11 +126,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8CB5452F240E4D2D00154473 /* View */ = {
+		8C38E2402419003100C9E053 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				8C38E2412419008400C9E053 /* Loadable.swift */,
 			);
-			path = View;
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,13 +246,14 @@
 			files = (
 				8C2518782403C62E00BAD4B5 /* Tag.swift in Sources */,
 				8C2518772403C62E00BAD4B5 /* Workspace.swift in Sources */,
-				8C2518762403C62E00BAD4B5 /* TimeLogEntities.swift in Sources */,
 				8C2518792403C62E00BAD4B5 /* Client.swift in Sources */,
 				8C25187C2403C62E00BAD4B5 /* User.swift in Sources */,
 				8CB5452C240D6F5B00154473 /* Entity.swift in Sources */,
 				8C25187A2403C62E00BAD4B5 /* Task.swift in Sources */,
 				8C25187B2403C62E00BAD4B5 /* Project.swift in Sources */,
 				8C2518752403C62E00BAD4B5 /* TimeEntry.swift in Sources */,
+				8C38E244241900EF00C9E053 /* TimeLogEntities.swift in Sources */,
+				8C38E2422419008400C9E053 /* Loadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +408,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Models/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,6 +436,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Models/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
