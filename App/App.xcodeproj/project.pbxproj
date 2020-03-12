@@ -16,8 +16,7 @@
 		8C2518152403C59F00BAD4B5 /* TogglTrack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C25180D2403C59F00BAD4B5 /* TogglTrack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C2518D42403C97100BAD4B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518D22403C97100BAD4B5 /* SceneDelegate.swift */; };
 		8C2518D52403C97100BAD4B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2518D32403C97100BAD4B5 /* AppDelegate.swift */; };
-		8C25196D2403CF0300BAD4B5 /* RxSwiftDep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2519672403CE5A00BAD4B5 /* RxSwiftDep.framework */; };
-		8C25196E2403CF0300BAD4B5 /* RxSwiftDep.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2519672403CE5A00BAD4B5 /* RxSwiftDep.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AA68ECB8DF37A98FDBCB93E1 /* libPods-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC8D392F8B56D8C801EC9584 /* libPods-App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +37,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				8C2518152403C59F00BAD4B5 /* TogglTrack.framework in Embed Frameworks */,
-				8C25196E2403CF0300BAD4B5 /* RxSwiftDep.framework in Embed Frameworks */,
 				8C25180F2403C59F00BAD4B5 /* Assets.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -47,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		13FAAE45C4236D366555C6AD /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		8C2515B82403C0BC00BAD4B5 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2515C42403C0BD00BAD4B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C2515C72403C0BD00BAD4B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +61,8 @@
 		8C2518D32403C97100BAD4B5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C2518F22403CA7D00BAD4B5 /* RxDatasourcesDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDatasourcesDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C2519672403CE5A00BAD4B5 /* RxSwiftDep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwiftDep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94C5C24F604EAAF62DD4C477 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
+		FC8D392F8B56D8C801EC9584 /* libPods-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +71,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C2518142403C59F00BAD4B5 /* TogglTrack.framework in Frameworks */,
-				8C25196D2403CF0300BAD4B5 /* RxSwiftDep.framework in Frameworks */,
 				8C25180E2403C59F00BAD4B5 /* Assets.framework in Frameworks */,
+				AA68ECB8DF37A98FDBCB93E1 /* libPods-App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +93,7 @@
 				8C2515D12403C0BD00BAD4B5 /* AppTests */,
 				8C2515B92403C0BC00BAD4B5 /* Products */,
 				8C2518092403C59F00BAD4B5 /* Frameworks */,
+				E77F8391F261967A4432A0B9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,8 +136,19 @@
 				8C25180B2403C59F00BAD4B5 /* RxCocoaDep.framework */,
 				8C25180C2403C59F00BAD4B5 /* RxSwiftDep.framework */,
 				8C25180D2403C59F00BAD4B5 /* TogglTrack.framework */,
+				FC8D392F8B56D8C801EC9584 /* libPods-App.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E77F8391F261967A4432A0B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				13FAAE45C4236D366555C6AD /* Pods-App.debug.xcconfig */,
+				94C5C24F604EAAF62DD4C477 /* Pods-App.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +158,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C2515D72403C0BD00BAD4B5 /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
+				E90F329F2553038312FC049E /* [CP] Check Pods Manifest.lock */,
 				8C2515B42403C0BC00BAD4B5 /* Sources */,
 				8C2515B52403C0BC00BAD4B5 /* Frameworks */,
 				8C2515B62403C0BC00BAD4B5 /* Resources */,
@@ -233,6 +247,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E90F329F2553038312FC049E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8C2515B42403C0BC00BAD4B5 /* Sources */ = {
@@ -390,17 +429,22 @@
 		};
 		8C2515D82403C0BD00BAD4B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13FAAE45C4236D366555C6AD /* Pods-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = B227VTMZ94;
 				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.aurora.App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.aurora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Aurora Distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -408,17 +452,22 @@
 		};
 		8C2515D92403C0BD00BAD4B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94C5C24F604EAAF62DD4C477 /* Pods-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = B227VTMZ94;
 				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.aurora.App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toggl.aurora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Aurora Distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
